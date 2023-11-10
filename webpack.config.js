@@ -10,6 +10,11 @@ module.exports = {
   mode,
   target,
   devtool,
+  devServer: {
+    port: 3000,
+    open:true,
+    hot:true,
+  },
   entry: path.resolve(__dirname, "coffee-house", "index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
