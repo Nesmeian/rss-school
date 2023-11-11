@@ -1,0 +1,9 @@
+.enjoy__title {
+  @include font(72px, 600, 76px);
+  margin: 0;
+  color: $text-light;
+}
+.enjoy__title-span {
+  color: $text-accent;
+  transform: skew(15deg);
+}
