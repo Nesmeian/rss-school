@@ -1,3 +1,3 @@
 import "./index.html";
-import "./index.scss";
+import "./main.scss";
 import "./modules/bar.js";

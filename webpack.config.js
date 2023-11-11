@@ -12,8 +12,8 @@ module.exports = {
   devtool,
   devServer: {
     port: 3000,
-    open:true,
-    hot:true,
+    open: true,
+    hot: true,
   },
   entry: path.resolve(__dirname, "coffee-house", "index.js"),
   output: {
@@ -23,8 +23,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: "index.html",
       template: path.resolve(__dirname, "coffee-house", "index.html"),
     }),
+
+    new HtmlWebpackPlugin({
+      filename: "page2.html",
+      template: path.resolve(__dirname, "coffee-house", "page2.html"),
+    }),
+
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
     }),
