@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+@mixin font($size, $weight: 600, $line: 100%, $style: normal) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line;
+  font-style: $style;
+  font-family: "Inter", sans-serif;
+}

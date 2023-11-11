@@ -1,0 +1,9 @@
+.header__menu {
+  display: flex;
+  align-items: center;
+  @include font(16px, 600, 24px);
+  margin-top: -11px;
+}
+.menu__text {
+  padding-right: 9px;
+}

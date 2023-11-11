@@ -1,8 +1,14 @@
 // Base
+@import "sass/base/costants";
+@import "sass/base/fonts";
 
 // Loaylt
 @import "sass/loyalt/header";
 @import "sass/loyalt/wrapper";
+
+//Components
+@import "sass/components/nav";
+@import "sass/components/menu";
 
 // Normalize
 @import "sass/vendors/normalize.css";

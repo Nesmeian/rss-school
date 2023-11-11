@@ -1,0 +1,8 @@
+.nav__list {
+  @include font(16, 600, 24px);
+  display: flex;
+}
+.nav__item {
+  padding-right: 40px;
+  list-style-type: none;
+}
