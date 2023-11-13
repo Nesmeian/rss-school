@@ -1,7 +1,12 @@
-.enjoy__title {
+.title {
   @include font(72px, 600, 76px);
   margin: 0;
   color: $text-light;
+}
+
+h2.title {
+  color: $text-dark;
+  font-size: 60px;
 }
 .enjoy__title-span {
   color: $text-accent;
