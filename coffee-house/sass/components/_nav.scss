@@ -6,3 +6,16 @@
   padding-right: 40px;
   list-style-type: none;
 }
+
+.nav__item:after {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: all 0.7s;
+}
+.nav__item:hover::after {
+  opacity: 1;
+}

@@ -3,3 +3,12 @@
   color: $text-light;
   margin: 40px 0 40px 0;
 }
+
+.coffee__description {
+  @include font(16px, 400, 24px);
+}
+
+.coffee__prise {
+  @include font(24px, 600, 30px);
+  margin-bottom: 7px;
+}

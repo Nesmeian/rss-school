@@ -10,5 +10,13 @@ h2.title {
 }
 .enjoy__title-span {
   color: $text-accent;
-  transform: skew(15deg);
+}
+
+.coffee__title {
+  margin-bottom: 39px;
+}
+
+.coffee__name {
+  margin: 21px 0 0 0;
+  @include font(24px, 600, 30px);
 }

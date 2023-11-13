@@ -1,0 +1,10 @@
+.coffee__controls-list {
+  display: flex;
+}
+.coffee__controls-item {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: $border-dark;
+  margin: 0 6px 0 6px;
+}
