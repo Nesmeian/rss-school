@@ -25,3 +25,9 @@ h3.title {
 .footer__text {
   padding-bottom: 39px;
 }
+.menu__title {
+  margin-top: 16px;
+  @include font(60px, 600, 75px);
+  color: $text-dark;
+  text-align: center;
+}

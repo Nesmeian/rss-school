@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import "sass/vendors/normalize.css";
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+body {
+  background-color: #e1d4c9;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 40px;
+}
+
+.nav__list {
+  font-size: 16;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  display: flex;
+}
+
+.nav__item {
+  padding-right: 40px;
+  list-style-type: none;
+}
+
+.nav__item:after {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.nav__item:hover::after {
+  opacity: 1;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  margin-top: -11px;
+}
+
+.menu__text {
+  padding-right: 9px;
+}
+
+.title {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 76px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  color: #e1d4c9;
+}
+
+h2.title,
+h3.title {
+  color: #403f3d;
+  font-size: 60px;
+}
+
+.enjoy__title-span {
+  color: #b0907a;
+}
+
+.coffee__title {
+  margin-bottom: 39px;
+}
+
+.coffee__name {
+  margin: 21px 0 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+}
+
+.footer__text {
+  padding-bottom: 39px;
+}
+
+.menu__title {
+  margin-top: 16px;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 75px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  color: #403f3d;
+  text-align: center;
+}
+
+.enjoy__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  color: #e1d4c9;
+  margin: 40px 0 40px 0;
+}
+
+.coffee__description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+}
+
+.coffee__prise {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 7px;
+}
+
+.left-container__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  margin: 39px 0 40px;
+}
+
+.app-store__top-text {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 14px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.app-store__bottom-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  margin: 2px 0 0 0;
+}
+
+.google-play__top-text {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 14px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.google-play__bottom-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  margin: 2px 0 0 0;
+}
+
+.footer__contact-us {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+}
+
+.footer__location {
+  margin: 39px 0 19px;
+}
+
+.enjoy__container {
+  margin-top: 15px;
+  padding: 100px 100px 0;
+  background-image: url(./img/enjoy__wrapper.png);
+  border-radius: 50px;
+}
+
+.coffee__container-external {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0 98px;
+}
+
+.coffee__container-internal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about__img-container {
+  padding-top: 38px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.mobile__main-container {
+  display: flex;
+  padding: 95px 0 95px 0;
+  justify-content: space-between;
+}
+
+.mobile__left-container {
+  padding-top: 148px;
+}
+
+.mobile__right-container {
+  padding-top: 5px;
+}
+
+.left-container__app-container {
+  display: flex;
+}
+
+.app-store_container__app-store_container,
+.app-store_container__google-play_container {
+  height: 64px;
+  width: 200px;
+  display: flex;
+  border: 1px solid #665f55;
+  border-radius: 100px;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.footer__main-container {
+  display: flex;
+  background-color: #665f55;
+  border-radius: 40px;
+  margin-bottom: 40px;
+}
+
+.footer__left-container {
+  padding-top: 99px;
+  margin-left: 99px;
+}
+
+.left-container__img-list {
+  padding-bottom: 96px;
+}
+
+.footer__rigth-container {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  color: #e1d4c9;
+  padding-top: 109px;
+  padding-left: 137px;
+}
+
+.menu__icons-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+}
+
+.container_for__icon-coffee {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: #e1d4c9;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon__item-desert,
+.icon__item-tea,
+.icon__item-coffee {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid #c1b6ad;
+  border-radius: 100px;
+}
+
+.icon__item-coffee {
+  border-radius: 100px;
+  background-color: #665f55;
+}
+
+.container_for__icon-tea,
+.container_for__icon-dessert {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: #c1b6ad;
+}
+
+.enjoy__btn_meny {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  padding: 19px 77px;
+  border-radius: 50px;
+  margin-bottom: 99px;
+}
+
+.img-container__item {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.img-container__item-4 {
+  margin-top: -159px;
+}
+
+.google-play__img,
+.app-store__img {
+  margin: 0px 12px 4px 23px;
+}
+
+.coffee__controls-list {
+  display: flex;
+}
+
+.coffee__controls-item {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #665f55;
+  margin: 0 6px 0 6px;
+}
+
+.arrow-left {
+  margin-top: 73px;
+  margin-left: 4px;
+}
+
+.arrow-right {
+  margin-top: 73px;
+  margin-right: 4px;
+}
+
+.left-container__img-item {
+  margin-right: 9px;
+}
+
+a {
+  color: #403f3d;
+  text-decoration: none;
+}/*# sourceMappingURL=main.css.map */
