@@ -12,3 +12,25 @@
   @include font(24px, 600, 30px);
   margin-bottom: 7px;
 }
+
+.left-container__text {
+  @include font(16px, 400, 24px);
+  margin: 39px 0 40px;
+}
+
+.app-store__top-text {
+  @include font(10px, 600, 14px);
+  margin: 0;
+}
+.app-store__bottom-text {
+  @include font(16px, 600, 24px);
+  margin: 2px 0 0 0;
+}
+.google-play__top-text {
+  @include font(10px, 600, 14px);
+  margin: 0;
+}
+.google-play__bottom-text {
+  @include font(16px, 600, 24px);
+  margin: 2px 0 0 0;
+}

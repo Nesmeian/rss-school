@@ -28,7 +28,28 @@
 
 .mobile__main-container {
   display: flex;
+  padding-top: 95px;
+  justify-content: space-between;
 }
 .mobile__left-container {
   padding-top: 148px;
+}
+
+.mobile__right-container {
+  padding-top: 5px;
+}
+
+.left-container__app-container {
+  display: flex;
+}
+
+.app-store_container__app-store_container,
+.app-store_container__google-play_container {
+  height: 64px;
+  width: 200px;
+  display: flex;
+  border: 1px solid $border-dark;
+  border-radius: 100px;
+  align-items: center;
+  margin-right: 16px;
 }
