@@ -4,7 +4,8 @@
   color: $text-light;
 }
 
-h2.title {
+h2.title,
+h3.title {
   color: $text-dark;
   font-size: 60px;
 }
@@ -19,4 +20,8 @@ h2.title {
 .coffee__name {
   margin: 21px 0 0 0;
   @include font(24px, 600, 30px);
+}
+
+.footer__text {
+  padding-bottom: 39px;
 }

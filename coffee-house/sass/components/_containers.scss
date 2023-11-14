@@ -28,7 +28,7 @@
 
 .mobile__main-container {
   display: flex;
-  padding-top: 95px;
+  padding: 95px 0 95px 0;
   justify-content: space-between;
 }
 .mobile__left-container {
@@ -52,4 +52,27 @@
   border-radius: 100px;
   align-items: center;
   margin-right: 16px;
+}
+
+.footer__main-container {
+  display: flex;
+  background-color: $border-dark;
+  border-radius: 40px;
+  margin-bottom: 40px;
+}
+
+.footer__left-container {
+  padding-top: 99px;
+  margin-left: 99px;
+}
+
+.left-container__img-list {
+  padding-bottom: 96px;
+}
+
+.footer__rigth-container {
+  @include font(16px, 600, 24px);
+  color: $text-light;
+  padding-top: 109px;
+  padding-left: 137px;
 }
