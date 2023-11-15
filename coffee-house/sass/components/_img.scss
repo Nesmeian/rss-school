@@ -1,15 +1,40 @@
 .img-container__item {
   display: block;
-  width: 100%;
+  width: 660px;
   max-width: 100%;
-  height: auto;
+  background-position: center;
   border-radius: 20px;
+  transition: all 1s ease;
 }
 
-.img-container__item-4 {
-  margin-top: -159px;
+.img-container__item:hover {
+  transform: scale(1.1);
 }
 .google-play__img,
 .app-store__img {
   margin: 0px 12px 4px 23px;
+}
+
+.img-container__item-1 {
+  background-image: url(./img/about-1.png);
+  height: 590px;
+}
+.img-container__item-3 {
+  height: 430px;
+  background-image: url(./img/about-2.png);
+}
+.img-container__item-2 {
+  height: 430px;
+  background-image: url(./img/about-3.png);
+}
+.img-container__item-4 {
+  height: 590px;
+  background-image: url(./img/about-4.png);
+}
+.img-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+}
+.img-wrapper-4 {
+  margin-top: -159px;
 }

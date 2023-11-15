@@ -11,14 +11,16 @@
       <div class="header__wrapper wrapper">
         <div class="header__container">
           <div class="header__logo">
+            <a href="./index.html">
             <img src="./img/logo.svg" alt="logo__img" class="logo_img" />
+          </a>
           </div>
           <nav class="nav">
             <ul class="nav__list">
-              <li class="nav__item">Favorite coffee</li>
-              <li class="nav__item">About</li>
-              <li class="nav__item">Mobile app</li>
-              <li class="nav__item">Contact us</li>
+              <li class="nav__item"><a href="#favourite">Favorite coffee</a></li>
+              <li class="nav__item"><a href="#about">About</a></li>
+              <li class="nav__item"><a href="#mobile">Mobile app</a></li>
+              <li class="nav__item"><a href="#footer">Contact us</a></li>
             </ul>
           </nav>
           <div class="header__menu">
@@ -40,7 +42,7 @@
           </div>
         </div>
       </section>
-      <section class="favorites-coffee">
+      <section class="favorites-coffee" id="favourite">
         <div class="coffee__wrapper wrapper">
           <div class="coffee__container-external">
           <div class="arrow-left"><img src="./img/arrow-left.svg" alt="arrow-left"></div>
@@ -67,20 +69,20 @@
         </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="about__wrapper wrapper">
           <div class="about__container">
             <h2 class="about__title title">Resource is the perfect and cozy place where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
             <div class="about__img-container">
-              <img src="./img/about-img1.png" alt="about-1" class="img-container__item-1 img-container__item">
-              <img src="./img/about-img2.png" alt="about-3" class="img-container__item-3 img-container__item">
-              <img src="./img/about-img3.png" alt="about-2" class="img-container__item-2 img-container__item">
-              <img src="./img/about-img4.png" alt="about-4" class="img-container__item-4 img-container__item">
+              <div class="img-wrapper"><div class="img-container__item-1 img-container__item"></div></div>
+              <div class="img-wrapper"><div class="img-container__item-2 img-container__item"></div></div>
+              <div class="img-wrapper"><div class="img-container__item-3 img-container__item"></div></div>
+              <div class="img-wrapper img-wrapper-4"><div class="img-container__item-4 img-container__item"></div></div>
             </div>
           </div>
         </div>
       </section>
-      <section class="mobile-app">
+      <section class="mobile-app" id="mobile">
         <div class="mobile__wrapper wrapper">
           <div class="mobile__main-container">
           <div class="mobile__left-container">
@@ -109,7 +111,7 @@
       </div>
       </section>
     </main> 
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="footer__wrapper wrapper">
         <div class="footer__main-container">
         <div class="footer__left-container">
