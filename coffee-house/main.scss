@@ -5,13 +5,14 @@
 // Loaylt
 @import "sass/loyalt/header";
 @import "sass/loyalt/wrapper";
+@import "sass/loyalt/containers";
 
 //Components
 @import "sass/components/nav";
-@import "sass/components/menu";
+@import "sass/components/menu-icon";
+@import "sass/components/menu-item";
 @import "sass/components/title";
 @import "sass/components/pargraphs";
-@import "sass/components/containers";
 @import "sass/components/buttons";
 @import "sass/components/img";
 @import "sass/components/controls";

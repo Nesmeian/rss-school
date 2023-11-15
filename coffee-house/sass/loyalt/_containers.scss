@@ -82,42 +82,14 @@
   justify-content: center;
   border-radius: 100px;
   @include font(16px, 600, 24px);
+  padding-bottom: 39px;
 }
 
-.container_for__icon-coffee {
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
-  background-color: $background-body;
-  text-align: center;
+.drinks-item__container {
+  box-sizing: border-box;
+  padding-left: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon__item-desert,
-.icon__item-tea,
-.icon__item-coffee {
-  margin-left: 12px;
-  display: flex;
-  align-items: center;
-  padding: 8px 16px 8px 8px;
-  border: 1px solid $border-light;
-  border-radius: 100px;
-}
-
-.icon__item-coffee {
-  border-radius: 100px;
-  background-color: $background-container;
-}
-.container_for__icon-tea,
-.container_for__icon-dessert {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
-  background-color: $border-light;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 188px;
 }

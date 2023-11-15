@@ -8,8 +8,11 @@
   @include font(16px, 400, 24px);
 }
 
-.coffee__prise {
+.price {
   @include font(24px, 600, 30px);
+}
+
+.coffee__price {
   margin-bottom: 7px;
 }
 
@@ -41,4 +44,16 @@
 
 .footer__location {
   margin: 39px 0 19px;
+}
+
+.drinks-item__description {
+  @include font(16px, 400, 24px);
+  padding-right: 20px;
+  margin-top: 11px;
+  margin-bottom: auto;
+}
+
+.drinks-item__price {
+  margin-top: 13px;
+  margin-bottom: 18px;
 }
