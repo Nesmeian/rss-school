@@ -38,3 +38,13 @@
 .img-wrapper-4 {
   margin-top: -159px;
 }
+
+.menu__drinks-img {
+  object-fit: none;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.menu__drinks-img:hover {
+  transform: scale(1.1);
+}

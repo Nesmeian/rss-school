@@ -91,5 +91,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 188px;
+  height: 194px;
+}
+.menu__drinks-img_container {
+  overflow: hidden;
+  width: 310px;
+  height: 310px;
+  border-radius: 40px;
 }
