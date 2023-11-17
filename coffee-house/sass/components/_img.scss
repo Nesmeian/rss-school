@@ -10,9 +10,14 @@
 .img-container__item:hover {
   transform: scale(1.1);
 }
+
+.google-play__img {
+  stroke: none;
+}
+
 .google-play__img,
 .app-store__img {
-  margin: 0px 12px 4px 23px;
+  margin: 0px 5px 4px 21px;
 }
 
 .img-container__item-1 {

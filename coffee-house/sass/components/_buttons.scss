@@ -1,6 +1,28 @@
 .enjoy__btn_meny {
+  position: relative;
   @include font(16px, 600, 24px);
   padding: 19px 77px;
   border-radius: 50px;
   margin-bottom: 99px;
+  transition: all 0.5s ease;
+}
+
+.enjoy__btn_text {
+  transition: all 0.5s ease;
+}
+.enjoy__btn_meny::after {
+  position: absolute;
+  content: url(./img/coffee-cup.svg);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.enjoy__btn_meny:hover {
+  .enjoy__btn_text {
+    transform: translateX(-12px);
+    display: inline-block;
+  }
+}
+
+.enjoy__btn_meny:hover::after {
+  opacity: 1;
 }

@@ -3,6 +3,8 @@
   padding: 100px 100px 0;
   background-image: url(./img/enjoy__wrapper.png);
   border-radius: 50px;
+  background-position: center;
+  background-size: cover;
 }
 
 .coffee__container-external {
@@ -52,6 +54,23 @@
   border-radius: 100px;
   align-items: center;
   margin-right: 16px;
+  transition: all 0.5s ease;
+}
+
+.app-store_container__app-store_container:hover {
+  background-color: $border-dark;
+  color: $text-light;
+  .app-store__svg {
+    fill: $text-light;
+  }
+}
+
+.app-store_container__google-play_container:hover {
+  background-color: $border-dark;
+  color: $text-light;
+  .google-play__svg {
+    fill: $text-light;
+  }
 }
 
 .footer__main-container {
@@ -67,6 +86,7 @@
 }
 
 .left-container__img-list {
+  display: flex;
   padding-bottom: 96px;
 }
 

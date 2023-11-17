@@ -4,6 +4,11 @@
   color: $text-light;
 }
 
+.title-span {
+  font-style: italic;
+  color: $text-accent;
+}
+
 h2.title,
 h3.title {
   color: $text-dark;
@@ -12,10 +17,6 @@ h3.title {
 
 h3.title {
   @include font(24px, 600, 30px);
-}
-
-.enjoy__title-span {
-  color: $text-accent;
 }
 
 .coffee__title {
@@ -30,8 +31,9 @@ h3.title {
   padding-bottom: 39px;
 }
 
-.footer__title {
-  margin-bottom: 39px;
+h2.footer__title {
+  margin-bottom: 37px;
+  color: $text-light;
 }
 
 .menu__title {

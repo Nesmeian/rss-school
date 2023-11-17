@@ -2,3 +2,75 @@ a {
   color: $text-dark;
   text-decoration: none;
 }
+
+.menu__link {
+  cursor: default;
+}
+
+.nav__item-link {
+  position: relative;
+}
+.nav__item-link:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+.nav__item-link::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0px;
+  right: 50%;
+  width: 0;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+
+.nav__item-link:hover::before {
+  width: 50%;
+}
+.nav__item-link:hover::after {
+  width: 50%;
+}
+
+.footer__link {
+  position: relative;
+  color: $text-light;
+}
+.footer__link::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  right: 50%;
+  width: 0;
+  background-color: $text-light;
+  transition: all 0.7s;
+}
+
+.footer__link::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0px;
+  left: 50%;
+  width: 0;
+  background-color: $text-light;
+  transition: all 0.7s;
+}
+
+.footer__link:hover::after {
+  width: 50%;
+}
+.footer__link:hover::before {
+  width: 50%;
+}
