@@ -17,7 +17,7 @@ module.exports = {
   },
   entry: path.resolve(__dirname, "coffee-house", "index.js"),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     clean: true,
     filename: "[name].[contenthash].js",
   },
