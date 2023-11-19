@@ -30,7 +30,7 @@
 
 .mobile__main-container {
   display: flex;
-  padding: 95px 0 95px 0;
+  padding: 95px 0 93px 0;
   justify-content: space-between;
 }
 .mobile__left-container {
@@ -48,12 +48,12 @@
 .app-store_container,
 .google-play_container {
   height: 64px;
-  width: 200px;
+  width: 198px;
   display: flex;
   border: 1px solid $border-dark;
   border-radius: 100px;
   align-items: center;
-  margin-right: 16px;
+  margin-right: 19px;
   transition: all 0.5s ease;
 }
 
@@ -87,7 +87,7 @@
 
 .left-container__img-list {
   display: flex;
-  padding-bottom: 99px;
+  padding-bottom: 100px;
 }
 
 .footer_rigth__container {
