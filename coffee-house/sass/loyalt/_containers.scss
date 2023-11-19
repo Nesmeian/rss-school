@@ -45,8 +45,8 @@
   display: flex;
 }
 
-.app-store_container__app-store_container,
-.app-store_container__google-play_container {
+.app-store_container,
+.google-play_container {
   height: 64px;
   width: 200px;
   display: flex;
@@ -57,7 +57,7 @@
   transition: all 0.5s ease;
 }
 
-.app-store_container__app-store_container:hover {
+.app-store_container:hover {
   background-color: $border-dark;
   color: $text-light;
   .app-store__svg {
@@ -65,7 +65,7 @@
   }
 }
 
-.app-store_container__google-play_container:hover {
+.google-play_container:hover {
   background-color: $border-dark;
   color: $text-light;
   .google-play__svg {
