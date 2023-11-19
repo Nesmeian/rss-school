@@ -87,10 +87,10 @@
 
 .left-container__img-list {
   display: flex;
-  padding-bottom: 96px;
+  padding-bottom: 99px;
 }
 
-.footer__rigth-container {
+.footer_rigth__container {
   @include font(16px, 600, 24px);
   color: $text-light;
   padding-top: 109px;

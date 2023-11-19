@@ -38,14 +38,22 @@
   margin: 2px 0 0 0;
 }
 
+.footer_rigth__container-item {
+  display: flex;
+  align-items: flex-start;
+}
+
 .footer__contact-us {
   @include font(24px, 600, 30px);
 }
 
 .footer__location {
-  margin: 39px 0 19px;
+  margin: 35px 0 19px;
 }
 
+.footer__phone {
+  margin: 21px 0 21px;
+}
 .drinks-item__description {
   @include font(16px, 400, 24px);
   padding-right: 20px;
