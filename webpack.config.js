@@ -15,9 +15,9 @@ module.exports = {
     open: true,
     hot: true,
   },
-  entry: path.resolve(__dirname, "coffee-house", "index.js"),
+  entry: path.resolve(__dirname, "src", "index.js"),
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "coffee-house"),
     clean: true,
     filename: "[name].[contenthash].js",
   },
