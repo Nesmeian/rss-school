@@ -1,45 +1,56 @@
 .mobile__main-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 95px 0 93px 0;
-    justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 95px 0;
+  gap: 100px;
+}
+.mobile__left-container {
+  padding-top: 148px;
+}
+
+.mobile__right-container {
+  padding-top: 5px;
+}
+
+.left-container__app-container {
+  display: flex;
+}
+
+.app-store_container,
+.google-play_container {
+  height: 64px;
+  width: 198px;
+  display: flex;
+  border: 1px solid $border-dark;
+  border-radius: 100px;
+  align-items: center;
+  margin-right: 19px;
+  transition: all 0.5s ease;
+}
+
+.app-store_container:hover {
+  background-color: $border-dark;
+  color: $text-light;
+  .app-store__svg {
+    fill: $text-light;
   }
+}
+
+.google-play_container:hover {
+  background-color: $border-dark;
+  color: $text-light;
+  .google-play__svg {
+    fill: $text-light;
+  }
+}
+@media (max-width: 1330px) {
+  .mobile__main-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
   .mobile__left-container {
-    padding-top: 148px;
-  }
-  
-  .mobile__right-container {
     padding-top: 5px;
   }
-  
-  .left-container__app-container {
-    display: flex;
-  }
-  
-  .app-store_container,
-  .google-play_container {
-    height: 64px;
-    width: 198px;
-    display: flex;
-    border: 1px solid $border-dark;
-    border-radius: 100px;
-    align-items: center;
-    margin-right: 19px;
-    transition: all 0.5s ease;
-  }
-  
-  .app-store_container:hover {
-    background-color: $border-dark;
-    color: $text-light;
-    .app-store__svg {
-      fill: $text-light;
-    }
-  }
-  
-  .google-play_container:hover {
-    background-color: $border-dark;
-    color: $text-light;
-    .google-play__svg {
-      fill: $text-light;
-    }
-  }
+}
