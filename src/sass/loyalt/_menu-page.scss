@@ -20,3 +20,13 @@
   height: 310px;
   border-radius: 40px;
 }
+
+.menu__title_container {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 1030px) {
+  .menu__drinks-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}

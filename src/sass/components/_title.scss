@@ -38,6 +38,7 @@ h2.footer__title {
 }
 
 .menu__title {
+  width: 800px;
   margin-top: 16px;
   @include font(60px, 600, 75px);
   color: $text-dark;

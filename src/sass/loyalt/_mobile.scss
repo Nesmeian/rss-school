@@ -1,6 +1,7 @@
 .mobile__main-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
   padding: 95px 0;
   gap: 100px;
 }
@@ -52,5 +53,8 @@
 @media (max-width: 768px) {
   .mobile__left-container {
     padding-top: 5px;
+  }
+  .mobile__right-container {
+    padding-top: 0;
   }
 }

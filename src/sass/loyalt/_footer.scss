@@ -21,3 +21,18 @@
   padding-top: 109px;
   padding-left: 137px;
 }
+
+@media (max-width: 768px) {
+  .footer__main-container {
+    flex-direction: column;
+  }
+  .footer__left-container {
+    margin-left: 60px;
+  }
+  .left-container__img-list {
+    padding-bottom: 76px;
+  }
+  .footer_rigth__container {
+    padding: 0 0 86px 60px;
+  }
+}

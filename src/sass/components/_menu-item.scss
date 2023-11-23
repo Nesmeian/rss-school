@@ -10,3 +10,14 @@
   border: 1px solid $border-light;
   border-radius: 40px;
 }
+
+@media (max-width: 1040px) {
+  .menu__drinks-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 26px;
+    padding: 0px 0 38px 14px;
+  }
+  .menu__drinks-item:nth-child(n + 5) {
+    display: none;
+  }
+}
