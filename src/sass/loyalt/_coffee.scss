@@ -1,0 +1,13 @@
+.coffee__container-external {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 39px 0 98px;
+}
+
+.coffee__container-internal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

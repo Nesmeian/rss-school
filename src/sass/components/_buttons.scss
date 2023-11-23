@@ -31,3 +31,14 @@
   transition: all 0.7s ease;
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .enjoy__btn_text {
+    right: 89px;
+    top: 18px;
+  }
+  .enjoy__btn_meny::after {
+    opacity: 1;
+    right: 61px;
+  }
+}

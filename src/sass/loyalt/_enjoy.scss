@@ -1,0 +1,14 @@
+.enjoy__container {
+  margin-top: 15px;
+  padding: 100px 100px 102px;
+  background-image: url(./img/enjoy__wrapper.png);
+  border-radius: 40px;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .enjoy__container {
+    padding: 100px 59px 102px;
+  }
+}
