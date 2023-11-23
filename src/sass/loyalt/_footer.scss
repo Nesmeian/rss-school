@@ -36,3 +36,16 @@
     padding: 0 0 86px 60px;
   }
 }
+
+@media (max-width: 500px) {
+  .footer__left-container {
+    margin-left: 15px;
+    padding-top: 62px;
+  }
+  .left-container__img-list {
+    padding-bottom: 17px;
+  }
+  .footer_rigth__container {
+    padding: 0 0 46px 16px;
+  }
+}
