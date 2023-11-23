@@ -7,3 +7,9 @@
 .menu__text {
   padding-right: 9px;
 }
+
+@media (max-width: 768px) {
+  .header__menu {
+    display: none;
+  }
+}

@@ -30,6 +30,7 @@
 
 .mobile__main-container {
   display: flex;
+  flex-wrap: wrap;
   padding: 95px 0 93px 0;
   justify-content: space-between;
 }

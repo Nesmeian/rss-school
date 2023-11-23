@@ -1,0 +1,25 @@
+.burger__menu {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 8px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid $border-dark;
+  border-radius: 100px;
+}
+.burger__line {
+  width: 18px;
+  height: 1.5px;
+  background-color: $border-dark;
+}
+.burger__line:nth-child(1) {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .burger__menu {
+    display: flex;
+  }
+}
