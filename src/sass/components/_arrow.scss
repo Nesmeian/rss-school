@@ -37,3 +37,10 @@
     stroke: $text-light;
   }
 }
+
+@media (max-width: 500px) {
+  .arrow-left,
+  .arrow-right {
+    display: none;
+  }
+}

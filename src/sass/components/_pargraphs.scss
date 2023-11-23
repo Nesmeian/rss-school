@@ -2,9 +2,11 @@
   @include font(16px, 400, 24px);
   color: $text-light;
   margin: 40px 0 40px 0;
+  width: 555px;
 }
 
 .coffee__description {
+  width: 480px;
   @include font(16px, 400, 24px);
 }
 
@@ -72,5 +74,14 @@
   }
   .left-container__text {
     margin-bottom: 39px;
+  }
+}
+
+@media (max-width: 500px) {
+  .enjoy__text {
+    width: auto;
+  }
+  .coffee__description {
+    width: auto;
   }
 }

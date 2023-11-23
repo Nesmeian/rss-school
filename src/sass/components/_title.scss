@@ -19,6 +19,9 @@ h3.title {
   @include font(24px, 600, 30px);
 }
 
+.enjoy__title {
+  width: 555px;
+}
 .coffee__title {
   margin-top: 98px;
   text-align: center;
@@ -53,5 +56,19 @@ h2.footer__title {
 @media (max-width: 768px) {
   .about__title {
     line-height: 75px;
+  }
+}
+
+@media (max-width: 380px) {
+  .enjoy__title {
+    width: auto;
+    @include font(42px, 600, 48px);
+  }
+  h2.about__title,
+  h2.coffee__title {
+    @include font(32px, 600, 40px);
+  }
+  .coffee__name {
+    margin-top: 22px;
   }
 }

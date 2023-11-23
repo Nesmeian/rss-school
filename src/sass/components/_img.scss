@@ -67,3 +67,14 @@
     width: 726px;
   }
 }
+
+@media (max-width: 500px) {
+  .right-container__img {
+    width: 348px;
+    height: 348px;
+  }
+  .coffee_img {
+    width: 348px;
+    height: 348px;
+  }
+}
