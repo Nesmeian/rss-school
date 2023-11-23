@@ -10,3 +10,9 @@
     grid-template-columns: auto;
   }
 }
+
+@media (max-width: 500px) {
+  .about__img-container {
+    padding-top: 40px;
+  }
+}

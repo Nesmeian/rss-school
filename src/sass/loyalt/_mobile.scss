@@ -58,3 +58,17 @@
     padding-top: 0;
   }
 }
+@media (max-width: 500px) {
+  .mobile__left-container {
+    width: 360px;
+  }
+  .left-container__app-container {
+    flex-direction: column;
+  }
+  .app-store_container {
+    margin: 0 0 17px 0;
+  }
+  .mobile__main-container {
+    gap: 39px;
+  }
+}

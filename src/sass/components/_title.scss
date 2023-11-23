@@ -64,6 +64,8 @@ h2.footer__title {
     width: auto;
     @include font(42px, 600, 48px);
   }
+  h2.footer__title,
+  h2.left-container__title,
   h2.about__title,
   h2.coffee__title {
     @include font(32px, 600, 40px);
