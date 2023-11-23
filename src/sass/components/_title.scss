@@ -48,3 +48,9 @@ h2.footer__title {
 .drinks-item__title {
   margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .about__title {
+    line-height: 75px;
+  }
+}

@@ -4,3 +4,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
+
+@media (max-width: 768px) {
+  .about__img-container {
+    grid-template-columns: auto;
+  }
+}

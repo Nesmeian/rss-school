@@ -53,3 +53,17 @@
 .menu__drinks-img:hover {
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  .img-wrapper:nth-child(3),
+  .img-wrapper:nth-child(2) {
+    display: none;
+  }
+  .img-wrapper-4 {
+    margin: 0;
+  }
+  .img-container__item-1,
+  .img-container__item-4 {
+    width: 726px;
+  }
+}
