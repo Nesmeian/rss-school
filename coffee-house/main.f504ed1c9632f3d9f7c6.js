@@ -1315,7 +1315,7 @@ var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(
 var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./img/logo.svg */ "./src/img/logo.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ./img/coffee-cup.svg */ "./src/img/coffee-cup.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ./img/coffee-slider-1.svg */ "./src/img/coffee-slider-1.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ./img/mobile-screens.png */ "./src/img/mobile-screens.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ./img/mobile-screens.svg */ "./src/img/mobile-screens.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./img/pin-alt.svg */ "./src/img/pin-alt.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./img/phone.svg */ "./src/img/phone.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./img/clock.svg */ "./src/img/clock.svg"), __webpack_require__.b);
@@ -1996,14 +1996,14 @@ module.exports = __webpack_require__.p + "43dc7a5d689e27eb1f95.svg";
 
 /***/ }),
 
-/***/ "./src/img/mobile-screens.png":
+/***/ "./src/img/mobile-screens.svg":
 /*!************************************!*\
-  !*** ./src/img/mobile-screens.png ***!
+  !*** ./src/img/mobile-screens.svg ***!
   \************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "8118599d1ca6d7ea91e3.png";
+module.exports = __webpack_require__.p + "c1fba24207bb9cdcc1d1.svg";
 
 /***/ }),
 
@@ -2205,4 +2205,4 @@ console.log(
 
 /******/ })()
 ;
-//# sourceMappingURL=main.9a8a2e3cf9c0e828f4f0.js.map
+//# sourceMappingURL=main.f504ed1c9632f3d9f7c6.js.map
