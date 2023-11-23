@@ -24,12 +24,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve(__dirname, "coffee-house", "index.html"),
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
 
     new HtmlWebpackPlugin({
       filename: "page2.html",
-      template: path.resolve(__dirname, "coffee-house", "page2.html"),
+      template: path.resolve(__dirname, "src", "page2.html"),
     }),
 
     new MiniCssExtractPlugin({
