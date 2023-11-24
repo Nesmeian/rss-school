@@ -4,8 +4,8 @@ const burgerLine = document.querySelectorAll(".burger__line");
 
 burgerBtn.addEventListener("click", toogleBurger);
 function toogleBurger() {
-  burgerMenu.classList.toggle("--active");
-  burgerBtn.classList.toggle("--active");
+  burgerMenu.classList.toggle("--active-burger");
+  burgerBtn.classList.toggle("--active-btn-burger");
 }
 window.addEventListener("click", (e) => {
   for (let i = 0; i < burgerLine.length; i++) {
@@ -15,8 +15,16 @@ window.addEventListener("click", (e) => {
       e.target !== burgerLine[0] &&
       e.target !== burgerLine[1]
     ) {
-      burgerMenu.classList.remove("--active");
-      burgerBtn.classList.remove("--active");
+      burgerMenu.classList.remove("--active-burger");
+      burgerBtn.classList.remove("--active-btn-burger");
     }
   }
 });
+
+function checkingWidth() {
+  if (window.innerWidth >= 769) {
+    burgerMenu.classList.remove("--active-burger");
+    burgerBtn.classList.remove("--active-btn-burger");
+  }
+}
+// setInterval(checkingWidth, 1000);

@@ -5,3 +5,4 @@ import "./index.html";
 import "./menu.html";
 import "./main.scss";
 import "./modules/burger.js";
+import "./modules/slider.js";

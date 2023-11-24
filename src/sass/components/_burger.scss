@@ -20,12 +20,12 @@
 }
 
 .burger__menu {
+  opacity: 0;
   position: absolute;
   background-color: $background-body;
-  right: -2000px;
-  width: 90vw;
-  opacity: 0;
-  transition: all 1s ease;
+  width: 10vw;
+  right: 0;
+  transition: all 2s ease;
 }
 .burger__list {
   padding: 0;
@@ -47,13 +47,16 @@
   }
 }
 
-.--active {
-  transition: all 1s ease;
+.--active-burger {
   opacity: 1;
   right: 40px;
+  width: 90vw;
 }
 
-.burger__btn.--active {
+.--active-btn-burger {
+  transition: all 1s ease;
+}
+.burger__btn.--active-btn-burger {
   .burger__line:nth-child(1) {
     transition: all 1s ease;
     transform: translateY(4px) rotate(-45deg);
