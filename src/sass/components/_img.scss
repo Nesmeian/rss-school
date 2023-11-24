@@ -50,6 +50,8 @@
   width: 100%;
   transition: all 0.5s ease;
 }
-.menu__drinks-img:hover {
-  transform: scale(1.1);
+.menu__drinks-item:hover {
+  .menu__drinks-img {
+    transform: scale(1.1);
+  }
 }
