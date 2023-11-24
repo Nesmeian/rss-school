@@ -1,0 +1,63 @@
+@media (hover: hover) {
+  .menu__drinks-item:hover {
+    .menu__drinks-img:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .left-container__img-item:hover {
+    background-color: $text-light;
+    .left-container__img-svg {
+      stroke: $text-dark;
+    }
+  }
+
+  .icon__item-tea:hover {
+    background-color: $background-container;
+    .container_for__icon-tea {
+      background-color: $background-body;
+    }
+  }
+  .icon__item-desert:hover {
+    background-color: $background-container;
+    .container_for__icon-dessert {
+      background-color: $background-body;
+    }
+  }
+
+  .arrow-left:hover {
+    background: $background-container;
+    .arrow-left__svg {
+      stroke: $text-light;
+    }
+  }
+
+  .arrow-right:hover {
+    background: $background-container;
+    .arrow-right__svg {
+      stroke: $text-light;
+    }
+  }
+
+  .enjoy__btn_meny:hover {
+    .enjoy__btn_text {
+      right: 98px;
+    }
+  }
+
+  .enjoy__btn_meny:hover::after {
+    transition: all 0.7s ease;
+    opacity: 1;
+  }
+
+  .img-container__item:hover {
+    transform: scale(1.1);
+  }
+
+  .nav__item-link:hover::before,
+  .nav__item-link:hover::after,
+  .footer__link:hover::after,
+  .footer__link:hover::before {
+    width: 50%;
+  }
+}

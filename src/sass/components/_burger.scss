@@ -13,6 +13,7 @@
   width: 18px;
   height: 1.5px;
   background-color: $border-dark;
+  transition: all 1s ease;
 }
 .burger__line:nth-child(1) {
   margin-bottom: 6px;
@@ -50,4 +51,15 @@
   transition: all 1s ease;
   opacity: 1;
   right: 40px;
+}
+
+.burger__btn.--active {
+  .burger__line:nth-child(1) {
+    transition: all 1s ease;
+    transform: translateY(4px) rotate(-45deg);
+  }
+  .burger__line:nth-child(2) {
+    transition: all 1s ease;
+    transform: translateY(-3px) rotate(45deg);
+  }
 }
