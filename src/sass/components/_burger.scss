@@ -1,4 +1,4 @@
-.burger__menu {
+.burger__btn {
   display: none;
   align-items: center;
   flex-direction: column;
@@ -18,8 +18,36 @@
   margin-bottom: 6px;
 }
 
+.burger__menu {
+  position: absolute;
+  background-color: $background-body;
+  right: -2000px;
+  width: 90vw;
+  opacity: 0;
+  transition: all 1s ease;
+}
+.burger__list {
+  padding: 0;
+  @include font(16, 600, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger__item {
+  padding-bottom: 60px;
+  list-style-type: none;
+}
+
 @media (max-width: 768px) {
-  .burger__menu {
+  .burger__btn {
     display: flex;
   }
+}
+
+.--active {
+  transition: all 1s ease;
+  opacity: 1;
+  right: 40px;
 }

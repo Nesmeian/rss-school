@@ -50,10 +50,11 @@
   width: 100%;
   transition: all 0.5s ease;
 }
-.menu__drinks-img:hover {
-  transform: scale(1.1);
+.menu__drinks-item:hover {
+  .menu__drinks-img {
+    transform: scale(1.1);
+  }
 }
-
 @media (max-width: 768px) {
   .img-wrapper:nth-child(3),
   .img-wrapper:nth-child(2) {
@@ -68,7 +69,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 670px) {
   .right-container__img {
     width: 348px;
     height: 348px;

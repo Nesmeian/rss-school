@@ -4,5 +4,4 @@ console.log(
 import "./index.html";
 import "./menu.html";
 import "./main.scss";
-import "./modules/bar.js";
-import "./modules/buttons.js";
+import "./modules/burger.js";

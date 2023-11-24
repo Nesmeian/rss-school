@@ -1,5 +1,6 @@
 .footer__main-container {
   display: flex;
+  flex-wrap: wrap;
   background-color: $border-dark;
   border-radius: 40px;
   margin-bottom: 40px;
@@ -23,9 +24,6 @@
 }
 
 @media (max-width: 768px) {
-  .footer__main-container {
-    flex-direction: column;
-  }
   .footer__left-container {
     margin-left: 60px;
   }

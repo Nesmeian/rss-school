@@ -11,7 +11,7 @@
   border-radius: 40px;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1400px) {
   .menu__drinks-list {
     grid-template-columns: 1fr 1fr;
     gap: 40px 26px;
@@ -22,7 +22,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 740px) {
   .menu__drinks-list {
     grid-template-columns: 1fr;
     padding-left: 19px;
