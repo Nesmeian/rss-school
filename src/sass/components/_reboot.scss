@@ -1,5 +1,5 @@
 .menu__reboot {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -8,4 +8,10 @@
   border: 1px solid $border-dark;
   border-radius: 100px;
   margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  .menu__reboot {
+    display: flex;
+  }
 }

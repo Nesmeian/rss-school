@@ -54,13 +54,16 @@ h2.footer__title {
   margin-top: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .about__title {
     line-height: 75px;
   }
+  .menu__title {
+    width: auto;
+  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .enjoy__title {
     width: auto;
     @include font(42px, 600, 48px);
@@ -76,5 +79,8 @@ h2.footer__title {
   }
   h2.footer__title {
     width: auto;
+  }
+  .menu__title {
+    @include font(32px, 600, 40px);
   }
 }

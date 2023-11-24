@@ -90,3 +90,15 @@
     background-color: $background-body;
   }
 }
+
+@media (max-width: 380px) {
+  .icon__item-coffee {
+    width: 115px;
+  }
+  .icon__item-tea {
+    margin: 0;
+  }
+  .menu__icons-container {
+    justify-content: space-between;
+  }
+}

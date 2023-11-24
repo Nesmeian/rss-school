@@ -21,3 +21,10 @@
     display: none;
   }
 }
+
+@media (max-width: 500px) {
+  .menu__drinks-list {
+    grid-template-columns: 1fr;
+    padding-left: 19px;
+  }
+}
