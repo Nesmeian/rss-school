@@ -1,4 +1,6 @@
 .menu__drinks-list {
+  opacity: 0;
+  position: absolute;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0px 0 99px;
@@ -27,4 +29,9 @@
     grid-template-columns: 1fr;
     padding-left: 19px;
   }
+}
+
+.menu__drinks-list.menu-list--active {
+  position: relative;
+  opacity: 1;
 }

@@ -7,9 +7,7 @@
   transition: all 1s ease;
 }
 
-.img-container__item:hover {
-  transform: scale(1.1);
-}
+
 
 .google-play__img {
   stroke: none;
@@ -50,11 +48,7 @@
   width: 100%;
   transition: all 0.5s ease;
 }
-.menu__drinks-item:hover {
-  .menu__drinks-img {
-    transform: scale(1.1);
-  }
-}
+
 @media (max-width: 768px) {
   .img-wrapper:nth-child(3),
   .img-wrapper:nth-child(2) {

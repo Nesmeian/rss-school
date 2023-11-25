@@ -44,33 +44,3 @@ a {
   position: relative;
   color: $text-light;
 }
-.footer__link::after {
-  display: block;
-  position: absolute;
-  content: "";
-  height: 2px;
-  bottom: 0;
-  right: 50%;
-  width: 0;
-  background-color: $text-light;
-  transition: all 0.7s;
-}
-
-.footer__link::before {
-  display: block;
-  position: absolute;
-  content: "";
-  height: 2px;
-  bottom: 0px;
-  left: 50%;
-  width: 0;
-  background-color: $text-light;
-  transition: all 0.7s;
-}
-
-.footer__link:hover::after {
-  width: 50%;
-}
-.footer__link:hover::before {
-  width: 50%;
-}

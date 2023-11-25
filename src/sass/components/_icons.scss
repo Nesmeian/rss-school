@@ -10,12 +10,7 @@
   transition: all 0.5s ease;
 }
 
-.left-container__img-item:hover {
-  background-color: $text-light;
-  .left-container__img-svg {
-    stroke: $text-dark;
-  }
-}
+
 .container_for__icon-coffee {
   width: 30px;
   height: 30px;
@@ -39,10 +34,11 @@
   transition: all 0.5s ease;
 }
 
-.icon__item-coffee {
-  border-radius: 100px;
+.icon__item--active {
   background-color: $background-container;
+  border-radius: 100px;
 }
+.container_for__icon-coffee,
 .container_for__icon-tea,
 .container_for__icon-dessert {
   text-align: center;
@@ -78,18 +74,7 @@
   margin-right: 6px;
 }
 
-.icon__item-tea:hover {
-  background-color: $background-container;
-  .container_for__icon-tea {
-    background-color: $background-body;
-  }
-}
-.icon__item-desert:hover {
-  background-color: $background-container;
-  .container_for__icon-dessert {
-    background-color: $background-body;
-  }
-}
+
 
 @media (max-width: 380px) {
   .icon__item-coffee {
