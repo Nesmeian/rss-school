@@ -6,7 +6,9 @@
   background-position: center;
   background-size: cover;
 }
-
+.menu {
+  color: $text-dark;
+}
 .coffee__container-external {
   display: flex;
   justify-content: space-between;
@@ -19,6 +21,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  color: $text-dark;
 }
 
 .about__img-container {
@@ -32,6 +35,7 @@
   display: flex;
   padding: 95px 0 93px 0;
   justify-content: space-between;
+  color: $text-dark;
 }
 .mobile__left-container {
   padding-top: 148px;
@@ -60,7 +64,11 @@
 .app-store_container:hover {
   background-color: $border-dark;
   color: $text-light;
+  .app-store__img {
+    transition: all 0.5s ease;
+  }
   .app-store__svg {
+    transition: all 0.5s ease;
     fill: $text-light;
   }
 }
@@ -69,7 +77,11 @@
   background-color: $border-dark;
   color: $text-light;
   .google-play__svg {
+    transition: all 0.5s ease;
     fill: $text-light;
+  }
+  .google-play__img {
+    transition: all 0.5s ease;
   }
 }
 

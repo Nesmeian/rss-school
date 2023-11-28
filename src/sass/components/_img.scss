@@ -11,8 +11,9 @@
   transform: scale(1.1);
 }
 
-.google-play__img {
+.google-play__svg {
   stroke: none;
+  transition: all 0.5s ease;
 }
 
 .google-play__img,
@@ -40,6 +41,10 @@
   overflow: hidden;
   border-radius: 20px;
 }
+.img-wrapper-2 {
+  height: 430px;
+}
+
 .img-wrapper-4 {
   margin-top: -159px;
 }
@@ -53,5 +58,6 @@
 .menu__drinks-item:hover {
   .menu__drinks-img {
     transform: scale(1.1);
+    transition: all 0.5s ease;
   }
 }

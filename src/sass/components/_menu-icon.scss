@@ -7,3 +7,37 @@
 .menu__text {
   padding-right: 9px;
 }
+
+.menu__text_page-2 {
+  position: relative;
+}
+
+.menu__text_page-2:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+.menu__text_page-2::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0px;
+  right: 50%;
+  width: 0;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+
+.menu__text_page-2:hover::after {
+  width: 100%;
+}
+.menu__text_page-2:hover::before {
+  width: 50%;
+}

@@ -50,7 +50,7 @@ a {
   content: "";
   height: 2px;
   bottom: 0;
-  right: 50%;
+  right: 70%;
   width: 0;
   background-color: $text-light;
   transition: all 0.7s;
@@ -62,14 +62,14 @@ a {
   content: "";
   height: 2px;
   bottom: 0px;
-  left: 50%;
+  left: 30%;
   width: 0;
   background-color: $text-light;
   transition: all 0.7s;
 }
 
 .footer__link:hover::after {
-  width: 50%;
+  width: 30%;
 }
 .footer__link:hover::before {
   width: 50%;
