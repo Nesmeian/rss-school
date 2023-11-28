@@ -6,6 +6,7 @@
   height: 64px;
   border-radius: 50px;
   transition: all 0.5s ease;
+  color: $text-dark;
   border: none;
   background: $background-body;
 }
@@ -17,8 +18,8 @@
   top: 20px;
 }
 .enjoy__btn_meny::after {
-  top: 19px;
-  right: 52px;
+  top: 21px;
+  right: 67px;
   position: absolute;
   content: url(./img/coffee-cup.svg);
   transition: all 0.7s ease;
@@ -26,7 +27,7 @@
 }
 .enjoy__btn_meny:hover {
   .enjoy__btn_text {
-    right: 98px;
+    right: 96px;
   }
 }
 
