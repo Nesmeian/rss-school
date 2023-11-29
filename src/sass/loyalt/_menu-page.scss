@@ -25,6 +25,10 @@
   display: flex;
   justify-content: center;
 }
+
+.menu__drinks-list-container {
+  position: relative;
+}
 @media (max-width: 1030px) {
   .menu__drinks-list {
     grid-template-columns: 1fr 1fr;

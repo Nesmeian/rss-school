@@ -1,16 +1,19 @@
 .menu__drinks-list {
   opacity: 0;
+  right: -999px;
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0px 0 99px;
   gap: 40px 37px;
+  transition: all 0.5s ease;
 }
 
 .menu__drinks-item {
   width: 310px;
   border: 1px solid $border-light;
   border-radius: 40px;
+  transition: all 1s ease;
 }
 
 @media (max-width: 1400px) {
@@ -18,9 +21,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px 26px;
     padding: 0px 0 38px 14px;
-  }
-  .menu__drinks-item:nth-child(n + 5) {
-    display: none;
   }
 }
 
@@ -32,6 +32,16 @@
 }
 
 .menu__drinks-list.menu-list--active {
-  position: relative;
+  position: static;
   opacity: 1;
+}
+
+.menu__drinks-item .menu-item--active {
+  display: block;
+}
+.menu-item--hide {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  transition: all 1s ease;
 }

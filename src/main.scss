@@ -1,6 +1,7 @@
 // Base
 @import "sass/base/costants";
 @import "sass/base/fonts";
+@import "sass/base/animation";
 
 // Loaylt
 @import "sass/loyalt/header";
@@ -27,6 +28,7 @@
 @import "sass/components/burger";
 @import "sass/components/reboot";
 @import "sass/components/slider";
+@import "sass/components/hover";
 
 //Pages
 @import "sass/pages/page1";

@@ -33,12 +33,7 @@ a {
   transition: all 0.7s;
 }
 
-.nav__item-link:hover::before {
-  width: 50%;
-}
-.nav__item-link:hover::after {
-  width: 50%;
-}
+
 
 .footer__link {
   position: relative;
