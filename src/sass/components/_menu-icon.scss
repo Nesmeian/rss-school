@@ -9,15 +9,26 @@
   cursor: pointer;
 }
 .menu__text {
+  position: relative;
   padding-right: 9px;
   color: $text-dark;
 }
 
-.menu__text_page-2 {
+.menu__text:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  width: 150%;
+  background-color: $text-dark;
+}
+
+.menu__text_page-1 {
   position: relative;
 }
 
-.menu__text_page-2:after {
+.menu__text_page-1:after {
   display: block;
   position: absolute;
   content: "";
@@ -28,7 +39,7 @@
   background-color: $text-dark;
   transition: all 0.7s;
 }
-.menu__text_page-2::before {
+.menu__text_page-1::before {
   display: block;
   position: absolute;
   content: "";
@@ -40,9 +51,9 @@
   transition: all 0.7s;
 }
 
-.menu__text_page-2:hover::after {
+.menu__text_page-1:hover::after {
   width: 100%;
 }
-.menu__text_page-2:hover::before {
+.menu__text_page-1:hover::before {
   width: 50%;
 }
