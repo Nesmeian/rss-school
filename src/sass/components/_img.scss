@@ -1,14 +1,16 @@
 .img-container__item {
   display: block;
   width: 660px;
-  max-width: 100%;
+  width: 100%;
   background-position: center;
   border-radius: 20px;
   transition: all 1s ease;
+  transform: scale(1.1);
+  background-size: cover;
 }
 
 .img-container__item:hover {
-  transform: scale(0.92);
+  transform: scale(1.03);
 }
 
 .google-play__svg {
@@ -50,14 +52,15 @@
 }
 
 .menu__drinks-img {
-  object-fit: none;
+  object-fit: contain;
   height: 100%;
   width: 100%;
+  transform: scale(1.1);
   transition: all 0.5s ease;
 }
 .menu__drinks-item:hover {
   .menu__drinks-img {
-    transform: scale(0.95);
+    transform: scale(1);
     transition: all 0.5s ease;
   }
 }
