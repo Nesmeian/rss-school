@@ -1,0 +1,128 @@
+.modal__wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+.modal__container {
+  position: absolute;
+  display: flex;
+  margin: auto;
+  left: 0;
+  right: 0;
+  max-width: 800px;
+  border-radius: 40px;
+  background-color: $background-body;
+  z-index: 10;
+  color: $text-dark;
+}
+.modal__img_container {
+  overflow: hidden;
+  height: 310px;
+  width: 310px;
+  margin: 16px;
+  border-radius: 40px;
+}
+.modal__img {
+  height: 100%;
+  width: 100%;
+  transform: scale(1.1);
+  object-fit: contain;
+}
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  padding-left: 5px;
+}
+.modal__sizes {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 21px;
+}
+.modal__additives_title,
+.modal__sizes_title {
+  margin-bottom: 6px;
+}
+.size__container {
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  height: 45px;
+  margin-right: 7px;
+  border: 1px solid $border-light;
+}
+
+.size__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background: $border-light;
+  margin: 0 8px 0px 7px;
+}
+
+.size--active {
+  background: $border-dark;
+  .size__icon {
+    background: $background-body;
+  }
+  .icon__text {
+    color: $text-light;
+  }
+}
+.modal__additives {
+  display: flex;
+  padding-bottom: 24px;
+}
+.additives__container {
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  height: 45px;
+  margin-right: 7px;
+  border: 1px solid $border-light;
+}
+.additives__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background: $border-light;
+  margin: 0 8px 0px 7px;
+}
+
+.additives__active {
+  background: $border-dark;
+  .additives__icon {
+    background: $background-body;
+  }
+  .icon__text {
+    color: $text-light;
+  }
+}
+
+.modal__total_container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 21px;
+}
+
+.modal__warning_container {
+  display: flex;
+  border-top: 1px solid $border-light;
+  padding-top: 12px;
+}
+.warning__icon {
+  margin-right: 8px;
+}
+.modal__btn_close {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 14px;
+  padding: 9px 0;
+  border: 1px solid;
+  border-radius: 40px;
+}

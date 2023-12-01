@@ -68,6 +68,27 @@
   margin-bottom: 18px;
 }
 
+.modal__container {
+  @include font(16px, 600, 24px);
+}
+.modal__description {
+  font-weight: 400;
+  margin: 12px 0 20px;
+}
+
+.icon__text {
+  margin: 0 16px 0 0;
+}
+
+.total__text,
+.total__price {
+  font-size: 24px;
+}
+
+.warning__desription {
+  @include font(10px, 600, 14px);
+}
+
 @media (max-width: 768px) {
   .enjoy__text {
     margin-top: 42px;

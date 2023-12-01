@@ -54,6 +54,11 @@ h2.footer__title {
   margin-top: 20px;
 }
 
+.modal__title {
+  @include font(24px, 600, 30px);
+  margin: 17px 0 0;
+}
+
 @media (max-width: 800px) {
   .about__title {
     line-height: 75px;

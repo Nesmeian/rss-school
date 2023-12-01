@@ -9,12 +9,12 @@ icon.forEach((e, i) => {
     removeListClass();
     addItemClass(e);
     addListClass(i);
-    hideItems(i);
     if (window.innerWidth <= 768) {
-      if (i !== 1) {
-        addReboot();
-      } else {
+      if (i == 1) {
         hideReboot();
+      } else {
+        addReboot();
+        hideItems(i);
       }
     }
   });
@@ -91,12 +91,14 @@ function addReboot() {
 }
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth <= 1200) {
+  if (window.innerWidth <= 768) {
     icon.forEach((e, i) => {
-      hideItems(i);
       if (i != 1) {
+        hideItems(i);
       }
     });
+  } else {
+    showItem();
   }
   if (!menuLists[1].classList.contains("menu-list--active")) {
     addReboot();
