@@ -1,18 +1,40 @@
 .modal__wrapper {
-  position: relative;
+  position: fixed;
+  display: flex;
   margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background: $background-backdrop;
+  z-index: -1;
+  bottom: 0;
+  transition: all 1s ease;
+  justify-content: center;
+  align-items: center;
 }
+.modal__wrapper--active {
+  z-index: 5;
+  opacity: 1;
+  transition: all 1s ease;
+}
+
 .modal__container {
-  position: absolute;
+  position: fixed;
   display: flex;
   margin: auto;
-  left: 0;
-  right: 0;
+  left: -9999px;
   max-width: 800px;
   border-radius: 40px;
   background-color: $background-body;
   z-index: 10;
   color: $text-dark;
+  transition: all 1s ease;
+}
+
+.modal--active {
+  left: 0;
+  right: 0;
+  transition: all 1s ease;
 }
 .modal__img_container {
   overflow: hidden;
@@ -49,6 +71,7 @@
   height: 45px;
   margin-right: 7px;
   border: 1px solid $border-light;
+  transition: all 0.5s ease;
 }
 
 .size__icon {
@@ -60,6 +83,7 @@
   border-radius: 100px;
   background: $border-light;
   margin: 0 8px 0px 7px;
+  transition: all 0.5s ease;
 }
 
 .size--active {
@@ -82,6 +106,7 @@
   height: 45px;
   margin-right: 7px;
   border: 1px solid $border-light;
+  transition: all 0.5s ease;
 }
 .additives__icon {
   display: flex;
@@ -92,6 +117,7 @@
   border-radius: 100px;
   background: $border-light;
   margin: 0 8px 0px 7px;
+  transition: all 0.5s ease;
 }
 
 .additives__active {

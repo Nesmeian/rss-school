@@ -1,3 +1,5 @@
+import { changeAdditiveText } from "./modal";
+
 const icon = document.querySelectorAll(".icon__item");
 const menuLists = document.querySelectorAll(".menu__drinks-list");
 const reboot = document.querySelector(".menu__reboot");
@@ -9,6 +11,7 @@ icon.forEach((e, i) => {
     removeListClass();
     addItemClass(e);
     addListClass(i);
+    changeAdditiveText(i);
     if (window.innerWidth <= 768) {
       if (i == 1) {
         hideReboot();
