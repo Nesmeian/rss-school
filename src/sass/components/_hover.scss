@@ -56,8 +56,17 @@
 
   .nav__item-link:hover::before,
   .nav__item-link:hover::after,
-  .footer__link:hover::after,
-  .footer__link:hover::before {
+  .footer__link:hover::after {
     width: 50%;
+  }
+  .footer__link:hover::before {
+    width: 25%;
+  }
+
+  .menu__text-home:hover::before {
+    width: 50%;
+  }
+  .menu__text-home:hover::after {
+    width: 80%;
   }
 }

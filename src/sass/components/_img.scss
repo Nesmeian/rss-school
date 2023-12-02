@@ -7,6 +7,10 @@
   transition: all 1s ease;
 }
 
+.coffee_img-none {
+  display: none;
+}
+
 .img-container__item:hover {
   transform: scale(1.1);
 }

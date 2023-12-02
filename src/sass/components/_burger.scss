@@ -23,9 +23,10 @@
   opacity: 0;
   position: absolute;
   background-color: $background-body;
-  width: 10vw;
+  width: 5%;
   right: 0;
   transition: all 2s ease;
+  height: 482px;
 }
 .burger__list {
   padding: 0;
@@ -39,6 +40,7 @@
 .burger__item {
   padding-bottom: 60px;
   list-style-type: none;
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -49,8 +51,12 @@
 
 .--active-burger {
   opacity: 1;
-  right: 40px;
-  width: 90vw;
+  right: 0;
+  width: 100vw;
+
+  .burger__item {
+    display: block;
+  }
 }
 
 .--active-btn-burger {

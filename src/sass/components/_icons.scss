@@ -76,16 +76,19 @@
 
 .icon__item-text-coffee {
   margin-right: 6px;
+  color: $text-light;
 }
 
 .icon__item-tea:hover {
   background-color: $background-container;
+  color: $text-light;
   .container_for__icon-tea {
     background-color: $background-body;
   }
 }
 .icon__item-desert:hover {
   background-color: $background-container;
+  color: $text-light;
   .container_for__icon-dessert {
     background-color: $background-body;
   }
