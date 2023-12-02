@@ -88,11 +88,13 @@
 .icon__item-text-coffee {
   color: $text-light;
   margin-right: 6px;
+  color: $text-light;
 }
 
 .icon__item-tea:hover {
   color: $text-light;
   background-color: $background-container;
+  color: $text-light;
   .container_for__icon-tea {
     transition: all 0.5s ease;
     background-color: $background-body;
@@ -104,5 +106,17 @@
   .container_for__icon-dessert {
     transition: all 0.5s ease;
     background-color: $background-body;
+  }
+}
+
+@media (max-width: 380px) {
+  .icon__item-coffee {
+    width: 115px;
+  }
+  .icon__item-tea {
+    margin: 0 10px 0 3px;
+  }
+  .menu__icons-container {
+    justify-content: space-between;
   }
 }

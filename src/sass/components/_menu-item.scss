@@ -11,3 +11,22 @@
   border: 1px solid $border-light;
   border-radius: 40px;
 }
+
+@media (max-width: 1400px) {
+  .menu__drinks-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 38px;
+    padding-bottom: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu__drinks-item:nth-child(n + 5) {
+    display: none;
+  }
+}
+@media (max-width: 460px) {
+  .menu__drinks-list {
+    grid-template-columns: 1fr;
+  }
+}

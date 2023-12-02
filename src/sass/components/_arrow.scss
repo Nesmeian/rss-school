@@ -5,7 +5,7 @@
   height: 60px;
   margin-top: 69px;
   margin-left: 4px;
-  border: 1px solid $border-dark;
+  border: 1px solid $text-dark;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
@@ -19,7 +19,7 @@
   height: 60px;
   margin-top: 69px;
   margin-left: 4px;
-  border: 1px solid $border-dark;
+  border: 1px solid $text-dark;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
@@ -42,5 +42,12 @@
   .arrow-right__svg {
     stroke: $text-light;
     transition: all 0.5s ease;
+  }
+}
+
+@media (max-width: 600px) {
+  .arrow-left,
+  .arrow-right {
+    display: none;
   }
 }

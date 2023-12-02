@@ -64,3 +64,38 @@
     transition: all 0.5s ease;
   }
 }
+.menu__drinks-item:hover {
+  .menu__drinks-img {
+    transform: scale(1);
+  }
+}
+@media (max-width: 1000px) {
+  .img-container__item {
+    transform: scale(1.05);
+  }
+
+  .img-wrapper:nth-child(3),
+  .img-wrapper:nth-child(2) {
+    display: none;
+  }
+
+  .img-wrapper-4 {
+    margin: 0;
+  }
+
+  @media (max-width: 670px) {
+    .img-container__item {
+      background-position: center;
+      transform: scale(1.23);
+    }
+    .right-container__img {
+      width: 348px;
+      height: 348px;
+      margin-left: -12px;
+    }
+    .coffee_img {
+      width: 348px;
+      height: 348px;
+    }
+  }
+}

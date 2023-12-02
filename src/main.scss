@@ -4,8 +4,13 @@
 
 // Loaylt
 @import "sass/loyalt/header";
+@import "sass/loyalt/enjoy";
+@import "sass/loyalt/coffee";
+@import "sass/loyalt/about";
+@import "sass/loyalt/mobile";
+@import "sass/loyalt/footer";
+@import "sass/loyalt/menu-page";
 @import "sass/loyalt/wrapper";
-@import "sass/loyalt/containers";
 
 //Components
 @import "sass/components/nav";
@@ -19,9 +24,13 @@
 @import "sass/components/arrow";
 @import "sass/components/icons";
 @import "sass/components/link";
+@import "sass/components/burger";
+@import "sass/components/reboot";
+@import "sass/components/slider";
+@import "sass/components/hover";
 
 //Pages
-@import 'sass/pages/page1';
+@import "sass/pages/page1";
 
 // Normalize
 @import "sass/vendors/normalize.css";

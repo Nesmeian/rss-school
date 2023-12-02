@@ -57,3 +57,47 @@
 .menu__text_page-1:hover::before {
   width: 50%;
 }
+
+.menu__text-home:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+.menu__text-menu {
+  position: relative;
+}
+
+.menu__text-menu::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0px;
+  width: 150%;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+
+.menu__text-home:before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0px;
+  right: 50%;
+  width: 0;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+
+@media (max-width: 768px) {
+  .header__menu {
+    display: none;
+  }
+}

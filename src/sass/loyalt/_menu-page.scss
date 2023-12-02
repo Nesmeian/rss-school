@@ -1,0 +1,32 @@
+.menu__icons-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  @include font(16px, 600, 24px);
+  padding-bottom: 39px;
+}
+
+.drinks-item__container {
+  box-sizing: border-box;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 194px;
+}
+.menu__drinks-img_container {
+  overflow: hidden;
+  width: 310px;
+  height: 310px;
+  border-radius: 40px;
+}
+
+.menu__title_container {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 1030px) {
+  .menu__drinks-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}

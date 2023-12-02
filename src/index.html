@@ -43,6 +43,36 @@
             </div>
             <img src="./img/coffee-cup.svg" alt="menu__img" class="menu__img" />
           </div>
+          <div class="burger__btn">
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
+          </div>
+        </div>
+        <div class="burger__menu">
+          <ul class="burger__list">
+            <li class="burger__item">
+              <a href="#favourite" class="burger__item-link link"
+                >Favorite coffee</a
+              >
+            </li>
+            <li class="burger__item">
+              <a href="#about" class="burger__item-link link">About</a>
+            </li>
+            <li class="burger__item">
+              <a href="#mobile" class="burger__item-link link">Mobile app</a>
+            </li>
+            <li class="burger__item">
+              <a href="#footer" class="burger__item-link link">Contact us</a>
+            </li>
+            <li class="burger__item">
+              <a href="./page2.html" class="menu__link">Menu</a>
+              <img
+                src="./img/coffee-cup.svg"
+                alt="menu__img"
+                class="menu__img"
+              />
+            </li>
+          </ul>
         </div>
       </div>
     </header>
@@ -51,17 +81,14 @@
         <div class="enjoy__wrapper wrapper">
           <div class="enjoy__container">
             <h1 class="enjoy__title title">
-              <span class="title-span">Enjoy</span> premium<br />
-              coffee at our<br />
+              <span class="title-span">Enjoy</span> premium coffee at our
               charming cafe
             </h1>
             <p class="enjoy__text">
               With its inviting atmosphere and delicious coffee options, the
-              Coffee <br />
-              House Resource is a popular destination for coffee lovers and
-              those<br />
-              seeking a warm and inviting space to enjoy their favorite
-              beverage.
+              Coffee House Resource is a popular destination for coffee lovers
+              and those seeking a warm and inviting space to enjoy their
+              favorite beverage.
             </p>
             <form action="./page2.html">
               <button type="submit" class="enjoy__btn_meny">
@@ -73,6 +100,9 @@
       </section>
       <section class="favorites-coffee" id="favourite">
         <div class="coffee__wrapper wrapper">
+          <h2 class="coffee__title title">
+            Choose your <span class="title-span">favorite</span> coffee
+          </h2>
           <div class="coffee__container-external">
             <div class="arrow-left">
               <svg
@@ -92,18 +122,27 @@
               </svg>
             </div>
             <div class="coffee__container-internal">
-              <h2 class="coffee__title title">
-                Choose your <span class="title-span">favorite</span> coffee
-              </h2>
-              <img
-                src="./img/coffee-slider-1.svg"
-                alt="coffee__img"
-                class="coffee_img"
-              />
+              <div class="coffee__slider">
+                <img
+                  src="./img/coffee-slider-1.svg"
+                  alt="coffee__img"
+                  class="coffee_img"
+                />
+                <img
+                  src="./img/coffee-slider-2.svg"
+                  alt="coffee__img"
+                  class="coffee_img coffee_img-none"
+                />
+                <img
+                  src="./img/coffee-slider-3.svg"
+                  alt="coffee__img"
+                  class="coffee_img coffee_img-none"
+                />
+              </div>
               <h3 class="coffee__name title">S’mores Frappuccino</h3>
               <p class="coffee__description">
-                This new drink takes an espresso and mixes it with brown<br />
-                sugar and cinnamon before being topped with oat milk.
+                This new drink takes an espresso and mixes it with brown sugar
+                and cinnamon before being topped with oat milk.
               </p>
               <div class="coffee__price price">$5.50</div>
               <div class="coffee__controls-list">
@@ -167,13 +206,12 @@
           <div class="mobile__main-container">
             <div class="mobile__left-container">
               <h2 class="left-container__title title">
-                <span class="title-span"> Download</span> our apps <br />
-                to start ordering
+                <span class="title-span"> Download</span> our apps to start
+                ordering
               </h2>
               <p class="left-container__text">
                 Download the Resource app today and experience the comfort of
-                ordering your<br />
-                favorite coffee from wherever you are
+                ordering your favorite coffee from wherever you are
               </p>
               <div class="left-container__app-container">
                 <a href="https://www.apple.com/app-store/">
@@ -246,7 +284,7 @@
               <img
                 src="./img/mobile-screens.svg"
                 alt="mobile-screens"
-                class="right-container"
+                class="right-container__img"
               />
             </div>
           </div>
@@ -258,7 +296,7 @@
         <div class="footer__main-container">
           <div class="footer__left-container">
             <h2 class="footer__title title">
-              Sip, Savor, Smile.<br />
+              Sip, Savor, Smile.
               <span class="title-span"> It’s coffee time!</span>
             </h2>
             <div class="left-container__img-list">

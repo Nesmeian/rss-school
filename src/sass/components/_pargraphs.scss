@@ -2,9 +2,11 @@
   @include font(16px, 400, 24px);
   color: $text-light;
   margin: 40px 0 40px 0;
+  width: 555px;
 }
 
 .coffee__description {
+  width: 480px;
   @include font(16px, 400, 24px);
 }
 
@@ -64,4 +66,26 @@
 .drinks-item__price {
   margin-top: 13px;
   margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .enjoy__text {
+    margin-top: 42px;
+  }
+  .left-container__text {
+    margin-bottom: 39px;
+  }
+}
+
+@media (max-width: 670px) {
+  .enjoy__text {
+    width: auto;
+  }
+  .coffee__description {
+    width: auto;
+  }
+
+  .left-container__text {
+    margin-top: 41px;
+  }
 }

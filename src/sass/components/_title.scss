@@ -19,8 +19,12 @@ h3.title {
   @include font(24px, 600, 30px);
 }
 
+.enjoy__title {
+  width: 555px;
+}
 .coffee__title {
-  margin-bottom: 39px;
+  margin-top: 98px;
+  text-align: center;
 }
 
 .coffee__name {
@@ -34,9 +38,11 @@ h3.title {
 h2.footer__title {
   margin-bottom: 37px;
   color: $text-light;
+  width: 495px;
 }
 
 .menu__title {
+  width: 800px;
   margin-top: 16px;
   @include font(60px, 600, 75px);
   color: $text-dark;
@@ -46,4 +52,35 @@ h2.footer__title {
 
 .drinks-item__title {
   margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .about__title {
+    line-height: 75px;
+  }
+  .menu__title {
+    width: auto;
+  }
+}
+
+@media (max-width: 670px) {
+  .enjoy__title {
+    width: auto;
+    @include font(42px, 600, 48px);
+  }
+  h2.footer__title,
+  h2.left-container__title,
+  h2.about__title,
+  h2.coffee__title {
+    @include font(32px, 600, 40px);
+  }
+  .coffee__name {
+    margin-top: 22px;
+  }
+  h2.footer__title {
+    width: auto;
+  }
+  .menu__title {
+    @include font(32px, 600, 40px);
+  }
 }
