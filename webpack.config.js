@@ -23,12 +23,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "[name].[contenthash].html",
+      filename: "index.html",
       template: path.resolve(__dirname, "src", "index.html"),
     }),
 
     new HtmlWebpackPlugin({
-      filename: "[name].[contenthash].html",
+      filename: "page2.html",
       template: path.resolve(__dirname, "coffee-house", "page2.html"),
     }),
 
