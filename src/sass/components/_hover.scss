@@ -1,10 +1,4 @@
 @media (hover: hover) {
-  .menu__drinks-item:hover {
-    .menu__drinks-img:hover {
-      transform: scale(1.1);
-    }
-  }
-
   .left-container__img-item:hover {
     background-color: $text-light;
     .left-container__img-svg {
