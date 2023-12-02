@@ -57,10 +57,17 @@
   .mobile__right-container {
     padding-top: 0;
   }
+  .mobile__main-container {
+    padding: 93px 0;
+  }
 }
 @media (max-width: 500px) {
   .mobile__left-container {
     width: 360px;
+    padding-top: 8px;
+  }
+  .mobile__main-container {
+    padding: 93px 0 95px;
   }
   .left-container__app-container {
     flex-direction: column;

@@ -51,9 +51,8 @@
   }
 
   .img-container__item:hover {
-    transform: scale(1.1);
+    transform: scale(1);
   }
-
   .nav__item-link:hover::before,
   .nav__item-link:hover::after,
   .footer__link:hover::after {
@@ -68,5 +67,10 @@
   }
   .menu__text-home:hover::after {
     width: 80%;
+  }
+  .menu__drinks-item:hover {
+    .menu__drinks-img {
+      transform: scale(1);
+    }
   }
 }

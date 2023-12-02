@@ -28,6 +28,12 @@ body {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .about__wrapper {
+    padding: 0 40px;
+  }
+}
+
 @media (max-width: 380px) {
   .wrapper {
     padding: 0 16px;
