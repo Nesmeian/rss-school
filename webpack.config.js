@@ -29,7 +29,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       filename: "page2.html",
-      template: path.resolve(__dirname, "src", "menu.html"),
+      template: path.resolve(__dirname, "coffee-house", "page2.html"),
     }),
 
     new MiniCssExtractPlugin({

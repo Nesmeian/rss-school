@@ -4,9 +4,58 @@
   @include font(16px, 600, 24px);
   margin-top: -11px;
 }
-.menu__text-home {
+
+.header__menu_page1 {
+  cursor: pointer;
+}
+.menu__text {
   position: relative;
   padding-right: 9px;
+  color: $text-dark;
+}
+
+.menu__text:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  width: 150%;
+  background-color: $text-dark;
+}
+
+.menu__text_page-1 {
+  position: relative;
+}
+
+.menu__text_page-1:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+.menu__text_page-1::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0px;
+  right: 50%;
+  width: 0;
+  background-color: $text-dark;
+  transition: all 0.7s;
+}
+
+.menu__text_page-1:hover::after {
+  width: 100%;
+}
+.menu__text_page-1:hover::before {
+  width: 50%;
 }
 
 .menu__text-home:after {

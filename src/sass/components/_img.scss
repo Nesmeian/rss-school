@@ -1,19 +1,21 @@
 .img-container__item {
   display: block;
+  width: 660px;
   width: 100%;
-  background-position: right;
+  background-position: center;
   border-radius: 20px;
   transition: all 1s ease;
   transform: scale(1.1);
   background-size: cover;
 }
 
-.coffee_img-none {
-  display: none;
+.img-container__item:hover {
+  transform: scale(1.03);
 }
 
-.google-play__img {
+.google-play__svg {
   stroke: none;
+  transition: all 0.5s ease;
 }
 
 .google-play__img,
@@ -50,11 +52,17 @@
 }
 
 .menu__drinks-img {
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: 100%;
-  transition: all 0.5s ease;
   transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+.menu__drinks-item:hover {
+  .menu__drinks-img {
+    transform: scale(1);
+    transition: all 0.5s ease;
+  }
 }
 .menu__drinks-item:hover {
   .menu__drinks-img {
