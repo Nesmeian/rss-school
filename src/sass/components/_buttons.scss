@@ -14,8 +14,8 @@
 .enjoy__btn_text {
   position: absolute;
   transition: all 0.5s ease;
-  right: 76px;
-  top: 20px;
+  right: 77px;
+  top: 21px;
 }
 .enjoy__btn_meny::after {
   top: 21px;
@@ -38,8 +38,8 @@
 
 @media (max-width: 768px) {
   .enjoy__btn_text {
-    right: 89px;
-    top: 18px;
+    right: 92px;
+    top: 20px;
   }
   .enjoy__btn_meny::after {
     opacity: 1;

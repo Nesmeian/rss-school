@@ -8,7 +8,9 @@
   transform: scale(1.1);
   background-size: cover;
 }
-
+.coffee_img-none {
+  display: none;
+}
 .img-container__item:hover {
   transform: scale(1.03);
 }
