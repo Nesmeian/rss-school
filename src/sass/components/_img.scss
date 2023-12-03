@@ -11,10 +11,6 @@
 .coffee_img-none {
   display: none;
 }
-.img-container__item:hover {
-  transform: scale(1.03);
-}
-
 .google-play__svg {
   stroke: none;
   transition: all 0.5s ease;
@@ -59,17 +55,6 @@
   width: 100%;
   transform: scale(1.1);
   transition: all 0.5s ease;
-}
-.menu__drinks-item:hover {
-  .menu__drinks-img {
-    transform: scale(1);
-    transition: all 0.5s ease;
-  }
-}
-.menu__drinks-item:hover {
-  .menu__drinks-img {
-    transform: scale(1);
-  }
 }
 @media (max-width: 1000px) {
   .img-container__item {

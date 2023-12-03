@@ -69,8 +69,61 @@
       transform: scale(1);
     }
   }
+  .footer__link:hover::after {
+    width: 30%;
+  }
+  .footer__link:hover::before {
+    width: 50%;
+  }
+  
+  .menu__text_page-1:hover::after {
+    width: 100%;
+  }
+  .menu__text_page-1:hover::before {
+    width: 50%;
+  }
+  .arrow-left:hover {
+    background: $background-container;
+    .arrow-left__svg {
+      transition: all 0.5s ease;
+      stroke: $text-light;
+    }
+  }
+  
+  .arrow-right:hover {
+    background: $background-container;
+    .arrow-right__svg {
+      stroke: $text-light;
+      transition: all 0.5s ease;
+    }
+  }
 }
+
+.icon__item-tea:active{
+  .icon__item-text-tea{
+  opacity: 0.5;
+  }
+}
+.icon__item-tea:active{
+  .icon__item-text-tea{
+  opacity: 0.5;
+  }
+}
+.icon__item-desert:active{
+  .icon__item-text-desert{
+  opacity: 0.5;
+  }
+}
+
+
+
+.icon__item-text-coffee:active,
+.icon__item-text-desert:active,
+.arrow-left:active,
+.arrow-rigth:active,
+.menu__text:active,
 .nav__item-link:active,
+.enjoy__btn_text:active,
 .footer__link:active{
   opacity: 0.5;
 }

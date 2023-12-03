@@ -15,13 +15,7 @@
   transition: all 0.5s ease;
 }
 
-.left-container__img-item:hover {
-  background-color: $text-light;
-  .left-container__img-svg {
-    transition: all 0.5s ease;
-    stroke: $text-dark;
-  }
-}
+
 .container_for__icon-coffee {
   width: 30px;
   height: 30px;
@@ -91,23 +85,7 @@
   color: $text-light;
 }
 
-.icon__item-tea:hover {
-  color: $text-light;
-  background-color: $background-container;
-  color: $text-light;
-  .container_for__icon-tea {
-    transition: all 0.5s ease;
-    background-color: $background-body;
-  }
-}
-.icon__item-desert:hover {
-  background-color: $background-container;
-  color: $text-light;
-  .container_for__icon-dessert {
-    transition: all 0.5s ease;
-    background-color: $background-body;
-  }
-}
+
 
 @media (max-width: 380px) {
   .icon__item-coffee {

@@ -51,12 +51,6 @@
   transition: all 0.7s;
 }
 
-.menu__text_page-1:hover::after {
-  width: 100%;
-}
-.menu__text_page-1:hover::before {
-  width: 50%;
-}
 
 .menu__text-home:after {
   display: block;
