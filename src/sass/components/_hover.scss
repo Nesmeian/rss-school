@@ -68,3 +68,7 @@
     }
   }
 }
+.nav__item-link:active,
+.footer__link:active{
+  opacity: 0.5;
+}

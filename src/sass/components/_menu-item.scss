@@ -1,8 +1,8 @@
 .menu__drinks-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 0px 0 99px;
-  gap: 40px 37px;
+  padding: 0px 0 101px;
+  gap: 40px 40px;
 }
 
 .menu__drinks-item {
@@ -25,7 +25,8 @@
     display: none;
   }
 }
-@media (max-width: 460px) {
+
+@media (max-width: 690px) {
   .menu__drinks-list {
     grid-template-columns: 1fr;
   }

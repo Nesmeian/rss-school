@@ -19,8 +19,8 @@
   position: absolute;
   content: "";
   height: 2px;
-  bottom: 0;
-  width: 150%;
+  bottom: -5px;
+  width: 138%;
   background-color: $text-dark;
 }
 
@@ -33,7 +33,7 @@
   position: absolute;
   content: "";
   height: 2px;
-  bottom: 0;
+  bottom: -5px;
   left: 50%;
   width: 0;
   background-color: $text-dark;
@@ -44,7 +44,7 @@
   position: absolute;
   content: "";
   height: 2px;
-  bottom: 0px;
+  bottom: -5px;
   right: 50%;
   width: 0;
   background-color: $text-dark;
