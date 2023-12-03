@@ -25,16 +25,6 @@
   transition: all 0.7s ease;
   opacity: 0;
 }
-.enjoy__btn_meny:hover {
-  .enjoy__btn_text {
-    right: 96px;
-  }
-}
-
-.enjoy__btn_meny:hover::after {
-  transition: all 0.7s ease;
-  opacity: 1;
-}
 
 @media (max-width: 768px) {
   .enjoy__btn_text {

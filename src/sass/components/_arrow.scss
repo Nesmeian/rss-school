@@ -29,21 +29,7 @@
 .arrow-left__svg {
   transition: all 0.5s ease;
 }
-.arrow-left:hover {
-  background: $background-container;
-  .arrow-left__svg {
-    transition: all 0.5s ease;
-    stroke: $text-light;
-  }
-}
 
-.arrow-right:hover {
-  background: $background-container;
-  .arrow-right__svg {
-    stroke: $text-light;
-    transition: all 0.5s ease;
-  }
-}
 @media (max-width: 768px) {
   .arrow-left {
     margin-left: -2px;

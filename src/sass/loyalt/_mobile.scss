@@ -29,21 +29,7 @@
   transition: all 0.5s ease;
 }
 
-.app-store_container:hover {
-  background-color: $border-dark;
-  color: $text-light;
-  .app-store__svg {
-    fill: $text-light;
-  }
-}
 
-.google-play_container:hover {
-  background-color: $border-dark;
-  color: $text-light;
-  .google-play__svg {
-    fill: $text-light;
-  }
-}
 @media (max-width: 1330px) {
   .mobile__main-container {
     grid-template-columns: 1fr;
@@ -51,6 +37,7 @@
 }
 
 @media (max-width: 768px) {
+  
   .mobile__left-container {
     padding-top: 5px;
   }
@@ -58,7 +45,7 @@
     padding-top: 0;
   }
   .mobile__main-container {
-    padding: 93px 0;
+    padding: 93px 0 97px;
   }
 }
 @media (max-width: 500px) {
