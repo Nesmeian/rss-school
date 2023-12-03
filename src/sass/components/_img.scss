@@ -61,15 +61,16 @@
     transform: scale(1.05);
   }
 
-  .img-wrapper:nth-child(3),
-  .img-wrapper:nth-child(2) {
-    display: none;
-  }
-
   .img-wrapper-4 {
     margin: 0;
   }
 
+  @media (max-width: 768px) {
+    .img-wrapper:nth-child(3),
+    .img-wrapper:nth-child(2) {
+      display: none;
+    }
+  }
   @media (max-width: 670px) {
     .img-container__item {
       background-position: center;
