@@ -1,36 +1,56 @@
 const slider = document.querySelector(".coffee__slider");
-const sliderItem = document.querySelectorAll(".coffee_img");
+const sliderItem = document.querySelectorAll(".slider__item");
 const arrowLeft = document.querySelector(".arrow-left");
 const arrowRight = document.querySelector(".arrow-right");
 const progressBar = document.querySelectorAll(".coffee__control-progress");
 let width = 0;
 let sliderCount = 0;
 let position = 0;
-
-arrowLeft.addEventListener("click", moveLeft);
-arrowRight.addEventListener("click", moveRight);
+let fillInterval;
+let x1=0;
+let firstPosition;
+let moveSlide;
 function checkPosition() {
+  if(window.innerWidth>=701){
+  moveSlide=480;
   if (sliderCount < 0) {
-    position = -1530;
+    position = -1440;
     sliderCount = 2;
   } else if (sliderCount > 2) {
-    position = 510;
+    position = 480;
     sliderCount = 0;
   }
 }
+  if(window.innerWidth<=700){
+    moveSlide=348
+    if (sliderCount < 0) {
+      sliderCount = 2;
+      position = -1044;
+    } else if (sliderCount > 2) {
+      position = 348;
+      sliderCount = 0;
+    }
+  }
+}
+
 
 function moveRight() {
   sliderCount++;
   checkPosition();
-  position = position - 510;
+  stopFiling()
+  clearProgressBar()
+  startFiling()
+  position = position - moveSlide;
   slider.style.transform = `translateX(${position}px)`;
 }
 
 function moveLeft() {
   sliderCount--;
   checkPosition();
-  position = position + 510;
-  console.log(sliderCount);
+  stopFiling()
+  clearProgressBar()
+  startFiling()
+  position = position + moveSlide;
   slider.style.transform = `translateX(${position}px)`;
 }
 
@@ -45,17 +65,63 @@ function fillingProgressBar() {
   }
 }
 
-sliderItem.forEach((slid) => {
-  slid.addEventListener("mousemove", stopFiling, { passive: true });
-  slid.addEventListener("mouseout", startFiling, { passive: true });
-  slid.addEventListener("mousedown", stopFiling, { passive: true });
-  slid.addEventListener("mouseup", startFiling, { passive: true });
-});
+function clearProgressBar(){
+  progressBar.forEach((bar)=>{
+    width=0
+    bar.style.width=`${width}%`
+  })
+}
 
-startFiling();
+function touchStart(e){
+  let firstTouch=e.touches[0]
+  x1=firstTouch.clientX
+  console.log(x1)
+}
+function touchMove(e){
+  if(!x1){
+      return false
+  }
+  let secondTouch=e.changedTouches[0]
+  let x2=secondTouch.clientX
+  let move=x2-x1
+  if(move>x1){
+    moveRight()
+  }else{
+    moveLeft()
+  }
+}
+
+function mouseStart(e){
+  firstPosition=e.offsetX
+}
+function mouseMove(e){
+  secondPosition=e.offsetX
+  if(secondPosition-firstPosition>100){
+    moveRight()
+  }else{
+    moveLeft()
+  }
+}
+
+
 function startFiling() {
-  return (fillInterval = setInterval(fillingProgressBar, 400));
+  stopFiling()
+  fillInterval = setInterval(fillingProgressBar, 400);
 }
 function stopFiling() {
   clearInterval(fillInterval);
 }
+arrowLeft.addEventListener("click", moveLeft);
+arrowRight.addEventListener("click", moveRight);
+startFiling();
+
+
+sliderItem.forEach((slid) => {
+  slid.addEventListener("mousemove", stopFiling);
+  slid.addEventListener("mouseout", startFiling);
+  slid.addEventListener("mousedown", mouseStart);
+  slid.addEventListener("mouseup", mouseMove);
+  slid.addEventListener('touchstart', touchStart);
+  slid.addEventListener('touchend', touchMove);
+});
+

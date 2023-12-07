@@ -2,4 +2,8 @@
   width: 100%;
   display: flex;
   transition: all 1s ease;
+ 
+}
+.slider__item{
+  user-select: none;
 }

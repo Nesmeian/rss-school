@@ -14,6 +14,11 @@
   text-align: center;
 }
 
+@media (max-width: 700px) {
+  .coffee__container-internal {
+    width: 348px;
+  }
+}
 @media (max-width: 500px) {
   .coffee__container-external {
     padding-bottom: 100px;
