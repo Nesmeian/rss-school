@@ -114,6 +114,13 @@
   }
 }
 
+
+.icon__item-text-tea:hover,
+.icon__item-text-desert:hover,
+.icon__item-text-coffee:hover{
+  color: $text-light;
+}
+
 .icon__item-tea:active{
   .icon__item-text-tea{
   opacity: 0.5;
@@ -131,7 +138,13 @@
 }
 
 
-
+.icon__item--active{
+  .icon__item-text-coffee,
+  .icon__item-text-dessert,
+  .icon__item-text-tea{
+    color: $text-light;
+  }
+}
 
 .icon__item-text-coffee:active,
 .icon__item-text-desert:active,
