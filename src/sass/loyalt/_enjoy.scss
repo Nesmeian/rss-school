@@ -1,10 +1,12 @@
 .enjoy__container {
+  position: relative;
   margin-top: 15px;
-  padding: 100px 100px 102px;
-  background-image: url(./img/enjoy__wrapper.png);
+  width: 100%;
   border-radius: 40px;
-  background-position: center;
-  background-size: cover;
+  padding: 99px 0 99px 60px;
+}
+.enjoy__external_contrainer {
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -13,8 +15,3 @@
   }
 }
 
-@media (max-width: 500px) {
-  .enjoy__container {
-    padding: 61px 10px 59px 16px;
-  }
-}

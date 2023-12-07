@@ -15,3 +15,11 @@
     display: flex;
   }
 }
+
+.reboot--active {
+  animation-name: make-circle;
+  animation-duration: 3s;
+}
+.reboot--hide {
+  opacity: 0;
+}
