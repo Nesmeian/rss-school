@@ -9,7 +9,7 @@
       type="image/x-icon"
     />
     <title>Menu</title>
-  <script defer src="main.cc31537270dc02bd8e4e.js"></script></head>
+  <script defer src="second.a741f04011cdffdb6fa9.js"></script></head>
   <body>
     <header class="header">
       <div class="header__wrapper wrapper">
@@ -48,6 +48,32 @@
             <div class="burger__line"></div>
           </div>
         </div>
+        <div class="burger__menu">
+          <ul class="burger__list">
+            <li class="burger__item">
+              <a href="#favourite" class="burger__item-link link"
+                >Favorite coffee</a
+              >
+            </li>
+            <li class="burger__item">
+              <a href="#about" class="burger__item-link link">About</a>
+            </li>
+            <li class="burger__item">
+              <a href="#mobile" class="burger__item-link link">Mobile app</a>
+            </li>
+            <li class="burger__item">
+              <a href="#footer" class="burger__item-link link">Contact us</a>
+            </li>
+            <li class="burger__item">
+              <a href="./page2.html" class="menu__link">Menu</a>
+              <img
+                src="4c0716c084ae8a5fb355.svg"
+                alt="menu__img"
+                class="menu__img"
+              />
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
@@ -60,153 +86,365 @@
             </h1>
           </div>
           <div class="menu__icons-container">
-            <div class="icon__item-coffee">
+            <div class="icon__item-coffee icon__item icon__item--active">
               <div class="container_for__icon-coffee">
                 <img src="e164c02ec0a2f0a8fc0f.svg" alt="coffee-cup" />
               </div>
               <div class="icon__item-text-coffee">Coffee</div>
             </div>
-            <div class="icon__item-tea">
+            <div class="icon__item-tea icon__item">
               <div class="container_for__icon-tea">
                 <img src="3fa64cb7b058ab064d1b.svg" alt="tea" />
               </div>
               <div class="icon__item-text-tea">Tea</div>
             </div>
-            <div class="icon__item-desert">
+            <div class="icon__item-desert icon__item">
               <div class="container_for__icon-dessert">
                 <img src="73a629783ac38966c8f3.svg" alt="cake" />
               </div>
               <div class="icon__item-text-dessert">Dessert</div>
             </div>
           </div>
-          <div class="menu__drinks-list">
-            <div class="menu__drinks-item">
-              <div class="menu__drinks-img_container">
-                <img
-                  src="f7f1fae7108398a398d2.png"
-                  alt="irish-coffee"
-                  class="menu__drinks-img"
-                />
+          <!-- coffee -->
+          <div class="menu__drinks-list-container">
+            <div
+              class="menu__drinks-list menu__drinks-list-coffee menu-list--active"
+            >
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="f7f1fae7108398a398d2.png"
+                    alt="irish-coffee"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Irish coffee</h3>
+                  <p class="drinks-item__description">
+                    Fragrant black coffee with Jameson Irish whiskey and whipped
+                    milk
+                  </p>
+                  <p class="drinks-item__price price">$7.00</p>
+                </div>
               </div>
-              <div class="drinks-item__container">
-                <h3 class="drinks-item__title title">Irish coffee</h3>
-                <p class="drinks-item__description">
-                  Fragrant black coffee with Jameson Irish whiskey and whipped
-                  milk
-                </p>
-                <p class="drinks-item__price price">$7.00</p>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="c2079f0f644fe20beb0c.png"
+                    alt="kahlua-coffee"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Kahlua coffee</h3>
+                  <p class="drinks-item__description">
+                    Classic coffee with milk and Kahlua liqueur under a cap of
+                    frothed milk
+                  </p>
+                  <p class="drinks-item__price price">$7.00</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="6b30dabd7c8fbec1e2aa.png"
+                    alt="honey-raf"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Honey raf</h3>
+                  <p class="drinks-item__description">
+                    Espresso with frothed milk, cream and aromatic honey
+                  </p>
+                  <p class="drinks-item__price price">$5.50</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="9ab2d041ebdd4d442052.png"
+                    alt="ice-cappuccino"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Ice cappuccino</h3>
+                  <p class="drinks-item__description">
+                    Cappuccino with soft thick foam in summer version with ice
+                  </p>
+                  <p class="drinks-item__price price">$5.00</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="ff13fe3e41f6faba22e0.png"
+                    alt="Espresso"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Espresso</h3>
+                  <p class="drinks-item__description">Classic black coffee</p>
+                  <p class="drinks-item__price price">$4.50</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="aa5948f6f2a7bb4a36a8.png"
+                    alt="latte"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Latte</h3>
+                  <p class="drinks-item__description">
+                    Espresso coffee with the addition of steamed milk and dense
+                    milk foam
+                  </p>
+                  <p class="drinks-item__price price">$5.50</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="506e0ef48eaa23070078.png"
+                    alt="latte-macchiato"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Latte macchiato</h3>
+                  <p class="drinks-item__description">
+                    Espresso with frothed milk and chocolate
+                  </p>
+                  <p class="drinks-item__price price">$5.50</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="a04a069f57c43b85c2fe.png"
+                    alt="coffee-with-cognac"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Coffee with cognac</h3>
+                  <p class="drinks-item__description">
+                    Fragrant black coffee with cognac and whipped cream
+                  </p>
+                  <p class="drinks-item__price price">$6.50</p>
+                </div>
               </div>
             </div>
-            <div class="menu__drinks-item">
-              <div class="menu__drinks-img_container">
-                <img
-                  src="c2079f0f644fe20beb0c.png"
-                  alt="kahlua-coffee"
-                  class="menu__drinks-img"
-                />
+
+            <!-- TEA -->
+            <div class="menu__drinks-list menu__drinks-list-tea">
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="6a118c5a5b00783f924a.png"
+                    alt="irish-coffee"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Moroccan</h3>
+                  <p class="drinks-item__description">
+                    Fragrant black tea with the addition of tangerine, cinnamon,
+                    honey, lemon and mint
+                  </p>
+                  <p class="drinks-item__price price">$4.50</p>
+                </div>
               </div>
-              <div class="drinks-item__container">
-                <h3 class="drinks-item__title title">Kahlua coffee</h3>
-                <p class="drinks-item__description">
-                  Classic coffee with milk and Kahlua liqueur under a cap of
-                  frothed milk
-                </p>
-                <p class="drinks-item__price price">$7.00</p>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="5fc2061ada105032bbe5.png"
+                    alt="kahlua-coffee"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Ginger</h3>
+                  <p class="drinks-item__description">
+                    Original black tea with fresh ginger, lemon and honey
+                  </p>
+                  <p class="drinks-item__price price">$5.00</p>
+                </div>
               </div>
-            </div>
-            <div class="menu__drinks-item">
-              <div class="menu__drinks-img_container">
-                <img
-                  src="6b30dabd7c8fbec1e2aa.png"
-                  alt="honey-raf"
-                  class="menu__drinks-img"
-                />
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="a5c36c0fb46ed3542a27.png"
+                    alt="honey-raf"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Cranberry</h3>
+                  <p class="drinks-item__description">
+                    Invigorating black tea with cranberry and honey
+                  </p>
+                  <p class="drinks-item__price price">$5.00</p>
+                </div>
               </div>
-              <div class="drinks-item__container">
-                <h3 class="drinks-item__title title">Honey raf</h3>
-                <p class="drinks-item__description">
-                  Espresso with frothed milk, cream and aromatic honey
-                </p>
-                <p class="drinks-item__price price">$5.50</p>
-              </div>
-            </div>
-            <div class="menu__drinks-item">
-              <div class="menu__drinks-img_container">
-                <img
-                  src="9ab2d041ebdd4d442052.png"
-                  alt="ice-cappuccino"
-                  class="menu__drinks-img"
-                />
-              </div>
-              <div class="drinks-item__container">
-                <h3 class="drinks-item__title title">Ice cappuccino</h3>
-                <p class="drinks-item__description">
-                  Cappuccino with soft thick foam in summer version with ice
-                </p>
-                <p class="drinks-item__price price">$5.00</p>
-              </div>
-            </div>
-            <div class="menu__drinks-item">
-              <div class="menu__drinks-img_container">
-                <img
-                  src="ff13fe3e41f6faba22e0.png"
-                  alt="Espresso"
-                  class="menu__drinks-img"
-                />
-              </div>
-              <div class="drinks-item__container">
-                <h3 class="drinks-item__title title">Espresso</h3>
-                <p class="drinks-item__description">Classic black coffee</p>
-                <p class="drinks-item__price price">$4.50</p>
-              </div>
-            </div>
-            <div class="menu__drinks-item">
-              <div class="menu__drinks-img_container">
-                <img
-                  src="aa5948f6f2a7bb4a36a8.png"
-                  alt="latte"
-                  class="menu__drinks-img"
-                />
-              </div>
-              <div class="drinks-item__container">
-                <h3 class="drinks-item__title title">Latte</h3>
-                <p class="drinks-item__description">
-                  Espresso coffee with the addition of steamed milk and dense
-                  milk foam
-                </p>
-                <p class="drinks-item__price price">$5.50</p>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="acc73f1f37b907791447.png"
+                    alt="honey-raf"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Sea buckthorn</h3>
+                  <p class="drinks-item__description">
+                    Toning sweet black tea with sea buckthorn, fresh thyme and
+                    cinnamon
+                  </p>
+                  <p class="drinks-item__price price">$5.50</p>
+                </div>
               </div>
             </div>
-            <div class="menu__drinks-item">
-              <div class="menu__drinks-img_container">
-                <img
-                  src="506e0ef48eaa23070078.png"
-                  alt="latte-macchiato"
-                  class="menu__drinks-img"
-                />
+
+            <!-- Dessert -->
+
+            <div class="menu__drinks-list">
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="e28173f0661d791c09f1.png"
+                    alt="irish-coffee"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Marble cheesecake</h3>
+                  <p class="drinks-item__description">
+                    Philadelphia cheese with lemon zest on a light sponge cake
+                    and red currant jam
+                  </p>
+                  <p class="drinks-item__price price">$3.50</p>
+                </div>
               </div>
-              <div class="drinks-item__container">
-                <h3 class="drinks-item__title title">Latte macchiato</h3>
-                <p class="drinks-item__description">
-                  Espresso with frothed milk and chocolate
-                </p>
-                <p class="drinks-item__price price">$5.50</p>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="37cb4fe3ee93ae65d2b1.png"
+                    alt="kahlua-coffee"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Red velvet</h3>
+                  <p class="drinks-item__description">
+                    Layer cake with cream cheese frosting
+                  </p>
+                  <p class="drinks-item__price price">$4.00</p>
+                </div>
               </div>
-            </div>
-            <div class="menu__drinks-item">
-              <div class="menu__drinks-img_container">
-                <img
-                  src="a04a069f57c43b85c2fe.png"
-                  alt="coffee-with-cognac"
-                  class="menu__drinks-img"
-                />
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="332093e97e3809eca8a0.png"
+                    alt="honey-raf"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Cheesecakes</h3>
+                  <p class="drinks-item__description">
+                    Soft cottage cheese pancakes with sour cream and fresh
+                    berries and sprinkled with powdered sugar
+                  </p>
+                  <p class="drinks-item__price price">$4.50</p>
+                </div>
               </div>
-              <div class="drinks-item__container">
-                <h3 class="drinks-item__title title">Coffee with cognac</h3>
-                <p class="drinks-item__description">
-                  Fragrant black coffee with cognac and whipped cream
-                </p>
-                <p class="drinks-item__price price">$6.50</p>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="1d44b0cd8a9da991a5a1.png"
+                    alt="ice-cappuccino"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Creme brulee</h3>
+                  <p class="drinks-item__description">
+                    Delicate creamy dessert in a caramel basket with wild
+                    berries
+                  </p>
+                  <p class="drinks-item__price price">$4.00</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="27c68d864626920fecb7.png"
+                    alt="irish-coffee"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Pancakes</h3>
+                  <p class="drinks-item__description">
+                    Tender pancakes with strawberry jam and fresh strawberries
+                  </p>
+                  <p class="drinks-item__price price">$4.50</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="ca191af649d002a0edaf.png"
+                    alt="kahlua-coffee"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Honey cake</h3>
+                  <p class="drinks-item__description">
+                    Classic honey cake with delicate custard
+                  </p>
+                  <p class="drinks-item__price price">$4.50</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="bfbcfa36c3591865d20b.png"
+                    alt="honey-raf"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Chocolate cake</h3>
+                  <p class="drinks-item__description">
+                    Cake with hot chocolate filling and nuts with dried apricots
+                  </p>
+                  <p class="drinks-item__price price">$5.50</p>
+                </div>
+              </div>
+              <div class="menu__drinks-item">
+                <div class="menu__drinks-img_container">
+                  <img
+                    src="b471eca4888e1a082d9e.png"
+                    alt="ice-cappuccino"
+                    class="menu__drinks-img"
+                  />
+                </div>
+                <div class="drinks-item__container">
+                  <h3 class="drinks-item__title title">Black forest</h3>
+                  <p class="drinks-item__description">
+                    A combination of thin sponge cake with cherry jam and light
+                    chocolate mousse
+                  </p>
+                  <p class="drinks-item__price price">$6.50</p>
+                </div>
               </div>
             </div>
           </div>
@@ -350,5 +588,64 @@
         </div>
       </div>
     </footer>
+    <!-- modal -->
+    <div class="modal__wrapper">
+      <div class="modal__container">
+        <div class="modal__img_container">
+          <img src="f7f1fae7108398a398d2.png" alt="espresso" class="modal__img" />
+        </div>
+        <div class="modal__content">
+          <h3 class="modal__title">Irish coffee</h3>
+          <p class="modal__description">
+            Fragrant black coffee with Jameson Irish whiskey and whipped milk
+          </p>
+          <div class="modal__sizes_title">Size</div>
+          <div class="modal__sizes">
+            <div class="small__size size__container size--active">
+              <div class="small__icon size__icon">S</div>
+              <div class="icon__text">200 ml</div>
+            </div>
+            <div class="medium__size size__container">
+              <div class="medium__icon size__icon">M</div>
+              <div class="icon__text">300 ml</div>
+            </div>
+            <div class="large__size size__container">
+              <div class="large__icon size__icon">L</div>
+              <div class="icon__text">400 ml</div>
+            </div>
+          </div>
+          <div class="modal__additives_title">Additives</div>
+          <div class="modal__additives">
+            <div class="sugar__additives additives__container">
+              <div class="sugar__icon additives__icon">1</div>
+              <div class="icon__text">Sugar</div>
+            </div>
+            <div class="cinnamon__additives additives__container">
+              <div class="cinnamon__icon additives__icon">2</div>
+              <div class="icon__text">Cinnamon</div>
+            </div>
+            <div class="syrup__additives additives__container">
+              <div class="syrup__icon additives__icon">3</div>
+              <div class="icon__text">Syrup</div>
+            </div>
+          </div>
+          <div class="modal__total_container">
+            <span class="total__text">Total:</span>
+            <span class="total__cost">$7.00</span>
+          </div>
+          <div class="modal__warning_container">
+            <div class="warning__icon">
+              <img src="272d10c2798c59cee70f.svg" alt="warning" />
+            </div>
+            <div class="warning__desription">
+              The cost is not final. Download our mobile app to see the final
+              price and place your order. Earn loyalty points and enjoy your
+              favorite coffee with up to 20% discount.
+            </div>
+          </div>
+          <div class="modal__btn_close">Close</div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

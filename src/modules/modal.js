@@ -20,8 +20,6 @@ let globalCost = 0;
 
 additivesCost.forEach((e) => {
   e.addEventListener("click", () => {
-    console.log(console.log(globalCost));
-    console.log(console.log(typeof globalCost));
     e.classList.toggle("size--active");
     if (e.classList.contains("size--active")) {
       globalCost = +globalCost + 0.5;
@@ -82,7 +80,6 @@ function openModal(index) {
   });
   globalCost = drinksCost[index].innerHTML;
   globalCost = globalCost.slice(1);
-  // console.log(globalCost);
   modalCost.innerHTML = drinksCost[index].innerHTML;
 
   sizeCost[0].classList.add("size--active");
