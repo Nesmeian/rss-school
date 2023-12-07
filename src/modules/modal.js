@@ -1,3 +1,4 @@
+import { jsonModal } from "./modal-json";
 const modalItem = document.querySelectorAll(".menu__drinks-item");
 const modal = document.querySelector(".modal__container");
 const modalImg = document.querySelector(".modal__img");
@@ -15,6 +16,8 @@ const drinksDescription = document.querySelectorAll(
   ".drinks-item__description"
 );
 const drinksCost = document.querySelectorAll(".drinks-item__price");
+
+
 
 let globalCost = 0;
 
@@ -68,9 +71,9 @@ function changeCost(element, index) {
 
 function openModal(index) {
   modalImg.src = drinksImg[index].src;
-  modalTitle.innerHTML = drinksTitle[index].innerHTML;
-  modalDesription.innerHTML = drinksDescription[index].innerHTML;
-  modalCost.innerHTML = drinksCost[index].innerHTML;
+  modalTitle.innerHTML = jsonModal[index].name;
+  modalDesription.innerHTML = jsonModal[index].description;
+  modalCost.innerHTML = jsonModal[index].price;
   modal.classList.add("modal--active");
   body.classList.add("stop--scroll");
   modalWrapper.classList.add("modal__wrapper--active");
