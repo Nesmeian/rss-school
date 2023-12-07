@@ -10,6 +10,7 @@
 }
 
 .menu__drinks-item {
+  cursor: pointer;
   width: 310px;
   border: 1px solid $border-light;
   border-radius: 40px;
@@ -19,15 +20,14 @@
 @media (max-width: 1400px) {
   .menu__drinks-list {
     grid-template-columns: 1fr 1fr;
-    gap: 40px 26px;
-    padding: 0px 0 38px 14px;
+    gap: 40px 38px;
+    padding-bottom: 38px;
   }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 690px) {
   .menu__drinks-list {
     grid-template-columns: 1fr;
-    padding-left: 19px;
   }
 }
 

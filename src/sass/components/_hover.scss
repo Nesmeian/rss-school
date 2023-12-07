@@ -1,10 +1,4 @@
 @media (hover: hover) {
-  .menu__drinks-item:hover {
-    .menu__drinks-img {
-      transform: scale(1.1);
-    }
-  }
-
   .left-container__img-item:hover {
     background-color: $text-light;
     .left-container__img-svg {
@@ -51,13 +45,101 @@
   }
 
   .img-container__item:hover {
-    transform: scale(1.1);
+    transform: scale(1);
+  }
+  .nav__item-link:hover::before,
+  .nav__item-link:hover::after{
+    width: 50%;
+  }
+  .footer__link:hover::after {
+    width: 30%;
+  }
+  .footer__link:hover::before {
+    width: 45%;
   }
 
-  .nav__item-link:hover::before,
-  .nav__item-link:hover::after,
-  .footer__link:hover::after,
+  .menu__text-home:hover::before {
+    width: 50%;
+  }
+  .menu__text-home:hover::after {
+    width: 80%;
+  }
+  .menu__drinks-item:hover {
+    .menu__drinks-img {
+      transform: scale(1);
+    }
+  }
+  .footer__link:hover::after {
+    width: 30%;
+  }
   .footer__link:hover::before {
     width: 50%;
   }
+  
+  .menu__text_page-1:hover::after {
+    width: 100%;
+  }
+  .menu__text_page-1:hover::before {
+    width: 50%;
+  }
+  .arrow-left:hover {
+    background: $background-container;
+    .arrow-left__svg {
+      transition: all 0.5s ease;
+      stroke: $text-light;
+    }
+  }
+  
+  .arrow-right:hover {
+    background: $background-container;
+    .arrow-right__svg {
+      stroke: $text-light;
+      transition: all 0.5s ease;
+    }
+  }
+  .app-store_container:hover {
+    background-color: $border-dark;
+    color: $text-light;
+    .app-store__svg {
+      fill: $text-light;
+    }
+  }
+  
+  .google-play_container:hover {
+    background-color: $border-dark;
+    color: $text-light;
+    .google-play__svg {
+      fill: $text-light;
+    }
+  }
+}
+
+.icon__item-tea:active{
+  .icon__item-text-tea{
+  opacity: 0.5;
+  }
+}
+.icon__item-tea:active{
+  .icon__item-text-tea{
+  opacity: 0.5;
+  }
+}
+.icon__item-desert:active{
+  .icon__item-text-desert{
+  opacity: 0.5;
+  }
+}
+
+
+
+
+.icon__item-text-coffee:active,
+.icon__item-text-desert:active,
+.arrow-left:active,
+.arrow-rigth:active,
+.menu__text:active,
+.nav__item-link:active,
+.enjoy__btn_text:active,
+.footer__link:active{
+  opacity: 0.5;
 }

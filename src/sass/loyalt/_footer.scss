@@ -22,6 +22,11 @@
   padding-top: 109px;
   padding-left: 137px;
 }
+@media (max-width: 1000px) {
+  .footer_rigth__container {
+    padding: 0 0 86px 90px;
+  }
+}
 
 @media (max-width: 768px) {
   .footer__left-container {

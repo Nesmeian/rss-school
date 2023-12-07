@@ -1,4 +1,5 @@
 .left-container__img-item {
+  cursor: pointer;
   width: 60px;
   height: 60px;
   margin-right: 9px;
@@ -7,6 +8,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 40px;
+  transition: all 0.5s ease;
+}
+
+.left-container__img-svg {
   transition: all 0.5s ease;
 }
 
@@ -25,6 +30,7 @@
 .icon__item-desert,
 .icon__item-tea,
 .icon__item-coffee {
+  cursor: pointer;
   display: flex;
   height: 46px;
   align-items: center;
@@ -32,6 +38,9 @@
   justify-content: space-evenly;
   border-radius: 100px;
   transition: all 0.5s ease;
+}
+.icon__item-coffee {
+  cursor: default;
 }
 
 .icon__item--active {
@@ -49,6 +58,7 @@
   height: 30px;
   border-radius: 100px;
   background-color: $border-light;
+  transition: all 0.5s ease;
 }
 
 .icon__item-tea {
@@ -71,7 +81,9 @@
 }
 
 .icon__item-text-coffee {
+  color: $text-light;
   margin-right: 6px;
+  color: $text-light;
 }
 
 
@@ -81,7 +93,7 @@
     width: 115px;
   }
   .icon__item-tea {
-    margin: 0;
+    margin: 0 10px 0 3px;
   }
   .menu__icons-container {
     justify-content: space-between;

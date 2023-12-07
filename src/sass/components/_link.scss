@@ -9,6 +9,7 @@ a {
 
 .nav__item-link {
   position: relative;
+  transition: all 0.5s ease;
 }
 .nav__item-link:after {
   display: block;
@@ -34,8 +35,32 @@ a {
 }
 
 
-
 .footer__link {
   position: relative;
   color: $text-light;
+  transition: all 0.5s ease;
 }
+.footer__link::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  right: 70%;
+  width: 0;
+  background-color: $text-light;
+  transition: all 0.7s;
+}
+
+.footer__link::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0px;
+  left: 30%;
+  width: 0;
+  background-color: $text-light;
+  transition: all 0.7s;
+}
+

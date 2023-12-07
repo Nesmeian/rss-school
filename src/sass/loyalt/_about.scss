@@ -5,8 +5,9 @@
   gap: 40px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .about__img-container {
+    padding-top: 42px;
     grid-template-columns: auto;
   }
 }
