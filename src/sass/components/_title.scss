@@ -20,7 +20,6 @@ h3.title {
 }
 
 .enjoy__title {
-  
   width: 555px;
 }
 .coffee__title {
@@ -71,6 +70,7 @@ h2.footer__title {
 
 @media (max-width: 670px) {
   .enjoy__title {
+    padding-left:59px;
     width: auto;
     @include font(42px, 600, 48px);
   }

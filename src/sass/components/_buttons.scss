@@ -1,4 +1,5 @@
 .enjoy__btn_meny {
+  
   cursor: pointer;
   position: relative;
   @include font(16px, 600, 24px);
@@ -27,6 +28,9 @@
 }
 
 @media (max-width: 768px) {
+  .enjoy__btn_meny{
+    margin-left: 59px;
+  }
   .enjoy__btn_text {
     right: 92px;
     top: 20px;
