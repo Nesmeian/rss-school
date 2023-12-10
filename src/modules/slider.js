@@ -96,9 +96,9 @@ function mouseStart(e){
 }
 function mouseMove(e){
   secondPosition=e.offsetX
-  if(firstPosition>secondPosition&&secondPosition-firstPosition>100){
-    moveRight()
-  }else if(firstPosition<secondPosition&&secondPosition-firstPosition>100){
+  if(firstPosition>secondPosition&&firstPosition-secondPosition>100){
+    moveLeft()
+  }else if(firstPosition<secondPosition&&secondPosition-firstPosition>10){
     moveRight()
   }else{
     startFiling()
