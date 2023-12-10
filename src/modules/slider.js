@@ -92,10 +92,9 @@ function touchMove(e){
   }
   let secondTouch=e.changedTouches[0]
   let x2=secondTouch.clientX
-  let move=x2-x1
-  if(move>x1){
+  if(x1-x2>100){
     moveRight()
-  }else{
+  }else if(x2-x1>100){
     moveLeft()
   }
 }

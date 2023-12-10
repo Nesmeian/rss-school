@@ -34,7 +34,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      filename: "page2.html",
+      filename: "menu.html",
       inject: true,
       chunks: ["second"],
       template: "./src/menu.html",
