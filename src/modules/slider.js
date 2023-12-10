@@ -32,6 +32,15 @@ function checkPosition() {
     }
   }
 }
+window.addEventListener("resize", () => {
+  if(window.innerWidth<=768){
+    sliderCount=0  
+    position = 0;
+    slider.style.transform = `translateX(${position}px)`
+    clearProgressBar()
+  }
+})
+
 
 
 function moveRight() {
