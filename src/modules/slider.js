@@ -75,7 +75,7 @@ function clearProgressBar(){
 function touchStart(e){
   let firstTouch=e.touches[0]
   x1=firstTouch.clientX
-  console.log(x1)
+  stopFiling()
 }
 function touchMove(e){
   if(!x1){
@@ -96,10 +96,12 @@ function mouseStart(e){
 }
 function mouseMove(e){
   secondPosition=e.offsetX
-  if(secondPosition-firstPosition>100){
+  if(firstPosition>secondPosition&&secondPosition-firstPosition>100){
+    moveRight()
+  }else if(firstPosition<secondPosition&&secondPosition-firstPosition>100){
     moveRight()
   }else{
-    moveLeft()
+    startFiling()
   }
 }
 
