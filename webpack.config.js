@@ -15,7 +15,11 @@ module.exports = {
     open: true,
     hot: true,
   },
-  entry: path.resolve(__dirname, "src", "index.js"),
+  entry: {
+    first: "/src/index.js",
+    second: "/src/menu.js",
+  },
+
   output: {
     path: path.resolve(__dirname, "coffee-house"),
     clean: true,
@@ -24,12 +28,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve(__dirname, "src", "index.html"),
+      inject: true,
+      chunks: ["first"],
+      template: "./src/index.html",
     }),
 
     new HtmlWebpackPlugin({
-      filename: "menu.html",
-      template: path.resolve(__dirname, "src", "menu.html"),
+      filename: "page2.html",
+      inject: true,
+      chunks: ["second"],
+      template: "./src/menu.html",
     }),
 
     new MiniCssExtractPlugin({

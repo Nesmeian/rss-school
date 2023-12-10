@@ -20,6 +20,7 @@ h3.title {
 }
 
 .enjoy__title {
+  
   width: 555px;
 }
 .coffee__title {
@@ -52,6 +53,11 @@ h2.footer__title {
 
 .drinks-item__title {
   margin-top: 20px;
+}
+
+.modal__title {
+  @include font(24px, 600, 30px);
+  margin: 17px 0 0;
 }
 
 @media (max-width: 800px) {

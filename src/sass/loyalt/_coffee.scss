@@ -7,11 +7,18 @@
 
 .coffee__container-internal {
   display: flex;
+  width: 480px;
+  overflow: hidden;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
+@media (max-width: 700px) {
+  .coffee__container-internal {
+    width: 348px;
+  }
+}
 @media (max-width: 500px) {
   .coffee__container-external {
     padding-bottom: 100px;

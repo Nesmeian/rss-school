@@ -9,7 +9,7 @@
       type="image/x-icon"
     />
     <title>Coffee-House</title>
-  <script defer src="main.410629148e730aa0975f.js"></script></head>
+  <script defer src="first.85cdbe76f487158a40e8.js"></script></head>
   <body>
     <header class="header">
       <div class="header__wrapper wrapper">
@@ -79,22 +79,33 @@
     <main class="main">
       <section class="enjoy">
         <div class="enjoy__wrapper wrapper">
-          <div class="enjoy__container">
-            <h1 class="enjoy__title title">
-              <span class="title-span">Enjoy</span> premium coffee at our
-              charming cafe
-            </h1>
-            <p class="enjoy__text">
-              With its inviting atmosphere and delicious coffee options, the
-              Coffee House Resource is a popular destination for coffee lovers
-              and those seeking a warm and inviting space to enjoy their
-              favorite beverage.
-            </p>
-            <form action="./menu.html">
-              <button type="submit" class="enjoy__btn_meny">
-                <span class="enjoy__btn_text">Menu</span>
-              </button>
-            </form>
+          <div class="enjoy__external_contrainer">
+            <video
+              src="3a19fd1210d63dc1b79d.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              class="enjoy__video"
+            ></video>
+
+            <div class="enjoy__container">
+              <h1 class="enjoy__title title">
+                <span class="title-span">Enjoy</span> premium coffee at our
+                charming cafe
+              </h1>
+              <p class="enjoy__text">
+                With its inviting atmosphere and delicious coffee options, the
+                Coffee House Resource is a popular destination for coffee lovers
+                and those seeking a warm and inviting space to enjoy their
+                favorite beverage.
+              </p>
+              <form action="./page2.html">
+                <button type="submit" class="enjoy__btn_meny">
+                  <span class="enjoy__btn_text">Menu</span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -123,34 +134,55 @@
             </div>
             <div class="coffee__container-internal">
               <div class="coffee__slider">
-                <img
+                <div class="slider__item">
+                  <img
                   src="dc9776758a8e4a486051.svg"
                   alt="coffee__img"
                   class="coffee_img"
                 />
-                <img
+                <h3 class="coffee__name title">S’mores Frappuccino</h3>
+                <p class="coffee__description">
+                  This new drink takes an espresso and mixes it with brown sugar
+                  and cinnamon before being topped with oat milk.
+                </p>
+                <div class="coffee__price price">$5.50</div>
+                </div>
+                <div class="slider__item">
+                  <img
                   src="98374f43f173e6836ec0.svg"
                   alt="coffee__img"
                   class="coffee_img coffee_img-none"
                 />
-                <img
+                <h3 class="coffee__name title">Caramel Macchiato</h3>
+                <p class="coffee__description">
+                  Fragrant and unique classic espresso with rich caramel-peanut syrup, with the addition of delicate cream under whipped thick foam.
+                </p>
+                <div class="coffee__price price">$5.00</div>
+                </div>
+                <div class="slider__item">
+                  <img
                   src="181927cff0a0ec8c3a5a.svg"
                   alt="coffee__img"
                   class="coffee_img coffee_img-none"
                 />
+                <h3 class="coffee__name title">Ice coffee</h3>
+                <p class="coffee__description">
+                  A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.
+                </p>
+                <div class="coffee__price price">$4.50</div>
+                </div>
               </div>
-              <h3 class="coffee__name title">S’mores Frappuccino</h3>
-              <p class="coffee__description">
-                This new drink takes an espresso and mixes it with brown sugar
-                and cinnamon before being topped with oat milk.
-              </p>
-              <div class="coffee__price price">$5.50</div>
+             
               <div class="coffee__controls-list">
-                <div
-                  class="coffee__controls-item coffee__controls-item--active"
-                ></div>
-                <div class="coffee__controls-item"></div>
-                <div class="coffee__controls-item"></div>
+                <div class="coffee__control-item coffee__control-item--active">
+                  <div class="coffee__control-progress"></div>
+                </div>
+                <div class="coffee__control-item">
+                  <div class="coffee__control-progress"></div>
+                </div>
+                <div class="coffee__control-item">
+                  <div class="coffee__control-progress"></div>
+                </div>
               </div>
             </div>
             <div class="arrow-right">

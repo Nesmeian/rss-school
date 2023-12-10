@@ -27,4 +27,4 @@ function checkingWidth() {
     burgerBtn.classList.remove("--active-btn-burger");
   }
 }
-// setInterval(checkingWidth, 1000);
+setInterval(checkingWidth, 1000);
