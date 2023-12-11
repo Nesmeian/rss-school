@@ -7,22 +7,22 @@ let width = 0;
 let sliderCount = 0;
 let position = 0;
 let fillInterval;
-let x1=0;
+let x1 = 0;
 let firstPosition;
 let moveSlide;
 function checkPosition() {
-  if(window.innerWidth>=701){
-  moveSlide=480;
-  if (sliderCount < 0) {
-    position = -1440;
-    sliderCount = 2;
-  } else if (sliderCount > 2) {
-    position = 480;
-    sliderCount = 0;
+  if (window.innerWidth >= 701) {
+    moveSlide = 480;
+    if (sliderCount < 0) {
+      position = -1440;
+      sliderCount = 2;
+    } else if (sliderCount > 2) {
+      position = 480;
+      sliderCount = 0;
+    }
   }
-}
-  if(window.innerWidth<=700){
-    moveSlide=348
+  if (window.innerWidth <= 700) {
+    moveSlide = 348;
     if (sliderCount < 0) {
       sliderCount = 2;
       position = -1044;
@@ -33,22 +33,18 @@ function checkPosition() {
   }
 }
 window.addEventListener("resize", () => {
-  if(window.innerWidth<=768){
-    sliderCount=0  
-    position = 0;
-    slider.style.transform = `translateX(${position}px)`
-    clearProgressBar()
-  }
-})
-
-
+  sliderCount = 0;
+  position = 0;
+  slider.style.transform = `translateX(${position}px)`;
+  clearProgressBar();
+});
 
 function moveRight() {
   sliderCount++;
   checkPosition();
-  stopFiling()
-  clearProgressBar()
-  startFiling()
+  stopFiling();
+  clearProgressBar();
+  startFiling();
   position = position - moveSlide;
   slider.style.transform = `translateX(${position}px)`;
 }
@@ -56,9 +52,9 @@ function moveRight() {
 function moveLeft() {
   sliderCount--;
   checkPosition();
-  stopFiling()
-  clearProgressBar()
-  startFiling()
+  stopFiling();
+  clearProgressBar();
+  startFiling();
   position = position + moveSlide;
   slider.style.transform = `translateX(${position}px)`;
 }
@@ -74,48 +70,50 @@ function fillingProgressBar() {
   }
 }
 
-function clearProgressBar(){
-  progressBar.forEach((bar)=>{
-    width=0
-    bar.style.width=`${width}%`
-  })
+function clearProgressBar() {
+  progressBar.forEach((bar) => {
+    width = 0;
+    bar.style.width = `${width}%`;
+  });
 }
 
-function touchStart(e){
-  let firstTouch=e.touches[0]
-  x1=firstTouch.clientX
-  stopFiling()
+function touchStart(e) {
+  let firstTouch = e.touches[0];
+  x1 = firstTouch.clientX;
+  stopFiling();
 }
-function touchMove(e){
-  if(!x1){
-      return false
+function touchMove(e) {
+  if (!x1) {
+    return false;
   }
-  let secondTouch=e.changedTouches[0]
-  let x2=secondTouch.clientX
-  if(x1-x2>100){
-    moveRight()
-  }else if(x2-x1>100){
-    moveLeft()
-  }
-}
-
-function mouseStart(e){
-  firstPosition=e.offsetX
-}
-function mouseMove(e){
-  secondPosition=e.offsetX
-  if(firstPosition>secondPosition&&firstPosition-secondPosition>100){
-    moveLeft()
-  }else if(firstPosition<secondPosition&&secondPosition-firstPosition>10){
-    moveRight()
-  }else{
-    startFiling()
+  let secondTouch = e.changedTouches[0];
+  let x2 = secondTouch.clientX;
+  if (x1 - x2 > 100) {
+    moveRight();
+  } else if (x2 - x1 > 100) {
+    moveLeft();
   }
 }
 
+function mouseStart(e) {
+  firstPosition = e.offsetX;
+}
+function mouseMove(e) {
+  secondPosition = e.offsetX;
+  if (firstPosition > secondPosition && firstPosition - secondPosition > 100) {
+    moveLeft();
+  } else if (
+    firstPosition < secondPosition &&
+    secondPosition - firstPosition > 10
+  ) {
+    moveRight();
+  } else {
+    startFiling();
+  }
+}
 
 function startFiling() {
-  stopFiling()
+  stopFiling();
   fillInterval = setInterval(fillingProgressBar, 400);
 }
 function stopFiling() {
@@ -125,13 +123,11 @@ arrowLeft.addEventListener("click", moveLeft);
 arrowRight.addEventListener("click", moveRight);
 startFiling();
 
-
 sliderItem.forEach((slid) => {
   slid.addEventListener("mousemove", stopFiling);
   slid.addEventListener("mouseout", startFiling);
   slid.addEventListener("mousedown", mouseStart);
   slid.addEventListener("mouseup", mouseMove);
-  slid.addEventListener('touchstart', touchStart);
-  slid.addEventListener('touchend', touchMove);
+  slid.addEventListener("touchstart", touchStart);
+  slid.addEventListener("touchend", touchMove);
 });
-

@@ -68,9 +68,9 @@ h2.footer__title {
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 768px) {
   .enjoy__title {
-    padding-left:59px;
+    padding-left: 59px;
     width: auto;
     @include font(42px, 600, 48px);
   }
