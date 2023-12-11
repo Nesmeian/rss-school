@@ -113,6 +113,22 @@
       fill: $text-light;
     }
   }
+
+  .additives__container:hover,
+  .size__container:hover {
+    background-color: $background-container;
+    .additives__icon,
+    .size__icon {
+      background-color: $background-body;
+    }
+    .icon__text {
+      color: $text-light;
+    }
+  }
+  .modal__btn_close:hover {
+    color: $text-light;
+    background-color: $background-container;
+  }
 }
 
 .burger__item:hover::before,
@@ -159,19 +175,4 @@
 .enjoy__btn_text:active,
 .footer__link:active {
   opacity: 0.5;
-}
-.additives__container:hover,
-.size__container:hover {
-  background-color: $background-container;
-  .additives__icon,
-  .size__icon {
-    background-color: $background-body;
-  }
-  .icon__text {
-    color: $text-light;
-  }
-}
-.modal__btn_close:hover {
-  color: $text-light;
-  background-color: $background-container;
 }
