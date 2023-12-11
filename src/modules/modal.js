@@ -9,15 +9,9 @@ const closeBtn = document.querySelector(".modal__btn_close");
 const body = document.querySelector("body");
 const modalWrapper = document.querySelector(".modal__wrapper");
 const drinksImg = document.querySelectorAll(".menu__drinks-img");
-const drinksTitle = document.querySelectorAll(".drinks-item__title");
 const sizeCost = document.querySelectorAll(".size__container");
 const additivesCost = document.querySelectorAll(".additives__container");
-const drinksDescription = document.querySelectorAll(
-  ".drinks-item__description"
-);
 const drinksCost = document.querySelectorAll(".drinks-item__price");
-
-
 
 let globalCost = 0;
 
@@ -75,7 +69,7 @@ function openModal(index) {
   modalDesription.innerHTML = jsonModal[index].description;
   modalCost.innerHTML = jsonModal[index].price;
   modal.classList.add("modal--active");
-  body.classList.add("stop--scroll");
+  body.classList.add("stop--scrol");
   modalWrapper.classList.add("modal__wrapper--active");
   indexOfItem = index;
   sizeCost.forEach((e, i) => {
@@ -93,6 +87,7 @@ function closeModal() {
   body.classList.remove("stop--scroll");
   modalWrapper.classList.remove("modal__wrapper--active");
   removeAdditives();
+  body.classList.remove("stop--scrol");
   sizeCost.forEach((e) => {
     e.classList.remove("size--active");
   });
