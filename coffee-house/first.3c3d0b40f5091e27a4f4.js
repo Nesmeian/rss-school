@@ -2072,7 +2072,7 @@ template {
 [hidden] {
   display: none;
 }
-`, "",{"version":3,"sources":["webpack://./src/sass/vendors/normalize.css"],"names":[],"mappings":"AAAA,2EAA2E;;AAE3E;+EAC+E;;AAE/E;;;EAGE;;AAEF;EACE,iBAAiB,EAAE,MAAM;EACzB,8BAA8B,EAAE,MAAM;AACxC;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,SAAS;AACX;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;EACE,cAAc;EACd,gBAAgB;AAClB;;AAEA;+EAC+E;;AAE/E;;;EAGE;;AAEF;EACE,uBAAuB,EAAE,MAAM;EAC/B,SAAS,EAAE,MAAM;EACjB,iBAAiB,EAAE,MAAM;AAC3B;;AAEA;;;EAGE;;AAEF;EACE,iCAAiC,EAAE,MAAM;EACzC,cAAc,EAAE,MAAM;AACxB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,6BAA6B;AAC/B;;AAEA;;;EAGE;;AAEF;EACE,mBAAmB,EAAE,MAAM;EAC3B,0BAA0B,EAAE,MAAM;EAClC,iCAAiC,EAAE,MAAM;AAC3C;;AAEA;;EAEE;;AAEF;;EAEE,mBAAmB;AACrB;;AAEA;;;EAGE;;AAEF;;;EAGE,iCAAiC,EAAE,MAAM;EACzC,cAAc,EAAE,MAAM;AACxB;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;EAEE,cAAc;EACd,cAAc;EACd,kBAAkB;EAClB,wBAAwB;AAC1B;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,kBAAkB;AACpB;;AAEA;+EAC+E;;AAE/E;;;EAGE;;AAEF;;;;;EAKE,oBAAoB,EAAE,MAAM;EAC5B,eAAe,EAAE,MAAM;EACvB,iBAAiB,EAAE,MAAM;EACzB,SAAS,EAAE,MAAM;AACnB;;AAEA;;;EAGE;;AAEF;QACQ,MAAM;EACZ,iBAAiB;AACnB;;AAEA;;;EAGE;;AAEF;SACS,MAAM;EACb,oBAAoB;AACtB;;AAEA;;EAEE;;AAEF;;;;EAIE,0BAA0B;AAC5B;;AAEA;;EAEE;;AAEF;;;;EAIE,kBAAkB;EAClB,UAAU;AACZ;;AAEA;;EAEE;;AAEF;;;;EAIE,8BAA8B;AAChC;;AAEA;;EAEE;;AAEF;EACE,8BAA8B;AAChC;;AAEA;;;;;EAKE;;AAEF;EACE,sBAAsB,EAAE,MAAM;EAC9B,cAAc,EAAE,MAAM;EACtB,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,MAAM;EAClB,mBAAmB,EAAE,MAAM;AAC7B;;AAEA;;EAEE;;AAEF;EACE,wBAAwB;AAC1B;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;EAEE,sBAAsB,EAAE,MAAM;EAC9B,UAAU,EAAE,MAAM;AACpB;;AAEA;;EAEE;;AAEF;;EAEE,YAAY;AACd;;AAEA;;;EAGE;;AAEF;EACE,6BAA6B,EAAE,MAAM;EACrC,oBAAoB,EAAE,MAAM;AAC9B;;AAEA;;EAEE;;AAEF;EACE,wBAAwB;AAC1B;;AAEA;;;EAGE;;AAEF;EACE,0BAA0B,EAAE,MAAM;EAClC,aAAa,EAAE,MAAM;AACvB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;EAEE;;AAEF;EACE,kBAAkB;AACpB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,aAAa;AACf;;AAEA;;EAEE;;AAEF;EACE,aAAa;AACf","sourcesContent":["/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n\n/* Document\n   ========================================================================== */\n\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\n\nhtml {\n  line-height: 1.15; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n}\n\n/* Sections\n   ========================================================================== */\n\n/**\n * Remove the margin in all browsers.\n */\n\nbody {\n  margin: 0;\n}\n\n/**\n * Render the `main` element consistently in IE.\n */\n\nmain {\n  display: block;\n}\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\n\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n\n/* Grouping content\n   ========================================================================== */\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\n\nhr {\n  box-sizing: content-box; /* 1 */\n  height: 0; /* 1 */\n  overflow: visible; /* 2 */\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\n\npre {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/* Text-level semantics\n   ========================================================================== */\n\n/**\n * Remove the gray background on active links in IE 10.\n */\n\na {\n  background-color: transparent;\n}\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\n\nabbr[title] {\n  border-bottom: none; /* 1 */\n  text-decoration: underline; /* 2 */\n  text-decoration: underline dotted; /* 2 */\n}\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\n\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/**\n * Add the correct font size in all browsers.\n */\n\nsmall {\n  font-size: 80%;\n}\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/* Embedded content\n   ========================================================================== */\n\n/**\n * Remove the border on images inside links in IE 10.\n */\n\nimg {\n  border-style: none;\n}\n\n/* Forms\n   ========================================================================== */\n\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  line-height: 1.15; /* 1 */\n  margin: 0; /* 2 */\n}\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\n\nbutton,\ninput { /* 1 */\n  overflow: visible;\n}\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\n\nbutton,\nselect { /* 1 */\n  text-transform: none;\n}\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\n/**\n * Remove the inner border and padding in Firefox.\n */\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\n\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\n\n/**\n * Correct the padding in Firefox.\n */\n\nfieldset {\n  padding: 0.35em 0.75em 0.625em;\n}\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\n\nlegend {\n  box-sizing: border-box; /* 1 */\n  color: inherit; /* 2 */\n  display: table; /* 1 */\n  max-width: 100%; /* 1 */\n  padding: 0; /* 3 */\n  white-space: normal; /* 1 */\n}\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\n\nprogress {\n  vertical-align: baseline;\n}\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\n\ntextarea {\n  overflow: auto;\n}\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box; /* 1 */\n  padding: 0; /* 2 */\n}\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/* Interactive\n   ========================================================================== */\n\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\n\ndetails {\n  display: block;\n}\n\n/*\n * Add the correct display in all browsers.\n */\n\nsummary {\n  display: list-item;\n}\n\n/* Misc\n   ========================================================================== */\n\n/**\n * Add the correct display in IE 10+.\n */\n\ntemplate {\n  display: none;\n}\n\n/**\n * Add the correct display in IE 10.\n */\n\n[hidden] {\n  display: none;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/sass/vendors/normalize.css"],"names":[],"mappings":"AAAA,2EAA2E;;AAE3E;+EAC+E;;AAE/E;;;EAGE;;AAEF;EACE,iBAAiB,EAAE,MAAM;EACzB,8BAA8B,EAAE,MAAM;AACxC;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,SAAS;AACX;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;EACE,cAAc;EACd,gBAAgB;AAClB;;AAEA;+EAC+E;;AAE/E;;;EAGE;;AAEF;EACE,uBAAuB,EAAE,MAAM;EAC/B,SAAS,EAAE,MAAM;EACjB,iBAAiB,EAAE,MAAM;AAC3B;;AAEA;;;EAGE;;AAEF;EACE,iCAAiC,EAAE,MAAM;EACzC,cAAc,EAAE,MAAM;AACxB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,6BAA6B;AAC/B;;AAEA;;;EAGE;;AAEF;EACE,mBAAmB,EAAE,MAAM;EAC3B,0BAA0B,EAAE,MAAM;EAClC,iCAAiC,EAAE,MAAM;AAC3C;;AAEA;;EAEE;;AAEF;;EAEE,mBAAmB;AACrB;;AAEA;;;EAGE;;AAEF;;;EAGE,iCAAiC,EAAE,MAAM;EACzC,cAAc,EAAE,MAAM;AACxB;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;EAEE,cAAc;EACd,cAAc;EACd,kBAAkB;EAClB,wBAAwB;AAC1B;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,kBAAkB;AACpB;;AAEA;+EAC+E;;AAE/E;;;EAGE;;AAEF;;;;;EAKE,oBAAoB,EAAE,MAAM;EAC5B,eAAe,EAAE,MAAM;EACvB,iBAAiB,EAAE,MAAM;EACzB,SAAS,EAAE,MAAM;AACnB;;AAEA;;;EAGE;;AAEF;QACQ,MAAM;EACZ,iBAAiB;AACnB;;AAEA;;;EAGE;;AAEF;SACS,MAAM;EACb,oBAAoB;AACtB;;AAEA;;EAEE;;AAEF;;;;EAIE,0BAA0B;AAC5B;;AAEA;;EAEE;;AAEF;;;;EAIE,kBAAkB;EAClB,UAAU;AACZ;;AAEA;;EAEE;;AAEF;;;;EAIE,8BAA8B;AAChC;;AAEA;;EAEE;;AAEF;EACE,8BAA8B;AAChC;;AAEA;;;;;EAKE;;AAEF;EACE,sBAAsB,EAAE,MAAM;EAC9B,cAAc,EAAE,MAAM;EACtB,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,MAAM;EAClB,mBAAmB,EAAE,MAAM;AAC7B;;AAEA;;EAEE;;AAEF;EACE,wBAAwB;AAC1B;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;EAEE,sBAAsB,EAAE,MAAM;EAC9B,UAAU,EAAE,MAAM;AACpB;;AAEA;;EAEE;;AAEF;;EAEE,YAAY;AACd;;AAEA;;;EAGE;;AAEF;EACE,6BAA6B,EAAE,MAAM;EACrC,oBAAoB,EAAE,MAAM;AAC9B;;AAEA;;EAEE;;AAEF;EACE,wBAAwB;AAC1B;;AAEA;;;EAGE;;AAEF;EACE,0BAA0B,EAAE,MAAM;EAClC,aAAa,EAAE,MAAM;AACvB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;EAEE;;AAEF;EACE,kBAAkB;AACpB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,aAAa;AACf;;AAEA;;EAEE;;AAEF;EACE,aAAa;AACf","sourcesContent":["/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\r\n\r\n/* Document\r\n   ========================================================================== */\r\n\r\n/**\r\n * 1. Correct the line height in all browsers.\r\n * 2. Prevent adjustments of font size after orientation changes in iOS.\r\n */\r\n\r\nhtml {\r\n  line-height: 1.15; /* 1 */\r\n  -webkit-text-size-adjust: 100%; /* 2 */\r\n}\r\n\r\n/* Sections\r\n   ========================================================================== */\r\n\r\n/**\r\n * Remove the margin in all browsers.\r\n */\r\n\r\nbody {\r\n  margin: 0;\r\n}\r\n\r\n/**\r\n * Render the `main` element consistently in IE.\r\n */\r\n\r\nmain {\r\n  display: block;\r\n}\r\n\r\n/**\r\n * Correct the font size and margin on `h1` elements within `section` and\r\n * `article` contexts in Chrome, Firefox, and Safari.\r\n */\r\n\r\nh1 {\r\n  font-size: 2em;\r\n  margin: 0.67em 0;\r\n}\r\n\r\n/* Grouping content\r\n   ========================================================================== */\r\n\r\n/**\r\n * 1. Add the correct box sizing in Firefox.\r\n * 2. Show the overflow in Edge and IE.\r\n */\r\n\r\nhr {\r\n  box-sizing: content-box; /* 1 */\r\n  height: 0; /* 1 */\r\n  overflow: visible; /* 2 */\r\n}\r\n\r\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\r\n\r\npre {\r\n  font-family: monospace, monospace; /* 1 */\r\n  font-size: 1em; /* 2 */\r\n}\r\n\r\n/* Text-level semantics\r\n   ========================================================================== */\r\n\r\n/**\r\n * Remove the gray background on active links in IE 10.\r\n */\r\n\r\na {\r\n  background-color: transparent;\r\n}\r\n\r\n/**\r\n * 1. Remove the bottom border in Chrome 57-\r\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\r\n */\r\n\r\nabbr[title] {\r\n  border-bottom: none; /* 1 */\r\n  text-decoration: underline; /* 2 */\r\n  text-decoration: underline dotted; /* 2 */\r\n}\r\n\r\n/**\r\n * Add the correct font weight in Chrome, Edge, and Safari.\r\n */\r\n\r\nb,\r\nstrong {\r\n  font-weight: bolder;\r\n}\r\n\r\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\r\n\r\ncode,\r\nkbd,\r\nsamp {\r\n  font-family: monospace, monospace; /* 1 */\r\n  font-size: 1em; /* 2 */\r\n}\r\n\r\n/**\r\n * Add the correct font size in all browsers.\r\n */\r\n\r\nsmall {\r\n  font-size: 80%;\r\n}\r\n\r\n/**\r\n * Prevent `sub` and `sup` elements from affecting the line height in\r\n * all browsers.\r\n */\r\n\r\nsub,\r\nsup {\r\n  font-size: 75%;\r\n  line-height: 0;\r\n  position: relative;\r\n  vertical-align: baseline;\r\n}\r\n\r\nsub {\r\n  bottom: -0.25em;\r\n}\r\n\r\nsup {\r\n  top: -0.5em;\r\n}\r\n\r\n/* Embedded content\r\n   ========================================================================== */\r\n\r\n/**\r\n * Remove the border on images inside links in IE 10.\r\n */\r\n\r\nimg {\r\n  border-style: none;\r\n}\r\n\r\n/* Forms\r\n   ========================================================================== */\r\n\r\n/**\r\n * 1. Change the font styles in all browsers.\r\n * 2. Remove the margin in Firefox and Safari.\r\n */\r\n\r\nbutton,\r\ninput,\r\noptgroup,\r\nselect,\r\ntextarea {\r\n  font-family: inherit; /* 1 */\r\n  font-size: 100%; /* 1 */\r\n  line-height: 1.15; /* 1 */\r\n  margin: 0; /* 2 */\r\n}\r\n\r\n/**\r\n * Show the overflow in IE.\r\n * 1. Show the overflow in Edge.\r\n */\r\n\r\nbutton,\r\ninput { /* 1 */\r\n  overflow: visible;\r\n}\r\n\r\n/**\r\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\r\n * 1. Remove the inheritance of text transform in Firefox.\r\n */\r\n\r\nbutton,\r\nselect { /* 1 */\r\n  text-transform: none;\r\n}\r\n\r\n/**\r\n * Correct the inability to style clickable types in iOS and Safari.\r\n */\r\n\r\nbutton,\r\n[type=\"button\"],\r\n[type=\"reset\"],\r\n[type=\"submit\"] {\r\n  -webkit-appearance: button;\r\n}\r\n\r\n/**\r\n * Remove the inner border and padding in Firefox.\r\n */\r\n\r\nbutton::-moz-focus-inner,\r\n[type=\"button\"]::-moz-focus-inner,\r\n[type=\"reset\"]::-moz-focus-inner,\r\n[type=\"submit\"]::-moz-focus-inner {\r\n  border-style: none;\r\n  padding: 0;\r\n}\r\n\r\n/**\r\n * Restore the focus styles unset by the previous rule.\r\n */\r\n\r\nbutton:-moz-focusring,\r\n[type=\"button\"]:-moz-focusring,\r\n[type=\"reset\"]:-moz-focusring,\r\n[type=\"submit\"]:-moz-focusring {\r\n  outline: 1px dotted ButtonText;\r\n}\r\n\r\n/**\r\n * Correct the padding in Firefox.\r\n */\r\n\r\nfieldset {\r\n  padding: 0.35em 0.75em 0.625em;\r\n}\r\n\r\n/**\r\n * 1. Correct the text wrapping in Edge and IE.\r\n * 2. Correct the color inheritance from `fieldset` elements in IE.\r\n * 3. Remove the padding so developers are not caught out when they zero out\r\n *    `fieldset` elements in all browsers.\r\n */\r\n\r\nlegend {\r\n  box-sizing: border-box; /* 1 */\r\n  color: inherit; /* 2 */\r\n  display: table; /* 1 */\r\n  max-width: 100%; /* 1 */\r\n  padding: 0; /* 3 */\r\n  white-space: normal; /* 1 */\r\n}\r\n\r\n/**\r\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\r\n */\r\n\r\nprogress {\r\n  vertical-align: baseline;\r\n}\r\n\r\n/**\r\n * Remove the default vertical scrollbar in IE 10+.\r\n */\r\n\r\ntextarea {\r\n  overflow: auto;\r\n}\r\n\r\n/**\r\n * 1. Add the correct box sizing in IE 10.\r\n * 2. Remove the padding in IE 10.\r\n */\r\n\r\n[type=\"checkbox\"],\r\n[type=\"radio\"] {\r\n  box-sizing: border-box; /* 1 */\r\n  padding: 0; /* 2 */\r\n}\r\n\r\n/**\r\n * Correct the cursor style of increment and decrement buttons in Chrome.\r\n */\r\n\r\n[type=\"number\"]::-webkit-inner-spin-button,\r\n[type=\"number\"]::-webkit-outer-spin-button {\r\n  height: auto;\r\n}\r\n\r\n/**\r\n * 1. Correct the odd appearance in Chrome and Safari.\r\n * 2. Correct the outline style in Safari.\r\n */\r\n\r\n[type=\"search\"] {\r\n  -webkit-appearance: textfield; /* 1 */\r\n  outline-offset: -2px; /* 2 */\r\n}\r\n\r\n/**\r\n * Remove the inner padding in Chrome and Safari on macOS.\r\n */\r\n\r\n[type=\"search\"]::-webkit-search-decoration {\r\n  -webkit-appearance: none;\r\n}\r\n\r\n/**\r\n * 1. Correct the inability to style clickable types in iOS and Safari.\r\n * 2. Change font properties to `inherit` in Safari.\r\n */\r\n\r\n::-webkit-file-upload-button {\r\n  -webkit-appearance: button; /* 1 */\r\n  font: inherit; /* 2 */\r\n}\r\n\r\n/* Interactive\r\n   ========================================================================== */\r\n\r\n/*\r\n * Add the correct display in Edge, IE 10+, and Firefox.\r\n */\r\n\r\ndetails {\r\n  display: block;\r\n}\r\n\r\n/*\r\n * Add the correct display in all browsers.\r\n */\r\n\r\nsummary {\r\n  display: list-item;\r\n}\r\n\r\n/* Misc\r\n   ========================================================================== */\r\n\r\n/**\r\n * Add the correct display in IE 10+.\r\n */\r\n\r\ntemplate {\r\n  display: none;\r\n}\r\n\r\n/**\r\n * Add the correct display in IE 10.\r\n */\r\n\r\n[hidden] {\r\n  display: none;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2236,10 +2236,10 @@ module.exports = function (item) {
 
 /***/ }),
 
-/***/ "./src/menu.html":
-/*!***********************!*\
-  !*** ./src/menu.html ***!
-  \***********************/
+/***/ "./src/index.html":
+/*!************************!*\
+  !*** ./src/index.html ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2255,33 +2255,14 @@ var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(
 var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./img/logo.svg */ "./src/img/logo.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ./img/coffee-cup.svg */ "./src/img/coffee-cup.svg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ./img/burger-coffee-cup.svg */ "./src/img/burger-coffee-cup.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ./img/coffe-cup.svg */ "./src/img/coffe-cup.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./img/tea-cup.svg */ "./src/img/tea-cup.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./img/cake.svg */ "./src/img/cake.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./img/irish-coffee.png */ "./src/img/irish-coffee.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ./img/kahlua-coffee.png */ "./src/img/kahlua-coffee.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./img/honey-raf.png */ "./src/img/honey-raf.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./img/ice-cappuccino.png */ "./src/img/ice-cappuccino.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ./img/espresso.png */ "./src/img/espresso.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_12___ = new URL(/* asset import */ __webpack_require__(/*! ./img/latte.png */ "./src/img/latte.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_13___ = new URL(/* asset import */ __webpack_require__(/*! ./img/latte-macchiato.png */ "./src/img/latte-macchiato.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_14___ = new URL(/* asset import */ __webpack_require__(/*! ./img/coffee-with-cognac.png */ "./src/img/coffee-with-cognac.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_15___ = new URL(/* asset import */ __webpack_require__(/*! ./img/tea-1.png */ "./src/img/tea-1.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_16___ = new URL(/* asset import */ __webpack_require__(/*! ./img/tea-2.png */ "./src/img/tea-2.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_17___ = new URL(/* asset import */ __webpack_require__(/*! ./img/tea-3.png */ "./src/img/tea-3.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_18___ = new URL(/* asset import */ __webpack_require__(/*! ./img/tea-4.png */ "./src/img/tea-4.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_19___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dessert-1.png */ "./src/img/dessert-1.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_20___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dessert-2.png */ "./src/img/dessert-2.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_21___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dessert-3.png */ "./src/img/dessert-3.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_22___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dessert-4.png */ "./src/img/dessert-4.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_23___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dessert-5.png */ "./src/img/dessert-5.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_24___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dessert-6.png */ "./src/img/dessert-6.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_25___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dessert-7.png */ "./src/img/dessert-7.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_26___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dessert-8.png */ "./src/img/dessert-8.png"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_27___ = new URL(/* asset import */ __webpack_require__(/*! ./img/pin-alt.svg */ "./src/img/pin-alt.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_28___ = new URL(/* asset import */ __webpack_require__(/*! ./img/phone.svg */ "./src/img/phone.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_29___ = new URL(/* asset import */ __webpack_require__(/*! ./img/clock.svg */ "./src/img/clock.svg"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_30___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning__icon.svg */ "./src/img/warning__icon.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ./video/coffee-enjoy.mp4 */ "./src/video/coffee-enjoy.mp4"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./img/coffee-slider-1.svg */ "./src/img/coffee-slider-1.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./img/coffee-slider-2.svg */ "./src/img/coffee-slider-2.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./img/coffee-slider-3.svg */ "./src/img/coffee-slider-3.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ./img/mobile-screens.svg */ "./src/img/mobile-screens.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./img/pin-alt.svg */ "./src/img/pin-alt.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./img/phone.svg */ "./src/img/phone.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ./img/clock.svg */ "./src/img/clock.svg"), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
 var ___HTML_LOADER_REPLACEMENT_1___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_1___);
@@ -2295,26 +2276,7 @@ var ___HTML_LOADER_REPLACEMENT_8___ = _node_modules_html_loader_dist_runtime_get
 var ___HTML_LOADER_REPLACEMENT_9___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_9___);
 var ___HTML_LOADER_REPLACEMENT_10___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_10___);
 var ___HTML_LOADER_REPLACEMENT_11___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_11___);
-var ___HTML_LOADER_REPLACEMENT_12___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_12___);
-var ___HTML_LOADER_REPLACEMENT_13___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_13___);
-var ___HTML_LOADER_REPLACEMENT_14___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_14___);
-var ___HTML_LOADER_REPLACEMENT_15___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_15___);
-var ___HTML_LOADER_REPLACEMENT_16___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_16___);
-var ___HTML_LOADER_REPLACEMENT_17___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_17___);
-var ___HTML_LOADER_REPLACEMENT_18___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_18___);
-var ___HTML_LOADER_REPLACEMENT_19___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_19___);
-var ___HTML_LOADER_REPLACEMENT_20___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_20___);
-var ___HTML_LOADER_REPLACEMENT_21___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_21___);
-var ___HTML_LOADER_REPLACEMENT_22___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_22___);
-var ___HTML_LOADER_REPLACEMENT_23___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_23___);
-var ___HTML_LOADER_REPLACEMENT_24___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_24___);
-var ___HTML_LOADER_REPLACEMENT_25___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_25___);
-var ___HTML_LOADER_REPLACEMENT_26___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_26___);
-var ___HTML_LOADER_REPLACEMENT_27___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_27___);
-var ___HTML_LOADER_REPLACEMENT_28___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_28___);
-var ___HTML_LOADER_REPLACEMENT_29___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_29___);
-var ___HTML_LOADER_REPLACEMENT_30___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_30___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <link\r\n      rel=\"shortcut icon\"\r\n      href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\"\r\n      type=\"image/x-icon\"\r\n    />\r\n    <title>Menu</title>\r\n  </head>\r\n  <body>\r\n    <header class=\"header\">\r\n      <div class=\"header__wrapper wrapper\">\r\n        <div class=\"header__container\">\r\n          <div class=\"header__logo\">\r\n            <a href=\"./index.html\">\r\n              <img src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\" alt=\"logo__img\" class=\"logo_img\" />\r\n            </a>\r\n          </div>\r\n          <nav class=\"nav\">\r\n            <ul class=\"nav__list\">\r\n              <li class=\"nav__item\">\r\n                <a href=\"./index.html#favourite\" class=\"nav__item-link link\"\r\n                  >Favorite coffee</a\r\n                >\r\n              </li>\r\n              <li class=\"nav__item\">\r\n                <a href=\"./index.html#about\" class=\"nav__item-link link\"\r\n                  >About</a\r\n                >\r\n              </li>\r\n              <li class=\"nav__item\">\r\n                <a href=\"./index.html#mobile\" class=\"nav__item-link link\"\r\n                  >Mobile app</a\r\n                >\r\n              </li>\r\n              <li class=\"nav__item\">\r\n                <a href=\"#footer\" class=\"nav__item-link link\">Contact us</a>\r\n              </li>\r\n            </ul>\r\n          </nav>\r\n          <div class=\"header__menu header__menu_page1\">\r\n            <div class=\"menu__text\">\r\n              <a href=\"./menu.html\">Menu</a>\r\n            </div>\r\n            <img src=\"" + ___HTML_LOADER_REPLACEMENT_2___ + "\" alt=\"menu__img\" class=\"menu__img\" />\r\n          </div>\r\n          <div class=\"burger__btn\">\r\n            <div class=\"burger__line\"></div>\r\n            <div class=\"burger__line\"></div>\r\n          </div>\r\n        </div>\r\n        <div class=\"burger__menu\">\r\n          <ul class=\"burger__list\">\r\n            <li class=\"burger__item\">\r\n              <a href=\"#favourite\" class=\"burger__item-link link\"\r\n                >Favorite coffee</a\r\n              >\r\n            </li>\r\n            <li class=\"burger__item\">\r\n              <a href=\"#about\" class=\"burger__item-link link\">About</a>\r\n            </li>\r\n            <li class=\"burger__item\">\r\n              <a href=\"#mobile\" class=\"burger__item-link link\">Mobile app</a>\r\n            </li>\r\n            <li class=\"burger__item\">\r\n              <a href=\"#footer\" class=\"burger__item-link link\">Contact us</a>\r\n            </li>\r\n            <li class=\"burger__item\">\r\n              <a href=\"./menu.html\" class=\"menu__link\">Menu</a>\r\n              <img\r\n                src=\"" + ___HTML_LOADER_REPLACEMENT_3___ + "\"\r\n                alt=\"menu__img\"\r\n                class=\"menu__img\"\r\n              />\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </header>\r\n    <main>\r\n      <section class=\"menu\">\r\n        <div class=\"menu__wrapper wrapper\">\r\n          <h1 class=\"menu__title\">\r\n            Behind each of our cups hides an\r\n            <span class=\"title-span\">amazing surprise</span>\r\n          </h1>\r\n          <div class=\"menu__icons-container\">\r\n            <div class=\"icon__item-coffee icon__item icon__item--active\">\r\n              <div class=\"container_for__icon-coffee\">\r\n                <img src=\"" + ___HTML_LOADER_REPLACEMENT_4___ + "\" alt=\"coffee-cup\" />\r\n              </div>\r\n              <div class=\"icon__item-text-coffee\">Coffee</div>\r\n            </div>\r\n            <div class=\"icon__item-tea icon__item\">\r\n              <div class=\"container_for__icon-tea\">\r\n                <img src=\"" + ___HTML_LOADER_REPLACEMENT_5___ + "\" alt=\"tea\" />\r\n              </div>\r\n              <div class=\"icon__item-text-tea\">Tea</div>\r\n            </div>\r\n            <div class=\"icon__item-desert icon__item\">\r\n              <div class=\"container_for__icon-dessert\">\r\n                <img src=\"" + ___HTML_LOADER_REPLACEMENT_6___ + "\" alt=\"cake\" />\r\n              </div>\r\n              <div class=\"icon__item-text-dessert\">Dessert</div>\r\n            </div>\r\n          </div>\r\n          <!-- coffee -->\r\n          <div class=\"menu__drinks-list-container\">\r\n            <div\r\n              class=\"menu__drinks-list menu__drinks-list-coffee menu-list--active\"\r\n            >\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_7___ + "\"\r\n                    alt=\"irish-coffee\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Irish coffee</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Fragrant black coffee with Jameson Irish whiskey and whipped\r\n                    milk\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$7.00</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_8___ + "\"\r\n                    alt=\"kahlua-coffee\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Kahlua coffee</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Classic coffee with milk and Kahlua liqueur under a cap of\r\n                    frothed milk\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$7.00</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_9___ + "\"\r\n                    alt=\"honey-raf\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Honey raf</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Espresso with frothed milk, cream and aromatic honey\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$5.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_10___ + "\"\r\n                    alt=\"ice-cappuccino\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Ice cappuccino</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Cappuccino with soft thick foam in summer version with ice\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$5.00</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_11___ + "\"\r\n                    alt=\"Espresso\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Espresso</h3>\r\n                  <p class=\"drinks-item__description\">Classic black coffee</p>\r\n                  <p class=\"drinks-item__price price\">$4.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_12___ + "\"\r\n                    alt=\"latte\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Latte</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Espresso coffee with the addition of steamed milk and dense\r\n                    milk foam\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$5.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_13___ + "\"\r\n                    alt=\"latte-macchiato\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Latte macchiato</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Espresso with frothed milk and chocolate\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$5.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_14___ + "\"\r\n                    alt=\"coffee-with-cognac\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Coffee with cognac</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Fragrant black coffee with cognac and whipped cream\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$6.50</p>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- TEA -->\r\n            <div class=\"menu__drinks-list menu__drinks-list-tea\">\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_15___ + "\"\r\n                    alt=\"irish-coffee\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Moroccan</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Fragrant black tea with the addition of tangerine, cinnamon,\r\n                    honey, lemon and mint\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$4.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_16___ + "\"\r\n                    alt=\"kahlua-coffee\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Ginger</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Original black tea with fresh ginger, lemon and honey\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$5.00</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_17___ + "\"\r\n                    alt=\"honey-raf\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Cranberry</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Invigorating black tea with cranberry and honey\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$5.00</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_18___ + "\"\r\n                    alt=\"honey-raf\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Sea buckthorn</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Toning sweet black tea with sea buckthorn, fresh thyme and\r\n                    cinnamon\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$5.50</p>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- Dessert -->\r\n\r\n            <div class=\"menu__drinks-list\">\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_19___ + "\"\r\n                    alt=\"irish-coffee\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Marble cheesecake</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Philadelphia cheese with lemon zest on a light sponge cake\r\n                    and red currant jam\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$3.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_20___ + "\"\r\n                    alt=\"kahlua-coffee\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Red velvet</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Layer cake with cream cheese frosting\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$4.00</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_21___ + "\"\r\n                    alt=\"honey-raf\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Cheesecakes</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Soft cottage cheese pancakes with sour cream and fresh\r\n                    berries and sprinkled with powdered sugar\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$4.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_22___ + "\"\r\n                    alt=\"ice-cappuccino\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Creme brulee</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Delicate creamy dessert in a caramel basket with wild\r\n                    berries\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$4.00</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_23___ + "\"\r\n                    alt=\"irish-coffee\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Pancakes</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Tender pancakes with strawberry jam and fresh strawberries\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$4.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_24___ + "\"\r\n                    alt=\"kahlua-coffee\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Honey cake</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Classic honey cake with delicate custard\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$4.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_25___ + "\"\r\n                    alt=\"honey-raf\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Chocolate cake</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    Cake with hot chocolate filling and nuts with dried apricots\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$5.50</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"menu__drinks-item\">\r\n                <div class=\"menu__drinks-img_container\">\r\n                  <img\r\n                    src=\"" + ___HTML_LOADER_REPLACEMENT_26___ + "\"\r\n                    alt=\"ice-cappuccino\"\r\n                    class=\"menu__drinks-img\"\r\n                  />\r\n                </div>\r\n                <div class=\"drinks-item__container\">\r\n                  <h3 class=\"drinks-item__title title\">Black forest</h3>\r\n                  <p class=\"drinks-item__description\">\r\n                    A combination of thin sponge cake with cherry jam and light\r\n                    chocolate mousse\r\n                  </p>\r\n                  <p class=\"drinks-item__price price\">$6.50</p>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"menu__reboot\">\r\n            <svg\r\n              xmlns=\"http://www.w3.org/2000/svg\"\r\n              width=\"24\"\r\n              height=\"24\"\r\n              viewBox=\"0 0 24 24\"\r\n              fill=\"none\"\r\n            >\r\n              <path\r\n                class=\"menu__reboot_item\"\r\n                d=\"M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8\"\r\n                stroke=\"#403F3D\"\r\n                stroke-linecap=\"round\"\r\n                stroke-linejoin=\"round\"\r\n              />\r\n              <path\r\n                class=\"menu__reboot_item\"\r\n                d=\"M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3\"\r\n                stroke=\"#403F3D\"\r\n                stroke-linecap=\"round\"\r\n                stroke-linejoin=\"round\"\r\n              />\r\n            </svg>\r\n          </div>\r\n        </div>\r\n      </section>\r\n    </main>\r\n    <footer class=\"footer\" id=\"footer\">\r\n      <div class=\"footer__wrapper wrapper\">\r\n        <div class=\"footer__main-container\">\r\n          <div class=\"footer__left-container\">\r\n            <h2 class=\"footer__title title\">\r\n              Sip, Savor, Smile.\r\n              <span class=\"title-span\"> It’s coffee time!</span>\r\n            </h2>\r\n            <div class=\"left-container__img-list\">\r\n              <div class=\"left-container__img-item\">\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  width=\"24\"\r\n                  height=\"24\"\r\n                  viewBox=\"0 0 24 24\"\r\n                  fill=\"none\"\r\n                >\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z\"\r\n                    stroke=\"#E1D4C9\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                  />\r\n                </svg>\r\n              </div>\r\n              <div class=\"left-container__img-item\">\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  width=\"24\"\r\n                  height=\"24\"\r\n                  viewBox=\"0 0 24 24\"\r\n                  fill=\"none\"\r\n                >\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z\"\r\n                    stroke=\"#E1D4C9\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                  />\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z\"\r\n                    stroke=\"#E1D4C9\"\r\n                  />\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M17.5 6.51L17.51 6.49889\"\r\n                    stroke=\"#E1D4C9\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                  />\r\n                </svg>\r\n              </div>\r\n              <div class=\"left-container__img-item\">\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  width=\"24\"\r\n                  height=\"24\"\r\n                  viewBox=\"0 0 24 24\"\r\n                  fill=\"none\"\r\n                >\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z\"\r\n                    stroke=\"#E1D4C9\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                  />\r\n                </svg>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"footer_rigth__container\">\r\n            <p class=\"footer__contact-us\">Contact us</p>\r\n            <p class=\"footer__location\">\r\n              <a\r\n                href=\"https://www.google.com/maps/@35.7040744,139.5577317,3a,90y,288.14h,67.46t/data=!3m7!1e1!3m5!1sgT28ssf0BB2LxZ63JNcL1w!2e0!3e5!7i13312!8i6656\"\r\n                target=\"_blank\"\r\n                class=\"footer__link footer_rigth__container-item\"\r\n              >\r\n                <img\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_27___ + "\"\r\n                  alt=\"location\"\r\n                  class=\"location__img\"\r\n                />&nbsp; 8558 Green Rd., LA\r\n              </a>\r\n            </p>\r\n            <p class=\"footer__phone\">\r\n              <a\r\n                href=\"tel:+74957873422\"\r\n                target=\"_blank\"\r\n                class=\"footer__link footer_rigth__container-item\"\r\n              >\r\n                <img\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_28___ + "\"\r\n                  alt=\"phone\"\r\n                  class=\"phone__img\"\r\n                />&nbsp;&nbsp;+1 (603) 555-0123</a\r\n              >\r\n            </p>\r\n            <p class=\"footer__time-work footer_rigth__container-item\">\r\n              <img\r\n                src=\"" + ___HTML_LOADER_REPLACEMENT_29___ + "\"\r\n                alt=\"time-work\"\r\n                class=\"time-worl__img\"\r\n              />&nbsp;&nbsp;Mon-Sat: 9:00 AM – 23:00 PM\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </footer>\r\n    <!-- modal -->\r\n    <div class=\"modal__wrapper\">\r\n      <div class=\"modal__container\">\r\n        <div class=\"modal__img_container\">\r\n          <div class=\"modal__img_wrapper\">\r\n            <img\r\n              src=\"" + ___HTML_LOADER_REPLACEMENT_7___ + "\"\r\n              alt=\"espresso\"\r\n              class=\"modal__img\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"modal__content\">\r\n          <h3 class=\"modal__title\">Irish coffee</h3>\r\n          <p class=\"modal__description\">\r\n            Fragrant black coffee with Jameson Irish whiskey and whipped milk\r\n          </p>\r\n          <div class=\"modal__sizes_title\">Size</div>\r\n          <div class=\"modal__sizes\">\r\n            <div class=\"small__size size__container size--active\">\r\n              <div class=\"small__icon size__icon\">S</div>\r\n              <div class=\"icon__text\">200 ml</div>\r\n            </div>\r\n            <div class=\"medium__size size__container\">\r\n              <div class=\"medium__icon size__icon\">M</div>\r\n              <div class=\"icon__text\">300 ml</div>\r\n            </div>\r\n            <div class=\"large__size size__container\">\r\n              <div class=\"large__icon size__icon\">L</div>\r\n              <div class=\"icon__text\">400 ml</div>\r\n            </div>\r\n          </div>\r\n          <div class=\"modal__additives_title\">Additives</div>\r\n          <div class=\"modal__additives\">\r\n            <div class=\"sugar__additives additives__container\">\r\n              <div class=\"sugar__icon additives__icon\">1</div>\r\n              <div class=\"icon__text\">Sugar</div>\r\n            </div>\r\n            <div class=\"cinnamon__additives additives__container\">\r\n              <div class=\"cinnamon__icon additives__icon\">2</div>\r\n              <div class=\"icon__text\">Cinnamon</div>\r\n            </div>\r\n            <div class=\"syrup__additives additives__container\">\r\n              <div class=\"syrup__icon additives__icon\">3</div>\r\n              <div class=\"icon__text\">Syrup</div>\r\n            </div>\r\n          </div>\r\n          <div class=\"modal__total_container\">\r\n            <span class=\"total__text\">Total:</span>\r\n            <span class=\"total__cost\">$7.00</span>\r\n          </div>\r\n          <div class=\"modal__warning_container\">\r\n            <div class=\"warning__icon\">\r\n              <img src=\"" + ___HTML_LOADER_REPLACEMENT_30___ + "\" alt=\"warning\" />\r\n            </div>\r\n            <div class=\"warning__desription\">\r\n              The cost is not final. Download our mobile app to see the final\r\n              price and place your order. Earn loyalty points and enjoy your\r\n              favorite coffee with up to 20% discount.\r\n            </div>\r\n          </div>\r\n          <div class=\"modal__btn_close\">Close</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </body>\r\n</html>\r\n";
+var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <link\r\n      rel=\"shortcut icon\"\r\n      href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\"\r\n      type=\"image/x-icon\"\r\n    />\r\n    <title>Coffee-House</title>\r\n  </head>\r\n  <body>\r\n    <header class=\"header\">\r\n      <div class=\"header__wrapper wrapper\">\r\n        <div class=\"header__container\">\r\n          <div class=\"header__logo\">\r\n            <a href=\"./index.html\">\r\n              <img src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\" alt=\"logo__img\" class=\"logo_img\" />\r\n            </a>\r\n          </div>\r\n          <nav class=\"nav\">\r\n            <ul class=\"nav__list\">\r\n              <li class=\"nav__item\">\r\n                <a href=\"#favourite\" class=\"nav__item-link link\"\r\n                  >Favorite coffee</a\r\n                >\r\n              </li>\r\n              <li class=\"nav__item\">\r\n                <a href=\"#about\" class=\"nav__item-link link\">About</a>\r\n              </li>\r\n              <li class=\"nav__item\">\r\n                <a href=\"#mobile\" class=\"nav__item-link link\">Mobile app</a>\r\n              </li>\r\n              <li class=\"nav__item\">\r\n                <a href=\"#footer\" class=\"nav__item-link link\">Contact us</a>\r\n              </li>\r\n            </ul>\r\n          </nav>\r\n          <div class=\"header__menu header__menu_page1\">\r\n            <div class=\"menu__text menu__text_page-1\">\r\n              <a href=\"./menu.html\">Menu</a>\r\n            </div>\r\n            <img src=\"" + ___HTML_LOADER_REPLACEMENT_2___ + "\" alt=\"menu__img\" class=\"menu__img\" />\r\n          </div>\r\n          <div class=\"burger__btn\">\r\n            <div class=\"burger__line\"></div>\r\n            <div class=\"burger__line\"></div>\r\n          </div>\r\n        </div>\r\n        <div class=\"burger__menu\">\r\n          <ul class=\"burger__list\">\r\n            <li class=\"burger__item\">\r\n              <a href=\"#favourite\" class=\"burger__item-link link\"\r\n                >Favorite coffee</a\r\n              >\r\n            </li>\r\n            <li class=\"burger__item\">\r\n              <a href=\"#about\" class=\"burger__item-link link\">About</a>\r\n            </li>\r\n            <li class=\"burger__item\">\r\n              <a href=\"#mobile\" class=\"burger__item-link link\">Mobile app</a>\r\n            </li>\r\n            <li class=\"burger__item\">\r\n              <a href=\"#footer\" class=\"burger__item-link link\">Contact us</a>\r\n            </li>\r\n            <li class=\"burger__item\">\r\n              <a href=\"./menu.html\" class=\"menu__link\">Menu</a>\r\n              <img\r\n                src=\"" + ___HTML_LOADER_REPLACEMENT_3___ + "\"\r\n                alt=\"menu__img\"\r\n                class=\"menu__img\"\r\n              />\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </header>\r\n    <main class=\"main\">\r\n      <section class=\"enjoy\">\r\n        <div class=\"enjoy__wrapper wrapper\">\r\n          <div class=\"enjoy__external_contrainer\">\r\n            <video\r\n              src=\"" + ___HTML_LOADER_REPLACEMENT_4___ + "\"\r\n              autoplay\r\n              loop\r\n              muted\r\n              playsinline\r\n              class=\"enjoy__video\"\r\n            ></video>\r\n\r\n            <div class=\"enjoy__container\">\r\n              <h1 class=\"enjoy__title title\">\r\n                <span class=\"title-span\">Enjoy</span> premium coffee at our\r\n                charming cafe\r\n              </h1>\r\n              <p class=\"enjoy__text\">\r\n                With its inviting atmosphere and delicious coffee options, the\r\n                Coffee House Resource is a popular destination for coffee lovers\r\n                and those seeking a warm and inviting space to enjoy their\r\n                favorite beverage.\r\n              </p>\r\n              <form action=\"./menu.html\">\r\n                <button type=\"submit\" class=\"enjoy__btn_meny\">\r\n                  <span class=\"enjoy__btn_text\">Menu</span>\r\n                </button>\r\n              </form>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </section>\r\n      <section class=\"favorites-coffee\" id=\"favourite\">\r\n        <div class=\"coffee__wrapper wrapper\">\r\n          <h2 class=\"coffee__title title\">\r\n            Choose your <span class=\"title-span\">favorite</span> coffee\r\n          </h2>\r\n          <div class=\"coffee__container-external\">\r\n            <div class=\"arrow-left\">\r\n              <svg\r\n                xmlns=\"http://www.w3.org/2000/svg\"\r\n                width=\"14\"\r\n                height=\"14\"\r\n                viewBox=\"0 0 14 14\"\r\n                fill=\"none\"\r\n              >\r\n                <path\r\n                  class=\"arrow-left__svg\"\r\n                  d=\"M13.5 7H1M1 7L7 1M1 7L7 13\"\r\n                  stroke=\"#403F3D\"\r\n                  stroke-linecap=\"round\"\r\n                  stroke-linejoin=\"round\"\r\n                />\r\n              </svg>\r\n            </div>\r\n            <div class=\"coffee__container-internal\">\r\n              <div class=\"coffee__slider\">\r\n                <div class=\"slider__item\">\r\n                  <img\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_5___ + "\"\r\n                  alt=\"coffee__img\"\r\n                  class=\"coffee_img\"\r\n                />\r\n                <h3 class=\"coffee__name title\">S’mores Frappuccino</h3>\r\n                <p class=\"coffee__description\">\r\n                  This new drink takes an espresso and mixes it with brown sugar\r\n                  and cinnamon before being topped with oat milk.\r\n                </p>\r\n                <div class=\"coffee__price price\">$5.50</div>\r\n                </div>\r\n                <div class=\"slider__item\">\r\n                  <img\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_6___ + "\"\r\n                  alt=\"coffee__img\"\r\n                  class=\"coffee_img coffee_img-none\"\r\n                />\r\n                <h3 class=\"coffee__name title\">Caramel Macchiato</h3>\r\n                <p class=\"coffee__description\">\r\n                  Fragrant and unique classic espresso with rich caramel-peanut syrup, with the addition of delicate cream under whipped thick foam.\r\n                </p>\r\n                <div class=\"coffee__price price\">$5.00</div>\r\n                </div>\r\n                <div class=\"slider__item\">\r\n                  <img\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_7___ + "\"\r\n                  alt=\"coffee__img\"\r\n                  class=\"coffee_img coffee_img-none\"\r\n                />\r\n                <h3 class=\"coffee__name title\">Ice coffee</h3>\r\n                <p class=\"coffee__description\">\r\n                  A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.\r\n                </p>\r\n                <div class=\"coffee__price price\">$4.50</div>\r\n                </div>\r\n              </div>\r\n             \r\n              <div class=\"coffee__controls-list\">\r\n                <div class=\"coffee__control-item coffee__control-item--active\">\r\n                  <div class=\"coffee__control-progress\"></div>\r\n                </div>\r\n                <div class=\"coffee__control-item\">\r\n                  <div class=\"coffee__control-progress\"></div>\r\n                </div>\r\n                <div class=\"coffee__control-item\">\r\n                  <div class=\"coffee__control-progress\"></div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"arrow-right\">\r\n              <svg\r\n                xmlns=\"http://www.w3.org/2000/svg\"\r\n                width=\"24\"\r\n                height=\"24\"\r\n                viewBox=\"0 0 24 24\"\r\n                fill=\"none\"\r\n              >\r\n                <path\r\n                  class=\"arrow-right__svg\"\r\n                  d=\"M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18\"\r\n                  stroke=\"#403F3D\"\r\n                  stroke-linecap=\"round\"\r\n                  stroke-linejoin=\"round\"\r\n                />\r\n              </svg>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </section>\r\n\r\n      <section class=\"about\" id=\"about\">\r\n        <div class=\"about__wrapper wrapper\">\r\n          <div class=\"about__container\">\r\n            <h2 class=\"about__title title\">\r\n              Resource is<span class=\"title-span\">\r\n                the perfect and cozy place</span\r\n              >\r\n              where you can enjoy a variety of hot beverages, relax, catch up\r\n              with friends, or get some work done.\r\n            </h2>\r\n            <div class=\"about__img-container\">\r\n              <div class=\"img-wrapper\">\r\n                <div class=\"img-container__item-1 img-container__item\"></div>\r\n              </div>\r\n              <div class=\"img-wrapper img-wrapper-2\">\r\n                <div class=\"img-container__item-2 img-container__item\"></div>\r\n              </div>\r\n              <div class=\"img-wrapper\">\r\n                <div class=\"img-container__item-3 img-container__item\"></div>\r\n              </div>\r\n              <div class=\"img-wrapper img-wrapper-4\">\r\n                <div class=\"img-container__item-4 img-container__item\"></div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </section>\r\n      <section class=\"mobile-app\" id=\"mobile\">\r\n        <div class=\"mobile__wrapper wrapper\">\r\n          <div class=\"mobile__main-container\">\r\n            <div class=\"mobile__left-container\">\r\n              <h2 class=\"left-container__title title\">\r\n                <span class=\"title-span\"> Download</span> our apps to start\r\n                ordering\r\n              </h2>\r\n              <p class=\"left-container__text\">\r\n                Download the Resource app today and experience the comfort of\r\n                ordering your favorite coffee from wherever you are\r\n              </p>\r\n              <div class=\"left-container__app-container\">\r\n                <a href=\"https://www.apple.com/app-store/\">\r\n                  <div class=\"app-store_container\">\r\n                    <svg\r\n                      xmlns=\"http://www.w3.org/2000/svg\"\r\n                      width=\"36\"\r\n                      height=\"36\"\r\n                      viewBox=\"0 0 36 36\"\r\n                      fill=\"none\"\r\n                      class=\"app-store__img\"\r\n                    >\r\n                      <path\r\n                        class=\"app-store__svg\"\r\n                        d=\"M26.7063 18.6307C26.6694 14.6324 30.0641 12.6872 30.2193 12.5966C28.2967 9.86366 25.3169 9.49026 24.2697 9.46048C21.767 9.20369 19.3393 10.9206 18.0644 10.9206C16.764 10.9206 14.8008 9.48529 12.6848 9.52747C9.96196 9.56841 7.41468 11.1055 6.01762 13.4923C3.13444 18.359 5.28474 25.5108 8.04705 29.4446C9.42884 31.3712 11.0435 33.5223 13.1569 33.4466C15.2245 33.3635 15.9968 32.1614 18.4919 32.1614C20.9641 32.1614 21.6893 33.4466 23.8447 33.3983C26.0637 33.3635 27.4608 31.463 28.7942 29.519C30.3911 27.3108 31.0323 25.1362 31.0578 25.0245C31.0056 25.0071 26.7483 23.4229 26.7063 18.6307Z\"\r\n                        fill=\"#403F3D\"\r\n                      />\r\n                      <path\r\n                        class=\"app-store__svg\"\r\n                        d=\"M22.6347 6.87268C23.7468 5.51675 24.5076 3.67205 24.2964 1.80005C22.6869 1.86952 20.674 2.88554 19.5149 4.21169C18.4893 5.38029 17.5732 7.29571 17.8099 9.097C19.6179 9.2285 21.4743 8.20752 22.6347 6.87268Z\"\r\n                        fill=\"#403F3D\"\r\n                      />\r\n                    </svg>\r\n                    <div class=\"app-store__text\">\r\n                      <p class=\"app-store__top-text\">Available on the</p>\r\n                      <p class=\"app-store__bottom-text\">App Store</p>\r\n                    </div>\r\n                  </div>\r\n                </a>\r\n                <a href=\"https://play.google.com/store/games?hl=ru&gl=US\">\r\n                  <div class=\"google-play_container\">\r\n                    <svg\r\n                      xmlns=\"http://www.w3.org/2000/svg\"\r\n                      width=\"36\"\r\n                      height=\"36\"\r\n                      viewBox=\"0 0 36 36\"\r\n                      fill=\"none\"\r\n                      class=\"google-play__img\"\r\n                    >\r\n                      <path\r\n                        class=\"google-play__svg\"\r\n                        d=\"M3.7558 3.20297C3.39335 3.57289 3.18359 4.14884 3.18359 4.89471V31.4994C3.18359 32.2453 3.39335 32.8212 3.7558 33.1911L3.84525 33.2723L19.1359 18.37V18.0181L3.84525 3.11575L3.7558 3.20297Z\"\r\n                        fill=\"#403F3D\"\r\n                      />\r\n                      <path\r\n                        class=\"google-play__svg\"\r\n                        d=\"M26.0776 23.34L20.9863 18.37V18.0181L26.0837 13.0482L26.1979 13.1128L32.2345 16.4617C33.9573 17.4121 33.9573 18.976 32.2345 19.9324L26.1979 23.2753L26.0776 23.34Z\"\r\n                        fill=\"#403F3D\"\r\n                      />\r\n                      <path\r\n                        class=\"google-play__svg\"\r\n                        d=\"M25.2733 24.2007L20.0617 19.1195L4.68164 34.1166C5.25384 34.7031 6.18695 34.7737 7.24807 34.1873L25.2733 24.2007Z\"\r\n                        fill=\"#403F3D\"\r\n                      />\r\n                      <path\r\n                        class=\"google-play__svg\"\r\n                        d=\"M25.2733 12.1876L7.24807 2.20103C6.18695 1.62058 5.25384 1.69125 4.68164 2.27772L20.0617 17.2688L25.2733 12.1876Z\"\r\n                        fill=\"#403F3D\"\r\n                      />\r\n                    </svg>\r\n                    <div class=\"google-play__text\">\r\n                      <p class=\"google-play__top-text\">Available on</p>\r\n                      <p class=\"google-play__bottom-text\">Google Play</p>\r\n                    </div>\r\n                  </div>\r\n                </a>\r\n              </div>\r\n            </div>\r\n            <div class=\"mobile__right-container\">\r\n              <img\r\n                src=\"" + ___HTML_LOADER_REPLACEMENT_8___ + "\"\r\n                alt=\"mobile-screens\"\r\n                class=\"right-container__img\"\r\n              />\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </section>\r\n    </main>\r\n    <footer class=\"footer\" id=\"footer\">\r\n      <div class=\"footer__wrapper wrapper\">\r\n        <div class=\"footer__main-container\">\r\n          <div class=\"footer__left-container\">\r\n            <h2 class=\"footer__title title\">\r\n              Sip, Savor, Smile.\r\n              <span class=\"title-span\"> It’s coffee time!</span>\r\n            </h2>\r\n            <div class=\"left-container__img-list\">\r\n              <div class=\"left-container__img-item\">\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  width=\"24\"\r\n                  height=\"24\"\r\n                  viewBox=\"0 0 24 24\"\r\n                  fill=\"none\"\r\n                >\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z\"\r\n                    stroke=\"#E1D4C9\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                  />\r\n                </svg>\r\n              </div>\r\n              <div class=\"left-container__img-item\">\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  width=\"24\"\r\n                  height=\"24\"\r\n                  viewBox=\"0 0 24 24\"\r\n                  fill=\"none\"\r\n                >\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z\"\r\n                    stroke=\"#E1D4C9\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                  />\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z\"\r\n                    stroke=\"#E1D4C9\"\r\n                  />\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M17.5 6.51L17.51 6.49889\"\r\n                    stroke=\"#E1D4C9\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                  />\r\n                </svg>\r\n              </div>\r\n              <div class=\"left-container__img-item\">\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  width=\"24\"\r\n                  height=\"24\"\r\n                  viewBox=\"0 0 24 24\"\r\n                  fill=\"none\"\r\n                >\r\n                  <path\r\n                    class=\"left-container__img-svg\"\r\n                    d=\"M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z\"\r\n                    stroke=\"#E1D4C9\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                  />\r\n                </svg>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"footer_rigth__container\">\r\n            <p class=\"footer__contact-us\">Contact us</p>\r\n            <p class=\"footer__location\">\r\n              <a\r\n                href=\"https://www.google.com/maps/@35.7040744,139.5577317,3a,90y,288.14h,67.46t/data=!3m7!1e1!3m5!1sgT28ssf0BB2LxZ63JNcL1w!2e0!3e5!7i13312!8i6656\"\r\n                target=\"_blank\"\r\n                class=\"footer__link footer_rigth__container-item\"\r\n              >\r\n                <img\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_9___ + "\"\r\n                  alt=\"location\"\r\n                  class=\"location__img\"\r\n                />&nbsp; 8558 Green Rd., LA\r\n              </a>\r\n            </p>\r\n            <p class=\"footer__phone\">\r\n              <a\r\n                href=\"tel:+74957873422\"\r\n                target=\"_blank\"\r\n                class=\"footer__link footer_rigth__container-item\"\r\n              >\r\n                <img\r\n                  src=\"" + ___HTML_LOADER_REPLACEMENT_10___ + "\"\r\n                  alt=\"phone\"\r\n                  class=\"phone__img\"\r\n                />&nbsp;&nbsp;+1 (603) 555-0123</a\r\n              >\r\n            </p>\r\n            <p class=\"footer__time-work footer_rigth__container-item\">\r\n              <img\r\n                src=\"" + ___HTML_LOADER_REPLACEMENT_11___ + "\"\r\n                alt=\"time-work\"\r\n                class=\"time-worl__img\"\r\n              />&nbsp;&nbsp;Mon-Sat: 9:00 AM – 23:00 PM\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </footer>\r\n  </body>\r\n</html>\r\n";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -2727,981 +2689,145 @@ setInterval(checkingWidth, 1000);
 
 /***/ }),
 
-/***/ "./src/modules/modal-json.js":
-/*!***********************************!*\
-  !*** ./src/modules/modal-json.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/modules/slider.js":
+/*!*******************************!*\
+  !*** ./src/modules/slider.js ***!
+  \*******************************/
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   jsonModal: () => (/* binding */ jsonModal)
-/* harmony export */ });
-const jsonModal=[
-    {
-      "name": "Irish coffee",
-      "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
-      "price": "7.00",
-      "category": "coffee",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Cinnamon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Kahlua coffee",
-      "description": "Classic coffee with milk and Kahlua liqueur under a cap of frothed milk",
-      "price": "7.00",
-      "category": "coffee",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Cinnamon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Honey raf",
-      "description": "Espresso with frothed milk, cream and aromatic honey",
-      "price": "5.50",
-      "category": "coffee",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Cinnamon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Ice cappuccino",
-      "description": "Cappuccino with soft thick foam in summer version with ice",
-      "price": "5.00",
-      "category": "coffee",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Cinnamon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Espresso",
-      "description": "Classic black coffee",
-      "price": "4.50",
-      "category": "coffee",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Cinnamon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Latte",
-      "description": "Espresso coffee with the addition of steamed milk and dense milk foam",
-      "price": "5.50",
-      "category": "coffee",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Cinnamon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Latte macchiato",
-      "description": "Espresso with frothed milk and chocolate",
-      "price": "5.50",
-      "category": "coffee",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Cinnamon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Coffee with cognac",
-      "description": "Fragrant black coffee with cognac and whipped cream",
-      "price": "6.50",
-      "category": "coffee",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Cinnamon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Moroccan",
-      "description": "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
-      "price": "4.50",
-      "category": "tea",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Lemon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Ginger",
-      "description": "Original black tea with fresh ginger, lemon and honey",
-      "price": "5.00",
-      "category": "tea",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Lemon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Cranberry",
-      "description": "Invigorating black tea with cranberry and honey",
-      "price": "5.00",
-      "category": "tea",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Lemon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Sea buckthorn",
-      "description": "Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon",
-      "price": "5.50",
-      "category": "tea",
-      "sizes": {
-        "s": {
-          "size": "200 ml",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "300 ml",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "400 ml",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Sugar",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Lemon",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Syrup",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Marble cheesecake",
-      "description": "Philadelphia cheese with lemon zest on a light sponge cake and red currant jam",
-      "price": "3.50",
-      "category": "dessert",
-      "sizes": {
-        "s": {
-          "size": "50 g",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "100 g",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "200 g",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Berries",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Nuts",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Jam",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Red velvet",
-      "description": "Layer cake with cream cheese frosting",
-      "price": "4.00",
-      "category": "dessert",
-      "sizes": {
-        "s": {
-          "size": "50 g",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "100 g",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "200 g",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Berries",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Nuts",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Jam",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Cheesecakes",
-      "description": "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
-      "price": "4.50",
-      "category": "dessert",
-      "sizes": {
-        "s": {
-          "size": "50 g",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "100 g",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "200 g",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Berries",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Nuts",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Jam",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Creme brulee",
-      "description": "Delicate creamy dessert in a caramel basket with wild berries",
-      "price": "4.00",
-      "category": "dessert",
-      "sizes": {
-        "s": {
-          "size": "50 g",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "100 g",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "200 g",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Berries",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Nuts",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Jam",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Pancakes",
-      "description": "Tender pancakes with strawberry jam and fresh strawberries",
-      "price": "4.50",
-      "category": "dessert",
-      "sizes": {
-        "s": {
-          "size": "50 g",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "100 g",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "200 g",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Berries",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Nuts",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Jam",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Honey cake",
-      "description": "Classic honey cake with delicate custard",
-      "price": "4.50",
-      "category": "dessert",
-      "sizes": {
-        "s": {
-          "size": "50 g",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "100 g",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "200 g",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Berries",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Nuts",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Jam",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Chocolate cake",
-      "description": "Cake with hot chocolate filling and nuts with dried apricots",
-      "price": "5.50",
-      "category": "dessert",
-      "sizes": {
-        "s": {
-          "size": "50 g",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "100 g",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "200 g",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Berries",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Nuts",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Jam",
-          "add-price": "0.50"
-        }
-      ]
-    },
-  
-    {
-      "name": "Black forest",
-      "description": "A combination of thin sponge cake with cherry jam and light chocolate mousse",
-      "price": "6.50",
-      "category": "dessert",
-      "sizes": {
-        "s": {
-          "size": "50 g",
-          "add-price": "0.00"
-        },
-        "m": {
-          "size": "100 g",
-          "add-price": "0.50"
-        },
-        "l": {
-          "size": "200 g",
-          "add-price": "1.00"
-        }
-      },
-      "additives": [
-        {
-          "name": "Berries",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Nuts",
-          "add-price": "0.50"
-        },
-        {
-          "name": "Jam",
-          "add-price": "0.50"
-        }
-      ]
+const slider = document.querySelector(".coffee__slider");
+const sliderItem = document.querySelectorAll(".slider__item");
+const arrowLeft = document.querySelector(".arrow-left");
+const arrowRight = document.querySelector(".arrow-right");
+const progressBar = document.querySelectorAll(".coffee__control-progress");
+let width = 0;
+let sliderCount = 0;
+let position = 0;
+let fillInterval;
+let x1 = 0;
+let firstPosition;
+let moveSlide;
+function checkPosition() {
+  if (window.innerWidth >= 701) {
+    moveSlide = 480;
+    if (sliderCount < 0) {
+      position = -1440;
+      sliderCount = 2;
+    } else if (sliderCount > 2) {
+      position = 480;
+      sliderCount = 0;
     }
-  ]
-
-/***/ }),
-
-/***/ "./src/modules/modal.js":
-/*!******************************!*\
-  !*** ./src/modules/modal.js ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   changeAdditiveText: () => (/* binding */ changeAdditiveText)
-/* harmony export */ });
-/* harmony import */ var _modal_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal-json */ "./src/modules/modal-json.js");
-
-const modalItem = document.querySelectorAll(".menu__drinks-item");
-const modal = document.querySelector(".modal__container");
-const modalImg = document.querySelector(".modal__img");
-const modalTitle = document.querySelector(".modal__title");
-const modalDesription = document.querySelector(".modal__description");
-const modalCost = document.querySelector(".total__cost");
-const closeBtn = document.querySelector(".modal__btn_close");
-const body = document.querySelector("body");
-const modalWrapper = document.querySelector(".modal__wrapper");
-const drinksImg = document.querySelectorAll(".menu__drinks-img");
-const sizeCost = document.querySelectorAll(".size__container");
-const additivesCost = document.querySelectorAll(".additives__container");
-const drinksCost = document.querySelectorAll(".drinks-item__price");
-
-let globalCost = 0;
-
-additivesCost.forEach((e) => {
-  e.addEventListener("click", () => {
-    e.classList.toggle("size--active");
-    if (e.classList.contains("size--active")) {
-      globalCost = +globalCost + 0.5;
-      modalCost.innerHTML = `$${globalCost.toFixed(2)}`;
-    } else {
-      globalCost = +globalCost - 0.5;
-      modalCost.innerHTML = `$${globalCost.toFixed(2)}`;
+  }
+  if (window.innerWidth <= 700) {
+    moveSlide = 348;
+    if (sliderCount < 0) {
+      sliderCount = 2;
+      position = -1044;
+    } else if (sliderCount > 2) {
+      position = 348;
+      sliderCount = 0;
     }
-  });
-});
-
-let indexOfItem = 0;
-
-sizeCost.forEach((e, i) => {
-  e.addEventListener("click", () => changeCost(e, i));
-});
-
-modalItem.forEach((e, index) => {
-  e.addEventListener("click", () => openModal(index));
-});
-
-closeBtn.addEventListener("click", closeModal);
-window.addEventListener("click", (e) => {
-  if (e.target == modalWrapper) {
-    closeModal();
-  }
-});
-
-function removeAdditives() {
-  additivesCost.forEach((e) => {
-    e.classList.remove("size--active");
-  });
-}
-
-function changeCost(element, index) {
-  let cost = drinksCost[indexOfItem].innerHTML.slice(1);
-  sizeCost.forEach((e) => {
-    e.classList.remove("size--active");
-  });
-  cost = +cost + 0.5 * index;
-  globalCost = +cost;
-  modalCost.innerHTML = `$${globalCost.toFixed(2)}`;
-  element.classList.add("size--active");
-  removeAdditives();
-}
-
-function openModal(index) {
-  modalImg.src = drinksImg[index].src;
-  modalTitle.innerHTML = _modal_json__WEBPACK_IMPORTED_MODULE_0__.jsonModal[index].name;
-  modalDesription.innerHTML = _modal_json__WEBPACK_IMPORTED_MODULE_0__.jsonModal[index].description;
-  modalCost.innerHTML = _modal_json__WEBPACK_IMPORTED_MODULE_0__.jsonModal[index].price;
-  modal.classList.add("modal--active");
-  body.classList.add("stop--scrol");
-  modalWrapper.classList.add("modal__wrapper--active");
-  indexOfItem = index;
-  sizeCost.forEach((e, i) => {
-    e.classList.remove("size--active");
-  });
-  globalCost = drinksCost[index].innerHTML;
-  globalCost = globalCost.slice(1);
-  modalCost.innerHTML = drinksCost[index].innerHTML;
-
-  sizeCost[0].classList.add("size--active");
-}
-
-function closeModal() {
-  modal.classList.remove("modal--active");
-  body.classList.remove("stop--scroll");
-  modalWrapper.classList.remove("modal__wrapper--active");
-  removeAdditives();
-  body.classList.remove("stop--scrol");
-  sizeCost.forEach((e) => {
-    e.classList.remove("size--active");
-  });
-  sizeCost[0].classList.add("size--active");
-}
-
-function changeAdditiveText(index) {
-  console.log(1);
-  const additivesText = document.querySelectorAll(".icon__text");
-  console.log(additivesText[0].innerHTML);
-  if (index === 0) {
-    additivesText[0].innerText = "200 ml";
-    additivesText[1].innerHTML = "300 ml";
-    additivesText[2].innerHTML = "400 ml";
-    additivesText[3].innerText = "Sugar";
-    additivesText[4].innerHTML = "Cinammon";
-    additivesText[5].innerHTML = "Syrup";
-  } else if (index === 1) {
-    additivesText[0].innerText = "200 ml";
-    additivesText[1].innerHTML = "300 ml";
-    additivesText[2].innerHTML = "400 ml";
-    additivesText[3].innerText = "Sugar";
-    additivesText[4].innerHTML = "Lemon";
-    additivesText[5].innerHTML = "Syrup";
-  }
-  if (index === 2) {
-    additivesText[0].innerText = "50 g";
-    additivesText[1].innerHTML = "100 g";
-    additivesText[2].innerHTML = "150 g";
-    additivesText[3].innerText = "Berries";
-    additivesText[4].innerHTML = "Nuts";
-    additivesText[5].innerHTML = "Jam";
   }
 }
-
-
-/***/ }),
-
-/***/ "./src/modules/switcher.js":
-/*!*********************************!*\
-  !*** ./src/modules/switcher.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ "./src/modules/modal.js");
-
-
-const icon = document.querySelectorAll(".icon__item");
-const menuLists = document.querySelectorAll(".menu__drinks-list");
-const reboot = document.querySelector(".menu__reboot");
-const menuItem = document.querySelectorAll(".menu__drinks-item");
-
-icon.forEach((e, i) => {
-  e.addEventListener("click", () => {
-    removeIconClass();
-    removeListClass();
-    addItemClass(e);
-    addListClass(i);
-    (0,_modal__WEBPACK_IMPORTED_MODULE_0__.changeAdditiveText)(i);
-    if (window.innerWidth <= 768) {
-      if (i == 1) {
-        hideReboot();
-      } else {
-        addReboot();
-        hideItems(i);
-      }
-    }
-  });
-});
-
-reboot.addEventListener("click", showMore);
-
-function checkHideItems() {
-  if (menuLists[0].children.length > 3) {
-    Array.from(menuLists[0].children).forEach((e, i) => {
-      if (i > 3) {
-        e.classList.add("menu-item--hide");
-      }
-    });
-  }
-}
-
-function hideItems(index) {
-  if (menuLists[index].children.length > 3) {
-    Array.from(menuLists[index].children).forEach((e, i) => {
-      if (i > 3) {
-        e.classList.add("menu-item--hide");
-      }
-    });
-  }
-}
-
-function showMore() {
-  console.log(1);
-  reboot.classList.add("reboot--active");
-  setTimeout(hideReboot, 2900);
-  setTimeout(showItem, 3100);
-}
-
-function showItem() {
-  menuItem.forEach((e) => {
-    clearInterval(hideInterval);
-    e.classList.remove("menu-item--hide");
-  });
-}
-
-function hideReboot() {
-  reboot.classList.add("reboot--hide");
-}
-function checkWindow() {
-  if (window.innerWidth <= 768) {
-    checkHideItems();
-  }
-}
-
-function removeIconClass() {
-  icon.forEach((e) => {
-    e.classList.remove("icon__item--active");
-  });
-}
-
-function removeListClass() {
-  menuLists.forEach((e) => {
-    e.classList.remove("menu-list--active");
-  });
-}
-
-function addListClass(index) {
-  menuLists[index].classList.add("menu-list--active");
-}
-
-function addItemClass(elem) {
-  elem.classList.add("icon__item--active");
-}
-
-function addReboot() {
-  reboot.classList.remove("reboot--active");
-  reboot.classList.remove("reboot--hide");
-}
-
 window.addEventListener("resize", () => {
-  if (window.innerWidth <= 768) {
-    icon.forEach((e, i) => {
-      if (i != 1) {
-        hideItems(i);
-      }
-    });
-  } else {
-    showItem();
-  }
-  if (!menuLists[1].classList.contains("menu-list--active")) {
-    addReboot();
-  }
+  sliderCount = 0;
+  position = 0;
+  slider.style.transform = `translateX(${position}px)`;
+  clearProgressBar();
 });
 
-let hideInterval = setInterval(checkWindow, 1000);
+function moveRight() {
+  sliderCount++;
+  checkPosition();
+  stopFiling();
+  clearProgressBar();
+  startFiling();
+  position = position - moveSlide;
+  slider.style.transform = `translateX(${position}px)`;
+}
+
+function moveLeft() {
+  sliderCount--;
+  checkPosition();
+  stopFiling();
+  clearProgressBar();
+  startFiling();
+  position = position + moveSlide;
+  slider.style.transform = `translateX(${position}px)`;
+}
+
+function fillingProgressBar() {
+  if (width >= 100) {
+    width = 0;
+    progressBar[sliderCount].style.width = `${width}%`;
+    moveRight();
+  } else {
+    width = width + 10;
+    progressBar[sliderCount].style.width = `${width}%`;
+  }
+}
+
+function clearProgressBar() {
+  progressBar.forEach((bar) => {
+    width = 0;
+    bar.style.width = `${width}%`;
+  });
+}
+
+function touchStart(e) {
+  let firstTouch = e.touches[0];
+  x1 = firstTouch.clientX;
+  stopFiling();
+}
+function touchMove(e) {
+  if (!x1) {
+    return false;
+  }
+  let secondTouch = e.changedTouches[0];
+  let x2 = secondTouch.clientX;
+  if (x1 - x2 > 100) {
+    moveRight();
+  } else if (x2 - x1 > 100) {
+    moveLeft();
+  }
+}
+
+function mouseStart(e) {
+  firstPosition = e.offsetX;
+}
+function mouseMove(e) {
+  secondPosition = e.offsetX;
+  if (firstPosition > secondPosition && firstPosition - secondPosition > 100) {
+    moveLeft();
+  } else if (
+    firstPosition < secondPosition &&
+    secondPosition - firstPosition > 10
+  ) {
+    moveRight();
+  } else {
+    startFiling();
+  }
+}
+
+function startFiling() {
+  stopFiling();
+  fillInterval = setInterval(fillingProgressBar, 400);
+}
+function stopFiling() {
+  clearInterval(fillInterval);
+}
+arrowLeft.addEventListener("click", moveLeft);
+arrowRight.addEventListener("click", moveRight);
+startFiling();
+
+sliderItem.forEach((slid) => {
+  slid.addEventListener("mousemove", stopFiling);
+  slid.addEventListener("mouseout", startFiling);
+  slid.addEventListener("mousedown", mouseStart);
+  slid.addEventListener("mouseup", mouseMove);
+  slid.addEventListener("touchstart", touchStart);
+  slid.addEventListener("touchend", touchMove);
+});
 
 
 /***/ }),
@@ -3757,18 +2883,7 @@ module.exports = __webpack_require__.p + "9687c308615334c2c751.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "996c8fa17c89ffe60bdb.svg";
-
-/***/ }),
-
-/***/ "./src/img/cake.svg":
-/*!**************************!*\
-  !*** ./src/img/cake.svg ***!
-  \**************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "73a629783ac38966c8f3.svg";
+module.exports = __webpack_require__.p + "9b4dd40b3a9ec4b55c37.svg";
 
 /***/ }),
 
@@ -3779,18 +2894,7 @@ module.exports = __webpack_require__.p + "73a629783ac38966c8f3.svg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "9ed94ff4f08dbe367c78.svg";
-
-/***/ }),
-
-/***/ "./src/img/coffe-cup.svg":
-/*!*******************************!*\
-  !*** ./src/img/coffe-cup.svg ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "e164c02ec0a2f0a8fc0f.svg";
+module.exports = __webpack_require__.p + "cf5fa78fd8925465b9d4.svg";
 
 /***/ }),
 
@@ -3801,117 +2905,40 @@ module.exports = __webpack_require__.p + "e164c02ec0a2f0a8fc0f.svg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "4c0716c084ae8a5fb355.svg";
+module.exports = __webpack_require__.p + "465c6d520acc063cc9df.svg";
 
 /***/ }),
 
-/***/ "./src/img/coffee-with-cognac.png":
-/*!****************************************!*\
-  !*** ./src/img/coffee-with-cognac.png ***!
-  \****************************************/
+/***/ "./src/img/coffee-slider-1.svg":
+/*!*************************************!*\
+  !*** ./src/img/coffee-slider-1.svg ***!
+  \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "a04a069f57c43b85c2fe.png";
+module.exports = __webpack_require__.p + "dc9776758a8e4a486051.svg";
 
 /***/ }),
 
-/***/ "./src/img/dessert-1.png":
-/*!*******************************!*\
-  !*** ./src/img/dessert-1.png ***!
-  \*******************************/
+/***/ "./src/img/coffee-slider-2.svg":
+/*!*************************************!*\
+  !*** ./src/img/coffee-slider-2.svg ***!
+  \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "e28173f0661d791c09f1.png";
+module.exports = __webpack_require__.p + "98374f43f173e6836ec0.svg";
 
 /***/ }),
 
-/***/ "./src/img/dessert-2.png":
-/*!*******************************!*\
-  !*** ./src/img/dessert-2.png ***!
-  \*******************************/
+/***/ "./src/img/coffee-slider-3.svg":
+/*!*************************************!*\
+  !*** ./src/img/coffee-slider-3.svg ***!
+  \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "37cb4fe3ee93ae65d2b1.png";
-
-/***/ }),
-
-/***/ "./src/img/dessert-3.png":
-/*!*******************************!*\
-  !*** ./src/img/dessert-3.png ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "332093e97e3809eca8a0.png";
-
-/***/ }),
-
-/***/ "./src/img/dessert-4.png":
-/*!*******************************!*\
-  !*** ./src/img/dessert-4.png ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "1d44b0cd8a9da991a5a1.png";
-
-/***/ }),
-
-/***/ "./src/img/dessert-5.png":
-/*!*******************************!*\
-  !*** ./src/img/dessert-5.png ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "27c68d864626920fecb7.png";
-
-/***/ }),
-
-/***/ "./src/img/dessert-6.png":
-/*!*******************************!*\
-  !*** ./src/img/dessert-6.png ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "ca191af649d002a0edaf.png";
-
-/***/ }),
-
-/***/ "./src/img/dessert-7.png":
-/*!*******************************!*\
-  !*** ./src/img/dessert-7.png ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "bfbcfa36c3591865d20b.png";
-
-/***/ }),
-
-/***/ "./src/img/dessert-8.png":
-/*!*******************************!*\
-  !*** ./src/img/dessert-8.png ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "b471eca4888e1a082d9e.png";
-
-/***/ }),
-
-/***/ "./src/img/espresso.png":
-/*!******************************!*\
-  !*** ./src/img/espresso.png ***!
-  \******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "ff13fe3e41f6faba22e0.png";
+module.exports = __webpack_require__.p + "181927cff0a0ec8c3a5a.svg";
 
 /***/ }),
 
@@ -3926,72 +2953,6 @@ module.exports = __webpack_require__.p + "505efc5cd8fef559e591.png";
 
 /***/ }),
 
-/***/ "./src/img/honey-raf.png":
-/*!*******************************!*\
-  !*** ./src/img/honey-raf.png ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "6b30dabd7c8fbec1e2aa.png";
-
-/***/ }),
-
-/***/ "./src/img/ice-cappuccino.png":
-/*!************************************!*\
-  !*** ./src/img/ice-cappuccino.png ***!
-  \************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "9ab2d041ebdd4d442052.png";
-
-/***/ }),
-
-/***/ "./src/img/irish-coffee.png":
-/*!**********************************!*\
-  !*** ./src/img/irish-coffee.png ***!
-  \**********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "f7f1fae7108398a398d2.png";
-
-/***/ }),
-
-/***/ "./src/img/kahlua-coffee.png":
-/*!***********************************!*\
-  !*** ./src/img/kahlua-coffee.png ***!
-  \***********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "c2079f0f644fe20beb0c.png";
-
-/***/ }),
-
-/***/ "./src/img/latte-macchiato.png":
-/*!*************************************!*\
-  !*** ./src/img/latte-macchiato.png ***!
-  \*************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "506e0ef48eaa23070078.png";
-
-/***/ }),
-
-/***/ "./src/img/latte.png":
-/*!***************************!*\
-  !*** ./src/img/latte.png ***!
-  \***************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "aa5948f6f2a7bb4a36a8.png";
-
-/***/ }),
-
 /***/ "./src/img/logo.svg":
 /*!**************************!*\
   !*** ./src/img/logo.svg ***!
@@ -3999,7 +2960,18 @@ module.exports = __webpack_require__.p + "aa5948f6f2a7bb4a36a8.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "43dc7a5d689e27eb1f95.svg";
+module.exports = __webpack_require__.p + "38aa319db1d0695ead58.svg";
+
+/***/ }),
+
+/***/ "./src/img/mobile-screens.svg":
+/*!************************************!*\
+  !*** ./src/img/mobile-screens.svg ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "59b4394c4ac5e47970cb.svg";
 
 /***/ }),
 
@@ -4010,7 +2982,7 @@ module.exports = __webpack_require__.p + "43dc7a5d689e27eb1f95.svg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "3b450d4272c9bff40ed3.svg";
+module.exports = __webpack_require__.p + "00c239e413e1142e13a0.svg";
 
 /***/ }),
 
@@ -4021,73 +2993,18 @@ module.exports = __webpack_require__.p + "3b450d4272c9bff40ed3.svg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "dacfaae31557ac608ebc.svg";
+module.exports = __webpack_require__.p + "ad0a245720f5d737c5ce.svg";
 
 /***/ }),
 
-/***/ "./src/img/tea-1.png":
-/*!***************************!*\
-  !*** ./src/img/tea-1.png ***!
-  \***************************/
+/***/ "./src/video/coffee-enjoy.mp4":
+/*!************************************!*\
+  !*** ./src/video/coffee-enjoy.mp4 ***!
+  \************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "6a118c5a5b00783f924a.png";
-
-/***/ }),
-
-/***/ "./src/img/tea-2.png":
-/*!***************************!*\
-  !*** ./src/img/tea-2.png ***!
-  \***************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "5fc2061ada105032bbe5.png";
-
-/***/ }),
-
-/***/ "./src/img/tea-3.png":
-/*!***************************!*\
-  !*** ./src/img/tea-3.png ***!
-  \***************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "a5c36c0fb46ed3542a27.png";
-
-/***/ }),
-
-/***/ "./src/img/tea-4.png":
-/*!***************************!*\
-  !*** ./src/img/tea-4.png ***!
-  \***************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "acc73f1f37b907791447.png";
-
-/***/ }),
-
-/***/ "./src/img/tea-cup.svg":
-/*!*****************************!*\
-  !*** ./src/img/tea-cup.svg ***!
-  \*****************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "3fa64cb7b058ab064d1b.svg";
-
-/***/ }),
-
-/***/ "./src/img/warning__icon.svg":
-/*!***********************************!*\
-  !*** ./src/img/warning__icon.svg ***!
-  \***********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "272d10c2798c59cee70f.svg";
+module.exports = __webpack_require__.p + "3a19fd1210d63dc1b79d.mp4";
 
 /***/ })
 
@@ -4204,7 +3121,7 @@ module.exports = __webpack_require__.p + "272d10c2798c59cee70f.svg";
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"second": 0
+/******/ 			"first": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -4232,18 +3149,24 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!*********************!*\
-  !*** ./src/menu.js ***!
-  \*********************/
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ "./src/main.scss");
-/* harmony import */ var _menu_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.html */ "./src/menu.html");
-/* harmony import */ var _modules_switcher_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/switcher.js */ "./src/modules/switcher.js");
-/* harmony import */ var _modules_modal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modal.js */ "./src/modules/modal.js");
-/* harmony import */ var _modules_burger_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/burger.js */ "./src/modules/burger.js");
-/* harmony import */ var _modules_burger_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_burger_js__WEBPACK_IMPORTED_MODULE_4__);
-
-
+/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ "./src/index.html");
+/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.scss */ "./src/main.scss");
+/* harmony import */ var _modules_burger_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/burger.js */ "./src/modules/burger.js");
+/* harmony import */ var _modules_burger_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_burger_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_slider_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider.js */ "./src/modules/slider.js");
+/* harmony import */ var _modules_slider_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_js__WEBPACK_IMPORTED_MODULE_3__);
+console.log(
+  "1.Checking validation of pages: +16\n2.The layout matches the design: +42\n3.CSS Requirements: +10\n4.Interactivity: +32 "
+);
+console.log(
+  "1.The layout of the pages aligns the design at a screen width of 1440px: +14\n2.The layout of the pages aligns the design at a screen width of 768px: +14\n3.The layout of the pages aligns the design at a screen width of 380px: +14 \nThere is no horizontal scrollbar at all screen width up to 380px inclusive. All page content remains as per the design: it is not cropped, removed, or shifted to the side: +20\n5.During smooth resizing of the browser window from 1440px to 380px, the layout occupies the full width of the window (including specified margins), elements adjust their sizes and positions appropriately without full scaling, no elements overlap, and images maintain their correct aspect ratios: +8\n6.At screen widths of 768px and below, the menu and navigation buttons in the header are concealed on both pages, and a burger menu icon is displayed: +4\n7.Hover effects are active on desktop devices (as per the Desktop device type in DevTools) and are disabled for mobile devices (as per the Mobile device type in DevTools) on both pages: +4\n8.The layout for both pages is validated and error-free according to the W3C Validator (https://validator.w3.org/): +12"
+);
+console.log("1.Implementation of the burger menu on both pages: +22\n2.Implementation of the carousel on the home page: +24\n3.Categories of products on the menu page: +16\n4.The Modal on the menu page: +20\n5.Video on the home page: +8")
+;
 
 
 
@@ -4252,4 +3175,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=second.8a8bec765f0c85e7f05c.js.map
+//# sourceMappingURL=first.3c3d0b40f5091e27a4f4.js.map
