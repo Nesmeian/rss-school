@@ -1,0 +1,33 @@
+.interactive {
+  text-align: center;
+  width: 350px;
+}
+.interactive__question {
+  font-size: 24px;
+}
+
+.interactive__attempts {
+  font-size: 20px;
+}
+
+.interactive__keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+  gap: 7px;
+}
+
+.keyboard__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #2196f3;
+  border-radius: 3px;
+  color: white;
+}
+
+.keyboard__item:nth-child(19) {
+  margin-left: 20px;
+}

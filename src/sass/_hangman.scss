@@ -1,0 +1,37 @@
+.hangman__gallow {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  border: black solid 10px;
+  border-radius: 5px;
+  border-right: 0;
+}
+
+.hangman__support-beam {
+  width: 10px;
+  height: 120px;
+  background-color: black;
+  transform: rotateZ(45deg);
+  position: absolute;
+  left: 32px;
+  top: -22px;
+}
+
+.hangman__hanging-beam {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 40px;
+  border-radius: 0 0 10px 10px;
+  background-color: black;
+}
+
+.hangman__foundation {
+  position: absolute;
+  bottom: -10px;
+  left: -50px;
+  width: 350px;
+  height: 10px;
+  background-color: black;
+  border-radius: 10px;
+}
