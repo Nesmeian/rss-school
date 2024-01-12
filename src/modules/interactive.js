@@ -1,5 +1,5 @@
 import { ridles } from "./words";
-import { keyboard, word, question } from "./html";
+import { keyboard, word, question, attemptsCount } from "./html";
 
 let counter = 0;
 let randomNumber = takeRandomRidle();
@@ -36,11 +36,12 @@ function addItemsToKeyboard() {
     keyboardItem.textContent = alphabet[i];
   }
 }
+
+const limbs = document.querySelectorAll(".limb");
 const keyboardItem = document.querySelectorAll(".keyboard__item");
 const wordItem = document.querySelectorAll(".word__item");
 let splitAnswear = ridles[randomNumber].answear.split("");
 console.log(splitAnswear);
-// console.log(wordItem);
 keyboardItem.forEach((e) => {
   e.addEventListener("click", () => {
     const text = e.textContent;
@@ -58,7 +59,9 @@ keyboardItem.forEach((e) => {
     ) {
       e.classList.add("--disabled");
       counter++;
-      console.log(counter);
+      attemptsCount.textContent = `${counter}/6`;
+      limbs[counter - 1].classList.add("--active");
     }
   });
 });
+// console.log(attemptsCount);
