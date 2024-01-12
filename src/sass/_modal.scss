@@ -1,0 +1,16 @@
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background: gray;
+  z-index: 2;
+}
+.modal__wprapper {
+  margin: 0 auto;
+}
+.modal--active {
+  display: block;
+}

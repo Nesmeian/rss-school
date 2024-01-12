@@ -1,6 +1,6 @@
 import { ridles } from "./words";
-import { keyboard, word, question, attemptsCount } from "./html";
-
+import { keyboard, word, question, attemptsCount, modal } from "./html";
+let counterWin = 0;
 let counter = 0;
 let randomNumber = takeRandomRidle();
 let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -49,19 +49,28 @@ keyboardItem.forEach((e) => {
       let seacrhIndex = splitAnswear.indexOf(text);
       e.classList.add("--disabled");
       while (seacrhIndex != -1) {
+        counterWin++;
         wordItem[seacrhIndex].textContent = splitAnswear[seacrhIndex];
         wordItem[seacrhIndex].classList.add("--correct");
         seacrhIndex = splitAnswear.indexOf(text, seacrhIndex + 1);
+      }
+      if (counterWin === splitAnswear.length) {
+        modal.classList.add("modal--active");
       }
     } else if (
       !splitAnswear.includes(text) &&
       !e.classList.contains("--disabled")
     ) {
-      e.classList.add("--disabled");
-      counter++;
-      attemptsCount.textContent = `${counter}/6`;
-      limbs[counter - 1].classList.add("--active");
+      if (limbs[counter] != undefined) {
+        e.classList.add("--disabled");
+        limbs[counter].classList.add("--active");
+        counter++;
+        attemptsCount.textContent = `${counter}/6`;
+      } else {
+        modal.classList.add("modal--active");
+      }
     }
   });
 });
 // console.log(attemptsCount);
+console.log(limbs.length);

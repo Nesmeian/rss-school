@@ -36,7 +36,7 @@
   border-radius: 10px;
 }
 
-.hagman-head {
+.hagman__head {
   position: absolute;
   width: 50px;
   height: 0px;
@@ -46,7 +46,7 @@
   top: 39px;
   transition: all 0.7s ease;
 }
-.hagman-body {
+.hagman__body {
   height: 0px;
   width: 4px;
   background: black;
@@ -56,7 +56,7 @@
   transition: all 0.7s ease;
 }
 
-.hagman-left-arm {
+.hagman__left-arm {
   transform: rotate(45deg);
   height: 0;
   width: 3px;
@@ -67,7 +67,7 @@
   transition: all 0.7s ease;
 }
 
-.hagman-rigth-arm {
+.hagman__rigth-arm {
   transform: rotate(132deg);
   height: 0;
   width: 3px;
@@ -78,7 +78,7 @@
   transition: all 0.7s ease;
 }
 
-.hagman-left-leg {
+.hagman__left-leg {
   transform: rotate(45deg);
   height: 0;
   width: 3px;
@@ -89,7 +89,7 @@
   transition: all 0.7s ease;
 }
 
-.hagman-rigth-leg {
+.hagman__rigth-leg {
   transform: rotate(132deg);
   height: 0;
   width: 3px;

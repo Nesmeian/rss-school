@@ -19,6 +19,12 @@ export const hagnmanLeftArm = document.createElement("div");
 export const hagnmanLeftLeg = document.createElement("div");
 export const hagnmanRightArm = document.createElement("div");
 export const hagnmanRightLeg = document.createElement("div");
+export const modal = document.createElement("div");
+export const modalWrapper = document.createElement("div");
+export const modalWord = document.createElement("div");
+export const modalResult = document.createElement("div");
+export const modalTryAgain = document.createElement("button");
+
 // wrappers
 main.className = "main";
 wrapper.className = "wrapper";
@@ -32,12 +38,12 @@ hangingBeam.className = "hangman__hanging-beam";
 foundation.className = "hangman__foundation";
 title.className = "title";
 title.innerHTML = "HANGMAN";
-hagnmanHead.className = "hagman-head limb";
-hagnmanBody.className = "hagman-body limb";
-hagnmanRightArm.className = "hagman-rigth-arm limb";
-hagnmanRightLeg.className = "hagman-rigth-leg limb";
-hagnmanLeftArm.className = "hagman-left-arm limb";
-hagnmanLeftLeg.className = "hagman-left-leg limb";
+hagnmanHead.className = "hagman__head limb";
+hagnmanBody.className = "hagman__body limb";
+hagnmanRightArm.className = "hagman__rigth-arm limb";
+hagnmanRightLeg.className = "hagman__rigth-leg limb";
+hagnmanLeftArm.className = "hagman__left-arm limb";
+hagnmanLeftLeg.className = "hagman__left-leg limb";
 
 // const interactive
 interactive.className = "interactive";
@@ -52,6 +58,7 @@ keyboard.className = "interactive__keyboard";
 
 // common append
 body.append(main);
+main.append(modal);
 main.append(title);
 main.append(wrapper);
 wrapper.append(hagnman);
@@ -64,8 +71,8 @@ gallow.append(foundation);
 gallow.append(hagnmanHead);
 gallow.append(hagnmanBody);
 gallow.append(hagnmanLeftArm);
-gallow.append(hagnmanLeftLeg);
 gallow.append(hagnmanRightArm);
+gallow.append(hagnmanLeftLeg);
 gallow.append(hagnmanRightLeg);
 
 // interactive append
@@ -74,3 +81,15 @@ interactive.append(question);
 attempts.append(attemptsCount);
 interactive.append(attempts);
 interactive.append(keyboard);
+
+//modal
+modal.append(modalWrapper);
+modal.append(modalResult);
+modal.append(modalWord);
+modal.append(modalTryAgain);
+modal.className = "modal";
+modalWrapper.className = "modal__wrpapper";
+modalResult.className = "modal__result";
+modalWord.className = "modal__word";
+modalTryAgain.className = "modal__btn-try-again";
+modalTryAgain.type = "button";
