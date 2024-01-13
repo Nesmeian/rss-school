@@ -24,6 +24,8 @@ export const modalWrapper = document.createElement("div");
 export const modalWord = document.createElement("div");
 export const modalResult = document.createElement("div");
 export const modalTryAgain = document.createElement("button");
+export let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+alphabet = alphabet.split("");
 
 // wrappers
 main.className = "main";
@@ -84,12 +86,13 @@ interactive.append(keyboard);
 
 //modal
 modal.append(modalWrapper);
-modal.append(modalResult);
-modal.append(modalWord);
-modal.append(modalTryAgain);
+modalWrapper.append(modalResult);
+modalWrapper.append(modalWord);
+modalWrapper.append(modalTryAgain);
 modal.className = "modal";
-modalWrapper.className = "modal__wrpapper";
+modalWrapper.className = "modal__wrapper";
 modalResult.className = "modal__result";
 modalWord.className = "modal__word";
 modalTryAgain.className = "modal__btn-try-again";
+modalTryAgain.textContent = "Try Again?";
 modalTryAgain.type = "button";

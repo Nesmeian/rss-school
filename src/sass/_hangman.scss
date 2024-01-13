@@ -1,3 +1,6 @@
+.hangman{
+  padding: 0 40px 40px;
+}
 .hangman__gallow {
   position: relative;
   width: 200px;
@@ -30,7 +33,7 @@
   position: absolute;
   bottom: -10px;
   left: -50px;
-  width: 350px;
+  width: 300px;
   height: 10px;
   background-color: black;
   border-radius: 10px;
@@ -43,64 +46,64 @@
   border: 0px solid black;
   border-radius: 30px;
   right: -23px;
-  top: 39px;
+  top: 38px;
   transition: all 0.7s ease;
 }
 .hagman__body {
   height: 0px;
-  width: 4px;
   background: black;
   position: absolute;
   right: 1px;
   top: 90px;
+  border-radius: 5px;
   transition: all 0.7s ease;
 }
 
 .hagman__left-arm {
   transform: rotate(45deg);
   height: 0;
-  width: 3px;
   background: black;
   position: absolute;
   right: 22px;
-  top: 83px;
+  top: 84px;
+  border-radius: 5px;
   transition: all 0.7s ease;
 }
 
 .hagman__rigth-arm {
   transform: rotate(132deg);
   height: 0;
-  width: 3px;
   background: black;
   position: absolute;
-  right: -19px;
-  top: 83px;
+  right: -20px;
+  top: 85px;
+  border-radius: 5px;
   transition: all 0.7s ease;
 }
 
 .hagman__left-leg {
   transform: rotate(45deg);
   height: 0;
-  width: 3px;
   background: black;
   position: absolute;
   right: 21px;
-  top: 130px;
+  top: 133px;
+  border-radius: 5px;
   transition: all 0.7s ease;
 }
 
 .hagman__rigth-leg {
   transform: rotate(132deg);
   height: 0;
-  width: 3px;
   background: black;
   position: absolute;
   right: -18px;
-  top: 130px;
+  top: 132px;
+  border-radius: 5px;
   transition: all 0.7s ease;
 }
 
 .--active {
   height: 50px;
-  border: 1px solid black;
+  border: 3px solid black;
 }
