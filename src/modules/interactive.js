@@ -23,10 +23,10 @@ let splitAnswear = ridles[randomNumber].answear.split("");
 
 console.log(splitAnswear);
 keyboardItem.forEach((e) => {
+  const text = e.textContent;
+  let seacrhIndex = splitAnswear.indexOf(text);
   e.addEventListener("click", () => {
-    const text = e.textContent;
     if (splitAnswear.includes(text)) {
-      let seacrhIndex = splitAnswear.indexOf(text);
       disabledButton(e);
       while (seacrhIndex != -1) {
         counterWin++;
@@ -52,9 +52,39 @@ keyboardItem.forEach((e) => {
 });
 modalTryAgain.addEventListener("click", reloadPage);
 
-// document.addEventListener("keydown", (e) => {
-//   if(e.key.toUpperCase());
-// });
+document.addEventListener("keydown", (e) => {
+  let btn = e.key.toUpperCase();
+  let seacrhIndex = splitAnswear.indexOf(btn);
+  keyboardItem.forEach((e) => {
+    let text = e.textContent;
+
+    if (splitAnswear.includes(btn)) {
+      if (btn === text) {
+        disabledButton(e);
+      }
+      while (seacrhIndex != -1) {
+        counterWin++;
+        wordItem[seacrhIndex].textContent = splitAnswear[seacrhIndex];
+        wordItem[seacrhIndex].classList.add("--correct");
+        seacrhIndex = splitAnswear.indexOf(btn, seacrhIndex + 1);
+      }
+      if (counterWin === splitAnswear.length) {
+        winGame();
+      }
+    } else if (
+      !splitAnswear.includes(text) &&
+      !e.classList.contains("--disabled") &&
+      btn === text
+    ) {
+      if (limbs[counter] != undefined) {
+        disabledButton(e);
+        incorectLeter();
+      } else {
+        loseGame();
+      }
+    }
+  });
+});
 
 function disabledButton(btn) {
   btn.classList.add("--disabled");
