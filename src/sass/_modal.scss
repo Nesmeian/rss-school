@@ -5,10 +5,10 @@
   top: 0;
   height: 100%;
   width: 0;
-  background: rgb(46,77,147);
+  background: rgb(46, 77, 147);
   z-index: 2;
   font-size: 24px;
-  transition: all 1s ease;
+  transition: all 1.5s ease-in-out;
 }
 .modal__wrapper {
   margin: 0 auto;
@@ -26,13 +26,13 @@
   left: 0;
   align-items: center;
   width: 100%;
-  .modal__wrapper{
-    min-width:360px;
+  .modal__wrapper {
+    min-width: 360px;
     width: 30vw;
   }
 }
 
-.modal__btn-try-again{
+.modal__btn-try-again {
   display: flex;
   align-items: center;
   justify-content: center;

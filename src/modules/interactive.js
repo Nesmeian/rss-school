@@ -44,7 +44,8 @@ keyboardItem.forEach((e) => {
       if (limbs[counter] != undefined) {
         disabledButton(e);
         incorectLeter();
-      } else {
+      }
+      if (counter >= 6) {
         loseGame();
       }
     }
@@ -79,7 +80,8 @@ document.addEventListener("keydown", (e) => {
       if (limbs[counter] != undefined) {
         disabledButton(e);
         incorectLeter();
-      } else {
+      }
+      if (counter >= 6) {
         loseGame();
       }
     }
