@@ -7,33 +7,35 @@ import {
   modal,
   modalResult,
   modalWord,
-  modalTryAgain,
+  btnTryAgain,
   alphabet,
 } from "./html";
 let counterWin = 0;
 let counter = 0;
 let randomNumber = takeRandomRidle();
+let wordItem;
 addItemsToKeyboard();
 createRandomWord(randomNumber);
-
 const limbs = document.querySelectorAll(".limb");
 const keyboardItem = document.querySelectorAll(".keyboard__item");
-const wordItem = document.querySelectorAll(".word__item");
 let splitAnswear = ridles[randomNumber].answear.split("");
+btnTryAgain.addEventListener("click", reloadGame);
+let seacrhIndex;
 
-console.log(splitAnswear);
 keyboardItem.forEach((e) => {
   const text = e.textContent;
-  let seacrhIndex = splitAnswear.indexOf(text);
+  seacrhIndex = splitAnswear.indexOf(text);
   e.addEventListener("click", () => {
     if (splitAnswear.includes(text)) {
       disabledButton(e);
-      while (seacrhIndex != -1) {
-        counterWin++;
-        wordItem[seacrhIndex].textContent = splitAnswear[seacrhIndex];
-        wordItem[seacrhIndex].classList.add("--correct");
-        seacrhIndex = splitAnswear.indexOf(text, seacrhIndex + 1);
-      }
+      [...splitAnswear].forEach((currentLetter, index) => {
+        if (currentLetter === text) {
+          console.log(wordItem);
+          wordItem[index].textContent = splitAnswear[index];
+          wordItem[index].classList.add("--correct");
+          counterWin++;
+        }
+      });
       if (counterWin === splitAnswear.length) {
         winGame();
       }
@@ -51,14 +53,12 @@ keyboardItem.forEach((e) => {
     }
   });
 });
-modalTryAgain.addEventListener("click", reloadPage);
 
 document.addEventListener("keydown", (e) => {
   let btn = e.key.toUpperCase();
   let seacrhIndex = splitAnswear.indexOf(btn);
   keyboardItem.forEach((e) => {
     let text = e.textContent;
-
     if (splitAnswear.includes(btn)) {
       if (btn === text) {
         disabledButton(e);
@@ -103,24 +103,42 @@ function winGame() {
   modalResult.textContent = "Congratulations my friend you win this game!";
   modalWord.textContent = `Secret word is: ${splitAnswear.join("")}`;
 }
+
 function loseGame() {
   modal.classList.add("modal--active");
   modalResult.textContent = "You lose this game";
   modalWord.textContent = `Secret word is: ${splitAnswear.join("")}`;
 }
-function reloadPage() {
-  location.reload();
+function reloadGame() {
+  modal.classList.remove("modal--active");
+  counterWin = 0;
+  counter = 0;
+  attemptsCount.textContent = `${counter}/6`;
+  seacrhIndex = 0;
+  randomNumber = takeRandomRidle();
+  word.innerHTML = "";
+  createRandomWord(randomNumber);
+  splitAnswear = ridles[randomNumber].answear.split("");
+
+  keyboardItem.forEach((e) => {
+    e.classList.remove("--disabled");
+  });
+  limbs.forEach((e) => {
+    e.classList.remove("--active");
+  });
 }
 
-// express functions
 function createQuestion(rand) {
   question.textContent = `Hint: ${ridles[rand].questions}`;
 }
+
 function createRandomWord(random) {
+  wordItem = [];
   for (let i = 0; i < ridles[random].answear.length; i++) {
-    const wordItem = document.createElement("div");
-    wordItem.classList = "word__item";
-    word.append(wordItem);
+    let result = document.createElement("div");
+    result.className = "word__item";
+    wordItem.push(result);
+    word.append(result);
   }
   createQuestion(random);
 }
