@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   alphabet: () => (/* binding */ alphabet),
 /* harmony export */   attempts: () => (/* binding */ attempts),
 /* harmony export */   attemptsCount: () => (/* binding */ attemptsCount),
+/* harmony export */   btnTryAgain: () => (/* binding */ btnTryAgain),
 /* harmony export */   hagnmanBody: () => (/* binding */ hagnmanBody),
 /* harmony export */   hagnmanHead: () => (/* binding */ hagnmanHead),
 /* harmony export */   hagnmanLeftArm: () => (/* binding */ hagnmanLeftArm),
@@ -22,7 +23,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   keyboard: () => (/* binding */ keyboard),
 /* harmony export */   modal: () => (/* binding */ modal),
 /* harmony export */   modalResult: () => (/* binding */ modalResult),
-/* harmony export */   modalTryAgain: () => (/* binding */ modalTryAgain),
 /* harmony export */   modalWord: () => (/* binding */ modalWord),
 /* harmony export */   modalWrapper: () => (/* binding */ modalWrapper),
 /* harmony export */   question: () => (/* binding */ question),
@@ -53,7 +53,7 @@ const modal = document.createElement("div");
 const modalWrapper = document.createElement("div");
 const modalWord = document.createElement("div");
 const modalResult = document.createElement("div");
-const modalTryAgain = document.createElement("button");
+const btnTryAgain = document.createElement("button");
 let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 alphabet = alphabet.split("");
 
@@ -118,14 +118,14 @@ interactive.append(keyboard);
 modal.append(modalWrapper);
 modalWrapper.append(modalResult);
 modalWrapper.append(modalWord);
-modalWrapper.append(modalTryAgain);
+modalWrapper.append(btnTryAgain);
 modal.className = "modal";
 modalWrapper.className = "modal__wrapper";
 modalResult.className = "modal__result";
 modalWord.className = "modal__word";
-modalTryAgain.className = "modal__btn-try-again";
-modalTryAgain.textContent = "Try Again?";
-modalTryAgain.type = "button";
+btnTryAgain.className = "modal__btn-try-again";
+btnTryAgain.textContent = "Try Again?";
+btnTryAgain.type = "button";
 
 /***/ }),
 
@@ -143,25 +143,28 @@ __webpack_require__.r(__webpack_exports__);
 let counterWin = 0;
 let counter = 0;
 let randomNumber = takeRandomRidle();
+let wordItem;
 addItemsToKeyboard();
 createRandomWord(randomNumber);
 const limbs = document.querySelectorAll(".limb");
 const keyboardItem = document.querySelectorAll(".keyboard__item");
-const wordItem = document.querySelectorAll(".word__item");
 let splitAnswear = _words__WEBPACK_IMPORTED_MODULE_0__.ridles[randomNumber].answear.split("");
-console.log(splitAnswear);
+_html__WEBPACK_IMPORTED_MODULE_1__.btnTryAgain.addEventListener("click", reloadGame);
+let seacrhIndex;
 keyboardItem.forEach(e => {
   const text = e.textContent;
-  let seacrhIndex = splitAnswear.indexOf(text);
+  seacrhIndex = splitAnswear.indexOf(text);
   e.addEventListener("click", () => {
     if (splitAnswear.includes(text)) {
       disabledButton(e);
-      while (seacrhIndex != -1) {
-        counterWin++;
-        wordItem[seacrhIndex].textContent = splitAnswear[seacrhIndex];
-        wordItem[seacrhIndex].classList.add("--correct");
-        seacrhIndex = splitAnswear.indexOf(text, seacrhIndex + 1);
-      }
+      [...splitAnswear].forEach((currentLetter, index) => {
+        if (currentLetter === text) {
+          console.log(wordItem);
+          wordItem[index].textContent = splitAnswear[index];
+          wordItem[index].classList.add("--correct");
+          counterWin++;
+        }
+      });
       if (counterWin === splitAnswear.length) {
         winGame();
       }
@@ -176,7 +179,6 @@ keyboardItem.forEach(e => {
     }
   });
 });
-_html__WEBPACK_IMPORTED_MODULE_1__.modalTryAgain.addEventListener("click", reloadPage);
 document.addEventListener("keydown", e => {
   let btn = e.key.toUpperCase();
   let seacrhIndex = splitAnswear.indexOf(btn);
@@ -224,19 +226,33 @@ function loseGame() {
   _html__WEBPACK_IMPORTED_MODULE_1__.modalResult.textContent = "You lose this game";
   _html__WEBPACK_IMPORTED_MODULE_1__.modalWord.textContent = `Secret word is: ${splitAnswear.join("")}`;
 }
-function reloadPage() {
-  location.reload();
+function reloadGame() {
+  _html__WEBPACK_IMPORTED_MODULE_1__.modal.classList.remove("modal--active");
+  counterWin = 0;
+  counter = 0;
+  _html__WEBPACK_IMPORTED_MODULE_1__.attemptsCount.textContent = `${counter}/6`;
+  seacrhIndex = 0;
+  randomNumber = takeRandomRidle();
+  _html__WEBPACK_IMPORTED_MODULE_1__.word.innerHTML = "";
+  createRandomWord(randomNumber);
+  splitAnswear = _words__WEBPACK_IMPORTED_MODULE_0__.ridles[randomNumber].answear.split("");
+  keyboardItem.forEach(e => {
+    e.classList.remove("--disabled");
+  });
+  limbs.forEach(e => {
+    e.classList.remove("--active");
+  });
 }
-
-// express functions
 function createQuestion(rand) {
   _html__WEBPACK_IMPORTED_MODULE_1__.question.textContent = `Hint: ${_words__WEBPACK_IMPORTED_MODULE_0__.ridles[rand].questions}`;
 }
 function createRandomWord(random) {
+  wordItem = [];
   for (let i = 0; i < _words__WEBPACK_IMPORTED_MODULE_0__.ridles[random].answear.length; i++) {
-    const wordItem = document.createElement("div");
-    wordItem.classList = "word__item";
-    _html__WEBPACK_IMPORTED_MODULE_1__.word.append(wordItem);
+    let result = document.createElement("div");
+    result.className = "word__item";
+    wordItem.push(result);
+    _html__WEBPACK_IMPORTED_MODULE_1__.word.append(result);
   }
   createQuestion(random);
 }
@@ -540,12 +556,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hangman {
   background: rgb(46, 77, 147);
   z-index: 2;
   font-size: 24px;
+  align-items: center;
   transition: all 1.5s ease-in-out;
 }
 
 .modal__wrapper {
   margin: 0 auto;
-  width: 0;
+  min-width: 360px;
+  width: 30vw;
   height: 30lvh;
   background: white;
   display: flex;
@@ -558,12 +576,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hangman {
 
 .modal--active {
   left: 0;
-  align-items: center;
   width: 100%;
-}
-.modal--active .modal__wrapper {
-  min-width: 360px;
-  width: 30vw;
 }
 
 .modal__btn-try-again {
@@ -577,7 +590,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hangman {
   color: white;
   cursor: pointer;
   transition: all 0.5s ease;
-}`, "",{"version":3,"sources":["webpack://./src/sass/_hangman.scss","webpack://./src/main.scss","webpack://./src/sass/_interactive.scss","webpack://./src/sass/_wrapper.scss","webpack://./src/sass/_modal.scss"],"names":[],"mappings":"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","sourcesContent":[".hangman{\r\n  padding: 0 40px 40px;\r\n}\r\n.hangman__gallow {\r\n  position: relative;\r\n  width: 200px;\r\n  height: 250px;\r\n  border: black solid 10px;\r\n  border-radius: 5px;\r\n  border-right: 0;\r\n}\r\n\r\n.hangman__support-beam {\r\n  width: 10px;\r\n  height: 120px;\r\n  background-color: black;\r\n  transform: rotateZ(45deg);\r\n  position: absolute;\r\n  left: 32px;\r\n  top: -22px;\r\n}\r\n\r\n.hangman__hanging-beam {\r\n  position: absolute;\r\n  right: 2px;\r\n  width: 5px;\r\n  height: 40px;\r\n  border-radius: 0 0 10px 10px;\r\n  background-color: black;\r\n}\r\n\r\n.hangman__foundation {\r\n  position: absolute;\r\n  bottom: -10px;\r\n  left: -50px;\r\n  width: 300px;\r\n  height: 10px;\r\n  background-color: black;\r\n  border-radius: 10px;\r\n}\r\n\r\n.hagman__head {\r\n  position: absolute;\r\n  width: 50px;\r\n  height: 0px;\r\n  border: 0px solid black;\r\n  border-radius: 30px;\r\n  right: -23px;\r\n  top: 38px;\r\n  transition: all 0.7s ease;\r\n}\r\n.hagman__body {\r\n  height: 0px;\r\n  background: black;\r\n  position: absolute;\r\n  right: 1px;\r\n  top: 90px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.hagman__left-arm {\r\n  transform: rotate(45deg);\r\n  height: 0;\r\n  background: black;\r\n  position: absolute;\r\n  right: 22px;\r\n  top: 84px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.hagman__rigth-arm {\r\n  transform: rotate(132deg);\r\n  height: 0;\r\n  background: black;\r\n  position: absolute;\r\n  right: -20px;\r\n  top: 85px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.hagman__left-leg {\r\n  transform: rotate(45deg);\r\n  height: 0;\r\n  background: black;\r\n  position: absolute;\r\n  right: 21px;\r\n  top: 133px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.hagman__rigth-leg {\r\n  transform: rotate(132deg);\r\n  height: 0;\r\n  background: black;\r\n  position: absolute;\r\n  right: -18px;\r\n  top: 132px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.--active {\r\n  height: 50px;\r\n  border: 3px solid black;\r\n}\r\n",".hangman {\n  padding: 0 40px 40px;\n}\n\n.hangman__gallow {\n  position: relative;\n  width: 200px;\n  height: 250px;\n  border: black solid 10px;\n  border-radius: 5px;\n  border-right: 0;\n}\n\n.hangman__support-beam {\n  width: 10px;\n  height: 120px;\n  background-color: black;\n  transform: rotateZ(45deg);\n  position: absolute;\n  left: 32px;\n  top: -22px;\n}\n\n.hangman__hanging-beam {\n  position: absolute;\n  right: 2px;\n  width: 5px;\n  height: 40px;\n  border-radius: 0 0 10px 10px;\n  background-color: black;\n}\n\n.hangman__foundation {\n  position: absolute;\n  bottom: -10px;\n  left: -50px;\n  width: 300px;\n  height: 10px;\n  background-color: black;\n  border-radius: 10px;\n}\n\n.hagman__head {\n  position: absolute;\n  width: 50px;\n  height: 0px;\n  border: 0px solid black;\n  border-radius: 30px;\n  right: -23px;\n  top: 38px;\n  transition: all 0.7s ease;\n}\n\n.hagman__body {\n  height: 0px;\n  background: black;\n  position: absolute;\n  right: 1px;\n  top: 90px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.hagman__left-arm {\n  transform: rotate(45deg);\n  height: 0;\n  background: black;\n  position: absolute;\n  right: 22px;\n  top: 84px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.hagman__rigth-arm {\n  transform: rotate(132deg);\n  height: 0;\n  background: black;\n  position: absolute;\n  right: -20px;\n  top: 85px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.hagman__left-leg {\n  transform: rotate(45deg);\n  height: 0;\n  background: black;\n  position: absolute;\n  right: 21px;\n  top: 133px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.hagman__rigth-leg {\n  transform: rotate(132deg);\n  height: 0;\n  background: black;\n  position: absolute;\n  right: -18px;\n  top: 132px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.--active {\n  height: 50px;\n  border: 3px solid black;\n}\n\n.interactive {\n  text-align: center;\n  width: 350px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n}\n\n.interactive__question {\n  font-size: 24px;\n}\n\n.interactive__word {\n  display: flex;\n  gap: 15px;\n  justify-content: center;\n}\n\n.word__item {\n  width: 20px;\n  height: 20px;\n  font-size: 20px;\n  border-bottom: 1px solid black;\n  transition: all 0.7s ease;\n}\n\n.--correct {\n  border-bottom: 0;\n}\n\n.interactive__attempts {\n  font-size: 20px;\n}\n\n.attempts__count {\n  color: red;\n  padding-left: 10px;\n}\n\n.interactive__keyboard {\n  display: flex;\n  flex-wrap: wrap;\n  width: 330px;\n  gap: 7px;\n}\n\n.keyboard__item {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background-color: #2196f3;\n  border-radius: 3px;\n  color: white;\n  cursor: pointer;\n  transition: all 0.5s ease;\n}\n\n.--disabled {\n  cursor: initial;\n  background-color: darkblue;\n}\n\n.keyboard__item:nth-child(19) {\n  margin-left: 20px;\n}\n\n.body {\n  background: rgb(46, 77, 147);\n  font-family: monospace;\n}\n\n.main {\n  margin: 0 auto;\n  max-width: 1440px;\n}\n\n.wrapper {\n  display: flex;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  margin: 0 auto;\n  background: white;\n  border-radius: 50px;\n  padding: 50px 0;\n}\n\n.title {\n  text-align: center;\n  font-size: 40px;\n  padding-bottom: 60px;\n  color: white;\n}\n\n.modal {\n  display: flex;\n  position: fixed;\n  left: -1000px;\n  top: 0;\n  height: 100%;\n  width: 0;\n  background: rgb(46, 77, 147);\n  z-index: 2;\n  font-size: 24px;\n  transition: all 1.5s ease-in-out;\n}\n\n.modal__wrapper {\n  margin: 0 auto;\n  width: 0;\n  height: 30lvh;\n  background: white;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around;\n  text-align: center;\n  border-radius: 40px;\n}\n\n.modal--active {\n  left: 0;\n  align-items: center;\n  width: 100%;\n}\n.modal--active .modal__wrapper {\n  min-width: 360px;\n  width: 30vw;\n}\n\n.modal__btn-try-again {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #2196f3;\n  border: 0;\n  padding: 15px;\n  border-radius: 15px;\n  color: white;\n  cursor: pointer;\n  transition: all 0.5s ease;\n}",".interactive {\r\n  text-align: center;\r\n  width: 350px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: space-evenly;\r\n}\r\n.interactive__question {\r\n  font-size: 24px;\r\n}\r\n\r\n.interactive__word {\r\n  display: flex;\r\n  gap: 15px;\r\n  justify-content: center;\r\n}\r\n\r\n.word__item {\r\n  width: 20px;\r\n  height: 20px;\r\n  font-size: 20px;\r\n  border-bottom: 1px solid black;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.--correct {\r\n  border-bottom: 0;\r\n}\r\n\r\n.interactive__attempts {\r\n  font-size: 20px;\r\n}\r\n\r\n.attempts__count {\r\n  color: red;\r\n  padding-left: 10px;\r\n}\r\n\r\n.interactive__keyboard {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  width: 330px;\r\n  gap: 7px;\r\n}\r\n\r\n.keyboard__item {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  width: 30px;\r\n  height: 30px;\r\n  background-color: #2196f3;\r\n  border-radius: 3px;\r\n  color: white;\r\n  cursor: pointer;\r\n  transition: all 0.5s ease;\r\n}\r\n\r\n.--disabled {\r\n  cursor: initial;\r\n  background-color: darkblue;\r\n}\r\n\r\n.keyboard__item:nth-child(19) {\r\n  margin-left: 20px;\r\n}\r\n",".body{\r\n  background: rgb(46,77,147);\r\n  font-family: monospace;\r\n}\r\n\r\n.main {\r\n  margin: 0 auto;\r\n  max-width: 1440px;\r\n}\r\n.wrapper {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n  flex-wrap: wrap;\r\n  margin: 0 auto;\r\n  background: white;\r\n  border-radius: 50px;\r\n  padding: 50px 0;\r\n}\r\n.title {\r\n  text-align: center;\r\n  font-size: 40px;\r\n  padding-bottom: 60px;\r\n  color: white;\r\n}\r\n",".modal {\r\n  display: flex;\r\n  position: fixed;\r\n  left: -1000px;\r\n  top: 0;\r\n  height: 100%;\r\n  width: 0;\r\n  background: rgb(46, 77, 147);\r\n  z-index: 2;\r\n  font-size: 24px;\r\n  transition: all 1.5s ease-in-out;\r\n}\r\n.modal__wrapper {\r\n  margin: 0 auto;\r\n  width: 0;\r\n  height: 30lvh;\r\n  background: white;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: space-around;\r\n  text-align: center;\r\n  border-radius: 40px;\r\n}\r\n.modal--active {\r\n  left: 0;\r\n  align-items: center;\r\n  width: 100%;\r\n  .modal__wrapper {\r\n    min-width: 360px;\r\n    width: 30vw;\r\n  }\r\n}\r\n\r\n.modal__btn-try-again {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  background-color: #2196f3;\r\n  border: 0;\r\n  padding: 15px;\r\n  border-radius: 15px;\r\n  color: white;\r\n  cursor: pointer;\r\n  transition: all 0.5s ease;\r\n}\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/sass/_hangman.scss","webpack://./src/main.scss","webpack://./src/sass/_interactive.scss","webpack://./src/sass/_wrapper.scss","webpack://./src/sass/_modal.scss"],"names":[],"mappings":"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","sourcesContent":[".hangman{\r\n  padding: 0 40px 40px;\r\n}\r\n.hangman__gallow {\r\n  position: relative;\r\n  width: 200px;\r\n  height: 250px;\r\n  border: black solid 10px;\r\n  border-radius: 5px;\r\n  border-right: 0;\r\n}\r\n\r\n.hangman__support-beam {\r\n  width: 10px;\r\n  height: 120px;\r\n  background-color: black;\r\n  transform: rotateZ(45deg);\r\n  position: absolute;\r\n  left: 32px;\r\n  top: -22px;\r\n}\r\n\r\n.hangman__hanging-beam {\r\n  position: absolute;\r\n  right: 2px;\r\n  width: 5px;\r\n  height: 40px;\r\n  border-radius: 0 0 10px 10px;\r\n  background-color: black;\r\n}\r\n\r\n.hangman__foundation {\r\n  position: absolute;\r\n  bottom: -10px;\r\n  left: -50px;\r\n  width: 300px;\r\n  height: 10px;\r\n  background-color: black;\r\n  border-radius: 10px;\r\n}\r\n\r\n.hagman__head {\r\n  position: absolute;\r\n  width: 50px;\r\n  height: 0px;\r\n  border: 0px solid black;\r\n  border-radius: 30px;\r\n  right: -23px;\r\n  top: 38px;\r\n  transition: all 0.7s ease;\r\n}\r\n.hagman__body {\r\n  height: 0px;\r\n  background: black;\r\n  position: absolute;\r\n  right: 1px;\r\n  top: 90px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.hagman__left-arm {\r\n  transform: rotate(45deg);\r\n  height: 0;\r\n  background: black;\r\n  position: absolute;\r\n  right: 22px;\r\n  top: 84px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.hagman__rigth-arm {\r\n  transform: rotate(132deg);\r\n  height: 0;\r\n  background: black;\r\n  position: absolute;\r\n  right: -20px;\r\n  top: 85px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.hagman__left-leg {\r\n  transform: rotate(45deg);\r\n  height: 0;\r\n  background: black;\r\n  position: absolute;\r\n  right: 21px;\r\n  top: 133px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.hagman__rigth-leg {\r\n  transform: rotate(132deg);\r\n  height: 0;\r\n  background: black;\r\n  position: absolute;\r\n  right: -18px;\r\n  top: 132px;\r\n  border-radius: 5px;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.--active {\r\n  height: 50px;\r\n  border: 3px solid black;\r\n}\r\n",".hangman {\n  padding: 0 40px 40px;\n}\n\n.hangman__gallow {\n  position: relative;\n  width: 200px;\n  height: 250px;\n  border: black solid 10px;\n  border-radius: 5px;\n  border-right: 0;\n}\n\n.hangman__support-beam {\n  width: 10px;\n  height: 120px;\n  background-color: black;\n  transform: rotateZ(45deg);\n  position: absolute;\n  left: 32px;\n  top: -22px;\n}\n\n.hangman__hanging-beam {\n  position: absolute;\n  right: 2px;\n  width: 5px;\n  height: 40px;\n  border-radius: 0 0 10px 10px;\n  background-color: black;\n}\n\n.hangman__foundation {\n  position: absolute;\n  bottom: -10px;\n  left: -50px;\n  width: 300px;\n  height: 10px;\n  background-color: black;\n  border-radius: 10px;\n}\n\n.hagman__head {\n  position: absolute;\n  width: 50px;\n  height: 0px;\n  border: 0px solid black;\n  border-radius: 30px;\n  right: -23px;\n  top: 38px;\n  transition: all 0.7s ease;\n}\n\n.hagman__body {\n  height: 0px;\n  background: black;\n  position: absolute;\n  right: 1px;\n  top: 90px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.hagman__left-arm {\n  transform: rotate(45deg);\n  height: 0;\n  background: black;\n  position: absolute;\n  right: 22px;\n  top: 84px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.hagman__rigth-arm {\n  transform: rotate(132deg);\n  height: 0;\n  background: black;\n  position: absolute;\n  right: -20px;\n  top: 85px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.hagman__left-leg {\n  transform: rotate(45deg);\n  height: 0;\n  background: black;\n  position: absolute;\n  right: 21px;\n  top: 133px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.hagman__rigth-leg {\n  transform: rotate(132deg);\n  height: 0;\n  background: black;\n  position: absolute;\n  right: -18px;\n  top: 132px;\n  border-radius: 5px;\n  transition: all 0.7s ease;\n}\n\n.--active {\n  height: 50px;\n  border: 3px solid black;\n}\n\n.interactive {\n  text-align: center;\n  width: 350px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n}\n\n.interactive__question {\n  font-size: 24px;\n}\n\n.interactive__word {\n  display: flex;\n  gap: 15px;\n  justify-content: center;\n}\n\n.word__item {\n  width: 20px;\n  height: 20px;\n  font-size: 20px;\n  border-bottom: 1px solid black;\n  transition: all 0.7s ease;\n}\n\n.--correct {\n  border-bottom: 0;\n}\n\n.interactive__attempts {\n  font-size: 20px;\n}\n\n.attempts__count {\n  color: red;\n  padding-left: 10px;\n}\n\n.interactive__keyboard {\n  display: flex;\n  flex-wrap: wrap;\n  width: 330px;\n  gap: 7px;\n}\n\n.keyboard__item {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background-color: #2196f3;\n  border-radius: 3px;\n  color: white;\n  cursor: pointer;\n  transition: all 0.5s ease;\n}\n\n.--disabled {\n  cursor: initial;\n  background-color: darkblue;\n}\n\n.keyboard__item:nth-child(19) {\n  margin-left: 20px;\n}\n\n.body {\n  background: rgb(46, 77, 147);\n  font-family: monospace;\n}\n\n.main {\n  margin: 0 auto;\n  max-width: 1440px;\n}\n\n.wrapper {\n  display: flex;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  margin: 0 auto;\n  background: white;\n  border-radius: 50px;\n  padding: 50px 0;\n}\n\n.title {\n  text-align: center;\n  font-size: 40px;\n  padding-bottom: 60px;\n  color: white;\n}\n\n.modal {\n  display: flex;\n  position: fixed;\n  left: -1000px;\n  top: 0;\n  height: 100%;\n  width: 0;\n  background: rgb(46, 77, 147);\n  z-index: 2;\n  font-size: 24px;\n  align-items: center;\n  transition: all 1.5s ease-in-out;\n}\n\n.modal__wrapper {\n  margin: 0 auto;\n  min-width: 360px;\n  width: 30vw;\n  height: 30lvh;\n  background: white;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around;\n  text-align: center;\n  border-radius: 40px;\n}\n\n.modal--active {\n  left: 0;\n  width: 100%;\n}\n\n.modal__btn-try-again {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #2196f3;\n  border: 0;\n  padding: 15px;\n  border-radius: 15px;\n  color: white;\n  cursor: pointer;\n  transition: all 0.5s ease;\n}",".interactive {\r\n  text-align: center;\r\n  width: 350px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: space-evenly;\r\n}\r\n.interactive__question {\r\n  font-size: 24px;\r\n}\r\n\r\n.interactive__word {\r\n  display: flex;\r\n  gap: 15px;\r\n  justify-content: center;\r\n}\r\n\r\n.word__item {\r\n  width: 20px;\r\n  height: 20px;\r\n  font-size: 20px;\r\n  border-bottom: 1px solid black;\r\n  transition: all 0.7s ease;\r\n}\r\n\r\n.--correct {\r\n  border-bottom: 0;\r\n}\r\n\r\n.interactive__attempts {\r\n  font-size: 20px;\r\n}\r\n\r\n.attempts__count {\r\n  color: red;\r\n  padding-left: 10px;\r\n}\r\n\r\n.interactive__keyboard {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  width: 330px;\r\n  gap: 7px;\r\n}\r\n\r\n.keyboard__item {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  width: 30px;\r\n  height: 30px;\r\n  background-color: #2196f3;\r\n  border-radius: 3px;\r\n  color: white;\r\n  cursor: pointer;\r\n  transition: all 0.5s ease;\r\n}\r\n\r\n.--disabled {\r\n  cursor: initial;\r\n  background-color: darkblue;\r\n}\r\n\r\n.keyboard__item:nth-child(19) {\r\n  margin-left: 20px;\r\n}\r\n",".body{\r\n  background: rgb(46,77,147);\r\n  font-family: monospace;\r\n}\r\n\r\n.main {\r\n  margin: 0 auto;\r\n  max-width: 1440px;\r\n}\r\n.wrapper {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n  flex-wrap: wrap;\r\n  margin: 0 auto;\r\n  background: white;\r\n  border-radius: 50px;\r\n  padding: 50px 0;\r\n}\r\n.title {\r\n  text-align: center;\r\n  font-size: 40px;\r\n  padding-bottom: 60px;\r\n  color: white;\r\n}\r\n",".modal {\r\n  display: flex;\r\n  position: fixed;\r\n  left: -1000px;\r\n  top: 0;\r\n  height: 100%;\r\n  width: 0;\r\n  background: rgb(46, 77, 147);\r\n  z-index: 2;\r\n  font-size: 24px;\r\n  align-items: center;\r\n  transition: all 1.5s ease-in-out;\r\n}\r\n.modal__wrapper {\r\n  margin: 0 auto;\r\n  min-width: 360px;\r\n  width: 30vw;\r\n  height: 30lvh;\r\n  background: white;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: space-around;\r\n  text-align: center;\r\n  border-radius: 40px;\r\n}\r\n.modal--active {\r\n  left: 0;\r\n  width: 100%;\r\n}\r\n\r\n.modal__btn-try-again {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  background-color: #2196f3;\r\n  border: 0;\r\n  padding: 15px;\r\n  border-radius: 15px;\r\n  color: white;\r\n  cursor: pointer;\r\n  transition: all 0.5s ease;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1261,4 +1274,4 @@ console.log(`1.The game starts with the correct default view (empty gallows, und
 
 /******/ })()
 ;
-//# sourceMappingURL=main.7f019ad2402a227df869.js.map
+//# sourceMappingURL=main.c00f86fd5983b4c1205a.js.map
