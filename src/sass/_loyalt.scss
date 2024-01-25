@@ -1,0 +1,13 @@
+.wrapper {
+  max-width: 1440px;
+  margin: 0, auto;
+}
+.title {
+  text-align: center;
+}
+.nonogramm__container {
+  width: 1400px;
+  min-width: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
