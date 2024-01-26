@@ -6,8 +6,64 @@
   text-align: center;
 }
 .nonogramm__container {
-  width: 1400px;
+  margin: 0 auto;
+  width: 80vw;
   min-width: 500px;
+  background-color: black;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.container {
+  background-color: aquamarine;
+  color: white;
+}
+
+.container__top-left {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: white;
+}
+
+.container__bottom-left {
+  grid-area: 2 / 1 / 5 / 2;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.container__top-right {
+  grid-area: 1 / 2 / 2 / 5;
+
+  display: flex;
+  align-items: flex-end;
+}
+.container__bottom-right {
+  display: flex;
+  grid-area: 2 / 2 / 5 / 5;
+
+  flex-direction: column;
+  align-items: flex-start;
+}
+.column {
+  display: flex;
+  justify-content: end;
+}
+.column-top {
+  flex-direction: column-reverse;
+}
+.column-left {
+  flex-direction: row-reverse;
+}
+.item {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+.item-right {
+  background-color: red;
 }
