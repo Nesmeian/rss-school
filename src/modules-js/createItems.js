@@ -1,4 +1,4 @@
-import { hamster } from "./game";
+import { games, hamster } from "./game";
 import { bottomRight, bottomLeft, topRight } from "./html";
 import { createElement } from "./createFunc";
 function createItem(column, row, purpose, value) {
@@ -8,7 +8,7 @@ function createItem(column, row, purpose, value) {
   if (purpose === "top") {
     className.push("item-top");
   } else if (purpose === "right") {
-    className.push("item-right");
+    className.push("game-cell");
   } else {
     className.push("item-left");
   }
@@ -23,6 +23,7 @@ function createItem(column, row, purpose, value) {
   }
   return result;
 }
+let game = games.cat;
 function createColumns(height, width, parent, purpose, value) {
   let item = [];
   let className = ["column"];
@@ -63,7 +64,7 @@ function createGame(game) {
     for (let j = 0; j < game.length; j++) {
       if (game[i][j] === 1) {
         countLeft++;
-        gameBoard[i][j].textContent = game[i][j];
+        gameBoard[i][j].classList.add("target");
       } else if (countLeft > 0) {
         arrCountLeft.unshift(countLeft);
         countLeft = 0;
@@ -104,6 +105,5 @@ function deleteTrashItems() {
     }
   });
 }
-
-createGame(hamster);
+createGame(game);
 deleteTrashItems();

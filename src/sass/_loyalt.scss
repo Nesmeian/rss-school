@@ -5,65 +5,84 @@
 .title {
   text-align: center;
 }
+.main {
+  background: gray;
+}
+.nonogramm {
+  width: max-content;
+  padding: 20px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 30px;
+}
 .nonogramm__container {
   margin: 0 auto;
-  width: 80vw;
-  min-width: 500px;
-  background-color: black;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  justify-content: center;
+  padding: 10px;
 }
 .container {
-  background-color: aquamarine;
   color: white;
 }
-
-.container__top-left {
-  grid-area: 1 / 1 / 2 / 2;
-  background-color: white;
-}
-
 .container__bottom-left {
-  grid-area: 2 / 1 / 5 / 2;
-  background-color: aquamarine;
   display: flex;
+  grid-row: 2;
   flex-direction: column;
-  align-items: flex-end;
+  border: 1px solid black;
+  border-right: none;
 }
 .container__top-right {
-  grid-area: 1 / 2 / 2 / 5;
-
   display: flex;
-  align-items: flex-end;
+  border: 1px solid black;
+  border-bottom: none;
 }
 .container__bottom-right {
   display: flex;
-  grid-area: 2 / 2 / 5 / 5;
-
+  grid-row: 2;
   flex-direction: column;
-  align-items: flex-start;
+  border: 1px solid black;
 }
 .column {
   display: flex;
   justify-content: end;
 }
 .column-top {
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 .column-left {
-  flex-direction: row-reverse;
+  flex-direction: row;
+}
+.column-right {
+  justify-content: space-between;
 }
 .item {
   display: flex;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
+  min-width: 10px;
+  min-height: 10px;
+  border: 0.2px solid white;
   align-items: center;
   justify-content: center;
+  font-size: 0.7rem;
   background-color: black;
 }
-.item-right {
+.game-cell {
   background-color: red;
+  transition: all 0.5s ease-in-out;
+}
+
+.--fill {
+  background-color: black;
+}
+.--empty {
+  background-color: white;
+}
+.column-top:nth-child(5n):not(:last-child),
+.game-cell:nth-child(5n):not(:last-child) {
+  border-right: 1px solid black;
+}
+.column-left:nth-child(5n):not(:last-child),
+.column-right:nth-child(5n):not(:last-child) {
+  border-bottom: 1px solid black;
 }
