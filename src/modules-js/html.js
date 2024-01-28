@@ -53,20 +53,6 @@ export const setupMenu = createElement({
   classes: ["setup-menu"],
 });
 
-const setupForm = createElement({
-  tag: "form",
-  classes: ["setup-form"],
-});
-const setupLabel = createElement({
-  tag: "label",
-  classes: ["setup-label"],
-});
-const setupInput = createElement({
-  tag: "input",
-  classes: ["setup-input"],
-});
-setupInput.type = "radio";
-
 // append
 body.append(main);
 main.append(title);
@@ -78,7 +64,5 @@ nonogrammContainer.append(topLeft);
 nonogrammContainer.append(topRight);
 nonogrammContainer.append(bottomLeft);
 nonogrammContainer.append(bottomRight);
-setupMenu.append(setupForm);
-setupForm.append(setupLabel);
-setupForm.append(setupInput);
+
 // function

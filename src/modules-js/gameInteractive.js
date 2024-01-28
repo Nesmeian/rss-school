@@ -10,7 +10,6 @@ function clickOnBoard() {
           winCount++;
         }
       }
-
       console.log(winCount);
       e.classList.toggle("--empty");
     });
