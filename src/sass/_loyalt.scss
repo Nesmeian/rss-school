@@ -1,0 +1,90 @@
+.wrapper {
+  max-width: 1440px;
+  display: flex;
+  margin: 0 auto;
+  background: white;
+  border-radius: 30px;
+}
+.title {
+  text-align: center;
+}
+.main {
+  background: gray;
+}
+.nonogramm {
+  width: max-content;
+  padding: 20px;
+  margin: 0 auto;
+}
+.nonogramm__container {
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  padding: 10px;
+}
+.container {
+  color: white;
+}
+
+.container__bottom-left {
+  display: flex;
+  grid-row: 2;
+  flex-direction: column;
+  border: 1px solid black;
+  border-right: none;
+}
+.container__top-right {
+  display: flex;
+  border: 1px solid black;
+  border-bottom: none;
+}
+.container__bottom-right {
+  display: flex;
+  grid-row: 2;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.column {
+  display: flex;
+  justify-content: end;
+}
+.column-top {
+  flex-direction: column;
+}
+.column-left {
+  flex-direction: row;
+}
+.column-right {
+  justify-content: space-between;
+}
+.item {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  min-width: 10px;
+  min-height: 10px;
+  border: 0.2px solid white;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  background-color: black;
+}
+.game-cell {
+  background-color: red;
+  transition: all 0.5s ease-in-out;
+}
+
+.--fill {
+  background-color: black;
+}
+.--empty {
+  background-color: white;
+}
+.column-top:nth-child(5n):not(:last-child),
+.game-cell:nth-child(5n):not(:last-child) {
+  border-right: 1px solid black;
+}
+.column-left:nth-child(5n):not(:last-child),
+.column-right:nth-child(5n):not(:last-child) {
+  border-bottom: 1px solid black;
+}

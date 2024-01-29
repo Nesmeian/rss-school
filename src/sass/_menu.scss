@@ -1,0 +1,63 @@
+.select {
+  display: flex;
+  width: 200px;
+  background: beige;
+  flex-direction: column;
+}
+
+.select__level {
+  position: relative;
+  display: flex;
+  border: 1px solid black;
+}
+
+.level__title {
+  transition: all 0.5 ease;
+}
+
+.level__game {
+  transition: all 0.5s ease;
+  font-size: 0;
+}
+
+// .column-left:nth-child(5n):not(:last-child)
+.select__game_value:nth-child() {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.level__btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 30px;
+}
+
+.--hide {
+  font-size: 0;
+}
+.--show {
+  font-size: 12px;
+}
+.level__btn::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 7px;
+  background-color: white;
+  top: 5px;
+  right: 10px;
+  transform: rotate(45deg);
+  transition: all 1.5s ease-in-out;
+}
+.level__btn::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 7px;
+  background-color: white;
+  top: 10px;
+  right: 10px;
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+}
