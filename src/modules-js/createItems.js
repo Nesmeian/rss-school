@@ -23,7 +23,7 @@ function createItem(column, row, purpose, value) {
   }
   return result;
 }
-let game = games.medium.dog;
+let game = games.easy.bomb;
 function createColumns(height, width, parent, purpose, value) {
   let item = [];
   let className = ["column"];
