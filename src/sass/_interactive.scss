@@ -1,0 +1,67 @@
+.interactive {
+  text-align: center;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.interactive__question {
+  font-size: 24px;
+}
+
+.interactive__word {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.word__item {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  transition: all 0.7s ease;
+}
+
+.--correct {
+  border-bottom: 0;
+}
+
+.interactive__attempts {
+  font-size: 20px;
+}
+
+.attempts__count {
+  color: red;
+  padding-left: 10px;
+}
+
+.interactive__keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 330px;
+  gap: 7px;
+}
+
+.keyboard__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #2196f3;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.--disabled {
+  cursor: initial;
+  background-color: darkblue;
+}
+
+.keyboard__item:nth-child(19) {
+  margin-left: 20px;
+}
