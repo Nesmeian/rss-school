@@ -4,6 +4,8 @@
   margin: 0 auto;
   background: white;
   border-radius: 30px;
+  justify-content: center;
+  align-items: center;
 }
 .title {
   text-align: center;
@@ -14,7 +16,6 @@
 .nonogramm {
   width: max-content;
   padding: 20px;
-  margin: 0 auto;
 }
 .nonogramm__container {
   margin: 0 auto;
@@ -70,7 +71,8 @@
   background-color: black;
 }
 .game-cell {
-  background-color: red;
+  background-color: gray;
+  border: 0.2px solid black;
   transition: all 0.5s ease-in-out;
 }
 

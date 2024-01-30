@@ -60,17 +60,14 @@ function createSelect(games) {
 createSelect(games);
 
 function showSelect() {
+  const selectLevel = document.querySelectorAll(".select__level");
   const levelBtn = document.querySelectorAll(".level__btn");
-  const levelGame = document.querySelectorAll(".level__game");
-  const levelTitle = document.querySelectorAll(".level__title");
   levelBtn.forEach((e, i) => {
     e.addEventListener("click", () => {
       for (let index = 0; index < levelBtn.length; index++) {
-        levelTitle[index].classList.remove("--hide");
-        levelGame[index].classList.remove("--show");
+        selectLevel[index].classList.remove("--active");
       }
-      levelTitle[i].classList.add("--hide");
-      levelGame[i].classList.add("--show");
+      selectLevel[i].classList.add("--active");
     });
   });
 }

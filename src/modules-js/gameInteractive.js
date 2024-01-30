@@ -1,3 +1,5 @@
+clickOnBoard();
+
 function clickOnBoard() {
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
@@ -14,21 +16,24 @@ function clickOnBoard() {
       e.classList.toggle("--empty");
     });
     e.addEventListener("click", () => {
-      if (e.classList.contains("--empty")) {
-        e.classList.remove("--empty");
+      if (!e.classList.contains("--fill")) {
+        e.classList.add("--fill");
+        if (e.classList.contains("--empty")) {
+          e.classList.remove("--empty");
+        }
+        if (e.classList.contains("target")) {
+          winCount--;
+        }
+      } else if (e.classList.contains("--fill")) {
+        e.classList.remove("--fill");
+        if (e.classList.contains("target")) {
+          winCount++;
+        }
       }
-      if (e.classList.contains("target")) {
-        winCount--;
-      }
-      if (winCount === 0) {
-        alert("you win");
-      }
-      e.classList.toggle("--fill");
       console.log(winCount);
     });
   });
 }
-clickOnBoard();
 function createWinCount(gameCell) {
   let winCount = 0;
   gameCell.forEach((e) => {

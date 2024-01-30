@@ -72,7 +72,7 @@ function createGame(game) {
       if (game[j][i] === 1) {
         countRight++;
       } else if (countRight > 0) {
-        arrCountRight.unshift(countRight);
+        arrCountRight.push(countRight);
         countRight = 0;
       }
     }
@@ -80,7 +80,7 @@ function createGame(game) {
       arrCountLeft.unshift(countLeft);
     }
     if (countRight > 0) {
-      arrCountRight.unshift(countRight);
+      arrCountRight.push(countRight);
     }
     arrCountRight.forEach((e, j) => {
       seachTop[i][j].textContent = e;

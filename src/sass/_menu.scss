@@ -1,14 +1,16 @@
 .select {
   display: flex;
-  width: 200px;
+  width: 30vw;
   background: beige;
   flex-direction: column;
 }
 
 .select__level {
+  overflow: hidden;
   position: relative;
   display: flex;
   border: 1px solid black;
+  gap: 10px;
 }
 
 .level__title {
@@ -16,10 +18,22 @@
 }
 
 .level__game {
+  position: absolute;
   transition: all 0.5s ease;
   font-size: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 12px;
+  left: 105px;
 }
 
+.select__game {
+  border-bottom: 1px solid black;
+}
+.select__game:nth-child(5n) {
+  border-bottom: none;
+}
 // .column-left:nth-child(5n):not(:last-child)
 .select__game_value:nth-child() {
   border-top: 1px solid black;
@@ -32,32 +46,39 @@
   background: black;
   border-radius: 30px;
 }
-
-.--hide {
-  font-size: 0;
-}
-.--show {
-  font-size: 12px;
+.--active {
+  .level__title {
+    font-size: 0px;
+  }
+  .level__game {
+    position: static;
+  }
+  .level__btn::after {
+    transform: rotate(-45deg);
+  }
+  .level__btn::before {
+    transform: rotate(45deg);
+  }
 }
 .level__btn::after {
   content: "";
   position: absolute;
   width: 1px;
-  height: 7px;
+  height: 8px;
   background-color: white;
   top: 5px;
   right: 10px;
   transform: rotate(45deg);
-  transition: all 1.5s ease-in-out;
+  transition: all 0.4s ease;
 }
 .level__btn::before {
   content: "";
   position: absolute;
   width: 1px;
-  height: 7px;
+  height: 8px;
   background-color: white;
   top: 10px;
   right: 10px;
   transform: rotate(-45deg);
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
 }
