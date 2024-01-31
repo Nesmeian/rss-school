@@ -1,19 +1,16 @@
 import { games } from "./game";
 import { createElement } from "./createFunc";
 import { setupMenu } from "./html";
-// function createSelect(games) {
-
-//     setupLabel.id = items;
-//     setupLabel.textConten = items;
-//     setupInput.value = items;
-//     setupInput.id = items;
-//     setupInput.type = "radio";
-//     setupForm.append(setupLabel);
-//     setupLabel.append(setupInput);
-//   }
-// }
-// createSelect(games);
-
+import { game, createGame } from "./createItems";
+import { restartGame } from "./restartGame";
+createSelect(games);
+showSelect();
+const levelBtn = document.querySelectorAll(".level__btn");
+const menuGames = document.querySelectorAll(".select__game");
+const levelTitle = document.querySelectorAll(".level__title");
+let choseLevel;
+let choseGame = "";
+let checkGame = game;
 function createSelect(games) {
   const select = createElement({
     tag: "div",
@@ -46,18 +43,12 @@ function createSelect(games) {
       const selectGame = createElement({
         tag: "div",
         classes: ["select__game"],
-      });
-      const gameValue = createElement({
-        tag: "div",
-        classes: ["select__game_value"],
         text: game,
       });
       levelGame.append(selectGame);
-      selectGame.append(gameValue);
     }
   }
 }
-createSelect(games);
 
 function showSelect() {
   const selectLevel = document.querySelectorAll(".select__level");
@@ -71,4 +62,17 @@ function showSelect() {
     });
   });
 }
-showSelect();
+
+levelBtn.forEach((e, i) => {
+  e.addEventListener("click", () => {
+    choseLevel = levelTitle[i].textContent;
+  });
+});
+
+menuGames.forEach((e) => {
+  e.addEventListener("click", () => {
+    choseGame = e.textContent;
+    restartGame();
+    createGame(games[choseLevel][choseGame]);
+  });
+});

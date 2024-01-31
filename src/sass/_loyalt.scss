@@ -6,13 +6,22 @@
   border-radius: 30px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  width: fit-content;
 }
+
 .title {
   text-align: center;
+  margin: 0;
+  font-size: 24px;
 }
+
 .main {
   background: gray;
+  font-family: cursive;
+  height: 110vh;
 }
+
 .nonogramm {
   width: max-content;
   padding: 20px;
@@ -64,7 +73,7 @@
   height: 15px;
   min-width: 10px;
   min-height: 10px;
-  border: 0.2px solid white;
+  border: 1px solid white;
   align-items: center;
   justify-content: center;
   font-size: 0.7rem;
@@ -72,7 +81,6 @@
 }
 .game-cell {
   background-color: gray;
-  border: 0.2px solid black;
   transition: all 0.5s ease-in-out;
 }
 
@@ -84,9 +92,9 @@
 }
 .column-top:nth-child(5n):not(:last-child),
 .game-cell:nth-child(5n):not(:last-child) {
-  border-right: 1px solid black;
+  border-right: 2px solid black;
 }
 .column-left:nth-child(5n):not(:last-child),
 .column-right:nth-child(5n):not(:last-child) {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
 }

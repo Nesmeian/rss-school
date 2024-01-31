@@ -1,0 +1,37 @@
+.modal__wrapper {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: -9999px;
+  height: 100%;
+  width: 100%;
+  background: gray;
+  transition: all 1s ease;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  background-color: gainsboro;
+  border-radius: 30px;
+  gap: 30px;
+}
+.modal__btn {
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 5px 15px;
+}
+
+.modal__congratulation {
+  padding: 10px;
+}
+
+.modal--active {
+  left: 0;
+}

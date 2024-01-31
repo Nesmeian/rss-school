@@ -1,5 +1,5 @@
 clickOnBoard();
-
+import { modalWrapper } from "./modal";
 function clickOnBoard() {
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
@@ -30,7 +30,10 @@ function clickOnBoard() {
           winCount++;
         }
       }
-      console.log(winCount);
+      if (winCount === 0) {
+        console.log(modalWrapper);
+        modalWrapper.classList.add("modal--active");
+      }
     });
   });
 }

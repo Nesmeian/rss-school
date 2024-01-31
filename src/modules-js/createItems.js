@@ -1,6 +1,7 @@
-import { games, hamster } from "./game";
+import { games } from "./game";
 import { bottomRight, bottomLeft, topRight } from "./html";
 import { createElement } from "./createFunc";
+export let game = games.easy.bomb;
 function createItem(column, row, purpose, value) {
   const result = [];
   value = "";
@@ -23,7 +24,7 @@ function createItem(column, row, purpose, value) {
   }
   return result;
 }
-let game = games.easy.bomb;
+
 function createColumns(height, width, parent, purpose, value) {
   let item = [];
   let className = ["column"];
@@ -47,7 +48,7 @@ function createColumns(height, width, parent, purpose, value) {
   }
   return item;
 }
-function createGame(game) {
+export function createGame(game) {
   const gameBoard = createColumns(
     game.length,
     game.length,
@@ -89,9 +90,10 @@ function createGame(game) {
       searchLeft[i][j].textContent = e;
     });
   }
+  deleteTrashItems();
 }
 
-function deleteTrashItems() {
+export function deleteTrashItems() {
   const itemLeft = document.querySelectorAll(".item-left");
   const itemTop = document.querySelectorAll(".item-top");
   itemLeft.forEach((e) => {
@@ -106,4 +108,3 @@ function deleteTrashItems() {
   });
 }
 createGame(game);
-deleteTrashItems();

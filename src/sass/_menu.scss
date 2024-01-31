@@ -1,8 +1,12 @@
+.setup-menu {
+  padding: 20px;
+}
 .select {
   display: flex;
-  width: 30vw;
-  background: beige;
+  width: 30%;
+  min-width: 100px;
   flex-direction: column;
+  gap: 10px;
 }
 
 .select__level {
@@ -11,6 +15,9 @@
   display: flex;
   border: 1px solid black;
   gap: 10px;
+  background: beige;
+  padding: 5px;
+  border-radius: 20px;
 }
 
 .level__title {
@@ -30,16 +37,17 @@
 
 .select__game {
   border-bottom: 1px solid black;
+  cursor: pointer;
 }
 .select__game:nth-child(5n) {
   border-bottom: none;
 }
-// .column-left:nth-child(5n):not(:last-child)
 .select__game_value:nth-child() {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 .level__btn {
+  cursor: pointer;
   position: relative;
   width: 20px;
   height: 20px;
@@ -48,7 +56,7 @@
 }
 .--active {
   .level__title {
-    font-size: 0px;
+    display: none;
   }
   .level__game {
     position: static;
