@@ -1,7 +1,8 @@
-import { games } from "./game";
 import { bottomRight, bottomLeft, topRight } from "./html";
 import { createElement } from "./createFunc";
-export let game = games.easy.bomb;
+import { currentGame } from "./createMenu";
+import { clickOnBoard } from "./gameInteractive";
+
 function createItem(column, row, purpose, value) {
   const result = [];
   value = "";
@@ -91,6 +92,7 @@ export function createGame(game) {
     });
   }
   deleteTrashItems();
+  clickOnBoard();
 }
 
 export function deleteTrashItems() {
@@ -107,4 +109,4 @@ export function deleteTrashItems() {
     }
   });
 }
-createGame(game);
+createGame(currentGame);

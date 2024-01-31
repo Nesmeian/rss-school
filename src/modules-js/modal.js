@@ -2,7 +2,7 @@ import { createElement } from "./createFunc";
 import { main } from "./html";
 import { restartGame } from "./restartGame";
 import { createGame } from "./createItems";
-import { games } from "./game";
+import { currentGame } from "./createMenu";
 const modal = createElement({
   tag: "div",
   classes: ["modal"],
@@ -27,12 +27,11 @@ modalWrapper.append(modal);
 modal.append(modalCongratulation);
 modal.append(modalBtn);
 
-function playAgain() {
+function playAgain(game) {
   modalBtn.addEventListener("click", () => {
-    const game = games.easy.bomb;
     modalWrapper.classList.remove("modal--active");
     restartGame();
-    createGame(game);
+    createGame(currentGame);
   });
 }
-playAgain();
+playAgain(currentGame);

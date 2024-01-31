@@ -1,16 +1,16 @@
 import { games } from "./game";
 import { createElement } from "./createFunc";
 import { setupMenu } from "./html";
-import { game, createGame } from "./createItems";
+import { createGame } from "./createItems";
 import { restartGame } from "./restartGame";
-createSelect(games);
-showSelect();
-const levelBtn = document.querySelectorAll(".level__btn");
-const menuGames = document.querySelectorAll(".select__game");
-const levelTitle = document.querySelectorAll(".level__title");
+export let game = games.easy.bomb;
+export let currentGame = game;
 let choseLevel;
 let choseGame = "";
-let checkGame = game;
+createSelect(games);
+showSelect();
+changeGame();
+
 function createSelect(games) {
   const select = createElement({
     tag: "div",
@@ -63,16 +63,21 @@ function showSelect() {
   });
 }
 
-levelBtn.forEach((e, i) => {
-  e.addEventListener("click", () => {
-    choseLevel = levelTitle[i].textContent;
+function changeGame() {
+  const levelBtn = document.querySelectorAll(".level__btn");
+  const menuGames = document.querySelectorAll(".select__game");
+  const levelTitle = document.querySelectorAll(".level__title");
+  levelBtn.forEach((e, i) => {
+    e.addEventListener("click", () => {
+      choseLevel = levelTitle[i].textContent;
+    });
   });
-});
-
-menuGames.forEach((e) => {
-  e.addEventListener("click", () => {
-    choseGame = e.textContent;
-    restartGame();
-    createGame(games[choseLevel][choseGame]);
+  menuGames.forEach((e) => {
+    e.addEventListener("click", () => {
+      choseGame = e.textContent;
+      currentGame = games[choseLevel][choseGame];
+      restartGame();
+      createGame(currentGame);
+    });
   });
-});
+}
