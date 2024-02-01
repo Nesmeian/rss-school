@@ -15,6 +15,14 @@ function createItem(column, row, purpose, value) {
     className.push("item-left");
   }
   for (let i = 0; i < row; i++) {
+    const leftCross = createElement({
+      tag: "div",
+      classes: ["left-cross"],
+    });
+    const rigthCross = createElement({
+      tag: "div",
+      classes: ["rigth-cross"],
+    });
     const items = createElement({
       tag: "div",
       classes: className,
@@ -22,6 +30,10 @@ function createItem(column, row, purpose, value) {
     });
     result.push(items);
     column.append(items);
+    if (purpose === "right") {
+      items.append(leftCross);
+      items.append(rigthCross);
+    }
   }
   return result;
 }
