@@ -1,6 +1,8 @@
-import { games, hamster } from "./game";
 import { bottomRight, bottomLeft, topRight } from "./html";
 import { createElement } from "./createFunc";
+import { currentGame } from "./createMenu";
+import { clickOnBoard } from "./gameInteractive";
+
 function createItem(column, row, purpose, value) {
   const result = [];
   value = "";
@@ -13,6 +15,14 @@ function createItem(column, row, purpose, value) {
     className.push("item-left");
   }
   for (let i = 0; i < row; i++) {
+    const leftCross = createElement({
+      tag: "div",
+      classes: ["left-cross"],
+    });
+    const rigthCross = createElement({
+      tag: "div",
+      classes: ["rigth-cross"],
+    });
     const items = createElement({
       tag: "div",
       classes: className,
@@ -20,10 +30,14 @@ function createItem(column, row, purpose, value) {
     });
     result.push(items);
     column.append(items);
+    if (purpose === "right") {
+      items.append(leftCross);
+      items.append(rigthCross);
+    }
   }
   return result;
 }
-let game = games.easy.bomb;
+
 function createColumns(height, width, parent, purpose, value) {
   let item = [];
   let className = ["column"];
@@ -47,7 +61,7 @@ function createColumns(height, width, parent, purpose, value) {
   }
   return item;
 }
-function createGame(game) {
+export function createGame(game) {
   const gameBoard = createColumns(
     game.length,
     game.length,
@@ -72,7 +86,7 @@ function createGame(game) {
       if (game[j][i] === 1) {
         countRight++;
       } else if (countRight > 0) {
-        arrCountRight.unshift(countRight);
+        arrCountRight.push(countRight);
         countRight = 0;
       }
     }
@@ -80,7 +94,7 @@ function createGame(game) {
       arrCountLeft.unshift(countLeft);
     }
     if (countRight > 0) {
-      arrCountRight.unshift(countRight);
+      arrCountRight.push(countRight);
     }
     arrCountRight.forEach((e, j) => {
       seachTop[i][j].textContent = e;
@@ -89,9 +103,11 @@ function createGame(game) {
       searchLeft[i][j].textContent = e;
     });
   }
+  deleteTrashItems();
+  clickOnBoard();
 }
 
-function deleteTrashItems() {
+export function deleteTrashItems() {
   const itemLeft = document.querySelectorAll(".item-left");
   const itemTop = document.querySelectorAll(".item-top");
   itemLeft.forEach((e) => {
@@ -105,5 +121,4 @@ function deleteTrashItems() {
     }
   });
 }
-createGame(game);
-deleteTrashItems();
+createGame(currentGame);

@@ -7,7 +7,7 @@ const title = createElement({
   text: "Nonograms",
   classes: ["title"],
 });
-const main = createElement({
+export const main = createElement({
   tag: "main",
   classes: ["main"],
 });

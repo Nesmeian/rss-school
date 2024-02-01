@@ -1,18 +1,15 @@
 import { games } from "./game";
 import { createElement } from "./createFunc";
 import { setupMenu } from "./html";
-// function createSelect(games) {
-
-//     setupLabel.id = items;
-//     setupLabel.textConten = items;
-//     setupInput.value = items;
-//     setupInput.id = items;
-//     setupInput.type = "radio";
-//     setupForm.append(setupLabel);
-//     setupLabel.append(setupInput);
-//   }
-// }
-// createSelect(games);
+import { createGame } from "./createItems";
+import { restartGame } from "./restartGame";
+export let game = games.easy.bomb;
+export let currentGame = game;
+let choseLevel;
+let choseGame = "";
+createSelect(games);
+showSelect();
+changeGame();
 
 function createSelect(games) {
   const select = createElement({
@@ -46,32 +43,41 @@ function createSelect(games) {
       const selectGame = createElement({
         tag: "div",
         classes: ["select__game"],
-      });
-      const gameValue = createElement({
-        tag: "div",
-        classes: ["select__game_value"],
         text: game,
       });
       levelGame.append(selectGame);
-      selectGame.append(gameValue);
     }
   }
 }
-createSelect(games);
 
 function showSelect() {
+  const selectLevel = document.querySelectorAll(".select__level");
   const levelBtn = document.querySelectorAll(".level__btn");
-  const levelGame = document.querySelectorAll(".level__game");
-  const levelTitle = document.querySelectorAll(".level__title");
   levelBtn.forEach((e, i) => {
     e.addEventListener("click", () => {
       for (let index = 0; index < levelBtn.length; index++) {
-        levelTitle[index].classList.remove("--hide");
-        levelGame[index].classList.remove("--show");
+        selectLevel[index].classList.remove("--active");
       }
-      levelTitle[i].classList.add("--hide");
-      levelGame[i].classList.add("--show");
+      selectLevel[i].classList.add("--active");
     });
   });
 }
-showSelect();
+
+function changeGame() {
+  const levelBtn = document.querySelectorAll(".level__btn");
+  const menuGames = document.querySelectorAll(".select__game");
+  const levelTitle = document.querySelectorAll(".level__title");
+  levelBtn.forEach((e, i) => {
+    e.addEventListener("click", () => {
+      choseLevel = levelTitle[i].textContent;
+    });
+  });
+  menuGames.forEach((e) => {
+    e.addEventListener("click", () => {
+      choseGame = e.textContent;
+      currentGame = games[choseLevel][choseGame];
+      restartGame();
+      createGame(currentGame);
+    });
+  });
+}
