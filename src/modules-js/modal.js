@@ -5,7 +5,6 @@ import { createGame } from "./createItems";
 import { currentGame } from "./createMenu";
 import { audioNewGame } from "./audio";
 import { resetTimer } from "./timer";
-import { resultOfGames } from "./gameInteractive";
 
 const modal = createElement({
   tag: "div",

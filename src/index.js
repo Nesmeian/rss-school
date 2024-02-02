@@ -1,4 +1,5 @@
 import "./modules-js/html";
+import "./modules-js/header";
 import "./modules-js/createItems";
 import "./modules-js/gameInteractive";
 import "./modules-js/createMenu";
