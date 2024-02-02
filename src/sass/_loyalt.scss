@@ -38,7 +38,9 @@
 .container {
   color: white;
 }
-
+.container__top-left {
+  color: black;
+}
 .container__bottom-left {
   display: flex;
   grid-row: 2;

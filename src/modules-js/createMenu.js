@@ -4,6 +4,7 @@ import { setupMenu } from "./html";
 import { createGame } from "./createItems";
 import { restartGame } from "./restartGame";
 import { audioChangeLevel, audioChangeGame } from "./audio";
+import { stopTimer, resetTimer } from "./timer";
 export let game = games.easy.bomb;
 export let currentGame = game;
 let choseLevel;
@@ -80,6 +81,7 @@ function changeGame() {
       choseGame = e.textContent;
       currentGame = games[choseLevel][choseGame];
       restartGame();
+      resetTimer();
       createGame(currentGame);
     });
   });

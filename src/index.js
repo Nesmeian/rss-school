@@ -5,4 +5,6 @@ import "./modules-js/createMenu";
 import "./modules-js/modal";
 import "./modules-js/footer";
 import "./modules-js/audio";
+import "./modules-js/timer";
+import "./modules-js/randomGame";
 import "./main.scss";

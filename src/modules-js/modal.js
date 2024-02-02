@@ -4,6 +4,9 @@ import { restartGame } from "./restartGame";
 import { createGame } from "./createItems";
 import { currentGame } from "./createMenu";
 import { audioNewGame } from "./audio";
+import { resetTimer } from "./timer";
+import { resultOfGames } from "./gameInteractive";
+
 const modal = createElement({
   tag: "div",
   classes: ["modal"],
@@ -17,10 +20,9 @@ const modalBtn = createElement({
   classes: ["modal__btn"],
   text: "Play again?",
 });
-const modalCongratulation = createElement({
+export const modalCongratulation = createElement({
   tag: "div",
   classes: ["modal__congratulation"],
-  text: "You win this game your score is",
 });
 
 main.append(modalWrapper);
@@ -34,6 +36,7 @@ function playAgain(currentGame) {
     audioNewGame.play();
     restartGame();
     createGame(currentGame);
+    resetTimer();
   });
 }
 playAgain(currentGame);

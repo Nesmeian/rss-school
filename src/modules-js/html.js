@@ -1,5 +1,6 @@
 // Create
 import { createElement } from "./createFunc";
+
 const body = document.querySelector("body");
 body.className = "body";
 const title = createElement({
