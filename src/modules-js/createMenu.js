@@ -3,6 +3,7 @@ import { createElement } from "./createFunc";
 import { setupMenu } from "./html";
 import { createGame } from "./createItems";
 import { restartGame } from "./restartGame";
+import { audioChangeLevel, audioChangeGame } from "./audio";
 export let game = games.easy.bomb;
 export let currentGame = game;
 let choseLevel;
@@ -69,11 +70,13 @@ function changeGame() {
   const levelTitle = document.querySelectorAll(".level__title");
   levelBtn.forEach((e, i) => {
     e.addEventListener("click", () => {
+      audioChangeLevel.play();
       choseLevel = levelTitle[i].textContent;
     });
   });
   menuGames.forEach((e) => {
     e.addEventListener("click", () => {
+      audioChangeGame.play();
       choseGame = e.textContent;
       currentGame = games[choseLevel][choseGame];
       restartGame();

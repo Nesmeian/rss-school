@@ -3,6 +3,7 @@ import { main } from "./html";
 import { restartGame } from "./restartGame";
 import { createGame } from "./createItems";
 import { currentGame } from "./createMenu";
+import { audioNewGame } from "./audio";
 const modal = createElement({
   tag: "div",
   classes: ["modal"],
@@ -27,9 +28,10 @@ modalWrapper.append(modal);
 modal.append(modalCongratulation);
 modal.append(modalBtn);
 
-function playAgain(game) {
+function playAgain(currentGame) {
   modalBtn.addEventListener("click", () => {
     modalWrapper.classList.remove("modal--active");
+    audioNewGame.play();
     restartGame();
     createGame(currentGame);
   });

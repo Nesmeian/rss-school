@@ -17,11 +17,12 @@ module.exports = {
     open: true,
     hot: true,
   },
-  entry: path.resolve(__dirname, "src", "index.js"),
+  entry: ["@babel/polyfill", path.resolve(__dirname, "src", "index.js")],
   output: {
     path: path.resolve(__dirname, "nonograms"),
     clean: true,
     filename: "[name].[contenthash].js",
+    assetModuleFilename: "assets/[hash][ext]",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -54,8 +55,22 @@ module.exports = {
         ],
       },
       {
+        test: /\.(jpe?g|png|webp|gif|svg)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "img/[name][ext]",
+        },
+      },
+      {
+        test: /\.(mp3)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "audio/[name][ext]",
+        },
+      },
+      {
         test: /\.(?:js|mjs|cjs)$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
           options: {
