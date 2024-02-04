@@ -1,9 +1,32 @@
 import { rigthClick } from "./audio";
 import { countOfTargets } from "./gameInteractive";
 import { saveGameBtn, contineGameBtn } from "./html";
-const gameCell = document.querySelectorAll(".game-cell");
+import { restartGame } from "./restartGame";
+import { currentGame } from "./createMenu";
+import { createGame } from "./createItems";
+import { resetTimer } from "./timer";
 let saveGame = JSON.parse(window.localStorage.getItem("saveGame"));
-saveGameBtn.addEventListener("click", () => {
+
+saveGameBtn.addEventListener("click", save);
+
+contineGameBtn.addEventListener("click", continueGame);
+function continueGame() {
+  let a = JSON.parse(localStorage.getItem("saveGame"));
+  let currentGame = a.game;
+  let saveCount = a.saveCount;
+  restartGame();
+  createGame(currentGame, saveCount);
+  const gameCell = document.querySelectorAll(".game-cell");
+  a.fill.forEach((e) => {
+    gameCell[e].classList.add("--fill");
+  });
+  a.empty.forEach((e) => {
+    gameCell[e].classList.add("--empty");
+  });
+  resetTimer();
+}
+function save() {
+  const gameCell = document.querySelectorAll(".game-cell");
   let saveLeftClick = [];
   let saveRightClick = [];
   gameCell.forEach((e, i) => {
@@ -17,17 +40,8 @@ saveGameBtn.addEventListener("click", () => {
     fill: saveLeftClick,
     empty: saveRightClick,
     saveCount: countOfTargets,
+    game: currentGame,
   };
   saveGame = saveGameObj;
   localStorage.setItem("saveGame", JSON.stringify(saveGame));
-});
-
-contineGameBtn.addEventListener("click", () => {
-  let a = JSON.parse(localStorage.getItem("saveGame"));
-  a.fill.forEach((e) => {
-    gameCell[e].classList.add("--fill");
-  });
-  a.empty.forEach((e) => {
-    gameCell[e].classList.add("--empty");
-  });
-});
+}

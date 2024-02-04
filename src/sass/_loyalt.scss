@@ -3,6 +3,8 @@ html {
   font-family: Arial sans-serif;
 }
 .wrapper {
+  box-sizing: border-box;
+  padding-bottom: 90px;
   max-width: 1440px;
   display: flex;
   margin: 0 auto;
@@ -12,6 +14,7 @@ html {
   align-items: center;
   flex-wrap: wrap;
   width: fit-content;
+  min-height: 100%;
   border: 1px solid aliceblue;
   transition: all 0.5s ease;
 }

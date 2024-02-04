@@ -5,9 +5,14 @@ import { modalCongratulation } from "./modal";
 import { _gameActive } from "./createMenu";
 export let countOfTargets = 0;
 // import resultOfGames
-export function clickOnBoard() {
+export function clickOnBoard(count) {
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
+  if (count == undefined) {
+    console.log(1);
+  } else {
+    winCount = count;
+  }
   gameCell.forEach((e, i) => {
     e.addEventListener("contextmenu", (elem) => {
       elem.preventDefault();
