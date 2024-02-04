@@ -85,9 +85,9 @@ const titleS = createElement({
   classes: ["title-s"],
 });
 
-const emptyElem = createElement({
-  tag: "div",
-  classes: ["empty"],
+const winnersShowBtn = createElement({
+  tag: "button",
+  classes: ["button", "winners__show-btn"],
 });
 export const gameFeatures = createElement({
   tag: "div",
@@ -167,7 +167,7 @@ title.append(titleR);
 title.append(titleA);
 title.append(titleM);
 title.append(titleS);
-headerWrapper.append(emptyElem);
+headerWrapper.append(winnersShowBtn);
 main.append(wrapper);
 wrapper.append(gameFeatures);
 gameFeatures.append(contineGameBtn);
