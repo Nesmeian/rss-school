@@ -48,7 +48,6 @@ function createColumns(height, width, parent, purpose, value) {
   } else {
     className = ["column", "column-left"];
   }
-
   for (let i = 0; i < height; i++) {
     const columns = createElement({
       tag: "div",
@@ -61,7 +60,7 @@ function createColumns(height, width, parent, purpose, value) {
   }
   return item;
 }
-export function createGame(game) {
+export function createGame(game, count) {
   const gameBoard = createColumns(
     game.length,
     game.length,
@@ -103,8 +102,9 @@ export function createGame(game) {
       searchLeft[i][j].textContent = e;
     });
   }
+  console.log(count);
   deleteTrashItems();
-  clickOnBoard();
+  clickOnBoard(count);
 }
 
 export function deleteTrashItems() {

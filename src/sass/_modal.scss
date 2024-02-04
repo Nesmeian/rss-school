@@ -35,3 +35,31 @@
 .modal--active {
   left: 0;
 }
+
+.winners__modal {
+  position: fixed;
+  display: flex;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: gray;
+  transition: all 1s ease;
+}
+.winners__modal__wrapper {
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  background-color: gainsboro;
+  border-radius: 30px;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.winners__item {
+  width: 20%;
+  height: 100px;
+  background: black;
+}

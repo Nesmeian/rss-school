@@ -1,5 +1,6 @@
 import { createElement } from "./createFunc";
 import { main } from "./html";
+import rs from "../img/logo_rs_text.svg";
 const footer = createElement({
   tag: "footer",
   classes: ["footer"],
@@ -46,5 +47,5 @@ footerWrapper.append(school);
 school.append(schoolLink);
 schoolLink.append(schoolImg);
 schoolLink.href = "https://rs.school/";
-schoolImg.src = "../img/rsSchool.png";
+schoolImg.src = rs;
 schoolImg.alt = "rss-school";
