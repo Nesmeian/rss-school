@@ -48,7 +48,6 @@ function createColumns(height, width, parent, purpose, value) {
   } else {
     className = ["column", "column-left"];
   }
-
   for (let i = 0; i < height; i++) {
     const columns = createElement({
       tag: "div",

@@ -7,15 +7,16 @@
   min-width: 100px;
   flex-direction: column;
   gap: 10px;
+  color: white;
 }
 
 .select__level {
   overflow: hidden;
   position: relative;
   display: flex;
-  border: 1px solid black;
+  justify-content: center;
   gap: 10px;
-  background: beige;
+  background: #0e96ff;
   padding: 5px;
   border-radius: 20px;
 }
@@ -36,11 +37,12 @@
 }
 
 .select__game {
-  border-bottom: 1px solid black;
+  color: #0e96ff;
+  background: #e0f1ff;
+  padding: 0.2px 4px;
+  border-radius: 10px;
+  text-align: center;
   cursor: pointer;
-}
-.select__game:nth-child(5n) {
-  border-bottom: none;
 }
 .select__game_value:nth-child() {
   border-top: 1px solid black;
@@ -60,12 +62,6 @@
   }
   .level__game {
     position: static;
-  }
-  .level__btn::after {
-    transform: rotate(-45deg);
-  }
-  .level__btn::before {
-    transform: rotate(45deg);
   }
 }
 .level__btn::after {

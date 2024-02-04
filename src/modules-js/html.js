@@ -1,13 +1,8 @@
 // Create
 import { createElement } from "./createFunc";
-
+import logoPath from "../img/nogormas-fav.jpg";
 const body = document.querySelector("body");
 body.className = "body";
-const title = createElement({
-  tag: "h1",
-  text: "Nonograms",
-  classes: ["title"],
-});
 export const main = createElement({
   tag: "main",
   classes: ["main"],
@@ -17,6 +12,108 @@ const wrapper = createElement({
   text: "",
   classes: ["wrapper"],
 });
+const header = createElement({
+  tag: "header",
+  classes: ["header"],
+});
+const headerWrapper = createElement({
+  tag: "div",
+  classes: ["header__wrapper"],
+});
+export const themes = createElement({
+  tag: "div",
+  classes: ["themes"],
+});
+export const themesLight = createElement({
+  tag: "button",
+  classes: ["button", "themes__light"],
+  text: "light",
+});
+
+export const themesDark = createElement({
+  tag: "button",
+  classes: ["button", "themese__dark"],
+  text: "dark",
+});
+const title = createElement({
+  tag: "div",
+  text: "",
+  classes: ["title"],
+});
+
+const titleN = createElement({
+  tag: "div",
+  text: "N",
+  classes: ["title-nn"],
+});
+const titleO = createElement({
+  tag: "div",
+  text: "O",
+  classes: ["title-n"],
+});
+const titleNN = createElement({
+  tag: "div",
+  text: "O",
+  classes: ["title-o"],
+});
+const titleG = createElement({
+  tag: "div",
+  text: "G",
+  classes: ["title-g"],
+});
+const titleR = createElement({
+  tag: "div",
+  text: "R",
+  classes: ["title-r"],
+});
+
+const titleA = createElement({
+  tag: "div",
+  text: "A",
+  classes: ["title-a"],
+});
+
+const titleM = createElement({
+  tag: "div",
+  text: "M",
+  classes: ["title-m"],
+});
+
+const titleS = createElement({
+  tag: "div",
+  text: "S",
+  classes: ["title-s"],
+});
+
+const emptyElem = createElement({
+  tag: "div",
+  classes: ["empty"],
+});
+export const gameFeatures = createElement({
+  tag: "div",
+  classes: ["game__featurs"],
+});
+export const randomGameBtn = createElement({
+  tag: "button",
+  classes: ["button", "featurs__random"],
+  text: "Random Game",
+});
+export const autoSolutionBtn = createElement({
+  tag: "button",
+  classes: ["button", "featurs__auto-solution"],
+  text: "Auto Solution",
+});
+export const saveGameBtn = createElement({
+  tag: "button",
+  classes: ["button", "featurs__save-game"],
+  text: "Save Game",
+});
+export const contineGameBtn = createElement({
+  tag: "button",
+  classes: ["button", "featurs__continue-game"],
+  text: "Continue Last Game",
+});
+
 const nonogramm = createElement({
   tag: "div",
   text: "",
@@ -54,10 +151,29 @@ export const setupMenu = createElement({
   classes: ["setup-menu"],
 });
 
-// append
 body.append(main);
-main.append(title);
+main.append(header);
+header.append(headerWrapper);
+headerWrapper.append(themes);
+themes.append(themesDark);
+themes.append(themesLight);
+headerWrapper.append(title);
+title.append(titleN);
+title.append(titleO);
+title.append(titleNN);
+title.append(titleO);
+title.append(titleG);
+title.append(titleR);
+title.append(titleA);
+title.append(titleM);
+title.append(titleS);
+headerWrapper.append(emptyElem);
 main.append(wrapper);
+wrapper.append(gameFeatures);
+gameFeatures.append(contineGameBtn);
+gameFeatures.append(saveGameBtn);
+gameFeatures.append(autoSolutionBtn);
+gameFeatures.append(randomGameBtn);
 wrapper.append(nonogramm);
 wrapper.append(setupMenu);
 nonogramm.append(nonogrammContainer);
@@ -65,5 +181,3 @@ nonogrammContainer.append(topLeft);
 nonogrammContainer.append(topRight);
 nonogrammContainer.append(bottomLeft);
 nonogrammContainer.append(bottomRight);
-
-// function

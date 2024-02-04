@@ -4,7 +4,16 @@ import { setupMenu } from "./html";
 import { createGame } from "./createItems";
 import { restartGame } from "./restartGame";
 import { audioChangeLevel, audioChangeGame } from "./audio";
-import { stopTimer, resetTimer } from "./timer";
+import { resetTimer } from "./timer";
+export let _gameActive = true;
+export const gameActive = {
+  get() {
+    return _gameActive;
+  },
+  set(value) {
+    _gameActive = value;
+  },
+};
 export let game = games.easy.bomb;
 export let currentGame = game;
 let choseLevel;
@@ -33,12 +42,7 @@ function createSelect(games) {
       tag: "div",
       classes: ["level__game"],
     });
-    const levelBtn = createElement({
-      tag: "div",
-      classes: ["level__btn"],
-    });
     select.append(selectLevel);
-    selectLevel.append(levelBtn);
     selectLevel.append(levelTitle);
     selectLevel.append(levelGame);
     for (let game in games[level]) {
@@ -54,22 +58,28 @@ function createSelect(games) {
 
 function showSelect() {
   const selectLevel = document.querySelectorAll(".select__level");
-  const levelBtn = document.querySelectorAll(".level__btn");
-  levelBtn.forEach((e, i) => {
+  selectLevel.forEach((e, i) => {
+    e.classList.remove("--active");
     e.addEventListener("click", () => {
-      for (let index = 0; index < levelBtn.length; index++) {
-        selectLevel[index].classList.remove("--active");
+      if (!e.classList.contains("--active")) {
+        selectLevel.forEach((e) => {
+          e.classList.remove("--active");
+        });
+        audioChangeLevel.play();
+        e.classList.add("--active");
+      } else {
+        audioChangeLevel.play();
+        e.classList.remove("--active");
       }
-      selectLevel[i].classList.add("--active");
     });
   });
 }
 
 function changeGame() {
-  const levelBtn = document.querySelectorAll(".level__btn");
+  const selectLevel = document.querySelectorAll(".select__level");
   const menuGames = document.querySelectorAll(".select__game");
   const levelTitle = document.querySelectorAll(".level__title");
-  levelBtn.forEach((e, i) => {
+  selectLevel.forEach((e, i) => {
     e.addEventListener("click", () => {
       audioChangeLevel.play();
       choseLevel = levelTitle[i].textContent;
@@ -80,6 +90,7 @@ function changeGame() {
       audioChangeGame.play();
       choseGame = e.textContent;
       currentGame = games[choseLevel][choseGame];
+      gameActive.set(true);
       restartGame();
       resetTimer();
       createGame(currentGame);

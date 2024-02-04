@@ -1,0 +1,14 @@
+.game__featurs {
+  display: grid;
+  gap: 5px 10px;
+  font-size: 12px;
+  padding-left: 10px;
+}
+.button {
+  background: #0e96ff;
+  color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.5s ease;
+}
