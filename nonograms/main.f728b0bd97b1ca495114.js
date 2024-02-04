@@ -820,7 +820,10 @@ try {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   changeLevel: () => (/* binding */ changeLevel),
+/* harmony export */   audioChangeGame: () => (/* binding */ audioChangeGame),
+/* harmony export */   audioChangeLevel: () => (/* binding */ audioChangeLevel),
+/* harmony export */   audioNewGame: () => (/* binding */ audioNewGame),
+/* harmony export */   audioWinGame: () => (/* binding */ audioWinGame),
 /* harmony export */   leftClick: () => (/* binding */ leftClick),
 /* harmony export */   rigthClick: () => (/* binding */ rigthClick)
 /* harmony export */ });
@@ -828,6 +831,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _audio_leftclick_mp3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../audio/leftclick.mp3 */ "./src/audio/leftclick.mp3");
 /* harmony import */ var _audio_rigthclick_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../audio/rigthclick.mp3 */ "./src/audio/rigthclick.mp3");
 /* harmony import */ var _audio_changelevel_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../audio/changelevel.mp3 */ "./src/audio/changelevel.mp3");
+/* harmony import */ var _audio_changegame_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../audio/changegame.mp3 */ "./src/audio/changegame.mp3");
+/* harmony import */ var _audio_winGame_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../audio/winGame.mp3 */ "./src/audio/winGame.mp3");
+/* harmony import */ var _audio_newGame_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../audio/newGame.mp3 */ "./src/audio/newGame.mp3");
+
+
+
 
 
 
@@ -840,13 +849,55 @@ const rigthClick = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "audio",
   classes: ["audio__rigth-click"]
 });
-const changeLevel = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+const audioChangeLevel = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "audio",
   classes: ["audio__change-level"]
 });
+const audioChangeGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__change-game"]
+});
+const audioWinGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__win-game"]
+});
+const audioNewGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: 'audio',
+  classes: ['audio__new-game']
+});
 leftClick.src = _audio_leftclick_mp3__WEBPACK_IMPORTED_MODULE_1__;
 rigthClick.src = _audio_rigthclick_mp3__WEBPACK_IMPORTED_MODULE_2__;
-changeLevel.src = _audio_changelevel_mp3__WEBPACK_IMPORTED_MODULE_3__;
+audioChangeLevel.src = _audio_changelevel_mp3__WEBPACK_IMPORTED_MODULE_3__;
+audioChangeGame.src = _audio_changegame_mp3__WEBPACK_IMPORTED_MODULE_4__;
+audioWinGame.src = _audio_winGame_mp3__WEBPACK_IMPORTED_MODULE_5__;
+audioNewGame.src = _audio_newGame_mp3__WEBPACK_IMPORTED_MODULE_6__;
+
+/***/ }),
+
+/***/ "./src/modules-js/autoSolution.js":
+/*!****************************************!*\
+  !*** ./src/modules-js/autoSolution.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
+/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+
+
+
+_html__WEBPACK_IMPORTED_MODULE_1__.autoSolutionBtn.addEventListener("click", () => {
+  const gameCell = document.querySelectorAll(".game-cell");
+  gameCell.forEach(e => {
+    if (e.classList.contains("target")) {
+      e.classList.add("--fill");
+    }
+  });
+  (0,_timer__WEBPACK_IMPORTED_MODULE_2__.stopTimer)();
+  _createMenu__WEBPACK_IMPORTED_MODULE_0__.gameActive.set(false);
+});
 
 /***/ }),
 
@@ -957,7 +1008,7 @@ function createColumns(height, width, parent, purpose, value) {
   }
   return item;
 }
-function createGame(game) {
+function createGame(game, count) {
   const gameBoard = createColumns(game.length, game.length, _html__WEBPACK_IMPORTED_MODULE_0__.bottomRight, "right");
   const searchLeft = createColumns(game.length, game.length, _html__WEBPACK_IMPORTED_MODULE_0__.bottomLeft);
   const seachTop = createColumns(game.length, game.length, _html__WEBPACK_IMPORTED_MODULE_0__.topRight, "top");
@@ -994,8 +1045,9 @@ function createGame(game) {
       searchLeft[i][j].textContent = e;
     });
   }
+  console.log(count);
   deleteTrashItems();
-  (0,_gameInteractive__WEBPACK_IMPORTED_MODULE_3__.clickOnBoard)();
+  (0,_gameInteractive__WEBPACK_IMPORTED_MODULE_3__.clickOnBoard)(count);
 }
 function deleteTrashItems() {
   const itemLeft = document.querySelectorAll(".item-left");
@@ -1024,8 +1076,10 @@ createGame(_createMenu__WEBPACK_IMPORTED_MODULE_2__.currentGame);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _gameActive: () => (/* binding */ _gameActive),
 /* harmony export */   currentGame: () => (/* binding */ currentGame),
-/* harmony export */   game: () => (/* binding */ game)
+/* harmony export */   game: () => (/* binding */ game),
+/* harmony export */   gameActive: () => (/* binding */ gameActive)
 /* harmony export */ });
 /* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./game */ "./src/modules-js/game.js");
 /* harmony import */ var _createFunc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createFunc */ "./src/modules-js/createFunc.js");
@@ -1033,12 +1087,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
 /* harmony import */ var _restartGame__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./restartGame */ "./src/modules-js/restartGame.js");
 /* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
 
 
 
 
 
 
+
+let _gameActive = true;
+const gameActive = {
+  get() {
+    return _gameActive;
+  },
+  set(value) {
+    _gameActive = value;
+  }
+};
 let game = _game__WEBPACK_IMPORTED_MODULE_0__.games.easy.bomb;
 let currentGame = game;
 let choseLevel;
@@ -1066,12 +1131,7 @@ function createSelect(games) {
       tag: "div",
       classes: ["level__game"]
     });
-    const levelBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
-      tag: "div",
-      classes: ["level__btn"]
-    });
     select.append(selectLevel);
-    selectLevel.append(levelBtn);
     selectLevel.append(levelTitle);
     selectLevel.append(levelGame);
     for (let game in games[level]) {
@@ -1086,31 +1146,40 @@ function createSelect(games) {
 }
 function showSelect() {
   const selectLevel = document.querySelectorAll(".select__level");
-  const levelBtn = document.querySelectorAll(".level__btn");
-  levelBtn.forEach((e, i) => {
+  selectLevel.forEach((e, i) => {
+    e.classList.remove("--active");
     e.addEventListener("click", () => {
-      for (let index = 0; index < levelBtn.length; index++) {
-        selectLevel[index].classList.remove("--active");
+      if (!e.classList.contains("--active")) {
+        selectLevel.forEach(e => {
+          e.classList.remove("--active");
+        });
+        _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
+        e.classList.add("--active");
+      } else {
+        _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
+        e.classList.remove("--active");
       }
-      selectLevel[i].classList.add("--active");
     });
   });
 }
 function changeGame() {
-  const levelBtn = document.querySelectorAll(".level__btn");
+  const selectLevel = document.querySelectorAll(".select__level");
   const menuGames = document.querySelectorAll(".select__game");
   const levelTitle = document.querySelectorAll(".level__title");
-  levelBtn.forEach((e, i) => {
+  selectLevel.forEach((e, i) => {
     e.addEventListener("click", () => {
-      _audio__WEBPACK_IMPORTED_MODULE_5__.changeLevel.play();
+      _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
       choseLevel = levelTitle[i].textContent;
     });
   });
   menuGames.forEach(e => {
     e.addEventListener("click", () => {
+      _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeGame.play();
       choseGame = e.textContent;
       currentGame = _game__WEBPACK_IMPORTED_MODULE_0__.games[choseLevel][choseGame];
+      gameActive.set(true);
       (0,_restartGame__WEBPACK_IMPORTED_MODULE_4__.restartGame)();
+      (0,_timer__WEBPACK_IMPORTED_MODULE_6__.resetTimer)();
       (0,_createItems__WEBPACK_IMPORTED_MODULE_3__.createGame)(currentGame);
     });
   });
@@ -1227,55 +1296,80 @@ const games = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   clickOnBoard: () => (/* binding */ clickOnBoard)
+/* harmony export */   clickOnBoard: () => (/* binding */ clickOnBoard),
+/* harmony export */   countOfTargets: () => (/* binding */ countOfTargets)
 /* harmony export */ });
 /* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ "./src/modules-js/modal.js");
 /* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+/* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
 
 
-function clickOnBoard() {
+
+
+
+let countOfTargets = 0;
+// import resultOfGames
+function clickOnBoard(count) {
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
+  if (count == undefined) {
+    console.log(1);
+  } else {
+    winCount = count;
+  }
   gameCell.forEach((e, i) => {
     e.addEventListener("contextmenu", elem => {
-      _audio__WEBPACK_IMPORTED_MODULE_1__.rigthClick.play();
       elem.preventDefault();
-      if (e.classList.contains("--fill")) {
-        e.classList.remove("--fill");
-        if (e.classList.contains("target")) {
-          winCount++;
+      if (_createMenu__WEBPACK_IMPORTED_MODULE_3__._gameActive) {
+        (0,_timer__WEBPACK_IMPORTED_MODULE_2__.startTimer)();
+        _audio__WEBPACK_IMPORTED_MODULE_1__.rigthClick.play();
+        if (e.classList.contains("--fill")) {
+          e.classList.remove("--fill");
+          if (e.classList.contains("target")) {
+            winCount++;
+            countOfTargets = winCount;
+          }
+          if (!e.classList.contains("target")) {
+            winCount--;
+            countOfTargets = winCount;
+          }
         }
-        if (!e.classList.contains("target")) {
-          winCount--;
-        }
+        e.classList.toggle("--empty");
       }
-      console.log(winCount);
-      e.classList.toggle("--empty");
     });
     e.addEventListener("click", () => {
-      _audio__WEBPACK_IMPORTED_MODULE_1__.leftClick.play();
-      if (e.classList.contains("--empty")) {
-        e.classList.remove("--empty");
-      }
-      if (!e.classList.contains("--fill")) {
-        e.classList.add("--fill");
-        if (e.classList.contains("target")) {
-          winCount--;
-          console.log(1);
-        } else if (!e.classList.contains("target")) {
-          winCount++;
-          console.log(winCount);
+      if (_createMenu__WEBPACK_IMPORTED_MODULE_3__._gameActive) {
+        (0,_timer__WEBPACK_IMPORTED_MODULE_2__.startTimer)();
+        _audio__WEBPACK_IMPORTED_MODULE_1__.leftClick.play();
+        if (e.classList.contains("--empty")) {
+          e.classList.remove("--empty");
         }
-      } else if (e.classList.contains("--fill")) {
-        e.classList.remove("--fill");
-        if (!e.classList.contains("target")) {
-          winCount--;
-        } else if (e.classList.contains("target")) {
-          winCount++;
+        if (!e.classList.contains("--fill")) {
+          e.classList.add("--fill");
+          if (e.classList.contains("target")) {
+            winCount--;
+            countOfTargets = winCount;
+          } else if (!e.classList.contains("target")) {
+            winCount++;
+            countOfTargets = winCount;
+          }
+        } else if (e.classList.contains("--fill")) {
+          e.classList.remove("--fill");
+          if (!e.classList.contains("target")) {
+            winCount--;
+            countOfTargets = winCount;
+          } else if (e.classList.contains("target")) {
+            winCount++;
+            countOfTargets = winCount;
+          }
         }
-      }
-      if (winCount === 0) {
-        _modal__WEBPACK_IMPORTED_MODULE_0__.modalWrapper.classList.add("modal--active");
+        if (winCount === 0) {
+          _audio__WEBPACK_IMPORTED_MODULE_1__.audioWinGame.play();
+          _modal__WEBPACK_IMPORTED_MODULE_0__.modalWrapper.classList.add("modal--active");
+          _modal__WEBPACK_IMPORTED_MODULE_0__.modalCongratulation.textContent = `Great! You have solved the nonogram in ${_timer__WEBPACK_IMPORTED_MODULE_2__.result}`;
+          (0,_timer__WEBPACK_IMPORTED_MODULE_2__.stopTimer)();
+        }
       }
     });
   });
@@ -1301,23 +1395,28 @@ function createWinCount(gameCell) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   autoSolutionBtn: () => (/* binding */ autoSolutionBtn),
 /* harmony export */   bottomLeft: () => (/* binding */ bottomLeft),
 /* harmony export */   bottomRight: () => (/* binding */ bottomRight),
+/* harmony export */   contineGameBtn: () => (/* binding */ contineGameBtn),
+/* harmony export */   gameFeatures: () => (/* binding */ gameFeatures),
 /* harmony export */   main: () => (/* binding */ main),
+/* harmony export */   randomGameBtn: () => (/* binding */ randomGameBtn),
+/* harmony export */   saveGameBtn: () => (/* binding */ saveGameBtn),
 /* harmony export */   setupMenu: () => (/* binding */ setupMenu),
+/* harmony export */   themes: () => (/* binding */ themes),
+/* harmony export */   themesDark: () => (/* binding */ themesDark),
+/* harmony export */   themesLight: () => (/* binding */ themesLight),
 /* harmony export */   topLeft: () => (/* binding */ topLeft),
 /* harmony export */   topRight: () => (/* binding */ topRight)
 /* harmony export */ });
 /* harmony import */ var _createFunc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createFunc */ "./src/modules-js/createFunc.js");
+/* harmony import */ var _img_nogormas_fav_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/nogormas-fav.jpg */ "./src/img/nogormas-fav.jpg");
 // Create
+
 
 const body = document.querySelector("body");
 body.className = "body";
-const title = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
-  tag: "h1",
-  text: "Nonograms",
-  classes: ["title"]
-});
 const main = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "main",
   classes: ["main"]
@@ -1326,6 +1425,101 @@ const wrapper = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "div",
   text: "",
   classes: ["wrapper"]
+});
+const header = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "header",
+  classes: ["header"]
+});
+const headerWrapper = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  classes: ["header__wrapper"]
+});
+const themes = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  classes: ["themes"]
+});
+const themesLight = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "themes__light"],
+  text: "light"
+});
+const themesDark = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "themese__dark"],
+  text: "dark"
+});
+const title = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "",
+  classes: ["title"]
+});
+const titleN = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "N",
+  classes: ["title-nn"]
+});
+const titleO = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "O",
+  classes: ["title-n"]
+});
+const titleNN = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "O",
+  classes: ["title-o"]
+});
+const titleG = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "G",
+  classes: ["title-g"]
+});
+const titleR = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "R",
+  classes: ["title-r"]
+});
+const titleA = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "A",
+  classes: ["title-a"]
+});
+const titleM = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "M",
+  classes: ["title-m"]
+});
+const titleS = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  text: "S",
+  classes: ["title-s"]
+});
+const winnersShowBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "winners__show-btn"]
+});
+const gameFeatures = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "div",
+  classes: ["game__featurs"]
+});
+const randomGameBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "featurs__random"],
+  text: "Random Game"
+});
+const autoSolutionBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "featurs__auto-solution"],
+  text: "Auto Solution"
+});
+const saveGameBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "featurs__save-game"],
+  text: "Save Game"
+});
+const contineGameBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "featurs__continue-game"],
+  text: "Continue Last Game"
 });
 const nonogramm = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "div",
@@ -1361,11 +1555,29 @@ const setupMenu = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "div",
   classes: ["setup-menu"]
 });
-
-// append
 body.append(main);
-main.append(title);
+main.append(header);
+header.append(headerWrapper);
+headerWrapper.append(themes);
+themes.append(themesDark);
+themes.append(themesLight);
+headerWrapper.append(title);
+title.append(titleN);
+title.append(titleO);
+title.append(titleNN);
+title.append(titleO);
+title.append(titleG);
+title.append(titleR);
+title.append(titleA);
+title.append(titleM);
+title.append(titleS);
+headerWrapper.append(winnersShowBtn);
 main.append(wrapper);
+wrapper.append(gameFeatures);
+gameFeatures.append(contineGameBtn);
+gameFeatures.append(saveGameBtn);
+gameFeatures.append(autoSolutionBtn);
+gameFeatures.append(randomGameBtn);
 wrapper.append(nonogramm);
 wrapper.append(setupMenu);
 nonogramm.append(nonogrammContainer);
@@ -1373,8 +1585,6 @@ nonogrammContainer.append(topLeft);
 nonogrammContainer.append(topRight);
 nonogrammContainer.append(bottomLeft);
 nonogrammContainer.append(bottomRight);
-
-// function
 
 /***/ }),
 
@@ -1387,6 +1597,7 @@ nonogrammContainer.append(bottomRight);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   modalCongratulation: () => (/* binding */ modalCongratulation),
 /* harmony export */   modalWrapper: () => (/* binding */ modalWrapper)
 /* harmony export */ });
 /* harmony import */ var _createFunc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createFunc */ "./src/modules-js/createFunc.js");
@@ -1394,6 +1605,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _restartGame__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restartGame */ "./src/modules-js/restartGame.js");
 /* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
 /* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
+/* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+
+
 
 
 
@@ -1414,21 +1629,110 @@ const modalBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
 });
 const modalCongratulation = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "div",
-  classes: ["modal__congratulation"],
-  text: "You win this game your score is"
+  classes: ["modal__congratulation"]
 });
 _html__WEBPACK_IMPORTED_MODULE_1__.main.append(modalWrapper);
 modalWrapper.append(modal);
 modal.append(modalCongratulation);
 modal.append(modalBtn);
-function playAgain(game) {
+function playAgain(currentGame) {
   modalBtn.addEventListener("click", () => {
     modalWrapper.classList.remove("modal--active");
+    _audio__WEBPACK_IMPORTED_MODULE_5__.audioNewGame.play();
     (0,_restartGame__WEBPACK_IMPORTED_MODULE_2__.restartGame)();
-    (0,_createItems__WEBPACK_IMPORTED_MODULE_3__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_4__.currentGame);
+    (0,_createItems__WEBPACK_IMPORTED_MODULE_3__.createGame)(currentGame);
+    (0,_timer__WEBPACK_IMPORTED_MODULE_6__.resetTimer)();
   });
 }
 playAgain(_createMenu__WEBPACK_IMPORTED_MODULE_4__.currentGame);
+
+/***/ }),
+
+/***/ "./src/modules-js/modalWinners.js":
+/*!****************************************!*\
+  !*** ./src/modules-js/modalWinners.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+/* harmony import */ var _createFunc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createFunc */ "./src/modules-js/createFunc.js");
+
+
+const winnersModal = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
+  tag: "div",
+  classes: ["winners__modal"]
+});
+const winnersWrapper = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
+  tag: "div",
+  classes: ["winners__modal__wrapper"]
+});
+const winnersPlace = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
+  tag: "div",
+  classes: ["winners__item", "winners__place"]
+});
+const winnersGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
+  tag: "div",
+  classes: ["winners__item", "winner__game"]
+});
+const winnersLevel = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
+  tag: "div",
+  classes: ["winners__item", "winner__level"]
+});
+const winnersTime = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
+  tag: "div",
+  classes: ["winners__item", "winner__time"]
+});
+_html__WEBPACK_IMPORTED_MODULE_0__.main.append(winnersModal);
+winnersModal.append(winnersWrapper);
+winnersWrapper.append(winnersPlace);
+winnersWrapper.append(winnersGame);
+winnersWrapper.append(winnersLevel);
+winnersWrapper.append(winnersTime);
+
+/***/ }),
+
+/***/ "./src/modules-js/randomGame.js":
+/*!**************************************!*\
+  !*** ./src/modules-js/randomGame.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./game */ "./src/modules-js/game.js");
+/* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
+/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+/* harmony import */ var _restartGame__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./restartGame */ "./src/modules-js/restartGame.js");
+/* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
+
+
+
+
+
+_html__WEBPACK_IMPORTED_MODULE_2__.randomGameBtn.addEventListener("click", () => {
+  let randLevelValue = randomLevel(random());
+  let randGameValue = randomGame(randLevelValue);
+  (0,_restartGame__WEBPACK_IMPORTED_MODULE_3__.restartGame)();
+  _createMenu__WEBPACK_IMPORTED_MODULE_4__.gameActive.set(true);
+  (0,_createItems__WEBPACK_IMPORTED_MODULE_1__.createGame)(_game__WEBPACK_IMPORTED_MODULE_0__.games[randLevelValue][randGameValue]);
+});
+function randomLevel(random) {
+  let level = Object.keys(_game__WEBPACK_IMPORTED_MODULE_0__.games);
+  return level[random];
+}
+function random() {
+  let gamesLevelLength = Object.keys(_game__WEBPACK_IMPORTED_MODULE_0__.games).length;
+  let rand = Math.random() * (gamesLevelLength + 1 - 1);
+  return Math.floor(rand);
+}
+function randomGame(level) {
+  let gameKeys = Object.keys(_game__WEBPACK_IMPORTED_MODULE_0__.games[level]);
+  let randGame = Math.random() * (gameKeys.length + 1 - 1);
+  randGame = Math.floor(randGame);
+  return gameKeys[randGame];
+}
 
 /***/ }),
 
@@ -1449,6 +1753,151 @@ function restartGame() {
   _html__WEBPACK_IMPORTED_MODULE_0__.bottomLeft.textContent = "";
   _html__WEBPACK_IMPORTED_MODULE_0__.bottomRight.textContent = "";
   _html__WEBPACK_IMPORTED_MODULE_0__.topRight.textContent = "";
+}
+
+/***/ }),
+
+/***/ "./src/modules-js/saveGame.js":
+/*!************************************!*\
+  !*** ./src/modules-js/saveGame.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+/* harmony import */ var _gameInteractive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gameInteractive */ "./src/modules-js/gameInteractive.js");
+/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+/* harmony import */ var _restartGame__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./restartGame */ "./src/modules-js/restartGame.js");
+/* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
+/* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+
+
+
+
+
+
+
+let saveGame = JSON.parse(window.localStorage.getItem("saveGame"));
+_html__WEBPACK_IMPORTED_MODULE_2__.saveGameBtn.addEventListener("click", save);
+_html__WEBPACK_IMPORTED_MODULE_2__.contineGameBtn.addEventListener("click", continueGame);
+function continueGame() {
+  let a = JSON.parse(localStorage.getItem("saveGame"));
+  let currentGame = a.game;
+  let saveCount = a.saveCount;
+  (0,_restartGame__WEBPACK_IMPORTED_MODULE_3__.restartGame)();
+  (0,_createItems__WEBPACK_IMPORTED_MODULE_5__.createGame)(currentGame, saveCount);
+  const gameCell = document.querySelectorAll(".game-cell");
+  a.fill.forEach(e => {
+    gameCell[e].classList.add("--fill");
+  });
+  a.empty.forEach(e => {
+    gameCell[e].classList.add("--empty");
+  });
+  (0,_timer__WEBPACK_IMPORTED_MODULE_6__.resetTimer)();
+}
+function save() {
+  const gameCell = document.querySelectorAll(".game-cell");
+  let saveLeftClick = [];
+  let saveRightClick = [];
+  gameCell.forEach((e, i) => {
+    if (e.classList.contains("--fill")) {
+      saveLeftClick.push(i);
+    } else if (e.classList.contains("--empty")) {
+      saveRightClick.push(i);
+    }
+  });
+  let saveGameObj = {
+    fill: saveLeftClick,
+    empty: saveRightClick,
+    saveCount: _gameInteractive__WEBPACK_IMPORTED_MODULE_1__.countOfTargets,
+    game: _createMenu__WEBPACK_IMPORTED_MODULE_4__.currentGame
+  };
+  saveGame = saveGameObj;
+  localStorage.setItem("saveGame", JSON.stringify(saveGame));
+}
+
+/***/ }),
+
+/***/ "./src/modules-js/themes.js":
+/*!**********************************!*\
+  !*** ./src/modules-js/themes.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+
+const html = document.querySelector("html");
+_html__WEBPACK_IMPORTED_MODULE_0__.themesDark.addEventListener("click", () => {
+  html.classList.add("--dark");
+});
+_html__WEBPACK_IMPORTED_MODULE_0__.themesLight.addEventListener("click", () => {
+  html.classList.remove("--dark");
+});
+
+/***/ }),
+
+/***/ "./src/modules-js/timer.js":
+/*!*********************************!*\
+  !*** ./src/modules-js/timer.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   resetTimer: () => (/* binding */ resetTimer),
+/* harmony export */   result: () => (/* binding */ result),
+/* harmony export */   startTimer: () => (/* binding */ startTimer),
+/* harmony export */   stopTimer: () => (/* binding */ stopTimer)
+/* harmony export */ });
+/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+
+let result = 0;
+let timer;
+let timerSwitch = false;
+let seconds = 0;
+let minutes = 0;
+let secdecades = 0;
+let mindecades = 0;
+_html__WEBPACK_IMPORTED_MODULE_0__.topLeft.textContent = `${mindecades}${minutes}:${secdecades}${seconds}`;
+function startTimer() {
+  if (!timerSwitch) {
+    timer = setInterval(() => {
+      seconds++;
+      if (seconds === 10) {
+        secdecades++;
+        seconds = 0;
+      }
+      if (secdecades === 6) {
+        secdecades = 0;
+        minutes++;
+      }
+      if (minutes === 10) {
+        minutes = 0;
+        mindecades++;
+      }
+      _html__WEBPACK_IMPORTED_MODULE_0__.topLeft.textContent = `${mindecades}${minutes}:${secdecades}${seconds}`;
+      result = `${mindecades}${minutes}:${secdecades}${seconds}`;
+    }, 1000);
+  }
+  timerSwitch = true;
+}
+function stopTimer() {
+  clearInterval(timer);
+  timerSwitch = false;
+}
+function resetTimer() {
+  clearInterval(timer);
+  seconds = 0;
+  minutes = 0;
+  secdecades = 0;
+  mindecades = 0;
+  _html__WEBPACK_IMPORTED_MODULE_0__.topLeft.textContent = `${mindecades}${minutes}:${secdecades}${seconds}`;
+  timerSwitch = false;
 }
 
 /***/ }),
@@ -10528,7 +10977,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_sass_menu_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./sass/_menu.scss */ "./node_modules/css-loader/dist/cjs.js!./src/sass/_menu.scss");
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_sass_modal_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./sass/_modal.scss */ "./node_modules/css-loader/dist/cjs.js!./src/sass/_modal.scss");
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_sass_footer_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./sass/_footer.scss */ "./node_modules/css-loader/dist/cjs.js!./src/sass/_footer.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_sass_features_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./sass/_features.scss */ "./node_modules/css-loader/dist/cjs.js!./src/sass/_features.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_sass_title_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./sass/_title.scss */ "./node_modules/css-loader/dist/cjs.js!./src/sass/_title.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_sass_darkTheme_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./sass/_darkTheme.scss */ "./node_modules/css-loader/dist/cjs.js!./src/sass/_darkTheme.scss");
 // Imports
+
+
+
 
 
 
@@ -10540,8 +10995,116 @@ ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_sass_loyalt_scss_
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_sass_menu_scss__WEBPACK_IMPORTED_MODULE_3__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_sass_modal_scss__WEBPACK_IMPORTED_MODULE_4__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_sass_footer_scss__WEBPACK_IMPORTED_MODULE_5__["default"]);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_sass_features_scss__WEBPACK_IMPORTED_MODULE_6__["default"]);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_sass_title_scss__WEBPACK_IMPORTED_MODULE_7__["default"]);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_sass_darkTheme_scss__WEBPACK_IMPORTED_MODULE_8__["default"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ``, "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/sass/_darkTheme.scss":
+/*!************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/sass/_darkTheme.scss ***!
+  \************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.--dark {
+  background: #0c194a;
+  .title {
+    color: white;
+    gap: 2px;
+  }
+  .title-m,
+  .title-nn {
+    background-color: white;
+    color: #0c194a;
+  }
+  .wrapper {
+    background: #1e7af6;
+    border: none;
+  }
+  .button {
+    color: #d6e4f0;
+    background: #1e56a0;
+  }
+  .select__level {
+    color: #d6e4f0;
+    background: #1e56a0;
+  }
+  .select__game {
+    color: #d6e4f0;
+    background: #1e56a0;
+  }
+
+  .item-left,
+  .item-top {
+    background-color: #1e56a0;
+    color: #ddf0ff;
+  }
+  .footer__wrapper {
+    color: white;
+  }
+}
+`, "",{"version":3,"sources":["webpack://./src/sass/_darkTheme.scss"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB;IACE,YAAY;IACZ,QAAQ;EACV;EACA;;IAEE,uBAAuB;IACvB,cAAc;EAChB;EACA;IACE,mBAAmB;IACnB,YAAY;EACd;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;;EAEA;;IAEE,yBAAyB;IACzB,cAAc;EAChB;EACA;IACE,YAAY;EACd;AACF","sourcesContent":[".--dark {\r\n  background: #0c194a;\r\n  .title {\r\n    color: white;\r\n    gap: 2px;\r\n  }\r\n  .title-m,\r\n  .title-nn {\r\n    background-color: white;\r\n    color: #0c194a;\r\n  }\r\n  .wrapper {\r\n    background: #1e7af6;\r\n    border: none;\r\n  }\r\n  .button {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n  .select__level {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n  .select__game {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n\r\n  .item-left,\r\n  .item-top {\r\n    background-color: #1e56a0;\r\n    color: #ddf0ff;\r\n  }\r\n  .footer__wrapper {\r\n    color: white;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/sass/_features.scss":
+/*!***********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/sass/_features.scss ***!
+  \***********************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.game__featurs {
+  display: grid;
+  gap: 5px 10px;
+  font-size: 12px;
+  padding-left: 10px;
+}
+.button {
+  background: #0e96ff;
+  color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.5s ease;
+}
+`, "",{"version":3,"sources":["webpack://./src/sass/_features.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,aAAa;EACb,eAAe;EACf,kBAAkB;AACpB;AACA;EACE,mBAAmB;EACnB,YAAY;EACZ,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,yBAAyB;AAC3B","sourcesContent":[".game__featurs {\r\n  display: grid;\r\n  gap: 5px 10px;\r\n  font-size: 12px;\r\n  padding-left: 10px;\r\n}\r\n.button {\r\n  background: #0e96ff;\r\n  color: white;\r\n  padding: 5px;\r\n  border-radius: 20px;\r\n  border: none;\r\n  transition: all 0.5s ease;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10571,11 +11134,17 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `.footer__wrapper {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  color: #0b3d63;
+  padding: 30px 0 10px;
+  font-weight: 900;
+  font-size: 20px;
+  transition: all 0.5s ease;
 }
 .footer__school_img {
   width: 50px;
 }
-`, "",{"version":3,"sources":["webpack://./src/sass/_footer.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,6BAA6B;AAC/B;AACA;EACE,WAAW;AACb","sourcesContent":[".footer__wrapper {\r\n  display: flex;\r\n  justify-content: space-around;\r\n}\r\n.footer__school_img {\r\n  width: 50px;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/sass/_footer.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,6BAA6B;EAC7B,mBAAmB;EACnB,cAAc;EACd,oBAAoB;EACpB,gBAAgB;EAChB,eAAe;EACf,yBAAyB;AAC3B;AACA;EACE,WAAW;AACb","sourcesContent":[".footer__wrapper {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n  color: #0b3d63;\r\n  padding: 30px 0 10px;\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  transition: all 0.5s ease;\r\n}\r\n.footer__school_img {\r\n  width: 50px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10602,7 +11171,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.wrapper {
+___CSS_LOADER_EXPORT___.push([module.id, `html {
+  background: white;
+  font-family: Arial sans-serif;
+}
+.wrapper {
+  box-sizing: border-box;
+  padding-bottom: 90px;
   max-width: 1440px;
   display: flex;
   margin: 0 auto;
@@ -10612,21 +11187,35 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.wrapper {
   align-items: center;
   flex-wrap: wrap;
   width: fit-content;
+  min-height: 100%;
+  border: 1px solid aliceblue;
+  transition: all 0.5s ease;
 }
-
-.title {
-  text-align: center;
-  margin: 0;
-  font-size: 24px;
+.themes {
+  display: flex;
+  gap: 5px;
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 40px;
+}
+.logo-img {
+  width: 30px;
+  border-radius: 10px;
+}
+.header__auto-solution__btn,
+.header__random-game__btn {
+  border: none;
+  border-radius: 15px;
 }
 
 .main {
-  background: gray;
-  font-family: cursive;
   display: flex;
+  max-width: 1440px;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
+  margin: 0 auto;
 }
 
 .nonogramm {
@@ -10642,24 +11231,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.wrapper {
 .container {
   color: white;
 }
-
+.container__top-left {
+  color: #0b3d63;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .container__bottom-left {
   display: flex;
   grid-row: 2;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid #0b3d63;
   border-right: none;
 }
 .container__top-right {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #0b3d63;
   border-bottom: none;
 }
 .container__bottom-right {
   display: flex;
   grid-row: 2;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid #0b3d63;
 }
 .column {
   display: flex;
@@ -10680,15 +11275,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.wrapper {
   height: 15px;
   min-width: 10px;
   min-height: 10px;
-  border: 1px solid white;
+  border: 1px solid #0b3d63;
   align-items: center;
   justify-content: center;
   font-size: 0.7rem;
-  background-color: black;
+  background-color: #ddf0ff;
+  color: #0b3d63;
+  transition: all 0.5s ease;
 }
 .game-cell {
   position: relative;
-  background-color: gray;
+  background-color: white;
   transition: all 0.5s ease-in-out;
 }
 
@@ -10696,7 +11293,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.wrapper {
   position: absolute;
   width: 1px;
   height: 0px;
-  background-color: black;
+  background-color: #0b3d63;
   transform: rotate(45deg);
   transition: all 0.5 ease;
 }
@@ -10704,13 +11301,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.wrapper {
   position: absolute;
   width: 1px;
   height: 0px;
-  background-color: black;
+  background-color: #0b3d63;
   transform: rotate(-45deg);
   transition: all 0.5 ease;
 }
 
 .--fill {
-  background-color: black;
+  background-color: #0b3d63;
 }
 
 .--empty {
@@ -10723,13 +11320,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.wrapper {
 
 .column-top:nth-child(5n):not(:last-child),
 .game-cell:nth-child(5n):not(:last-child) {
-  border-right: 2px solid black;
+  border-right: 2px solid #0b3d63;
 }
 .column-left:nth-child(5n):not(:last-child),
 .column-right:nth-child(5n):not(:last-child) {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #0b3d63;
 }
-`, "",{"version":3,"sources":["webpack://./src/sass/_loyalt.scss"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,aAAa;EACb,cAAc;EACd,iBAAiB;EACjB,mBAAmB;EACnB,uBAAuB;EACvB,mBAAmB;EACnB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;EAClB,SAAS;EACT,eAAe;AACjB;;AAEA;EACE,gBAAgB;EAChB,oBAAoB;EACpB,aAAa;EACb,sBAAsB;EACtB,6BAA6B;EAC7B,aAAa;AACf;;AAEA;EACE,kBAAkB;EAClB,aAAa;AACf;AACA;EACE,cAAc;EACd,aAAa;EACb,uBAAuB;EACvB,aAAa;AACf;AACA;EACE,YAAY;AACd;;AAEA;EACE,aAAa;EACb,WAAW;EACX,sBAAsB;EACtB,uBAAuB;EACvB,kBAAkB;AACpB;AACA;EACE,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;AACA;EACE,aAAa;EACb,WAAW;EACX,sBAAsB;EACtB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,oBAAoB;AACtB;AACA;EACE,sBAAsB;AACxB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,8BAA8B;AAChC;AACA;EACE,aAAa;EACb,WAAW;EACX,YAAY;EACZ,eAAe;EACf,gBAAgB;EAChB,uBAAuB;EACvB,mBAAmB;EACnB,uBAAuB;EACvB,iBAAiB;EACjB,uBAAuB;AACzB;AACA;EACE,kBAAkB;EAClB,sBAAsB;EACtB,gCAAgC;AAClC;;AAEA;EACE,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,uBAAuB;EACvB,wBAAwB;EACxB,wBAAwB;AAC1B;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,uBAAuB;EACvB,yBAAyB;EACzB,wBAAwB;AAC1B;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,uBAAuB;EACvB;;IAEE,YAAY;EACd;AACF;;AAEA;;EAEE,6BAA6B;AAC/B;AACA;;EAEE,8BAA8B;AAChC","sourcesContent":[".wrapper {\r\n  max-width: 1440px;\r\n  display: flex;\r\n  margin: 0 auto;\r\n  background: white;\r\n  border-radius: 30px;\r\n  justify-content: center;\r\n  align-items: center;\r\n  flex-wrap: wrap;\r\n  width: fit-content;\r\n}\r\n\r\n.title {\r\n  text-align: center;\r\n  margin: 0;\r\n  font-size: 24px;\r\n}\r\n\r\n.main {\r\n  background: gray;\r\n  font-family: cursive;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-around;\r\n  height: 100vh;\r\n}\r\n\r\n.nonogramm {\r\n  width: max-content;\r\n  padding: 20px;\r\n}\r\n.nonogramm__container {\r\n  margin: 0 auto;\r\n  display: grid;\r\n  justify-content: center;\r\n  padding: 10px;\r\n}\r\n.container {\r\n  color: white;\r\n}\r\n\r\n.container__bottom-left {\r\n  display: flex;\r\n  grid-row: 2;\r\n  flex-direction: column;\r\n  border: 1px solid black;\r\n  border-right: none;\r\n}\r\n.container__top-right {\r\n  display: flex;\r\n  border: 1px solid black;\r\n  border-bottom: none;\r\n}\r\n.container__bottom-right {\r\n  display: flex;\r\n  grid-row: 2;\r\n  flex-direction: column;\r\n  border: 1px solid black;\r\n}\r\n.column {\r\n  display: flex;\r\n  justify-content: end;\r\n}\r\n.column-top {\r\n  flex-direction: column;\r\n}\r\n.column-left {\r\n  flex-direction: row;\r\n}\r\n.column-right {\r\n  justify-content: space-between;\r\n}\r\n.item {\r\n  display: flex;\r\n  width: 15px;\r\n  height: 15px;\r\n  min-width: 10px;\r\n  min-height: 10px;\r\n  border: 1px solid white;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 0.7rem;\r\n  background-color: black;\r\n}\r\n.game-cell {\r\n  position: relative;\r\n  background-color: gray;\r\n  transition: all 0.5s ease-in-out;\r\n}\r\n\r\n.left-cross {\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 0px;\r\n  background-color: black;\r\n  transform: rotate(45deg);\r\n  transition: all 0.5 ease;\r\n}\r\n.rigth-cross {\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 0px;\r\n  background-color: black;\r\n  transform: rotate(-45deg);\r\n  transition: all 0.5 ease;\r\n}\r\n\r\n.--fill {\r\n  background-color: black;\r\n}\r\n\r\n.--empty {\r\n  background-color: white;\r\n  .left-cross,\r\n  .rigth-cross {\r\n    height: 10px;\r\n  }\r\n}\r\n\r\n.column-top:nth-child(5n):not(:last-child),\r\n.game-cell:nth-child(5n):not(:last-child) {\r\n  border-right: 2px solid black;\r\n}\r\n.column-left:nth-child(5n):not(:last-child),\r\n.column-right:nth-child(5n):not(:last-child) {\r\n  border-bottom: 2px solid black;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/sass/_loyalt.scss"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,6BAA6B;AAC/B;AACA;EACE,sBAAsB;EACtB,oBAAoB;EACpB,iBAAiB;EACjB,aAAa;EACb,cAAc;EACd,iBAAiB;EACjB,mBAAmB;EACnB,uBAAuB;EACvB,mBAAmB;EACnB,eAAe;EACf,kBAAkB;EAClB,gBAAgB;EAChB,2BAA2B;EAC3B,yBAAyB;AAC3B;AACA;EACE,aAAa;EACb,QAAQ;AACV;AACA;EACE,aAAa;EACb,6BAA6B;EAC7B,oBAAoB;AACtB;AACA;EACE,WAAW;EACX,mBAAmB;AACrB;AACA;;EAEE,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,iBAAiB;EACjB,sBAAsB;EACtB,6BAA6B;EAC7B,cAAc;AAChB;;AAEA;EACE,kBAAkB;EAClB,aAAa;AACf;AACA;EACE,cAAc;EACd,aAAa;EACb,uBAAuB;EACvB,aAAa;AACf;AACA;EACE,YAAY;AACd;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,WAAW;EACX,sBAAsB;EACtB,yBAAyB;EACzB,kBAAkB;AACpB;AACA;EACE,aAAa;EACb,yBAAyB;EACzB,mBAAmB;AACrB;AACA;EACE,aAAa;EACb,WAAW;EACX,sBAAsB;EACtB,yBAAyB;AAC3B;AACA;EACE,aAAa;EACb,oBAAoB;AACtB;AACA;EACE,sBAAsB;AACxB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,8BAA8B;AAChC;AACA;EACE,aAAa;EACb,WAAW;EACX,YAAY;EACZ,eAAe;EACf,gBAAgB;EAChB,yBAAyB;EACzB,mBAAmB;EACnB,uBAAuB;EACvB,iBAAiB;EACjB,yBAAyB;EACzB,cAAc;EACd,yBAAyB;AAC3B;AACA;EACE,kBAAkB;EAClB,uBAAuB;EACvB,gCAAgC;AAClC;;AAEA;EACE,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,yBAAyB;EACzB,wBAAwB;EACxB,wBAAwB;AAC1B;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,yBAAyB;EACzB,yBAAyB;EACzB,wBAAwB;AAC1B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,uBAAuB;EACvB;;IAEE,YAAY;EACd;AACF;;AAEA;;EAEE,+BAA+B;AACjC;AACA;;EAEE,gCAAgC;AAClC","sourcesContent":["html {\r\n  background: white;\r\n  font-family: Arial sans-serif;\r\n}\r\n.wrapper {\r\n  box-sizing: border-box;\r\n  padding-bottom: 90px;\r\n  max-width: 1440px;\r\n  display: flex;\r\n  margin: 0 auto;\r\n  background: white;\r\n  border-radius: 30px;\r\n  justify-content: center;\r\n  align-items: center;\r\n  flex-wrap: wrap;\r\n  width: fit-content;\r\n  min-height: 100%;\r\n  border: 1px solid aliceblue;\r\n  transition: all 0.5s ease;\r\n}\r\n.themes {\r\n  display: flex;\r\n  gap: 5px;\r\n}\r\n.header__wrapper {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  padding: 10px 0 40px;\r\n}\r\n.logo-img {\r\n  width: 30px;\r\n  border-radius: 10px;\r\n}\r\n.header__auto-solution__btn,\r\n.header__random-game__btn {\r\n  border: none;\r\n  border-radius: 15px;\r\n}\r\n\r\n.main {\r\n  display: flex;\r\n  max-width: 1440px;\r\n  flex-direction: column;\r\n  justify-content: space-around;\r\n  margin: 0 auto;\r\n}\r\n\r\n.nonogramm {\r\n  width: max-content;\r\n  padding: 20px;\r\n}\r\n.nonogramm__container {\r\n  margin: 0 auto;\r\n  display: grid;\r\n  justify-content: center;\r\n  padding: 10px;\r\n}\r\n.container {\r\n  color: white;\r\n}\r\n.container__top-left {\r\n  color: #0b3d63;\r\n  font-size: 12px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n.container__bottom-left {\r\n  display: flex;\r\n  grid-row: 2;\r\n  flex-direction: column;\r\n  border: 1px solid #0b3d63;\r\n  border-right: none;\r\n}\r\n.container__top-right {\r\n  display: flex;\r\n  border: 1px solid #0b3d63;\r\n  border-bottom: none;\r\n}\r\n.container__bottom-right {\r\n  display: flex;\r\n  grid-row: 2;\r\n  flex-direction: column;\r\n  border: 1px solid #0b3d63;\r\n}\r\n.column {\r\n  display: flex;\r\n  justify-content: end;\r\n}\r\n.column-top {\r\n  flex-direction: column;\r\n}\r\n.column-left {\r\n  flex-direction: row;\r\n}\r\n.column-right {\r\n  justify-content: space-between;\r\n}\r\n.item {\r\n  display: flex;\r\n  width: 15px;\r\n  height: 15px;\r\n  min-width: 10px;\r\n  min-height: 10px;\r\n  border: 1px solid #0b3d63;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 0.7rem;\r\n  background-color: #ddf0ff;\r\n  color: #0b3d63;\r\n  transition: all 0.5s ease;\r\n}\r\n.game-cell {\r\n  position: relative;\r\n  background-color: white;\r\n  transition: all 0.5s ease-in-out;\r\n}\r\n\r\n.left-cross {\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 0px;\r\n  background-color: #0b3d63;\r\n  transform: rotate(45deg);\r\n  transition: all 0.5 ease;\r\n}\r\n.rigth-cross {\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 0px;\r\n  background-color: #0b3d63;\r\n  transform: rotate(-45deg);\r\n  transition: all 0.5 ease;\r\n}\r\n\r\n.--fill {\r\n  background-color: #0b3d63;\r\n}\r\n\r\n.--empty {\r\n  background-color: white;\r\n  .left-cross,\r\n  .rigth-cross {\r\n    height: 10px;\r\n  }\r\n}\r\n\r\n.column-top:nth-child(5n):not(:last-child),\r\n.game-cell:nth-child(5n):not(:last-child) {\r\n  border-right: 2px solid #0b3d63;\r\n}\r\n.column-left:nth-child(5n):not(:last-child),\r\n.column-right:nth-child(5n):not(:last-child) {\r\n  border-bottom: 2px solid #0b3d63;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10765,15 +11362,16 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.setup-menu {
   min-width: 100px;
   flex-direction: column;
   gap: 10px;
+  color: white;
 }
 
 .select__level {
   overflow: hidden;
   position: relative;
   display: flex;
-  border: 1px solid black;
+  justify-content: center;
   gap: 10px;
-  background: beige;
+  background: #0e96ff;
   padding: 5px;
   border-radius: 20px;
 }
@@ -10794,11 +11392,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.setup-menu {
 }
 
 .select__game {
-  border-bottom: 1px solid black;
+  color: #0e96ff;
+  background: #e0f1ff;
+  padding: 0.2px 4px;
+  border-radius: 10px;
+  text-align: center;
   cursor: pointer;
-}
-.select__game:nth-child(5n) {
-  border-bottom: none;
 }
 .select__game_value:nth-child() {
   border-top: 1px solid black;
@@ -10818,12 +11417,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.setup-menu {
   }
   .level__game {
     position: static;
-  }
-  .level__btn::after {
-    transform: rotate(-45deg);
-  }
-  .level__btn::before {
-    transform: rotate(45deg);
   }
 }
 .level__btn::after {
@@ -10848,7 +11441,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.setup-menu {
   transform: rotate(-45deg);
   transition: all 0.4s ease;
 }
-`, "",{"version":3,"sources":["webpack://./src/sass/_menu.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;AACf;AACA;EACE,aAAa;EACb,UAAU;EACV,gBAAgB;EAChB,sBAAsB;EACtB,SAAS;AACX;;AAEA;EACE,gBAAgB;EAChB,kBAAkB;EAClB,aAAa;EACb,uBAAuB;EACvB,SAAS;EACT,iBAAiB;EACjB,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,kBAAkB;EAClB,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,sBAAsB;EACtB,QAAQ;EACR,eAAe;EACf,WAAW;AACb;;AAEA;EACE,8BAA8B;EAC9B,eAAe;AACjB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,2BAA2B;EAC3B,8BAA8B;AAChC;AACA;EACE,eAAe;EACf,kBAAkB;EAClB,WAAW;EACX,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;AACrB;AACA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;EAClB;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,wBAAwB;EAC1B;AACF;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,uBAAuB;EACvB,QAAQ;EACR,WAAW;EACX,wBAAwB;EACxB,yBAAyB;AAC3B;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,uBAAuB;EACvB,SAAS;EACT,WAAW;EACX,yBAAyB;EACzB,yBAAyB;AAC3B","sourcesContent":[".setup-menu {\r\n  padding: 20px;\r\n}\r\n.select {\r\n  display: flex;\r\n  width: 30%;\r\n  min-width: 100px;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.select__level {\r\n  overflow: hidden;\r\n  position: relative;\r\n  display: flex;\r\n  border: 1px solid black;\r\n  gap: 10px;\r\n  background: beige;\r\n  padding: 5px;\r\n  border-radius: 20px;\r\n}\r\n\r\n.level__title {\r\n  transition: all 0.5 ease;\r\n}\r\n\r\n.level__game {\r\n  position: absolute;\r\n  transition: all 0.5s ease;\r\n  font-size: 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 3px;\r\n  font-size: 12px;\r\n  left: 105px;\r\n}\r\n\r\n.select__game {\r\n  border-bottom: 1px solid black;\r\n  cursor: pointer;\r\n}\r\n.select__game:nth-child(5n) {\r\n  border-bottom: none;\r\n}\r\n.select__game_value:nth-child() {\r\n  border-top: 1px solid black;\r\n  border-bottom: 1px solid black;\r\n}\r\n.level__btn {\r\n  cursor: pointer;\r\n  position: relative;\r\n  width: 20px;\r\n  height: 20px;\r\n  background: black;\r\n  border-radius: 30px;\r\n}\r\n.--active {\r\n  .level__title {\r\n    display: none;\r\n  }\r\n  .level__game {\r\n    position: static;\r\n  }\r\n  .level__btn::after {\r\n    transform: rotate(-45deg);\r\n  }\r\n  .level__btn::before {\r\n    transform: rotate(45deg);\r\n  }\r\n}\r\n.level__btn::after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 8px;\r\n  background-color: white;\r\n  top: 5px;\r\n  right: 10px;\r\n  transform: rotate(45deg);\r\n  transition: all 0.4s ease;\r\n}\r\n.level__btn::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 8px;\r\n  background-color: white;\r\n  top: 10px;\r\n  right: 10px;\r\n  transform: rotate(-45deg);\r\n  transition: all 0.4s ease;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/sass/_menu.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;AACf;AACA;EACE,aAAa;EACb,UAAU;EACV,gBAAgB;EAChB,sBAAsB;EACtB,SAAS;EACT,YAAY;AACd;;AAEA;EACE,gBAAgB;EAChB,kBAAkB;EAClB,aAAa;EACb,uBAAuB;EACvB,SAAS;EACT,mBAAmB;EACnB,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,kBAAkB;EAClB,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,sBAAsB;EACtB,QAAQ;EACR,eAAe;EACf,WAAW;AACb;;AAEA;EACE,cAAc;EACd,mBAAmB;EACnB,kBAAkB;EAClB,mBAAmB;EACnB,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,2BAA2B;EAC3B,8BAA8B;AAChC;AACA;EACE,eAAe;EACf,kBAAkB;EAClB,WAAW;EACX,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;AACrB;AACA;EACE;IACE,aAAa;EACf;EACA;IACE,gBAAgB;EAClB;AACF;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,uBAAuB;EACvB,QAAQ;EACR,WAAW;EACX,wBAAwB;EACxB,yBAAyB;AAC3B;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,uBAAuB;EACvB,SAAS;EACT,WAAW;EACX,yBAAyB;EACzB,yBAAyB;AAC3B","sourcesContent":[".setup-menu {\r\n  padding: 20px;\r\n}\r\n.select {\r\n  display: flex;\r\n  width: 30%;\r\n  min-width: 100px;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n  color: white;\r\n}\r\n\r\n.select__level {\r\n  overflow: hidden;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  gap: 10px;\r\n  background: #0e96ff;\r\n  padding: 5px;\r\n  border-radius: 20px;\r\n}\r\n\r\n.level__title {\r\n  transition: all 0.5 ease;\r\n}\r\n\r\n.level__game {\r\n  position: absolute;\r\n  transition: all 0.5s ease;\r\n  font-size: 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 3px;\r\n  font-size: 12px;\r\n  left: 105px;\r\n}\r\n\r\n.select__game {\r\n  color: #0e96ff;\r\n  background: #e0f1ff;\r\n  padding: 0.2px 4px;\r\n  border-radius: 10px;\r\n  text-align: center;\r\n  cursor: pointer;\r\n}\r\n.select__game_value:nth-child() {\r\n  border-top: 1px solid black;\r\n  border-bottom: 1px solid black;\r\n}\r\n.level__btn {\r\n  cursor: pointer;\r\n  position: relative;\r\n  width: 20px;\r\n  height: 20px;\r\n  background: black;\r\n  border-radius: 30px;\r\n}\r\n.--active {\r\n  .level__title {\r\n    display: none;\r\n  }\r\n  .level__game {\r\n    position: static;\r\n  }\r\n}\r\n.level__btn::after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 8px;\r\n  background-color: white;\r\n  top: 5px;\r\n  right: 10px;\r\n  transform: rotate(45deg);\r\n  transition: all 0.4s ease;\r\n}\r\n.level__btn::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 8px;\r\n  background-color: white;\r\n  top: 10px;\r\n  right: 10px;\r\n  transform: rotate(-45deg);\r\n  transition: all 0.4s ease;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10912,7 +11505,78 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.modal__wrapper {
 .modal--active {
   left: 0;
 }
-`, "",{"version":3,"sources":["webpack://./src/sass/_modal.scss"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,aAAa;EACb,MAAM;EACN,aAAa;EACb,YAAY;EACZ,WAAW;EACX,gBAAgB;EAChB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,2BAA2B;EAC3B,mBAAmB;EACnB,SAAS;AACX;AACA;EACE,uBAAuB;EACvB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,iBAAiB;AACnB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,OAAO;AACT","sourcesContent":[".modal__wrapper {\r\n  position: fixed;\r\n  display: flex;\r\n  top: 0;\r\n  left: -9999px;\r\n  height: 100%;\r\n  width: 100%;\r\n  background: gray;\r\n  transition: all 1s ease;\r\n}\r\n.modal {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  text-align: center;\r\n  width: 30%;\r\n  margin: auto;\r\n  background-color: gainsboro;\r\n  border-radius: 30px;\r\n  gap: 30px;\r\n}\r\n.modal__btn {\r\n  background-color: white;\r\n  border: none;\r\n  border-radius: 30px;\r\n  margin: 10px;\r\n  padding: 5px 15px;\r\n}\r\n\r\n.modal__congratulation {\r\n  padding: 10px;\r\n}\r\n\r\n.modal--active {\r\n  left: 0;\r\n}\r\n"],"sourceRoot":""}]);
+
+.winners__modal {
+  position: fixed;
+  display: flex;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: gray;
+  transition: all 1s ease;
+}
+.winners__modal__wrapper {
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  background-color: gainsboro;
+  border-radius: 30px;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.winners__item {
+  width: 20%;
+  height: 100px;
+  background: black;
+}
+`, "",{"version":3,"sources":["webpack://./src/sass/_modal.scss"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,aAAa;EACb,MAAM;EACN,aAAa;EACb,YAAY;EACZ,WAAW;EACX,gBAAgB;EAChB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,2BAA2B;EAC3B,mBAAmB;EACnB,SAAS;AACX;AACA;EACE,uBAAuB;EACvB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,iBAAiB;AACnB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,OAAO;AACT;;AAEA;EACE,eAAe;EACf,aAAa;EACb,MAAM;EACN,YAAY;EACZ,WAAW;EACX,gBAAgB;EAChB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,mBAAmB;EACnB,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,2BAA2B;EAC3B,mBAAmB;EACnB,SAAS;EACT,sCAAsC;AACxC;AACA;EACE,UAAU;EACV,aAAa;EACb,iBAAiB;AACnB","sourcesContent":[".modal__wrapper {\r\n  position: fixed;\r\n  display: flex;\r\n  top: 0;\r\n  left: -9999px;\r\n  height: 100%;\r\n  width: 100%;\r\n  background: gray;\r\n  transition: all 1s ease;\r\n}\r\n.modal {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  text-align: center;\r\n  width: 30%;\r\n  margin: auto;\r\n  background-color: gainsboro;\r\n  border-radius: 30px;\r\n  gap: 30px;\r\n}\r\n.modal__btn {\r\n  background-color: white;\r\n  border: none;\r\n  border-radius: 30px;\r\n  margin: 10px;\r\n  padding: 5px 15px;\r\n}\r\n\r\n.modal__congratulation {\r\n  padding: 10px;\r\n}\r\n\r\n.modal--active {\r\n  left: 0;\r\n}\r\n\r\n.winners__modal {\r\n  position: fixed;\r\n  display: flex;\r\n  top: 0;\r\n  height: 100%;\r\n  width: 100%;\r\n  background: gray;\r\n  transition: all 1s ease;\r\n}\r\n.winners__modal__wrapper {\r\n  display: grid;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  align-items: center;\r\n  text-align: center;\r\n  width: 30%;\r\n  margin: auto;\r\n  background-color: gainsboro;\r\n  border-radius: 30px;\r\n  gap: 30px;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n}\r\n.winners__item {\r\n  width: 20%;\r\n  height: 100px;\r\n  background: black;\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/sass/_title.scss":
+/*!********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/sass/_title.scss ***!
+  \********************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.title {
+  display: flex;
+  text-align: center;
+  margin: 0;
+  color: #0b3d63;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+
+.title-m,
+.title-nn {
+  background: black;
+  color: white;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+}
+`, "",{"version":3,"sources":["webpack://./src/sass/_title.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,kBAAkB;EAClB,SAAS;EACT,cAAc;EACd,eAAe;EACf,yBAAyB;AAC3B;;AAEA;;EAEE,iBAAiB;EACjB,YAAY;EACZ,kBAAkB;EAClB,yBAAyB;AAC3B","sourcesContent":[".title {\r\n  display: flex;\r\n  text-align: center;\r\n  margin: 0;\r\n  color: #0b3d63;\r\n  font-size: 24px;\r\n  transition: all 0.5s ease;\r\n}\r\n\r\n.title-m,\r\n.title-nn {\r\n  background: black;\r\n  color: white;\r\n  border-radius: 4px;\r\n  transition: all 0.5s ease;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -11368,6 +12032,17 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/audio/changegame.mp3":
+/*!**********************************!*\
+  !*** ./src/audio/changegame.mp3 ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/changegame.mp3";
+
+/***/ }),
+
 /***/ "./src/audio/changelevel.mp3":
 /*!***********************************!*\
   !*** ./src/audio/changelevel.mp3 ***!
@@ -11390,6 +12065,17 @@ module.exports = __webpack_require__.p + "audio/leftclick.mp3";
 
 /***/ }),
 
+/***/ "./src/audio/newGame.mp3":
+/*!*******************************!*\
+  !*** ./src/audio/newGame.mp3 ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/newGame.mp3";
+
+/***/ }),
+
 /***/ "./src/audio/rigthclick.mp3":
 /*!**********************************!*\
   !*** ./src/audio/rigthclick.mp3 ***!
@@ -11401,6 +12087,17 @@ module.exports = __webpack_require__.p + "audio/rigthclick.mp3";
 
 /***/ }),
 
+/***/ "./src/audio/winGame.mp3":
+/*!*******************************!*\
+  !*** ./src/audio/winGame.mp3 ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/winGame.mp3";
+
+/***/ }),
+
 /***/ "./src/img/logo_rs_text.svg":
 /*!**********************************!*\
   !*** ./src/img/logo_rs_text.svg ***!
@@ -11409,6 +12106,17 @@ module.exports = __webpack_require__.p + "audio/rigthclick.mp3";
 
 "use strict";
 module.exports = __webpack_require__.p + "img/logo_rs_text.svg";
+
+/***/ }),
+
+/***/ "./src/img/nogormas-fav.jpg":
+/*!**********************************!*\
+  !*** ./src/img/nogormas-fav.jpg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "img/nogormas-fav.jpg";
 
 /***/ })
 
@@ -11551,12 +12259,24 @@ _global["default"]._babelPolyfill = true;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_js_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules-js/html */ "./src/modules-js/html.js");
 /* harmony import */ var _modules_js_createItems__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules-js/createItems */ "./src/modules-js/createItems.js");
-/* harmony import */ var _modules_js_gameInteractive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules-js/gameInteractive */ "./src/modules-js/gameInteractive.js");
-/* harmony import */ var _modules_js_createMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules-js/createMenu */ "./src/modules-js/createMenu.js");
+/* harmony import */ var _modules_js_createMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules-js/createMenu */ "./src/modules-js/createMenu.js");
+/* harmony import */ var _modules_js_gameInteractive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules-js/gameInteractive */ "./src/modules-js/gameInteractive.js");
 /* harmony import */ var _modules_js_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules-js/modal */ "./src/modules-js/modal.js");
 /* harmony import */ var _modules_js_footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules-js/footer */ "./src/modules-js/footer.js");
 /* harmony import */ var _modules_js_audio__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules-js/audio */ "./src/modules-js/audio.js");
-/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main.scss */ "./src/main.scss");
+/* harmony import */ var _modules_js_timer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules-js/timer */ "./src/modules-js/timer.js");
+/* harmony import */ var _modules_js_randomGame__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules-js/randomGame */ "./src/modules-js/randomGame.js");
+/* harmony import */ var _modules_js_autoSolution__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules-js/autoSolution */ "./src/modules-js/autoSolution.js");
+/* harmony import */ var _modules_js_themes__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules-js/themes */ "./src/modules-js/themes.js");
+/* harmony import */ var _modules_js_saveGame__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules-js/saveGame */ "./src/modules-js/saveGame.js");
+/* harmony import */ var _modules_js_modalWinners__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules-js/modalWinners */ "./src/modules-js/modalWinners.js");
+/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./main.scss */ "./src/main.scss");
+
+
+
+
+
+
 
 
 
@@ -11569,4 +12289,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.f25a849679a322c6a50e.js.map
+//# sourceMappingURL=main.f728b0bd97b1ca495114.js.map
