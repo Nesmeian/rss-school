@@ -5,10 +5,6 @@ import { modalCongratulation } from "./modal";
 import { _gameActive, choseLevel, choseGame } from "./createMenu";
 export let countOfTargets = 0;
 export let scoreArr = JSON.parse(window.localStorage.getItem("scoreStorage"));
-export function activeButton(e){
-  e.classList.add('--active-Btn')
-  e.classList.remove('--active-Btn')
-}
 if (!localStorage.hasOwnProperty("scoreStorage")) {
   localStorage.setItem("scoreStorage", JSON.stringify([]));
 }
