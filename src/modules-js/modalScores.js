@@ -2,6 +2,7 @@ import { main } from "./html";
 import { createElement } from "./createFunc";
 import { scoresShowBtn } from "./html";
 import { scoreArr } from "./gameInteractive";
+
 const scoresModal = createElement({
   tag: "div",
   classes: ["scores__modal"],
@@ -50,6 +51,7 @@ scoresContainer.append(scoresTime);
 scoresWrapper.append(scoresCloseBtn)
 
 function createResults() {
+  
   let unzipResult = JSON.parse(localStorage.getItem("scoreStorage"));
   sortArr(unzipResult);
   if (unzipResult.length >= 6) {
