@@ -5,6 +5,7 @@ import { currentGame } from "./createMenu";
 import { createGame } from "./createItems";
 import { resetTimer } from "./timer";
 import { result } from "./timer";
+import { audioChangeLevel } from "./audio";
 import { topLeft } from "./html";
 export let saveTimer = 0;
 let saveGame = JSON.parse(window.localStorage.getItem("saveGame"));
@@ -17,6 +18,7 @@ function continueGame() {
   let currentGame = a.game;
   let saveCount = a.saveCount;
   saveTimer = a.time;
+  audioChangeLevel.play()
   restartGame();
   resetTimer();
   createGame(currentGame, saveCount, saveTimer);
@@ -47,6 +49,7 @@ function save() {
     saveCount: countOfTargets,
     game: currentGame,
   };
+  audioChangeLevel.play()
   saveGame = saveGameObj;
   localStorage.setItem("saveGame", JSON.stringify(saveGame));
 }
