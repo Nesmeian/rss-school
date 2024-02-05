@@ -4,12 +4,11 @@ import { startTimer, stopTimer, result } from "./timer";
 import { modalCongratulation } from "./modal";
 import { _gameActive } from "./createMenu";
 export let countOfTargets = 0;
-// import resultOfGames
-export function clickOnBoard(count) {
+export function clickOnBoard(count, saveTimer) {
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
   if (count == undefined) {
-    console.log(1);
+    let empty = 0;
   } else {
     winCount = count;
   }
@@ -17,7 +16,7 @@ export function clickOnBoard(count) {
     e.addEventListener("contextmenu", (elem) => {
       elem.preventDefault();
       if (_gameActive) {
-        startTimer();
+        startTimer(saveTimer);
         rigthClick.play();
         if (e.classList.contains("--fill")) {
           e.classList.remove("--fill");
@@ -35,7 +34,7 @@ export function clickOnBoard(count) {
     });
     e.addEventListener("click", () => {
       if (_gameActive) {
-        startTimer();
+        startTimer(saveTimer);
         leftClick.play();
         if (e.classList.contains("--empty")) {
           e.classList.remove("--empty");

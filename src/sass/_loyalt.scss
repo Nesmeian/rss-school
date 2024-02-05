@@ -69,19 +69,16 @@ html {
   display: flex;
   grid-row: 2;
   flex-direction: column;
-  border: 1px solid #0b3d63;
   border-right: none;
 }
 .container__top-right {
   display: flex;
-  border: 1px solid #0b3d63;
   border-bottom: none;
 }
 .container__bottom-right {
   display: flex;
   grid-row: 2;
   flex-direction: column;
-  border: 1px solid #0b3d63;
 }
 .column {
   display: flex;
