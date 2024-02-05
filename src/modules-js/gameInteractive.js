@@ -4,11 +4,11 @@ import { startTimer, stopTimer, result } from "./timer";
 import { modalCongratulation } from "./modal";
 import { _gameActive, choseLevel, choseGame } from "./createMenu";
 export let countOfTargets = 0;
-export let scoreArr = JSON.parse(window.localStorage.getItem("scoreStorage"));
-if (!localStorage.hasOwnProperty("scoreStorage")) {
-  localStorage.setItem("scoreStorage", JSON.stringify([]));
-}
 export function clickOnBoard(count, saveTimer) {
+  if (!localStorage.hasOwnProperty("scoreStorage")) {
+    localStorage.setItem("scoreStorage", JSON.stringify([]));
+  }
+  let scoreArr = JSON.parse(window.localStorage.getItem("scoreStorage"));
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
   if (count == undefined) {

@@ -532,8 +532,7 @@ const games = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   clickOnBoard: () => (/* binding */ clickOnBoard),
-/* harmony export */   countOfTargets: () => (/* binding */ countOfTargets),
-/* harmony export */   scoreArr: () => (/* binding */ scoreArr)
+/* harmony export */   countOfTargets: () => (/* binding */ countOfTargets)
 /* harmony export */ });
 /* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ "./src/modules-js/modal.js");
 /* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
@@ -545,11 +544,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let countOfTargets = 0;
-let scoreArr = JSON.parse(window.localStorage.getItem("scoreStorage"));
-if (!localStorage.hasOwnProperty("scoreStorage")) {
-  localStorage.setItem("scoreStorage", JSON.stringify([]));
-}
 function clickOnBoard(count, saveTimer) {
+  if (!localStorage.hasOwnProperty("scoreStorage")) {
+    localStorage.setItem("scoreStorage", JSON.stringify([]));
+  }
+  let scoreArr = JSON.parse(window.localStorage.getItem("scoreStorage"));
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
   if (count == undefined) {
@@ -10898,7 +10897,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.modal__wrapper {
 
 
 .scores__item {
-  height: 100px;
   padding: 10px;
 }
 
@@ -10912,7 +10910,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.modal__wrapper {
 .modal--active {
   left: 0;
 }
-`, "",{"version":3,"sources":["webpack://./src/sass/_modal.scss"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,aAAa;EACb,MAAM;EACN,aAAa;EACb,YAAY;EACZ,WAAW;EACX,iBAAiB;EACjB,uBAAuB;EACvB;AACF;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,2BAA2B;EAC3B,mBAAmB;EACnB,SAAS;EACT,2BAA2B;AAC7B;AACA;EACE,uBAAuB;EACvB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,iBAAiB;AACnB;;AAEA;EACE,aAAa;AACf;;;AAGA;EACE,eAAe;EACf,aAAa;EACb,aAAa;EACb,MAAM;EACN,YAAY;EACZ,WAAW;EACX,iBAAiB;EACjB,uBAAuB;EACvB;AACF;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,uBAAuB;EACvB,mBAAmB;EACnB,SAAS;EACT,gBAAgB;EAChB,2BAA2B;AAC7B;;AAEA;EACE,aAAa;EACb,sCAAsC;AACxC;;;AAGA;EACE,aAAa;EACb,aAAa;AACf;;;AAGA;;;;EAIE,gBAAgB;AAClB;AACA;EACE,OAAO;AACT","sourcesContent":[".modal__wrapper {\r\n  position: fixed;\r\n  display: flex;\r\n  top: 0;\r\n  left: -9999px;\r\n  height: 100%;\r\n  width: 100%;\r\n  background: white;\r\n  transition: all 1s ease;\r\n  color:#0b3d63\r\n}\r\n.modal {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  text-align: center;\r\n  width: 30%;\r\n  margin: auto;\r\n  background-color: gainsboro;\r\n  border-radius: 30px;\r\n  gap: 30px;\r\n  border: 1px solid aliceblue;\r\n}\r\n.modal__btn {\r\n  background-color: white;\r\n  border: none;\r\n  border-radius: 30px;\r\n  margin: 10px;\r\n  padding: 5px 15px;\r\n}\r\n\r\n.modal__congratulation {\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.scores__modal {\r\n  position: fixed;\r\n  display: flex;\r\n  left: -9999px;\r\n  top: 0;\r\n  height: 100%;\r\n  width: 100%;\r\n  background: white;\r\n  transition: all 1s ease;\r\n  color:#0b3d63\r\n}\r\n.scores__modal__wrapper {\r\n  text-align: center;\r\n  width: 40%;\r\n  margin: auto;\r\n  background-color: white;\r\n  border-radius: 30px;\r\n  gap: 20px;\r\n  padding: 1% 20px;\r\n  border: 1px solid aliceblue;\r\n}\r\n\r\n.scores__modal__container{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n}\r\n\r\n\r\n.scores__item {\r\n  height: 100px;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.time__name,\r\n.level__num,\r\n.game__num,\r\n.place__num{\r\n  padding-top: 5px;\r\n}\r\n.modal--active {\r\n  left: 0;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/sass/_modal.scss"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,aAAa;EACb,MAAM;EACN,aAAa;EACb,YAAY;EACZ,WAAW;EACX,iBAAiB;EACjB,uBAAuB;EACvB;AACF;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;EACnB,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,2BAA2B;EAC3B,mBAAmB;EACnB,SAAS;EACT,2BAA2B;AAC7B;AACA;EACE,uBAAuB;EACvB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,iBAAiB;AACnB;;AAEA;EACE,aAAa;AACf;;;AAGA;EACE,eAAe;EACf,aAAa;EACb,aAAa;EACb,MAAM;EACN,YAAY;EACZ,WAAW;EACX,iBAAiB;EACjB,uBAAuB;EACvB;AACF;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,YAAY;EACZ,uBAAuB;EACvB,mBAAmB;EACnB,SAAS;EACT,gBAAgB;EAChB,2BAA2B;AAC7B;;AAEA;EACE,aAAa;EACb,sCAAsC;AACxC;;;AAGA;EACE,aAAa;AACf;;;AAGA;;;;EAIE,gBAAgB;AAClB;AACA;EACE,OAAO;AACT","sourcesContent":[".modal__wrapper {\r\n  position: fixed;\r\n  display: flex;\r\n  top: 0;\r\n  left: -9999px;\r\n  height: 100%;\r\n  width: 100%;\r\n  background: white;\r\n  transition: all 1s ease;\r\n  color:#0b3d63\r\n}\r\n.modal {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  text-align: center;\r\n  width: 30%;\r\n  margin: auto;\r\n  background-color: gainsboro;\r\n  border-radius: 30px;\r\n  gap: 30px;\r\n  border: 1px solid aliceblue;\r\n}\r\n.modal__btn {\r\n  background-color: white;\r\n  border: none;\r\n  border-radius: 30px;\r\n  margin: 10px;\r\n  padding: 5px 15px;\r\n}\r\n\r\n.modal__congratulation {\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.scores__modal {\r\n  position: fixed;\r\n  display: flex;\r\n  left: -9999px;\r\n  top: 0;\r\n  height: 100%;\r\n  width: 100%;\r\n  background: white;\r\n  transition: all 1s ease;\r\n  color:#0b3d63\r\n}\r\n.scores__modal__wrapper {\r\n  text-align: center;\r\n  width: 40%;\r\n  margin: auto;\r\n  background-color: white;\r\n  border-radius: 30px;\r\n  gap: 20px;\r\n  padding: 1% 20px;\r\n  border: 1px solid aliceblue;\r\n}\r\n\r\n.scores__modal__container{\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr 1fr;\r\n}\r\n\r\n\r\n.scores__item {\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.time__name,\r\n.level__num,\r\n.game__num,\r\n.place__num{\r\n  padding-top: 5px;\r\n}\r\n.modal--active {\r\n  left: 0;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12439,4 +12437,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.cd7599d9660cd4e2bd37.js.map
+//# sourceMappingURL=main.b86f22d9bace2e4669de.js.map
