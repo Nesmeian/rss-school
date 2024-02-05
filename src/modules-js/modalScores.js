@@ -60,7 +60,7 @@ function createResults() {
     const placeNum = createElement({
       tag: "div",
       classes: ["place__num"],
-      text: i,
+      text: i+1,
     });
     const gameNum = createElement({
       tag: "div",
@@ -77,15 +77,19 @@ function createResults() {
       classes: ["time__name"],
       text: e.time,
     });
-    
     scoresPlace.append(placeNum);
     scoresGame.append(gameNum);
     scoresLevel.append(levelNum);
     scoresTime.append(timeName);
   });
-  console.log(unzipResult);
 }
-createResults();
+function deleteResult(){
+  scoresPlace.textContent='#'
+  scoresGame.textContent='Game'
+  scoresLevel.textContent='Level'
+  scoresTime.textContent='time'
+}
+
 function sortArr(arr) {
   arr.sort((a, b) => {
     const [minA, secA] = a.time.split(":").map(Number);
@@ -98,6 +102,8 @@ function sortArr(arr) {
   });
 }
 scoresShowBtn.addEventListener('click',()=>{
+  deleteResult()
+  createResults();
   scoresModal.classList.add('modal--active')
 })
 scoresCloseBtn.addEventListener('click',()=>{

@@ -967,7 +967,7 @@ function createResults() {
     const placeNum = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
       tag: "div",
       classes: ["place__num"],
-      text: i
+      text: i + 1
     });
     const gameNum = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
       tag: "div",
@@ -989,9 +989,13 @@ function createResults() {
     scoresLevel.append(levelNum);
     scoresTime.append(timeName);
   });
-  console.log(unzipResult);
 }
-createResults();
+function deleteResult() {
+  scoresPlace.textContent = '#';
+  scoresGame.textContent = 'Game';
+  scoresLevel.textContent = 'Level';
+  scoresTime.textContent = 'time';
+}
 function sortArr(arr) {
   arr.sort((a, b) => {
     const [minA, secA] = a.time.split(":").map(Number);
@@ -1003,6 +1007,8 @@ function sortArr(arr) {
   });
 }
 _html__WEBPACK_IMPORTED_MODULE_0__.scoresShowBtn.addEventListener('click', () => {
+  deleteResult();
+  createResults();
   scoresModal.classList.add('modal--active');
 });
 scoresCloseBtn.addEventListener('click', () => {
@@ -12433,4 +12439,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.bfb5305b6147d443b519.js.map
+//# sourceMappingURL=main.cd7599d9660cd4e2bd37.js.map
