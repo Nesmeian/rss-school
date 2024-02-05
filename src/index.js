@@ -11,6 +11,6 @@ import "./modules-js/randomGame";
 import "./modules-js/autoSolution";
 import "./modules-js/themes";
 import "./modules-js/saveGame";
-import "./modules-js/modalWinners";
+import "./modules-js/modalScores";
 import "./main.scss";
 

@@ -5,8 +5,9 @@
   left: -9999px;
   height: 100%;
   width: 100%;
-  background: gray;
+  background: white;
   transition: all 1s ease;
+  color:#0b3d63
 }
 .modal {
   display: flex;
@@ -19,6 +20,7 @@
   background-color: gainsboro;
   border-radius: 30px;
   gap: 30px;
+  border: 1px solid aliceblue;
 }
 .modal__btn {
   background-color: white;
@@ -32,35 +34,47 @@
   padding: 10px;
 }
 
-.modal--active {
-  left: 0;
-}
 
-.winners__modal {
+.scores__modal {
   position: fixed;
   display: flex;
-  top: 0;
   left: -9999px;
+  top: 0;
   height: 100%;
   width: 100%;
-  background: gray;
+  background: white;
   transition: all 1s ease;
+  color:#0b3d63
 }
-.winners__modal__wrapper {
-  display: grid;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.scores__modal__wrapper {
   text-align: center;
-  width: 30%;
+  width: 40%;
   margin: auto;
-  background-color: gainsboro;
+  background-color: white;
   border-radius: 30px;
-  gap: 30px;
+  gap: 20px;
+  padding: 1% 20px;
+  border: 1px solid aliceblue;
+}
+
+.scores__modal__container{
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.winners__item {
-  width: 20%;
+
+
+.scores__item {
   height: 100px;
-  background: black;
+  padding: 10px;
+}
+
+
+.time__name,
+.level__num,
+.game__num,
+.place__num{
+  padding-top: 5px;
+}
+.modal--active {
+  left: 0;
 }

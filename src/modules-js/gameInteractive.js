@@ -2,14 +2,17 @@ import { modalWrapper } from "./modal";
 import { leftClick, rigthClick, audioWinGame } from "./audio";
 import { startTimer, stopTimer, result } from "./timer";
 import { modalCongratulation } from "./modal";
-import { _gameActive } from "./createMenu";
+import { _gameActive, choseLevel, choseGame } from "./createMenu";
 export let countOfTargets = 0;
-// import resultOfGames
-export function clickOnBoard(count) {
+export let scoreArr = JSON.parse(window.localStorage.getItem("scoreStorage"));
+if (!localStorage.hasOwnProperty("scoreStorage")) {
+  localStorage.setItem("scoreStorage", JSON.stringify([]));
+}
+export function clickOnBoard(count, saveTimer) {
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
   if (count == undefined) {
-    console.log(1);
+    let empty = 0;
   } else {
     winCount = count;
   }
@@ -17,7 +20,7 @@ export function clickOnBoard(count) {
     e.addEventListener("contextmenu", (elem) => {
       elem.preventDefault();
       if (_gameActive) {
-        startTimer();
+        startTimer(saveTimer);
         rigthClick.play();
         if (e.classList.contains("--fill")) {
           e.classList.remove("--fill");
@@ -35,7 +38,7 @@ export function clickOnBoard(count) {
     });
     e.addEventListener("click", () => {
       if (_gameActive) {
-        startTimer();
+        startTimer(saveTimer);
         leftClick.play();
         if (e.classList.contains("--empty")) {
           e.classList.remove("--empty");
@@ -64,6 +67,13 @@ export function clickOnBoard(count) {
           modalWrapper.classList.add("modal--active");
           modalCongratulation.textContent = `Great! You have solved the nonogram in ${result}`;
           stopTimer();
+          let scoreObj = {
+            gameName: choseGame,
+            gameLevel: choseLevel,
+            time: result,
+          };
+          scoreArr.push(scoreObj);
+          localStorage.setItem("scoreStorage", JSON.stringify(scoreArr));
         }
       }
     });

@@ -1,10 +1,13 @@
-import { rigthClick } from "./audio";
 import { countOfTargets } from "./gameInteractive";
 import { saveGameBtn, contineGameBtn } from "./html";
 import { restartGame } from "./restartGame";
 import { currentGame } from "./createMenu";
 import { createGame } from "./createItems";
 import { resetTimer } from "./timer";
+import { result } from "./timer";
+import { audioChangeLevel } from "./audio";
+import { topLeft } from "./html";
+export let saveTimer = 0;
 let saveGame = JSON.parse(window.localStorage.getItem("saveGame"));
 
 saveGameBtn.addEventListener("click", save);
@@ -14,8 +17,11 @@ function continueGame() {
   let a = JSON.parse(localStorage.getItem("saveGame"));
   let currentGame = a.game;
   let saveCount = a.saveCount;
+  saveTimer = a.time;
+  audioChangeLevel.play()
   restartGame();
-  createGame(currentGame, saveCount);
+  resetTimer();
+  createGame(currentGame, saveCount, saveTimer);
   const gameCell = document.querySelectorAll(".game-cell");
   a.fill.forEach((e) => {
     gameCell[e].classList.add("--fill");
@@ -23,7 +29,7 @@ function continueGame() {
   a.empty.forEach((e) => {
     gameCell[e].classList.add("--empty");
   });
-  resetTimer();
+  topLeft.textContent = a.time;
 }
 function save() {
   const gameCell = document.querySelectorAll(".game-cell");
@@ -37,11 +43,13 @@ function save() {
     }
   });
   let saveGameObj = {
+    time: result,
     fill: saveLeftClick,
     empty: saveRightClick,
     saveCount: countOfTargets,
     game: currentGame,
   };
+  audioChangeLevel.play()
   saveGame = saveGameObj;
   localStorage.setItem("saveGame", JSON.stringify(saveGame));
 }

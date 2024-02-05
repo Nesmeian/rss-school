@@ -1,5 +1,5 @@
 import { topLeft } from "./html";
-export let result = 0;
+export let result = "00:00";
 let timer;
 let timerSwitch = false;
 let seconds = 0;
@@ -7,13 +7,20 @@ let minutes = 0;
 let secdecades = 0;
 let mindecades = 0;
 topLeft.textContent = `${mindecades}${minutes}:${secdecades}${seconds}`;
-export function startTimer() {
+export function startTimer(saveTimer) {
   if (!timerSwitch) {
+    if (saveTimer) {
+      saveTimer = saveTimer.split("").reverse();
+      seconds = saveTimer[0];
+      secdecades = saveTimer[1];
+      minutes = saveTimer[3];
+      mindecades = saveTimer[4];
+    }
     timer = setInterval(() => {
       seconds++;
       if (seconds === 10) {
-        secdecades++;
         seconds = 0;
+        secdecades++;
       }
       if (secdecades === 6) {
         secdecades = 0;

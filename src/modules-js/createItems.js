@@ -2,6 +2,7 @@ import { bottomRight, bottomLeft, topRight } from "./html";
 import { createElement } from "./createFunc";
 import { currentGame } from "./createMenu";
 import { clickOnBoard } from "./gameInteractive";
+import { saveTimer } from "./saveGame";
 
 function createItem(column, row, purpose, value) {
   const result = [];
@@ -60,7 +61,7 @@ function createColumns(height, width, parent, purpose, value) {
   }
   return item;
 }
-export function createGame(game, count) {
+export function createGame(game, count, saveTimer) {
   const gameBoard = createColumns(
     game.length,
     game.length,
@@ -102,9 +103,8 @@ export function createGame(game, count) {
       searchLeft[i][j].textContent = e;
     });
   }
-  console.log(count);
   deleteTrashItems();
-  clickOnBoard(count);
+  clickOnBoard(count, saveTimer);
 }
 
 export function deleteTrashItems() {
