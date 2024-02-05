@@ -27,13 +27,13 @@ export const themes = createElement({
 export const themesLight = createElement({
   tag: "button",
   classes: ["button", "themes__light"],
-  text: "light",
+  text: "Light",
 });
 
 export const themesDark = createElement({
   tag: "button",
   classes: ["button", "themese__dark"],
-  text: "dark",
+  text: "Dark",
 });
 const title = createElement({
   tag: "div",
@@ -85,9 +85,10 @@ const titleS = createElement({
   classes: ["title-s"],
 });
 
-const winnersShowBtn = createElement({
+export const scoresShowBtn = createElement({
   tag: "button",
-  classes: ["button", "winners__show-btn"],
+  classes: ["button", "scores__show-btn"],
+  text: "Scores",
 });
 export const gameFeatures = createElement({
   tag: "div",
@@ -167,7 +168,7 @@ title.append(titleR);
 title.append(titleA);
 title.append(titleM);
 title.append(titleS);
-headerWrapper.append(winnersShowBtn);
+headerWrapper.append(scoresShowBtn);
 main.append(wrapper);
 wrapper.append(gameFeatures);
 gameFeatures.append(contineGameBtn);

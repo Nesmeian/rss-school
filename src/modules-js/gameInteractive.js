@@ -2,8 +2,13 @@ import { modalWrapper } from "./modal";
 import { leftClick, rigthClick, audioWinGame } from "./audio";
 import { startTimer, stopTimer, result } from "./timer";
 import { modalCongratulation } from "./modal";
-import { _gameActive } from "./createMenu";
+import { _gameActive, choseLevel, choseGame } from "./createMenu";
 export let countOfTargets = 0;
+export let scoreArr = JSON.parse(window.localStorage.getItem("scoreStorage"));
+
+if (!localStorage.hasOwnProperty("scoreStorage")) {
+  localStorage.setItem("scoreStorage", JSON.stringify([]));
+}
 export function clickOnBoard(count, saveTimer) {
   const gameCell = document.querySelectorAll(".game-cell");
   let winCount = createWinCount(gameCell);
@@ -63,6 +68,13 @@ export function clickOnBoard(count, saveTimer) {
           modalWrapper.classList.add("modal--active");
           modalCongratulation.textContent = `Great! You have solved the nonogram in ${result}`;
           stopTimer();
+          let scoreObj = {
+            gameName: choseGame,
+            gameLevel: choseLevel,
+            time: result,
+          };
+          scoreArr.push(scoreObj);
+          localStorage.setItem("scoreStorage", JSON.stringify(scoreArr));
         }
       }
     });

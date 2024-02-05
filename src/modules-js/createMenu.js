@@ -16,8 +16,8 @@ export const gameActive = {
 };
 export let game = games.easy.bomb;
 export let currentGame = game;
-let choseLevel;
-let choseGame = "";
+export let choseLevel = "easy";
+export let choseGame = "bomb";
 createSelect(games);
 showSelect();
 changeGame();
