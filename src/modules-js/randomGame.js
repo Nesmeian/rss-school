@@ -1,5 +1,5 @@
 import { games } from "./game";
-import { audioChangeLevel, audioRandomGame } from "./audio";
+import { audioRandomGame, soundActive } from "./audio";
 import { createGame } from "./createItems";
 import { randomGameBtn } from "./html";
 import { restartGame } from "./restartGame";
@@ -17,7 +17,9 @@ export function activeButton(e) {
   }, 1000);
 }
 randomGameBtn.addEventListener("click", () => {
-  audioRandomGame.play();
+  if (soundActive) {
+    audioRandomGame.play();
+  }
   let randLevelValue = randomLevel(random());
   let randGameValue = randomGame(randLevelValue);
   restartGame();
@@ -26,7 +28,6 @@ randomGameBtn.addEventListener("click", () => {
   _currentGame.set(games[randLevelValue][randGameValue]);
   _choseGame.set(randGameValue);
   _choseLevel.set(randLevelValue);
-  audioChangeLevel.play(randomGame(randLevelValue));
 });
 
 function randomLevel(random) {

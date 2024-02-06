@@ -3,7 +3,7 @@ import { main } from "./html";
 import { restartGame } from "./restartGame";
 import { createGame } from "./createItems";
 import { currentGame } from "./createMenu";
-import { audioNewGame } from "./audio";
+import { audioNewGame, soundActive } from "./audio";
 import { resetTimer } from "./timer";
 
 const modal = createElement({
@@ -32,7 +32,9 @@ modal.append(modalBtn);
 function playAgain(currentGame) {
   modalBtn.addEventListener("click", () => {
     modalWrapper.classList.remove("modal--active");
-    audioNewGame.play();
+    if (soundActive) {
+      audioNewGame.play();
+    }
     restartGame();
     createGame(currentGame);
     resetTimer();

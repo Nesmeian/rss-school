@@ -2,7 +2,7 @@ import { main } from "./html";
 import { createElement } from "./createFunc";
 import { scoresShowBtn } from "./html";
 import { scoreArr } from "./gameInteractive";
-import { audioScore } from "./audio";
+import { audioScore, soundActive } from "./audio";
 const scoresModal = createElement({
   tag: "div",
   classes: ["scores__modal"],
@@ -105,10 +105,14 @@ function sortArr(arr) {
 scoresShowBtn.addEventListener("click", () => {
   deleteResult();
   createResults();
-  audioScore.play();
+  if (soundActive) {
+    audioScore.play();
+  }
   scoresModal.classList.add("modal--active");
 });
 scoresCloseBtn.addEventListener("click", () => {
   scoresModal.classList.remove("modal--active");
-  audioScore.play();
+  if (soundActive) {
+    audioScore.play();
+  }
 });

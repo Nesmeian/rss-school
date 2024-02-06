@@ -1,7 +1,7 @@
 import { _gameActive, gameActive } from "./createMenu";
-import { autoSolutionBtn } from "./html";
+import { autoSolutionBtn, soundOn } from "./html";
 import { stopTimer } from "./timer";
-import { audioChangeLevel, audioSolution } from "./audio";
+import { audioSolution, soundActive } from "./audio";
 import { restartGame } from "./restartGame";
 import { createGame } from "./createItems";
 import { currentGame } from "./createMenu";
@@ -24,7 +24,9 @@ autoSolutionBtn.addEventListener("click", () => {
       e.classList.add("--fill");
     }
   });
-  audioSolution.play();
+  if (soundActive) {
+    audioSolution.play();
+  }
   stopTimer();
   gameActive.set(false);
 });

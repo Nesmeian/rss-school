@@ -1,5 +1,5 @@
 import { modalWrapper } from "./modal";
-import { leftClick, rigthClick, audioWinGame } from "./audio";
+import { leftClick, rigthClick, audioWinGame, soundActive } from "./audio";
 import { startTimer, stopTimer, result } from "./timer";
 import { modalCongratulation } from "./modal";
 import { _gameActive, choseLevel, choseGame } from "./createMenu";
@@ -21,7 +21,9 @@ export function clickOnBoard(count, saveTimer) {
       elem.preventDefault();
       if (_gameActive) {
         startTimer(saveTimer);
-        rigthClick.play();
+        if (soundActive) {
+          rigthClick.play();
+        }
         if (e.classList.contains("--fill")) {
           e.classList.remove("--fill");
           if (e.classList.contains("target")) {
@@ -39,7 +41,9 @@ export function clickOnBoard(count, saveTimer) {
     e.addEventListener("click", () => {
       if (_gameActive) {
         startTimer(saveTimer);
-        leftClick.play();
+        if (soundActive) {
+          leftClick.play();
+        }
         if (e.classList.contains("--empty")) {
           e.classList.remove("--empty");
         }
@@ -63,7 +67,9 @@ export function clickOnBoard(count, saveTimer) {
           }
         }
         if (winCount === 0) {
-          audioWinGame.play();
+          if (soundActive) {
+            audioWinGame.play();
+          }
           modalWrapper.classList.add("modal--active");
           modalCongratulation.textContent = `Great! You have solved the nonogram in ${result}`;
           stopTimer();
