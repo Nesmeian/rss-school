@@ -5,8 +5,17 @@ import { audioChangeLevel, audioSolution } from "./audio";
 import { restartGame } from "./restartGame";
 import { createGame } from "./createItems";
 import { currentGame } from "./createMenu";
-
+export let solveGame = false;
+export const _solveGame = {
+  get() {
+    return solveGame;
+  },
+  set(value) {
+    solveGame = value;
+  },
+};
 autoSolutionBtn.addEventListener("click", () => {
+  solveGame = true;
   restartGame();
   createGame(currentGame);
   const gameCell = document.querySelectorAll(".game-cell");

@@ -8,12 +8,14 @@ import {
   _choseLevel,
   choseGame,
   choseLevel,
+  gameActive,
 } from "./createMenu";
 import { createGame } from "./createItems";
 import { resetTimer } from "./timer";
 import { result } from "./timer";
 import { audioChangeLevel, audioContinueGame, audioSaveGame } from "./audio";
 import { topLeft } from "./html";
+import { _solveGame, solveGame } from "./autoSolution";
 export let saveTimer = 0;
 let saveGame = JSON.parse(window.localStorage.getItem("saveGame"));
 saveGameBtn.addEventListener("click", save);
@@ -24,6 +26,8 @@ function continueGame() {
   let a = JSON.parse(localStorage.getItem("saveGame"));
   let currentGameResult = a.game;
   let saveCount = a.saveCount;
+  gameActive.set(true);
+  _solveGame.set(false);
   _currentGame.set(currentGameResult);
   console.log(currentGame);
   saveTimer = a.time;
@@ -44,6 +48,7 @@ function continueGame() {
 }
 function save() {
   audioSaveGame.play();
+
   const gameCell = document.querySelectorAll(".game-cell");
   let saveLeftClick = [];
   let saveRightClick = [];
@@ -54,6 +59,10 @@ function save() {
       saveRightClick.push(i);
     }
   });
+  if (solveGame) {
+    saveLeftClick = [];
+    saveRightClick = [];
+  }
   let saveGameObj = {
     time: result,
     fill: saveLeftClick,
