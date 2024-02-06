@@ -91,8 +91,8 @@ const audioWinGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)(
   classes: ["audio__win-game"]
 });
 const audioNewGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
-  tag: 'audio',
-  classes: ['audio__new-game']
+  tag: "audio",
+  classes: ["audio__new-game"]
 });
 leftClick.src = _audio_leftclick_mp3__WEBPACK_IMPORTED_MODULE_1__;
 rigthClick.src = _audio_rigthclick_mp3__WEBPACK_IMPORTED_MODULE_2__;
@@ -115,11 +115,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
 /* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+/* harmony import */ var _restartGame__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./restartGame */ "./src/modules-js/restartGame.js");
+/* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
+
+
+
 
 
 
 
 _html__WEBPACK_IMPORTED_MODULE_1__.autoSolutionBtn.addEventListener("click", () => {
+  (0,_restartGame__WEBPACK_IMPORTED_MODULE_4__.restartGame)();
+  (0,_createItems__WEBPACK_IMPORTED_MODULE_5__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_0__.currentGame);
   const gameCell = document.querySelectorAll(".game-cell");
   gameCell.forEach(e => {
     if (e.classList.contains("target")) {
@@ -626,6 +633,7 @@ function createWinCount(gameCell) {
       winCount++;
     }
   });
+  countOfTargets = winCount;
   return winCount;
 }
 
@@ -647,6 +655,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   gameFeatures: () => (/* binding */ gameFeatures),
 /* harmony export */   main: () => (/* binding */ main),
 /* harmony export */   randomGameBtn: () => (/* binding */ randomGameBtn),
+/* harmony export */   restartGameBtn: () => (/* binding */ restartGameBtn),
 /* harmony export */   saveGameBtn: () => (/* binding */ saveGameBtn),
 /* harmony export */   scoresShowBtn: () => (/* binding */ scoresShowBtn),
 /* harmony export */   setupMenu: () => (/* binding */ setupMenu),
@@ -753,6 +762,11 @@ const randomGameBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)
   classes: ["button", "featurs__random"],
   text: "Random Game"
 });
+const restartGameBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "featurs__restart"],
+  text: "Restart Game"
+});
 const autoSolutionBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "button",
   classes: ["button", "featurs__auto-solution"],
@@ -823,6 +837,7 @@ main.append(wrapper);
 wrapper.append(gameFeatures);
 gameFeatures.append(contineGameBtn);
 gameFeatures.append(saveGameBtn);
+gameFeatures.append(restartGameBtn);
 gameFeatures.append(autoSolutionBtn);
 gameFeatures.append(randomGameBtn);
 wrapper.append(nonogramm);
@@ -1083,12 +1098,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   restartGame: () => (/* binding */ restartGame)
 /* harmony export */ });
 /* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+/* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
+/* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+
+
+
 
 function restartGame() {
   _html__WEBPACK_IMPORTED_MODULE_0__.bottomLeft.textContent = "";
   _html__WEBPACK_IMPORTED_MODULE_0__.bottomRight.textContent = "";
   _html__WEBPACK_IMPORTED_MODULE_0__.topRight.textContent = "";
 }
+_html__WEBPACK_IMPORTED_MODULE_0__.restartGameBtn.addEventListener("click", () => {
+  restartGame();
+  (0,_createItems__WEBPACK_IMPORTED_MODULE_2__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_1__.currentGame);
+  (0,_timer__WEBPACK_IMPORTED_MODULE_3__.resetTimer)();
+});
 
 /***/ }),
 
@@ -1125,13 +1151,13 @@ _html__WEBPACK_IMPORTED_MODULE_1__.saveGameBtn.addEventListener("click", save);
 _html__WEBPACK_IMPORTED_MODULE_1__.contineGameBtn.addEventListener("click", continueGame);
 function continueGame() {
   let a = JSON.parse(localStorage.getItem("saveGame"));
-  let currentGame = a.game;
+  let currentGameResult = a.game;
   let saveCount = a.saveCount;
   saveTimer = a.time;
   _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
   (0,_restartGame__WEBPACK_IMPORTED_MODULE_2__.restartGame)();
   (0,_timer__WEBPACK_IMPORTED_MODULE_5__.resetTimer)();
-  (0,_createItems__WEBPACK_IMPORTED_MODULE_4__.createGame)(currentGame, saveCount, saveTimer);
+  (0,_createItems__WEBPACK_IMPORTED_MODULE_4__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame, saveCount, saveTimer);
   const gameCell = document.querySelectorAll(".game-cell");
   a.fill.forEach(e => {
     gameCell[e].classList.add("--fill");
@@ -12437,4 +12463,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.8a45df25e97fe8ea83e3.js.map
+//# sourceMappingURL=main.e91e94553ef0ebc6444b.js.map
