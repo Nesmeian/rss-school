@@ -316,6 +316,9 @@ createGame(_createMenu__WEBPACK_IMPORTED_MODULE_2__.currentGame);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _choseGame: () => (/* binding */ _choseGame),
+/* harmony export */   _choseLevel: () => (/* binding */ _choseLevel),
+/* harmony export */   _currentGame: () => (/* binding */ _currentGame),
 /* harmony export */   _gameActive: () => (/* binding */ _gameActive),
 /* harmony export */   choseGame: () => (/* binding */ choseGame),
 /* harmony export */   choseLevel: () => (/* binding */ choseLevel),
@@ -348,8 +351,32 @@ const gameActive = {
 };
 let game = _game__WEBPACK_IMPORTED_MODULE_0__.games.easy.bomb;
 let currentGame = game;
+const _currentGame = {
+  get() {
+    return currentGame;
+  },
+  set(value) {
+    currentGame = value;
+  }
+};
 let choseLevel = "easy";
+const _choseLevel = {
+  get() {
+    return choseLevel;
+  },
+  set(value) {
+    choseLevel = value;
+  }
+};
 let choseGame = "bomb";
+const _choseGame = {
+  get() {
+    return choseGame;
+  },
+  set(value) {
+    choseGame = value;
+  }
+};
 createSelect(_game__WEBPACK_IMPORTED_MODULE_0__.games);
 showSelect();
 changeGame();
@@ -934,32 +961,32 @@ const scoresWrapper = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)
   classes: ["scores__modal__wrapper"]
 });
 const scoresContainer = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
-  tag: 'div',
-  classes: ['scores__modal__container']
+  tag: "div",
+  classes: ["scores__modal__container"]
 });
 const scoresPlace = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
   tag: "div",
   classes: ["scores__item", "scores__place"],
-  text: '#'
+  text: "#"
 });
 const scoresGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
   tag: "div",
   classes: ["scores__item", "scores__game"],
-  text: 'Game'
+  text: "Game"
 });
 const scoresLevel = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
   tag: "div",
   classes: ["scores__item", "scores__level"],
-  text: 'Level'
+  text: "Level"
 });
 const scoresTime = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
   tag: "div",
   classes: ["scores__item", "scores__time"],
-  text: 'Time'
+  text: "Time"
 });
 const scoresCloseBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
-  tag: 'button',
-  classes: ['button', 'modal__closeBtn'],
+  tag: "button",
+  classes: ["button", "modal__closeBtn"],
   text: "Close"
 });
 _html__WEBPACK_IMPORTED_MODULE_0__.main.append(scoresModal);
@@ -1005,10 +1032,10 @@ function createResults() {
   });
 }
 function deleteResult() {
-  scoresPlace.textContent = '#';
-  scoresGame.textContent = 'Game';
-  scoresLevel.textContent = 'Level';
-  scoresTime.textContent = 'time';
+  scoresPlace.textContent = "#";
+  scoresGame.textContent = "Game";
+  scoresLevel.textContent = "Level";
+  scoresTime.textContent = "time";
 }
 function sortArr(arr) {
   arr.sort((a, b) => {
@@ -1020,13 +1047,13 @@ function sortArr(arr) {
     return secA - secB;
   });
 }
-_html__WEBPACK_IMPORTED_MODULE_0__.scoresShowBtn.addEventListener('click', () => {
+_html__WEBPACK_IMPORTED_MODULE_0__.scoresShowBtn.addEventListener("click", () => {
   deleteResult();
   createResults();
-  scoresModal.classList.add('modal--active');
+  scoresModal.classList.add("modal--active");
 });
-scoresCloseBtn.addEventListener('click', () => {
-  scoresModal.classList.remove('modal--active');
+scoresCloseBtn.addEventListener("click", () => {
+  scoresModal.classList.remove("modal--active");
 });
 
 /***/ }),
@@ -1153,12 +1180,16 @@ function continueGame() {
   let a = JSON.parse(localStorage.getItem("saveGame"));
   let currentGameResult = a.game;
   let saveCount = a.saveCount;
+  _createMenu__WEBPACK_IMPORTED_MODULE_3__._currentGame.set(currentGameResult);
+  console.log(_createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame);
   saveTimer = a.time;
   _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
   (0,_restartGame__WEBPACK_IMPORTED_MODULE_2__.restartGame)();
   (0,_timer__WEBPACK_IMPORTED_MODULE_5__.resetTimer)();
-  (0,_createItems__WEBPACK_IMPORTED_MODULE_4__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame, saveCount, saveTimer);
+  (0,_createItems__WEBPACK_IMPORTED_MODULE_4__.createGame)(currentGameResult, saveCount, saveTimer);
   const gameCell = document.querySelectorAll(".game-cell");
+  _createMenu__WEBPACK_IMPORTED_MODULE_3__._choseGame.set(a.gameName);
+  _createMenu__WEBPACK_IMPORTED_MODULE_3__._choseLevel.set(a.gameLevel);
   a.fill.forEach(e => {
     gameCell[e].classList.add("--fill");
   });
@@ -1183,7 +1214,9 @@ function save() {
     fill: saveLeftClick,
     empty: saveRightClick,
     saveCount: _gameInteractive__WEBPACK_IMPORTED_MODULE_0__.countOfTargets,
-    game: _createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame
+    game: _createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame,
+    gameName: _createMenu__WEBPACK_IMPORTED_MODULE_3__.choseGame,
+    gameLevel: _createMenu__WEBPACK_IMPORTED_MODULE_3__.choseLevel
   };
   _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
   saveGame = saveGameObj;
@@ -12463,4 +12496,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.e91e94553ef0ebc6444b.js.map
+//# sourceMappingURL=main.0117f2ff275183c0f1d9.js.map
