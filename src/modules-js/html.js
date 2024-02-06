@@ -99,6 +99,11 @@ export const randomGameBtn = createElement({
   classes: ["button", "featurs__random"],
   text: "Random Game",
 });
+export const restartGameBtn = createElement({
+  tag: "button",
+  classes: ["button", "featurs__restart"],
+  text: "Restart Game",
+});
 export const autoSolutionBtn = createElement({
   tag: "button",
   classes: ["button", "featurs__auto-solution"],
@@ -173,6 +178,7 @@ main.append(wrapper);
 wrapper.append(gameFeatures);
 gameFeatures.append(contineGameBtn);
 gameFeatures.append(saveGameBtn);
+gameFeatures.append(restartGameBtn);
 gameFeatures.append(autoSolutionBtn);
 gameFeatures.append(randomGameBtn);
 wrapper.append(nonogramm);
