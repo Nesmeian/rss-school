@@ -1,0 +1,48 @@
+.--dark {
+  background: #0c194a;
+  .title {
+    color: white;
+    gap: 2px;
+  }
+  .title-m,
+  .title-nn {
+    background-color: white;
+    color: #0c194a;
+  }
+  .wrapper {
+    background: #1e7af6;
+    border: none;
+  }
+  .button {
+    color: #d6e4f0;
+    background: #1e56a0;
+  }
+  .select__level {
+    color: #d6e4f0;
+    background: #1e56a0;
+  }
+  .select__game {
+    color: #d6e4f0;
+    background: #1e56a0;
+  }
+
+  .item-left,
+  .item-top {
+    background-color: #1e56a0;
+    color: #ddf0ff;
+  }
+  .footer__wrapper {
+    color: white;
+  }
+  .modal__wrapper{
+    background-color: #0c194a;
+  }
+  .scores__modal{
+    background-color:#0c194a ;
+    color:#d6e4f0
+  }
+  .scores__modal__wrapper{
+    background-color: #1e7af6;
+    border: none;
+  }
+}
