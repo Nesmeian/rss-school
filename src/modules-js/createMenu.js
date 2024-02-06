@@ -16,8 +16,32 @@ export const gameActive = {
 };
 export let game = games.easy.bomb;
 export let currentGame = game;
+export const _currentGame = {
+  get() {
+    return currentGame;
+  },
+  set(value) {
+    currentGame = value;
+  },
+};
 export let choseLevel = "easy";
+export const _choseLevel = {
+  get() {
+    return choseLevel;
+  },
+  set(value) {
+    choseLevel = value;
+  },
+};
 export let choseGame = "bomb";
+export const _choseGame = {
+  get() {
+    return choseGame;
+  },
+  set(value) {
+    choseGame = value;
+  },
+};
 createSelect(games);
 showSelect();
 changeGame();

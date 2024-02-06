@@ -1,7 +1,14 @@
 import { countOfTargets } from "./gameInteractive";
 import { saveGameBtn, contineGameBtn } from "./html";
 import { restartGame } from "./restartGame";
-import { currentGame } from "./createMenu";
+import {
+  currentGame,
+  _currentGame,
+  _choseGame,
+  _choseLevel,
+  choseGame,
+  choseLevel,
+} from "./createMenu";
 import { createGame } from "./createItems";
 import { resetTimer } from "./timer";
 import { result } from "./timer";
@@ -16,12 +23,16 @@ function continueGame() {
   let a = JSON.parse(localStorage.getItem("saveGame"));
   let currentGameResult = a.game;
   let saveCount = a.saveCount;
+  _currentGame.set(currentGameResult);
+  console.log(currentGame);
   saveTimer = a.time;
   audioChangeLevel.play();
   restartGame();
   resetTimer();
-  createGame(currentGame, saveCount, saveTimer);
+  createGame(currentGameResult, saveCount, saveTimer);
   const gameCell = document.querySelectorAll(".game-cell");
+  _choseGame.set(a.gameName);
+  _choseLevel.set(a.gameLevel);
   a.fill.forEach((e) => {
     gameCell[e].classList.add("--fill");
   });
@@ -47,6 +58,8 @@ function save() {
     empty: saveRightClick,
     saveCount: countOfTargets,
     game: currentGame,
+    gameName: choseGame,
+    gameLevel: choseLevel,
   };
   audioChangeLevel.play();
   saveGame = saveGameObj;
