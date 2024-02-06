@@ -87,12 +87,12 @@ function showSelect() {
     e.addEventListener("click", () => {
       if (!e.classList.contains("--active")) {
         selectLevel.forEach((e) => {
+          audioChangeLevel.play();
           e.classList.remove("--active");
         });
-        audioChangeLevel.play();
+
         e.classList.add("--active");
       } else {
-        audioChangeLevel.play();
         e.classList.remove("--active");
       }
     });
@@ -105,7 +105,6 @@ function changeGame() {
   const levelTitle = document.querySelectorAll(".level__title");
   selectLevel.forEach((e, i) => {
     e.addEventListener("click", () => {
-      audioChangeLevel.play();
       choseLevel = levelTitle[i].textContent;
     });
   });
