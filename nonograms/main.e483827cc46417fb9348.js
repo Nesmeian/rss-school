@@ -51,7 +51,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   audioChangeGame: () => (/* binding */ audioChangeGame),
 /* harmony export */   audioChangeLevel: () => (/* binding */ audioChangeLevel),
+/* harmony export */   audioContinueGame: () => (/* binding */ audioContinueGame),
+/* harmony export */   audioDark: () => (/* binding */ audioDark),
+/* harmony export */   audioLight: () => (/* binding */ audioLight),
 /* harmony export */   audioNewGame: () => (/* binding */ audioNewGame),
+/* harmony export */   audioRandomGame: () => (/* binding */ audioRandomGame),
+/* harmony export */   audioRestartGame: () => (/* binding */ audioRestartGame),
+/* harmony export */   audioSaveGame: () => (/* binding */ audioSaveGame),
+/* harmony export */   audioScore: () => (/* binding */ audioScore),
+/* harmony export */   audioSolution: () => (/* binding */ audioSolution),
 /* harmony export */   audioWinGame: () => (/* binding */ audioWinGame),
 /* harmony export */   leftClick: () => (/* binding */ leftClick),
 /* harmony export */   rigthClick: () => (/* binding */ rigthClick)
@@ -63,6 +71,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _audio_changegame_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../audio/changegame.mp3 */ "./src/audio/changegame.mp3");
 /* harmony import */ var _audio_winGame_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../audio/winGame.mp3 */ "./src/audio/winGame.mp3");
 /* harmony import */ var _audio_newGame_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../audio/newGame.mp3 */ "./src/audio/newGame.mp3");
+/* harmony import */ var _audio_random_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../audio/random.mp3 */ "./src/audio/random.mp3");
+/* harmony import */ var _audio_saveGame_mp3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../audio/saveGame.mp3 */ "./src/audio/saveGame.mp3");
+/* harmony import */ var _audio_continue_mp3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../audio/continue.mp3 */ "./src/audio/continue.mp3");
+/* harmony import */ var _audio_restart_mp3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../audio/restart.mp3 */ "./src/audio/restart.mp3");
+/* harmony import */ var _audio_scores_mp3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../audio/scores.mp3 */ "./src/audio/scores.mp3");
+/* harmony import */ var _audio_dark_mp3__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../audio/dark.mp3 */ "./src/audio/dark.mp3");
+/* harmony import */ var _audio_light_mp3__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../audio/light.mp3 */ "./src/audio/light.mp3");
+/* harmony import */ var _audio_autoSolution_mp3__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../audio/autoSolution.mp3 */ "./src/audio/autoSolution.mp3");
+
+
+
+
+
+
+
+
 
 
 
@@ -94,12 +118,52 @@ const audioNewGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)(
   tag: "audio",
   classes: ["audio__new-game"]
 });
+const audioSaveGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__save-game"]
+});
+const audioContinueGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__continue-game"]
+});
+const audioRestartGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__restart-game"]
+});
+const audioRandomGame = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__random-game"]
+});
+const audioDark = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__Dark"]
+});
+const audioLight = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__Light"]
+});
+const audioScore = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__score"]
+});
+const audioSolution = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__solution"]
+});
 leftClick.src = _audio_leftclick_mp3__WEBPACK_IMPORTED_MODULE_1__;
 rigthClick.src = _audio_rigthclick_mp3__WEBPACK_IMPORTED_MODULE_2__;
 audioChangeLevel.src = _audio_changelevel_mp3__WEBPACK_IMPORTED_MODULE_3__;
 audioChangeGame.src = _audio_changegame_mp3__WEBPACK_IMPORTED_MODULE_4__;
 audioWinGame.src = _audio_winGame_mp3__WEBPACK_IMPORTED_MODULE_5__;
 audioNewGame.src = _audio_newGame_mp3__WEBPACK_IMPORTED_MODULE_6__;
+audioDark.src = _audio_dark_mp3__WEBPACK_IMPORTED_MODULE_12__;
+audioLight.src = _audio_light_mp3__WEBPACK_IMPORTED_MODULE_13__;
+audioScore.src = _audio_scores_mp3__WEBPACK_IMPORTED_MODULE_11__;
+audioContinueGame.src = _audio_continue_mp3__WEBPACK_IMPORTED_MODULE_9__;
+audioRandomGame.src = _audio_random_mp3__WEBPACK_IMPORTED_MODULE_7__;
+audioRestartGame.src = _audio_restart_mp3__WEBPACK_IMPORTED_MODULE_10__;
+audioSaveGame.src = _audio_saveGame_mp3__WEBPACK_IMPORTED_MODULE_8__;
+audioSolution.src = _audio_autoSolution_mp3__WEBPACK_IMPORTED_MODULE_14__;
 
 /***/ }),
 
@@ -133,7 +197,7 @@ _html__WEBPACK_IMPORTED_MODULE_1__.autoSolutionBtn.addEventListener("click", () 
       e.classList.add("--fill");
     }
   });
-  _audio__WEBPACK_IMPORTED_MODULE_3__.audioChangeLevel.play();
+  _audio__WEBPACK_IMPORTED_MODULE_3__.audioSolution.play();
   (0,_timer__WEBPACK_IMPORTED_MODULE_2__.stopTimer)();
   _createMenu__WEBPACK_IMPORTED_MODULE_0__.gameActive.set(false);
 });
@@ -420,12 +484,11 @@ function showSelect() {
     e.addEventListener("click", () => {
       if (!e.classList.contains("--active")) {
         selectLevel.forEach(e => {
+          _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
           e.classList.remove("--active");
         });
-        _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
         e.classList.add("--active");
       } else {
-        _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
         e.classList.remove("--active");
       }
     });
@@ -437,7 +500,6 @@ function changeGame() {
   const levelTitle = document.querySelectorAll(".level__title");
   selectLevel.forEach((e, i) => {
     e.addEventListener("click", () => {
-      _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
       choseLevel = levelTitle[i].textContent;
     });
   });
@@ -948,6 +1010,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
 /* harmony import */ var _createFunc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createFunc */ "./src/modules-js/createFunc.js");
 /* harmony import */ var _gameInteractive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gameInteractive */ "./src/modules-js/gameInteractive.js");
+/* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+
 
 
 
@@ -1050,10 +1114,12 @@ function sortArr(arr) {
 _html__WEBPACK_IMPORTED_MODULE_0__.scoresShowBtn.addEventListener("click", () => {
   deleteResult();
   createResults();
+  _audio__WEBPACK_IMPORTED_MODULE_3__.audioScore.play();
   scoresModal.classList.add("modal--active");
 });
 scoresCloseBtn.addEventListener("click", () => {
   scoresModal.classList.remove("modal--active");
+  _audio__WEBPACK_IMPORTED_MODULE_3__.audioScore.play();
 });
 
 /***/ }),
@@ -1082,12 +1148,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function activeButton(e) {
-  e.classList.add('--active-Btn');
+  e.classList.add("--active-Btn");
   setTimeout(() => {
-    e.classList.remove('--active-Btn');
+    e.classList.remove("--active-Btn");
   }, 1000);
 }
 _html__WEBPACK_IMPORTED_MODULE_3__.randomGameBtn.addEventListener("click", () => {
+  _audio__WEBPACK_IMPORTED_MODULE_1__.audioRandomGame.play();
   let randLevelValue = randomLevel(random());
   let randGameValue = randomGame(randLevelValue);
   (0,_restartGame__WEBPACK_IMPORTED_MODULE_4__.restartGame)();
@@ -1128,6 +1195,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
 /* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+/* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+
 
 
 
@@ -1138,6 +1207,7 @@ function restartGame() {
   _html__WEBPACK_IMPORTED_MODULE_0__.topRight.textContent = "";
 }
 _html__WEBPACK_IMPORTED_MODULE_0__.restartGameBtn.addEventListener("click", () => {
+  _audio__WEBPACK_IMPORTED_MODULE_4__.audioRestartGame.play();
   restartGame();
   (0,_createItems__WEBPACK_IMPORTED_MODULE_2__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_1__.currentGame);
   (0,_timer__WEBPACK_IMPORTED_MODULE_3__.resetTimer)();
@@ -1177,6 +1247,7 @@ let saveGame = JSON.parse(window.localStorage.getItem("saveGame"));
 _html__WEBPACK_IMPORTED_MODULE_1__.saveGameBtn.addEventListener("click", save);
 _html__WEBPACK_IMPORTED_MODULE_1__.contineGameBtn.addEventListener("click", continueGame);
 function continueGame() {
+  _audio__WEBPACK_IMPORTED_MODULE_6__.audioContinueGame.play();
   let a = JSON.parse(localStorage.getItem("saveGame"));
   let currentGameResult = a.game;
   let saveCount = a.saveCount;
@@ -1199,6 +1270,7 @@ function continueGame() {
   _html__WEBPACK_IMPORTED_MODULE_1__.topLeft.textContent = a.time;
 }
 function save() {
+  _audio__WEBPACK_IMPORTED_MODULE_6__.audioSaveGame.play();
   const gameCell = document.querySelectorAll(".game-cell");
   let saveLeftClick = [];
   let saveRightClick = [];
@@ -1233,13 +1305,17 @@ function save() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+/* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
+
 
 const html = document.querySelector("html");
-_html__WEBPACK_IMPORTED_MODULE_0__.themesDark.addEventListener("click", () => {
+_html__WEBPACK_IMPORTED_MODULE_1__.themesDark.addEventListener("click", () => {
+  _audio__WEBPACK_IMPORTED_MODULE_0__.audioDark.play();
   html.classList.add("--dark");
 });
-_html__WEBPACK_IMPORTED_MODULE_0__.themesLight.addEventListener("click", () => {
+_html__WEBPACK_IMPORTED_MODULE_1__.themesLight.addEventListener("click", () => {
+  _audio__WEBPACK_IMPORTED_MODULE_0__.audioLight.play();
   html.classList.remove("--dark");
 });
 
@@ -12239,6 +12315,17 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/audio/autoSolution.mp3":
+/*!************************************!*\
+  !*** ./src/audio/autoSolution.mp3 ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/autoSolution.mp3";
+
+/***/ }),
+
 /***/ "./src/audio/changegame.mp3":
 /*!**********************************!*\
   !*** ./src/audio/changegame.mp3 ***!
@@ -12261,6 +12348,28 @@ module.exports = __webpack_require__.p + "audio/changelevel.mp3";
 
 /***/ }),
 
+/***/ "./src/audio/continue.mp3":
+/*!********************************!*\
+  !*** ./src/audio/continue.mp3 ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/continue.mp3";
+
+/***/ }),
+
+/***/ "./src/audio/dark.mp3":
+/*!****************************!*\
+  !*** ./src/audio/dark.mp3 ***!
+  \****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/dark.mp3";
+
+/***/ }),
+
 /***/ "./src/audio/leftclick.mp3":
 /*!*********************************!*\
   !*** ./src/audio/leftclick.mp3 ***!
@@ -12269,6 +12378,17 @@ module.exports = __webpack_require__.p + "audio/changelevel.mp3";
 
 "use strict";
 module.exports = __webpack_require__.p + "audio/leftclick.mp3";
+
+/***/ }),
+
+/***/ "./src/audio/light.mp3":
+/*!*****************************!*\
+  !*** ./src/audio/light.mp3 ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/light.mp3";
 
 /***/ }),
 
@@ -12283,6 +12403,28 @@ module.exports = __webpack_require__.p + "audio/newGame.mp3";
 
 /***/ }),
 
+/***/ "./src/audio/random.mp3":
+/*!******************************!*\
+  !*** ./src/audio/random.mp3 ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/random.mp3";
+
+/***/ }),
+
+/***/ "./src/audio/restart.mp3":
+/*!*******************************!*\
+  !*** ./src/audio/restart.mp3 ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/restart.mp3";
+
+/***/ }),
+
 /***/ "./src/audio/rigthclick.mp3":
 /*!**********************************!*\
   !*** ./src/audio/rigthclick.mp3 ***!
@@ -12291,6 +12433,28 @@ module.exports = __webpack_require__.p + "audio/newGame.mp3";
 
 "use strict";
 module.exports = __webpack_require__.p + "audio/rigthclick.mp3";
+
+/***/ }),
+
+/***/ "./src/audio/saveGame.mp3":
+/*!********************************!*\
+  !*** ./src/audio/saveGame.mp3 ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/saveGame.mp3";
+
+/***/ }),
+
+/***/ "./src/audio/scores.mp3":
+/*!******************************!*\
+  !*** ./src/audio/scores.mp3 ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/scores.mp3";
 
 /***/ }),
 
@@ -12496,4 +12660,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.0117f2ff275183c0f1d9.js.map
+//# sourceMappingURL=main.e483827cc46417fb9348.js.map

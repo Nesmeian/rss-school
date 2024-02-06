@@ -12,7 +12,7 @@ import {
 import { createGame } from "./createItems";
 import { resetTimer } from "./timer";
 import { result } from "./timer";
-import { audioChangeLevel } from "./audio";
+import { audioChangeLevel, audioContinueGame, audioSaveGame } from "./audio";
 import { topLeft } from "./html";
 export let saveTimer = 0;
 let saveGame = JSON.parse(window.localStorage.getItem("saveGame"));
@@ -20,6 +20,7 @@ saveGameBtn.addEventListener("click", save);
 
 contineGameBtn.addEventListener("click", continueGame);
 function continueGame() {
+  audioContinueGame.play();
   let a = JSON.parse(localStorage.getItem("saveGame"));
   let currentGameResult = a.game;
   let saveCount = a.saveCount;
@@ -42,6 +43,7 @@ function continueGame() {
   topLeft.textContent = a.time;
 }
 function save() {
+  audioSaveGame.play();
   const gameCell = document.querySelectorAll(".game-cell");
   let saveLeftClick = [];
   let saveRightClick = [];
