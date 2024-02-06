@@ -35,6 +35,7 @@ export const themesDark = createElement({
   classes: ["button", "themese__dark"],
   text: "Dark",
 });
+
 const title = createElement({
   tag: "div",
   text: "",
@@ -103,6 +104,11 @@ export const restartGameBtn = createElement({
   tag: "button",
   classes: ["button", "featurs__restart"],
   text: "Restart Game",
+});
+export const soundOn = createElement({
+  tag: "button",
+  classes: ["button", "sound-on"],
+  text: "Sounds On",
 });
 export const autoSolutionBtn = createElement({
   tag: "button",
@@ -181,6 +187,7 @@ gameFeatures.append(saveGameBtn);
 gameFeatures.append(restartGameBtn);
 gameFeatures.append(autoSolutionBtn);
 gameFeatures.append(randomGameBtn);
+gameFeatures.append(soundOn);
 wrapper.append(nonogramm);
 wrapper.append(setupMenu);
 nonogramm.append(nonogrammContainer);

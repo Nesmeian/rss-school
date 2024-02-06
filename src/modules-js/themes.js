@@ -1,11 +1,15 @@
-import { audioDark, audioLight } from "./audio";
+import { audioDark, audioLight, soundActive } from "./audio";
 import { themesDark, themesLight } from "./html";
 const html = document.querySelector("html");
 themesDark.addEventListener("click", () => {
-  audioDark.play();
+  if (soundActive) {
+    audioDark.play();
+  }
   html.classList.add("--dark");
 });
 themesLight.addEventListener("click", () => {
-  audioLight.play();
+  if (soundActive) {
+    audioLight.play();
+  }
   html.classList.remove("--dark");
 });

@@ -13,6 +13,9 @@ import scores from "../audio/scores.mp3";
 import dark from "../audio/dark.mp3";
 import light from "../audio/light.mp3";
 import solution from "../audio/autoSolution.mp3";
+import audioOff from "../audio/soundOff.mp3";
+import { soundOn } from "./html";
+export let soundActive = true;
 export const leftClick = createElement({
   tag: "audio",
   classes: ["audio__left-click"],
@@ -69,6 +72,10 @@ export const audioSolution = createElement({
   tag: "audio",
   classes: ["audio__solution"],
 });
+const soundOff = createElement({
+  tag: "audio",
+  classes: ["audio__off"],
+});
 leftClick.src = left;
 rigthClick.src = rigth;
 audioChangeLevel.src = changelev;
@@ -83,3 +90,14 @@ audioRandomGame.src = random;
 audioRestartGame.src = restart;
 audioSaveGame.src = save;
 audioSolution.src = solution;
+soundOff.src = audioOff;
+soundOn.addEventListener("click", () => {
+  if (soundActive) {
+    soundOff.play();
+    soundActive = false;
+    soundOn.textContent = "Sounds Off";
+  } else {
+    soundActive = true;
+    soundOn.textContent = "Sounds On";
+  }
+});

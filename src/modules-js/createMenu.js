@@ -3,7 +3,7 @@ import { createElement } from "./createFunc";
 import { setupMenu } from "./html";
 import { createGame } from "./createItems";
 import { restartGame } from "./restartGame";
-import { audioChangeLevel, audioChangeGame } from "./audio";
+import { audioChangeLevel, audioChangeGame, soundActive } from "./audio";
 import { resetTimer } from "./timer";
 export let _gameActive = true;
 export const gameActive = {
@@ -87,7 +87,9 @@ function showSelect() {
     e.addEventListener("click", () => {
       if (!e.classList.contains("--active")) {
         selectLevel.forEach((e) => {
-          audioChangeLevel.play();
+          if (soundActive) {
+            audioChangeLevel.play();
+          }
           e.classList.remove("--active");
         });
 
@@ -110,7 +112,9 @@ function changeGame() {
   });
   menuGames.forEach((e) => {
     e.addEventListener("click", () => {
-      audioChangeGame.play();
+      if (soundActive) {
+        audioChangeGame.play();
+      }
       choseGame = e.textContent;
       currentGame = games[choseLevel][choseGame];
       gameActive.set(true);

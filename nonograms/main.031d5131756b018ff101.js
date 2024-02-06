@@ -62,7 +62,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   audioSolution: () => (/* binding */ audioSolution),
 /* harmony export */   audioWinGame: () => (/* binding */ audioWinGame),
 /* harmony export */   leftClick: () => (/* binding */ leftClick),
-/* harmony export */   rigthClick: () => (/* binding */ rigthClick)
+/* harmony export */   rigthClick: () => (/* binding */ rigthClick),
+/* harmony export */   soundActive: () => (/* binding */ soundActive)
 /* harmony export */ });
 /* harmony import */ var _createFunc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createFunc */ "./src/modules-js/createFunc.js");
 /* harmony import */ var _audio_leftclick_mp3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../audio/leftclick.mp3 */ "./src/audio/leftclick.mp3");
@@ -79,6 +80,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _audio_dark_mp3__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../audio/dark.mp3 */ "./src/audio/dark.mp3");
 /* harmony import */ var _audio_light_mp3__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../audio/light.mp3 */ "./src/audio/light.mp3");
 /* harmony import */ var _audio_autoSolution_mp3__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../audio/autoSolution.mp3 */ "./src/audio/autoSolution.mp3");
+/* harmony import */ var _audio_soundOff_mp3__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../audio/soundOff.mp3 */ "./src/audio/soundOff.mp3");
+/* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
 
 
 
@@ -94,6 +97,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+let soundActive = true;
 const leftClick = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "audio",
   classes: ["audio__left-click"]
@@ -150,6 +156,10 @@ const audioSolution = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)
   tag: "audio",
   classes: ["audio__solution"]
 });
+const soundOff = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "audio",
+  classes: ["audio__off"]
+});
 leftClick.src = _audio_leftclick_mp3__WEBPACK_IMPORTED_MODULE_1__;
 rigthClick.src = _audio_rigthclick_mp3__WEBPACK_IMPORTED_MODULE_2__;
 audioChangeLevel.src = _audio_changelevel_mp3__WEBPACK_IMPORTED_MODULE_3__;
@@ -164,6 +174,17 @@ audioRandomGame.src = _audio_random_mp3__WEBPACK_IMPORTED_MODULE_7__;
 audioRestartGame.src = _audio_restart_mp3__WEBPACK_IMPORTED_MODULE_10__;
 audioSaveGame.src = _audio_saveGame_mp3__WEBPACK_IMPORTED_MODULE_8__;
 audioSolution.src = _audio_autoSolution_mp3__WEBPACK_IMPORTED_MODULE_14__;
+soundOff.src = _audio_soundOff_mp3__WEBPACK_IMPORTED_MODULE_15__;
+_html__WEBPACK_IMPORTED_MODULE_16__.soundOn.addEventListener("click", () => {
+  if (soundActive) {
+    soundOff.play();
+    soundActive = false;
+    _html__WEBPACK_IMPORTED_MODULE_16__.soundOn.textContent = "Sounds Off";
+  } else {
+    soundActive = true;
+    _html__WEBPACK_IMPORTED_MODULE_16__.soundOn.textContent = "Sounds On";
+  }
+});
 
 /***/ }),
 
@@ -211,7 +232,9 @@ _html__WEBPACK_IMPORTED_MODULE_1__.autoSolutionBtn.addEventListener("click", () 
       e.classList.add("--fill");
     }
   });
-  _audio__WEBPACK_IMPORTED_MODULE_3__.audioSolution.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_3__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_3__.audioSolution.play();
+  }
   (0,_timer__WEBPACK_IMPORTED_MODULE_2__.stopTimer)();
   _createMenu__WEBPACK_IMPORTED_MODULE_0__.gameActive.set(false);
 });
@@ -498,7 +521,9 @@ function showSelect() {
     e.addEventListener("click", () => {
       if (!e.classList.contains("--active")) {
         selectLevel.forEach(e => {
-          _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
+          if (_audio__WEBPACK_IMPORTED_MODULE_5__.soundActive) {
+            _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeLevel.play();
+          }
           e.classList.remove("--active");
         });
         e.classList.add("--active");
@@ -519,7 +544,9 @@ function changeGame() {
   });
   menuGames.forEach(e => {
     e.addEventListener("click", () => {
-      _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeGame.play();
+      if (_audio__WEBPACK_IMPORTED_MODULE_5__.soundActive) {
+        _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeGame.play();
+      }
       choseGame = e.textContent;
       currentGame = _game__WEBPACK_IMPORTED_MODULE_0__.games[choseLevel][choseGame];
       gameActive.set(true);
@@ -671,7 +698,9 @@ function clickOnBoard(count, saveTimer) {
       elem.preventDefault();
       if (_createMenu__WEBPACK_IMPORTED_MODULE_3__._gameActive) {
         (0,_timer__WEBPACK_IMPORTED_MODULE_2__.startTimer)(saveTimer);
-        _audio__WEBPACK_IMPORTED_MODULE_1__.rigthClick.play();
+        if (_audio__WEBPACK_IMPORTED_MODULE_1__.soundActive) {
+          _audio__WEBPACK_IMPORTED_MODULE_1__.rigthClick.play();
+        }
         if (e.classList.contains("--fill")) {
           e.classList.remove("--fill");
           if (e.classList.contains("target")) {
@@ -689,7 +718,9 @@ function clickOnBoard(count, saveTimer) {
     e.addEventListener("click", () => {
       if (_createMenu__WEBPACK_IMPORTED_MODULE_3__._gameActive) {
         (0,_timer__WEBPACK_IMPORTED_MODULE_2__.startTimer)(saveTimer);
-        _audio__WEBPACK_IMPORTED_MODULE_1__.leftClick.play();
+        if (_audio__WEBPACK_IMPORTED_MODULE_1__.soundActive) {
+          _audio__WEBPACK_IMPORTED_MODULE_1__.leftClick.play();
+        }
         if (e.classList.contains("--empty")) {
           e.classList.remove("--empty");
         }
@@ -713,7 +744,9 @@ function clickOnBoard(count, saveTimer) {
           }
         }
         if (winCount === 0) {
-          _audio__WEBPACK_IMPORTED_MODULE_1__.audioWinGame.play();
+          if (_audio__WEBPACK_IMPORTED_MODULE_1__.soundActive) {
+            _audio__WEBPACK_IMPORTED_MODULE_1__.audioWinGame.play();
+          }
           _modal__WEBPACK_IMPORTED_MODULE_0__.modalWrapper.classList.add("modal--active");
           _modal__WEBPACK_IMPORTED_MODULE_0__.modalCongratulation.textContent = `Great! You have solved the nonogram in ${_timer__WEBPACK_IMPORTED_MODULE_2__.result}`;
           (0,_timer__WEBPACK_IMPORTED_MODULE_2__.stopTimer)();
@@ -762,6 +795,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   saveGameBtn: () => (/* binding */ saveGameBtn),
 /* harmony export */   scoresShowBtn: () => (/* binding */ scoresShowBtn),
 /* harmony export */   setupMenu: () => (/* binding */ setupMenu),
+/* harmony export */   soundOn: () => (/* binding */ soundOn),
 /* harmony export */   themes: () => (/* binding */ themes),
 /* harmony export */   themesDark: () => (/* binding */ themesDark),
 /* harmony export */   themesLight: () => (/* binding */ themesLight),
@@ -870,6 +904,11 @@ const restartGameBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement
   classes: ["button", "featurs__restart"],
   text: "Restart Game"
 });
+const soundOn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
+  tag: "button",
+  classes: ["button", "sound-on"],
+  text: "Sounds On"
+});
 const autoSolutionBtn = (0,_createFunc__WEBPACK_IMPORTED_MODULE_0__.createElement)({
   tag: "button",
   classes: ["button", "featurs__auto-solution"],
@@ -943,6 +982,7 @@ gameFeatures.append(saveGameBtn);
 gameFeatures.append(restartGameBtn);
 gameFeatures.append(autoSolutionBtn);
 gameFeatures.append(randomGameBtn);
+gameFeatures.append(soundOn);
 wrapper.append(nonogramm);
 wrapper.append(setupMenu);
 nonogramm.append(nonogrammContainer);
@@ -1003,7 +1043,9 @@ modal.append(modalBtn);
 function playAgain(currentGame) {
   modalBtn.addEventListener("click", () => {
     modalWrapper.classList.remove("modal--active");
-    _audio__WEBPACK_IMPORTED_MODULE_5__.audioNewGame.play();
+    if (_audio__WEBPACK_IMPORTED_MODULE_5__.soundActive) {
+      _audio__WEBPACK_IMPORTED_MODULE_5__.audioNewGame.play();
+    }
     (0,_restartGame__WEBPACK_IMPORTED_MODULE_2__.restartGame)();
     (0,_createItems__WEBPACK_IMPORTED_MODULE_3__.createGame)(currentGame);
     (0,_timer__WEBPACK_IMPORTED_MODULE_6__.resetTimer)();
@@ -1128,12 +1170,16 @@ function sortArr(arr) {
 _html__WEBPACK_IMPORTED_MODULE_0__.scoresShowBtn.addEventListener("click", () => {
   deleteResult();
   createResults();
-  _audio__WEBPACK_IMPORTED_MODULE_3__.audioScore.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_3__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_3__.audioScore.play();
+  }
   scoresModal.classList.add("modal--active");
 });
 scoresCloseBtn.addEventListener("click", () => {
   scoresModal.classList.remove("modal--active");
-  _audio__WEBPACK_IMPORTED_MODULE_3__.audioScore.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_3__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_3__.audioScore.play();
+  }
 });
 
 /***/ }),
@@ -1168,7 +1214,9 @@ function activeButton(e) {
   }, 1000);
 }
 _html__WEBPACK_IMPORTED_MODULE_3__.randomGameBtn.addEventListener("click", () => {
-  _audio__WEBPACK_IMPORTED_MODULE_1__.audioRandomGame.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_1__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_1__.audioRandomGame.play();
+  }
   let randLevelValue = randomLevel(random());
   let randGameValue = randomGame(randLevelValue);
   (0,_restartGame__WEBPACK_IMPORTED_MODULE_4__.restartGame)();
@@ -1177,7 +1225,6 @@ _html__WEBPACK_IMPORTED_MODULE_3__.randomGameBtn.addEventListener("click", () =>
   _createMenu__WEBPACK_IMPORTED_MODULE_5__._currentGame.set(_game__WEBPACK_IMPORTED_MODULE_0__.games[randLevelValue][randGameValue]);
   _createMenu__WEBPACK_IMPORTED_MODULE_5__._choseGame.set(randGameValue);
   _createMenu__WEBPACK_IMPORTED_MODULE_5__._choseLevel.set(randLevelValue);
-  _audio__WEBPACK_IMPORTED_MODULE_1__.audioChangeLevel.play(randomGame(randLevelValue));
 });
 function randomLevel(random) {
   let level = Object.keys(_game__WEBPACK_IMPORTED_MODULE_0__.games);
@@ -1224,7 +1271,9 @@ function restartGame() {
   _html__WEBPACK_IMPORTED_MODULE_0__.topRight.textContent = "";
 }
 _html__WEBPACK_IMPORTED_MODULE_0__.restartGameBtn.addEventListener("click", () => {
-  _audio__WEBPACK_IMPORTED_MODULE_4__.audioRestartGame.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_4__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_4__.audioRestartGame.play();
+  }
   restartGame();
   (0,_createItems__WEBPACK_IMPORTED_MODULE_2__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_1__.currentGame);
   (0,_timer__WEBPACK_IMPORTED_MODULE_3__.resetTimer)();
@@ -1266,7 +1315,9 @@ let saveGame = JSON.parse(window.localStorage.getItem("saveGame"));
 _html__WEBPACK_IMPORTED_MODULE_1__.saveGameBtn.addEventListener("click", save);
 _html__WEBPACK_IMPORTED_MODULE_1__.contineGameBtn.addEventListener("click", continueGame);
 function continueGame() {
-  _audio__WEBPACK_IMPORTED_MODULE_6__.audioContinueGame.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_6__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_6__.audioContinueGame.play();
+  }
   let a = JSON.parse(localStorage.getItem("saveGame"));
   let currentGameResult = a.game;
   let saveCount = a.saveCount;
@@ -1275,7 +1326,9 @@ function continueGame() {
   _createMenu__WEBPACK_IMPORTED_MODULE_3__._currentGame.set(currentGameResult);
   console.log(_createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame);
   saveTimer = a.time;
-  _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_6__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
+  }
   (0,_restartGame__WEBPACK_IMPORTED_MODULE_2__.restartGame)();
   (0,_timer__WEBPACK_IMPORTED_MODULE_5__.resetTimer)();
   (0,_createItems__WEBPACK_IMPORTED_MODULE_4__.createGame)(currentGameResult, saveCount, saveTimer);
@@ -1291,7 +1344,9 @@ function continueGame() {
   _html__WEBPACK_IMPORTED_MODULE_1__.topLeft.textContent = a.time;
 }
 function save() {
-  _audio__WEBPACK_IMPORTED_MODULE_6__.audioSaveGame.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_6__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_6__.audioSaveGame.play();
+  }
   const gameCell = document.querySelectorAll(".game-cell");
   let saveLeftClick = [];
   let saveRightClick = [];
@@ -1315,7 +1370,9 @@ function save() {
     gameName: _createMenu__WEBPACK_IMPORTED_MODULE_3__.choseGame,
     gameLevel: _createMenu__WEBPACK_IMPORTED_MODULE_3__.choseLevel
   };
-  _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_6__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
+  }
   saveGame = saveGameObj;
   localStorage.setItem("saveGame", JSON.stringify(saveGame));
 }
@@ -1336,11 +1393,15 @@ __webpack_require__.r(__webpack_exports__);
 
 const html = document.querySelector("html");
 _html__WEBPACK_IMPORTED_MODULE_1__.themesDark.addEventListener("click", () => {
-  _audio__WEBPACK_IMPORTED_MODULE_0__.audioDark.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_0__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_0__.audioDark.play();
+  }
   html.classList.add("--dark");
 });
 _html__WEBPACK_IMPORTED_MODULE_1__.themesLight.addEventListener("click", () => {
-  _audio__WEBPACK_IMPORTED_MODULE_0__.audioLight.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_0__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_0__.audioLight.play();
+  }
   html.classList.remove("--dark");
 });
 
@@ -12483,6 +12544,17 @@ module.exports = __webpack_require__.p + "audio/scores.mp3";
 
 /***/ }),
 
+/***/ "./src/audio/soundOff.mp3":
+/*!********************************!*\
+  !*** ./src/audio/soundOff.mp3 ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "audio/soundOff.mp3";
+
+/***/ }),
+
 /***/ "./src/audio/winGame.mp3":
 /*!*******************************!*\
   !*** ./src/audio/winGame.mp3 ***!
@@ -12685,4 +12757,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.a7053baf982a2e958686.js.map
+//# sourceMappingURL=main.031d5131756b018ff101.js.map
