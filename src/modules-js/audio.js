@@ -4,7 +4,7 @@ import rigth from "../audio/rigthclick.mp3";
 import changelev from "../audio/changelevel.mp3";
 import changegam from "../audio/changegame.mp3";
 import wingame from "../audio/winGame.mp3";
-import newgame from '../audio/newGame.mp3';
+import newgame from "../audio/newGame.mp3";
 export const leftClick = createElement({
   tag: "audio",
   classes: ["audio__left-click"],
@@ -25,13 +25,13 @@ export const audioWinGame = createElement({
   tag: "audio",
   classes: ["audio__win-game"],
 });
-export const audioNewGame=createElement({
-    tag:'audio',
-    classes:['audio__new-game']
-}) 
+export const audioNewGame = createElement({
+  tag: "audio",
+  classes: ["audio__new-game"],
+});
 leftClick.src = left;
 rigthClick.src = rigth;
 audioChangeLevel.src = changelev;
 audioChangeGame.src = changegam;
 audioWinGame.src = wingame;
-audioNewGame.src = newgame
+audioNewGame.src = newgame;

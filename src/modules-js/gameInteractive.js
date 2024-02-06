@@ -86,5 +86,6 @@ function createWinCount(gameCell) {
       winCount++;
     }
   });
+  countOfTargets = winCount;
   return winCount;
 }
