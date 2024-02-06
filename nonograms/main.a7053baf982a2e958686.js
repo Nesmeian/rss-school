@@ -175,6 +175,10 @@ audioSolution.src = _audio_autoSolution_mp3__WEBPACK_IMPORTED_MODULE_14__;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _solveGame: () => (/* binding */ _solveGame),
+/* harmony export */   solveGame: () => (/* binding */ solveGame)
+/* harmony export */ });
 /* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
 /* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
@@ -188,7 +192,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+let solveGame = false;
+const _solveGame = {
+  get() {
+    return solveGame;
+  },
+  set(value) {
+    solveGame = value;
+  }
+};
 _html__WEBPACK_IMPORTED_MODULE_1__.autoSolutionBtn.addEventListener("click", () => {
+  solveGame = true;
   (0,_restartGame__WEBPACK_IMPORTED_MODULE_4__.restartGame)();
   (0,_createItems__WEBPACK_IMPORTED_MODULE_5__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_0__.currentGame);
   const gameCell = document.querySelectorAll(".game-cell");
@@ -1236,6 +1250,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
 /* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+/* harmony import */ var _autoSolution__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./autoSolution */ "./src/modules-js/autoSolution.js");
+
 
 
 
@@ -1254,6 +1270,8 @@ function continueGame() {
   let a = JSON.parse(localStorage.getItem("saveGame"));
   let currentGameResult = a.game;
   let saveCount = a.saveCount;
+  _createMenu__WEBPACK_IMPORTED_MODULE_3__.gameActive.set(true);
+  _autoSolution__WEBPACK_IMPORTED_MODULE_7__._solveGame.set(false);
   _createMenu__WEBPACK_IMPORTED_MODULE_3__._currentGame.set(currentGameResult);
   console.log(_createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame);
   saveTimer = a.time;
@@ -1284,6 +1302,10 @@ function save() {
       saveRightClick.push(i);
     }
   });
+  if (_autoSolution__WEBPACK_IMPORTED_MODULE_7__.solveGame) {
+    saveLeftClick = [];
+    saveRightClick = [];
+  }
   let saveGameObj = {
     time: _timer__WEBPACK_IMPORTED_MODULE_5__.result,
     fill: saveLeftClick,
@@ -12663,4 +12685,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.4fa550b78c38a5bc8bb4.js.map
+//# sourceMappingURL=main.a7053baf982a2e958686.js.map
