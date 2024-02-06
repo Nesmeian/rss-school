@@ -1160,7 +1160,10 @@ _html__WEBPACK_IMPORTED_MODULE_3__.randomGameBtn.addEventListener("click", () =>
   (0,_restartGame__WEBPACK_IMPORTED_MODULE_4__.restartGame)();
   _createMenu__WEBPACK_IMPORTED_MODULE_5__.gameActive.set(true);
   (0,_createItems__WEBPACK_IMPORTED_MODULE_2__.createGame)(_game__WEBPACK_IMPORTED_MODULE_0__.games[randLevelValue][randGameValue]);
-  _audio__WEBPACK_IMPORTED_MODULE_1__.audioChangeLevel.play();
+  _createMenu__WEBPACK_IMPORTED_MODULE_5__._currentGame.set(_game__WEBPACK_IMPORTED_MODULE_0__.games[randLevelValue][randGameValue]);
+  _createMenu__WEBPACK_IMPORTED_MODULE_5__._choseGame.set(randGameValue);
+  _createMenu__WEBPACK_IMPORTED_MODULE_5__._choseLevel.set(randLevelValue);
+  _audio__WEBPACK_IMPORTED_MODULE_1__.audioChangeLevel.play(randomGame(randLevelValue));
 });
 function randomLevel(random) {
   let level = Object.keys(_game__WEBPACK_IMPORTED_MODULE_0__.games);
@@ -12660,4 +12663,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.e483827cc46417fb9348.js.map
+//# sourceMappingURL=main.4fa550b78c38a5bc8bb4.js.map
