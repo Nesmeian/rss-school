@@ -1206,6 +1206,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _restartGame__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./restartGame */ "./src/modules-js/restartGame.js");
 /* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+/* harmony import */ var _autoSolution__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./autoSolution */ "./src/modules-js/autoSolution.js");
+
 
 
 
@@ -1220,6 +1222,7 @@ function activeButton(e) {
   }, 1000);
 }
 _html__WEBPACK_IMPORTED_MODULE_3__.randomGameBtn.addEventListener("click", () => {
+  _autoSolution__WEBPACK_IMPORTED_MODULE_7__._solveGame.set(false);
   if (_audio__WEBPACK_IMPORTED_MODULE_1__.soundActive) {
     _audio__WEBPACK_IMPORTED_MODULE_1__.audioRandomGame.play();
   }
@@ -12787,4 +12790,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.1bd4acd27c8c987b365c.js.map
+//# sourceMappingURL=main.c6e0814523fb926cc37b.js.map
