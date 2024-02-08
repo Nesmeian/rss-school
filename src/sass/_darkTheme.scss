@@ -31,6 +31,18 @@
     background-color: #1e56a0;
     color: #ddf0ff;
   }
+  .game-cell{
+    background-color:#1e56a0 ;
+  }
+  .--fill{
+    background-color: white;
+  }
+  .--empty{
+    .rigth-cross,
+    .left-cross{
+      background-color: white;
+    }
+  }
   .footer__wrapper {
     color: white;
   }
