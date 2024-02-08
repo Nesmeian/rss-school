@@ -5,6 +5,7 @@ import { createGame } from "./createItems";
 import { restartGame } from "./restartGame";
 import { audioChangeLevel, audioChangeGame, soundActive } from "./audio";
 import { resetTimer } from "./timer";
+import { _solveGame, solveGame } from "./autoSolution";
 export let _gameActive = true;
 export const gameActive = {
   get() {
@@ -112,6 +113,7 @@ function changeGame() {
   });
   menuGames.forEach((e) => {
     e.addEventListener("click", () => {
+      _solveGame.set(false)
       if (soundActive) {
         audioChangeGame.play();
       }

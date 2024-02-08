@@ -30,5 +30,4 @@ autoSolutionBtn.addEventListener("click", () => {
   }
   stopTimer();
   gameActive.set(false);
-  _result.set("00:00");
 });
