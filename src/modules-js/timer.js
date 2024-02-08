@@ -1,5 +1,13 @@
 import { topLeft } from "./html";
 export let result = "00:00";
+export const _result = {
+  get() {
+    return result;
+  },
+  set(value) {
+    result = value;
+  },
+};
 let timer;
 let timerSwitch = false;
 let seconds = 0;

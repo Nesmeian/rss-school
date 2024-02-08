@@ -213,6 +213,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let solveGame = false;
 const _solveGame = {
   get() {
@@ -237,6 +238,7 @@ _html__WEBPACK_IMPORTED_MODULE_1__.autoSolutionBtn.addEventListener("click", () 
   }
   (0,_timer__WEBPACK_IMPORTED_MODULE_2__.stopTimer)();
   _createMenu__WEBPACK_IMPORTED_MODULE_0__.gameActive.set(false);
+  _timer__WEBPACK_IMPORTED_MODULE_2__._result.set("00:00");
 });
 
 /***/ }),
@@ -756,6 +758,9 @@ function clickOnBoard(count, saveTimer) {
             time: _timer__WEBPACK_IMPORTED_MODULE_2__.result
           };
           scoreArr.push(scoreObj);
+          if (scoreArr.length >= 5) {
+            scoreArr.shift();
+          }
           localStorage.setItem("scoreStorage", JSON.stringify(scoreArr));
         }
       }
@@ -1065,9 +1070,7 @@ playAgain(_createMenu__WEBPACK_IMPORTED_MODULE_4__.currentGame);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
 /* harmony import */ var _createFunc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createFunc */ "./src/modules-js/createFunc.js");
-/* harmony import */ var _gameInteractive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gameInteractive */ "./src/modules-js/gameInteractive.js");
-/* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
-
+/* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
 
 
 
@@ -1119,12 +1122,10 @@ scoresContainer.append(scoresTime);
 scoresWrapper.append(scoresCloseBtn);
 function createResults() {
   let unzipResult = JSON.parse(localStorage.getItem("scoreStorage"));
-  sortArr(unzipResult);
-  if (unzipResult.length >= 6) {
-    unzipResult.pop();
-  }
+  let workUnzipResult = unzipResult;
+  sortArr(workUnzipResult);
   localStorage.setItem("scoreStorage", JSON.stringify(unzipResult));
-  unzipResult.forEach((e, i) => {
+  workUnzipResult.forEach((e, i) => {
     const placeNum = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
       tag: "div",
       classes: ["place__num"],
@@ -1170,15 +1171,15 @@ function sortArr(arr) {
 _html__WEBPACK_IMPORTED_MODULE_0__.scoresShowBtn.addEventListener("click", () => {
   deleteResult();
   createResults();
-  if (_audio__WEBPACK_IMPORTED_MODULE_3__.soundActive) {
-    _audio__WEBPACK_IMPORTED_MODULE_3__.audioScore.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_2__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_2__.audioScore.play();
   }
   scoresModal.classList.add("modal--active");
 });
 scoresCloseBtn.addEventListener("click", () => {
   scoresModal.classList.remove("modal--active");
-  if (_audio__WEBPACK_IMPORTED_MODULE_3__.soundActive) {
-    _audio__WEBPACK_IMPORTED_MODULE_3__.audioScore.play();
+  if (_audio__WEBPACK_IMPORTED_MODULE_2__.soundActive) {
+    _audio__WEBPACK_IMPORTED_MODULE_2__.audioScore.play();
   }
 });
 
@@ -1201,6 +1202,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
 /* harmony import */ var _restartGame__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./restartGame */ "./src/modules-js/restartGame.js");
 /* harmony import */ var _createMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./createMenu */ "./src/modules-js/createMenu.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+
 
 
 
@@ -1220,6 +1223,7 @@ _html__WEBPACK_IMPORTED_MODULE_3__.randomGameBtn.addEventListener("click", () =>
   let randLevelValue = randomLevel(random());
   let randGameValue = randomGame(randLevelValue);
   (0,_restartGame__WEBPACK_IMPORTED_MODULE_4__.restartGame)();
+  (0,_timer__WEBPACK_IMPORTED_MODULE_6__.resetTimer)();
   _createMenu__WEBPACK_IMPORTED_MODULE_5__.gameActive.set(true);
   (0,_createItems__WEBPACK_IMPORTED_MODULE_2__.createGame)(_game__WEBPACK_IMPORTED_MODULE_0__.games[randLevelValue][randGameValue]);
   _createMenu__WEBPACK_IMPORTED_MODULE_5__._currentGame.set(_game__WEBPACK_IMPORTED_MODULE_0__.games[randLevelValue][randGameValue]);
@@ -1417,6 +1421,7 @@ _html__WEBPACK_IMPORTED_MODULE_1__.themesLight.addEventListener("click", () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _result: () => (/* binding */ _result),
 /* harmony export */   resetTimer: () => (/* binding */ resetTimer),
 /* harmony export */   result: () => (/* binding */ result),
 /* harmony export */   startTimer: () => (/* binding */ startTimer),
@@ -1425,6 +1430,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./html */ "./src/modules-js/html.js");
 
 let result = "00:00";
+const _result = {
+  get() {
+    return result;
+  },
+  set(value) {
+    result = value;
+  }
+};
 let timer;
 let timerSwitch = false;
 let seconds = 0;
@@ -12770,4 +12783,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.1c366f29f342e8ce6b5f.js.map
+//# sourceMappingURL=main.f5338430fd3e1673c031.js.map

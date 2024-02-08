@@ -1,10 +1,11 @@
 import { _gameActive, gameActive } from "./createMenu";
 import { autoSolutionBtn, soundOn } from "./html";
-import { stopTimer } from "./timer";
+import { _result, stopTimer } from "./timer";
 import { audioSolution, soundActive } from "./audio";
 import { restartGame } from "./restartGame";
 import { createGame } from "./createItems";
 import { currentGame } from "./createMenu";
+import { result } from "./timer";
 export let solveGame = false;
 export const _solveGame = {
   get() {
@@ -29,4 +30,5 @@ autoSolutionBtn.addEventListener("click", () => {
   }
   stopTimer();
   gameActive.set(false);
+  _result.set("00:00");
 });

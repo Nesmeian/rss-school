@@ -1,7 +1,6 @@
 import { main } from "./html";
 import { createElement } from "./createFunc";
 import { scoresShowBtn } from "./html";
-import { scoreArr } from "./gameInteractive";
 import { audioScore, soundActive } from "./audio";
 const scoresModal = createElement({
   tag: "div",
@@ -52,12 +51,10 @@ scoresWrapper.append(scoresCloseBtn);
 
 function createResults() {
   let unzipResult = JSON.parse(localStorage.getItem("scoreStorage"));
-  sortArr(unzipResult);
-  if (unzipResult.length >= 6) {
-    unzipResult.pop();
-  }
+  let workUnzipResult = unzipResult;
+  sortArr(workUnzipResult);
   localStorage.setItem("scoreStorage", JSON.stringify(unzipResult));
-  unzipResult.forEach((e, i) => {
+  workUnzipResult.forEach((e, i) => {
     const placeNum = createElement({
       tag: "div",
       classes: ["place__num"],
