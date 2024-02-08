@@ -238,7 +238,6 @@ _html__WEBPACK_IMPORTED_MODULE_1__.autoSolutionBtn.addEventListener("click", () 
   }
   (0,_timer__WEBPACK_IMPORTED_MODULE_2__.stopTimer)();
   _createMenu__WEBPACK_IMPORTED_MODULE_0__.gameActive.set(false);
-  _timer__WEBPACK_IMPORTED_MODULE_2__._result.set("00:00");
 });
 
 /***/ }),
@@ -436,6 +435,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _restartGame__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./restartGame */ "./src/modules-js/restartGame.js");
 /* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
+/* harmony import */ var _autoSolution__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./autoSolution */ "./src/modules-js/autoSolution.js");
+
 
 
 
@@ -546,6 +547,7 @@ function changeGame() {
   });
   menuGames.forEach(e => {
     e.addEventListener("click", () => {
+      _autoSolution__WEBPACK_IMPORTED_MODULE_7__._solveGame.set(false);
       if (_audio__WEBPACK_IMPORTED_MODULE_5__.soundActive) {
         _audio__WEBPACK_IMPORTED_MODULE_5__.audioChangeGame.play();
       }
@@ -760,6 +762,7 @@ function clickOnBoard(count, saveTimer) {
           };
           scoreArr.push(scoreObj);
           if (scoreArr.length >= 6) {
+            scoreArr.shift();
             scoreArr.shift();
           }
           localStorage.setItem("scoreStorage", JSON.stringify(scoreArr));
@@ -1264,6 +1267,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createItems__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createItems */ "./src/modules-js/createItems.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./timer */ "./src/modules-js/timer.js");
 /* harmony import */ var _audio__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./audio */ "./src/modules-js/audio.js");
+/* harmony import */ var _autoSolution__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./autoSolution */ "./src/modules-js/autoSolution.js");
+
 
 
 
@@ -1275,6 +1280,7 @@ function restartGame() {
   _html__WEBPACK_IMPORTED_MODULE_0__.topRight.textContent = "";
 }
 _html__WEBPACK_IMPORTED_MODULE_0__.restartGameBtn.addEventListener("click", () => {
+  _autoSolution__WEBPACK_IMPORTED_MODULE_5__._solveGame.set(false);
   if (_audio__WEBPACK_IMPORTED_MODULE_4__.soundActive) {
     _audio__WEBPACK_IMPORTED_MODULE_4__.audioRestartGame.play();
   }
@@ -12781,4 +12787,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.f8e65c514465b287265f.js.map
+//# sourceMappingURL=main.1bd4acd27c8c987b365c.js.map
