@@ -759,7 +759,7 @@ function clickOnBoard(count, saveTimer) {
             time: _timer__WEBPACK_IMPORTED_MODULE_2__.result
           };
           scoreArr.push(scoreObj);
-          if (scoreArr.length >= 7) {
+          if (scoreArr.length >= 6) {
             scoreArr.shift();
           }
           localStorage.setItem("scoreStorage", JSON.stringify(scoreArr));
@@ -12781,4 +12781,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.da91ae7d65a3280604f7.js.map
+//# sourceMappingURL=main.f8e65c514465b287265f.js.map
