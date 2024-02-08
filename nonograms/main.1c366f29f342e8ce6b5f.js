@@ -1277,6 +1277,7 @@ _html__WEBPACK_IMPORTED_MODULE_0__.restartGameBtn.addEventListener("click", () =
   restartGame();
   (0,_createItems__WEBPACK_IMPORTED_MODULE_2__.createGame)(_createMenu__WEBPACK_IMPORTED_MODULE_1__.currentGame);
   (0,_timer__WEBPACK_IMPORTED_MODULE_3__.resetTimer)();
+  _createMenu__WEBPACK_IMPORTED_MODULE_1__.gameActive.set(true);
 });
 
 /***/ }),
@@ -10633,6 +10634,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.--dark {
     background-color: #1e56a0;
     color: #ddf0ff;
   }
+  .game-cell{
+    background-color:#1e56a0 ;
+  }
+  .--fill{
+    background-color: white;
+  }
+  .--empty{
+    .rigth-cross,
+    .left-cross{
+      background-color: white;
+    }
+  }
   .footer__wrapper {
     color: white;
   }
@@ -10648,7 +10661,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.--dark {
     border: none;
   }
 }
-`, "",{"version":3,"sources":["webpack://./src/sass/_darkTheme.scss"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB;IACE,YAAY;IACZ,QAAQ;EACV;EACA;;IAEE,uBAAuB;IACvB,cAAc;EAChB;EACA;IACE,mBAAmB;IACnB,YAAY;EACd;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;;EAEA;;IAEE,yBAAyB;IACzB,cAAc;EAChB;EACA;IACE,YAAY;EACd;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,yBAAyB;IACzB;EACF;EACA;IACE,yBAAyB;IACzB,YAAY;EACd;AACF","sourcesContent":[".--dark {\r\n  background: #0c194a;\r\n  .title {\r\n    color: white;\r\n    gap: 2px;\r\n  }\r\n  .title-m,\r\n  .title-nn {\r\n    background-color: white;\r\n    color: #0c194a;\r\n  }\r\n  .wrapper {\r\n    background: #1e7af6;\r\n    border: none;\r\n  }\r\n  .button {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n  .select__level {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n  .select__game {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n\r\n  .item-left,\r\n  .item-top {\r\n    background-color: #1e56a0;\r\n    color: #ddf0ff;\r\n  }\r\n  .footer__wrapper {\r\n    color: white;\r\n  }\r\n  .modal__wrapper{\r\n    background-color: #0c194a;\r\n  }\r\n  .scores__modal{\r\n    background-color:#0c194a ;\r\n    color:#d6e4f0\r\n  }\r\n  .scores__modal__wrapper{\r\n    background-color: #1e7af6;\r\n    border: none;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/sass/_darkTheme.scss"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB;IACE,YAAY;IACZ,QAAQ;EACV;EACA;;IAEE,uBAAuB;IACvB,cAAc;EAChB;EACA;IACE,mBAAmB;IACnB,YAAY;EACd;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;EACA;IACE,cAAc;IACd,mBAAmB;EACrB;;EAEA;;IAEE,yBAAyB;IACzB,cAAc;EAChB;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,uBAAuB;EACzB;EACA;IACE;;MAEE,uBAAuB;IACzB;EACF;EACA;IACE,YAAY;EACd;EACA;IACE,yBAAyB;EAC3B;EACA;IACE,yBAAyB;IACzB;EACF;EACA;IACE,yBAAyB;IACzB,YAAY;EACd;AACF","sourcesContent":[".--dark {\r\n  background: #0c194a;\r\n  .title {\r\n    color: white;\r\n    gap: 2px;\r\n  }\r\n  .title-m,\r\n  .title-nn {\r\n    background-color: white;\r\n    color: #0c194a;\r\n  }\r\n  .wrapper {\r\n    background: #1e7af6;\r\n    border: none;\r\n  }\r\n  .button {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n  .select__level {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n  .select__game {\r\n    color: #d6e4f0;\r\n    background: #1e56a0;\r\n  }\r\n\r\n  .item-left,\r\n  .item-top {\r\n    background-color: #1e56a0;\r\n    color: #ddf0ff;\r\n  }\r\n  .game-cell{\r\n    background-color:#1e56a0 ;\r\n  }\r\n  .--fill{\r\n    background-color: white;\r\n  }\r\n  .--empty{\r\n    .rigth-cross,\r\n    .left-cross{\r\n      background-color: white;\r\n    }\r\n  }\r\n  .footer__wrapper {\r\n    color: white;\r\n  }\r\n  .modal__wrapper{\r\n    background-color: #0c194a;\r\n  }\r\n  .scores__modal{\r\n    background-color:#0c194a ;\r\n    color:#d6e4f0\r\n  }\r\n  .scores__modal__wrapper{\r\n    background-color: #1e7af6;\r\n    border: none;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12757,4 +12770,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.031d5131756b018ff101.js.map
+//# sourceMappingURL=main.1c366f29f342e8ce6b5f.js.map
