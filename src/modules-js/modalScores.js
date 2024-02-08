@@ -53,7 +53,6 @@ function createResults() {
   let unzipResult = JSON.parse(localStorage.getItem("scoreStorage"));
   let workUnzipResult = unzipResult;
   sortArr(workUnzipResult);
-  localStorage.setItem("scoreStorage", JSON.stringify(unzipResult));
   workUnzipResult.forEach((e, i) => {
     const placeNum = createElement({
       tag: "div",

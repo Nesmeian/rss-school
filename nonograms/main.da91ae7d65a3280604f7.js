@@ -718,6 +718,7 @@ function clickOnBoard(count, saveTimer) {
       }
     });
     e.addEventListener("click", () => {
+      console.log(scoreArr);
       if (_createMenu__WEBPACK_IMPORTED_MODULE_3__._gameActive) {
         (0,_timer__WEBPACK_IMPORTED_MODULE_2__.startTimer)(saveTimer);
         if (_audio__WEBPACK_IMPORTED_MODULE_1__.soundActive) {
@@ -758,7 +759,7 @@ function clickOnBoard(count, saveTimer) {
             time: _timer__WEBPACK_IMPORTED_MODULE_2__.result
           };
           scoreArr.push(scoreObj);
-          if (scoreArr.length >= 5) {
+          if (scoreArr.length >= 7) {
             scoreArr.shift();
           }
           localStorage.setItem("scoreStorage", JSON.stringify(scoreArr));
@@ -1124,7 +1125,6 @@ function createResults() {
   let unzipResult = JSON.parse(localStorage.getItem("scoreStorage"));
   let workUnzipResult = unzipResult;
   sortArr(workUnzipResult);
-  localStorage.setItem("scoreStorage", JSON.stringify(unzipResult));
   workUnzipResult.forEach((e, i) => {
     const placeNum = (0,_createFunc__WEBPACK_IMPORTED_MODULE_1__.createElement)({
       tag: "div",
@@ -1349,37 +1349,35 @@ function continueGame() {
   _html__WEBPACK_IMPORTED_MODULE_1__.topLeft.textContent = a.time;
 }
 function save() {
-  if (_audio__WEBPACK_IMPORTED_MODULE_6__.soundActive) {
-    _audio__WEBPACK_IMPORTED_MODULE_6__.audioSaveGame.play();
-  }
-  const gameCell = document.querySelectorAll(".game-cell");
-  let saveLeftClick = [];
-  let saveRightClick = [];
-  gameCell.forEach((e, i) => {
-    if (e.classList.contains("--fill")) {
-      saveLeftClick.push(i);
-    } else if (e.classList.contains("--empty")) {
-      saveRightClick.push(i);
+  if (!_autoSolution__WEBPACK_IMPORTED_MODULE_7__.solveGame) {
+    if (_audio__WEBPACK_IMPORTED_MODULE_6__.soundActive) {
+      _audio__WEBPACK_IMPORTED_MODULE_6__.audioSaveGame.play();
     }
-  });
-  if (_autoSolution__WEBPACK_IMPORTED_MODULE_7__.solveGame) {
-    saveLeftClick = [];
-    saveRightClick = [];
+    const gameCell = document.querySelectorAll(".game-cell");
+    let saveLeftClick = [];
+    let saveRightClick = [];
+    gameCell.forEach((e, i) => {
+      if (e.classList.contains("--fill")) {
+        saveLeftClick.push(i);
+      } else if (e.classList.contains("--empty")) {
+        saveRightClick.push(i);
+      }
+    });
+    let saveGameObj = {
+      time: _timer__WEBPACK_IMPORTED_MODULE_5__.result,
+      fill: saveLeftClick,
+      empty: saveRightClick,
+      saveCount: _gameInteractive__WEBPACK_IMPORTED_MODULE_0__.countOfTargets,
+      game: _createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame,
+      gameName: _createMenu__WEBPACK_IMPORTED_MODULE_3__.choseGame,
+      gameLevel: _createMenu__WEBPACK_IMPORTED_MODULE_3__.choseLevel
+    };
+    if (_audio__WEBPACK_IMPORTED_MODULE_6__.soundActive) {
+      _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
+    }
+    saveGame = saveGameObj;
+    localStorage.setItem("saveGame", JSON.stringify(saveGame));
   }
-  let saveGameObj = {
-    time: _timer__WEBPACK_IMPORTED_MODULE_5__.result,
-    fill: saveLeftClick,
-    empty: saveRightClick,
-    saveCount: _gameInteractive__WEBPACK_IMPORTED_MODULE_0__.countOfTargets,
-    game: _createMenu__WEBPACK_IMPORTED_MODULE_3__.currentGame,
-    gameName: _createMenu__WEBPACK_IMPORTED_MODULE_3__.choseGame,
-    gameLevel: _createMenu__WEBPACK_IMPORTED_MODULE_3__.choseLevel
-  };
-  if (_audio__WEBPACK_IMPORTED_MODULE_6__.soundActive) {
-    _audio__WEBPACK_IMPORTED_MODULE_6__.audioChangeLevel.play();
-  }
-  saveGame = saveGameObj;
-  localStorage.setItem("saveGame", JSON.stringify(saveGame));
 }
 
 /***/ }),
@@ -12783,4 +12781,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.f5338430fd3e1673c031.js.map
+//# sourceMappingURL=main.da91ae7d65a3280604f7.js.map

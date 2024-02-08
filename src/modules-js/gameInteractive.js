@@ -39,6 +39,7 @@ export function clickOnBoard(count, saveTimer) {
       }
     });
     e.addEventListener("click", () => {
+      console.log(scoreArr)
       if (_gameActive) {
         startTimer(saveTimer);
         if (soundActive) {
@@ -79,8 +80,8 @@ export function clickOnBoard(count, saveTimer) {
             time: result,
           };
           scoreArr.push(scoreObj);
-          if (scoreArr.length >= 5) {
-            scoreArr.shift();
+          if(scoreArr.length>=7){
+            scoreArr.shift()
           }
           localStorage.setItem("scoreStorage", JSON.stringify(scoreArr));
         }
