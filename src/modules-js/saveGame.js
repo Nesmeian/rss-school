@@ -56,6 +56,7 @@ function continueGame() {
   topLeft.textContent = a.time;
 }
 function save() {
+  if(!solveGame){
   if (soundActive) {
     audioSaveGame.play();
   }
@@ -69,10 +70,7 @@ function save() {
       saveRightClick.push(i);
     }
   });
-  if (solveGame) {
-    saveLeftClick = [];
-    saveRightClick = [];
-  }
+  
   let saveGameObj = {
     time: result,
     fill: saveLeftClick,
@@ -87,4 +85,5 @@ function save() {
   }
   saveGame = saveGameObj;
   localStorage.setItem("saveGame", JSON.stringify(saveGame));
+}
 }
