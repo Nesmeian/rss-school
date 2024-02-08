@@ -80,7 +80,7 @@ export function clickOnBoard(count, saveTimer) {
             time: result,
           };
           scoreArr.push(scoreObj);
-          if(scoreArr.length>=7){
+          if(scoreArr.length>=6){
             scoreArr.shift()
           }
           localStorage.setItem("scoreStorage", JSON.stringify(scoreArr));
