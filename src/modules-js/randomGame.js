@@ -10,6 +10,7 @@ import {
   gameActive,
 } from "./createMenu";
 import { _result, resetTimer } from "./timer";
+import { _solveGame } from "./autoSolution";
 
 export function activeButton(e) {
   e.classList.add("--active-Btn");
@@ -18,6 +19,7 @@ export function activeButton(e) {
   }, 1000);
 }
 randomGameBtn.addEventListener("click", () => {
+  _solveGame.set(false)
   if (soundActive) {
     audioRandomGame.play();
   }
