@@ -9,6 +9,7 @@ import {
   _currentGame,
   gameActive,
 } from "./createMenu";
+import { _result, resetTimer } from "./timer";
 
 export function activeButton(e) {
   e.classList.add("--active-Btn");
@@ -23,6 +24,7 @@ randomGameBtn.addEventListener("click", () => {
   let randLevelValue = randomLevel(random());
   let randGameValue = randomGame(randLevelValue);
   restartGame();
+  resetTimer();
   gameActive.set(true);
   createGame(games[randLevelValue][randGameValue]);
   _currentGame.set(games[randLevelValue][randGameValue]);
