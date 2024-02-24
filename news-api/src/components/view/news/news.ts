@@ -1,3 +1,4 @@
+import Sources from '../sources/sources';
 import './news.css'
 export interface NewsItems {
     name: string; 
@@ -10,6 +11,23 @@ export interface NewsItems {
     description: string;
     url: string;
 }
+
+export interface NewsItemsStatus {
+    status: string;
+    totalResults: number;
+    articles: NewsItems[];
+}
+
+export interface NewsItemsSources{
+    sources:NewsItems[]
+    status:string
+} 
+// sources
+// : 
+// (128) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, …]
+// status
+// : 
+// "ok"
 
 class News {
     draw(data: NewsItems[]): void {
