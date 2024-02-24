@@ -1,4 +1,3 @@
-import Sources from '../sources/sources';
 import './news.css'
 export interface NewsItems {
     name: string; 
@@ -22,13 +21,6 @@ export interface NewsItemsSources{
     sources:NewsItems[]
     status:string
 } 
-// sources
-// : 
-// (128) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, …]
-// status
-// : 
-// "ok"
-
 class News {
     draw(data: NewsItems[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
