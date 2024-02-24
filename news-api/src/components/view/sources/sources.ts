@@ -1,7 +1,7 @@
 import './sources.css';
 import { changeType,NewsItems } from '../news/news';
 class Sources {
-    draw(data:NewsItems[]):void {
+    public draw(data:NewsItems[]):void {
         const fragment:DocumentFragment = document.createDocumentFragment();
         const sourceItemTemp:HTMLTemplateElement|null = document.querySelector('#sourceItemTemp');
 
