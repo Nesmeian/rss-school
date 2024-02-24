@@ -1,5 +1,7 @@
 import './news.css'
-interface NewsItems {
+export interface NewsItems {
+    name: string; 
+    id: string
     author: string;
     urlToImage: string;
     source: { name: string; id: string };
@@ -47,7 +49,7 @@ class News {
     }
 }
 
-function changeType<Type extends HTMLElement>(parent: DocumentFragment | Document, seacrh: string): Type {
+export function changeType<Type extends HTMLElement>(parent: DocumentFragment | Document, seacrh: string): Type {
     const result = parent.querySelector<Type>(seacrh);
     if (result === null || result === undefined) {
         throw new Error('its element is null');
