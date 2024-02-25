@@ -1,7 +1,7 @@
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    getSources(callback) {
+    getSources(callback:()=>void) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -10,15 +10,17 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e, callback) {
-        let target = e.target;
-        const newsContainer = e.currentTarget;
-
+    public getNews(e:Event, callback:()=>void) {
+        let target: EventTarget|null|Element = e.target;
+        const newsContainer:EventTarget|null|Element = e.currentTarget;
         while (target !== newsContainer) {
+            if(target===null) throw new Error('elem dosent exist')
+            if(!(target instanceof Element)){throw new Error('Erorr')}
+            if(!(newsContainer instanceof Element)){throw new Error('Erorr')}
             if (target.classList.contains('source__item')) {
                 const sourceId = target.getAttribute('data-source-id');
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
-                    newsContainer.setAttribute('data-source', sourceId);
+                    newsContainer.setAttribute('data-source', sourceId as string);
                     super.getResp(
                         {
                             endpoint: 'everything',
