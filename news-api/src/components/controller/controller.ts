@@ -1,7 +1,9 @@
 import AppLoader from './appLoader';
+import {NewsItemsSources,NewsItemsStatus } from '../view/news/news';
+export type Callback<T> = (data?: T) => void;
 
 class AppController extends AppLoader {
-    getSources(callback:()=>void) {
+    getSources(callback: Callback<NewsItemsSources>) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -10,7 +12,7 @@ class AppController extends AppLoader {
         );
     }
 
-    public getNews(e:Event, callback:()=>void) {
+    public getNews(e:Event, callback: Callback<NewsItemsStatus>) {
         let target: EventTarget|null|Element = e.target;
         const newsContainer:EventTarget|null|Element = e.currentTarget;
         while (target !== newsContainer) {

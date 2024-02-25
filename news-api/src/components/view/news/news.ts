@@ -11,15 +11,20 @@ export interface NewsItems {
     url: string;
 }
 
+enum Status{
+    error="error",
+    ok='ok',
+}
+
 export interface NewsItemsStatus {
-    status: string;
+    status: Status;
     totalResults: number;
     articles: NewsItems[];
 }
 
 export interface NewsItemsSources{
     sources:NewsItems[]
-    status:string
+    status:Status
 } 
 class News {
     public draw(data: NewsItems[]): void {
