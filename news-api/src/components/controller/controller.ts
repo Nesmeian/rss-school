@@ -19,8 +19,13 @@ class AppController extends AppLoader {
             if(target===null) throw new Error('elem dosent exist')
             if(!(target instanceof Element)){throw new Error('Erorr')}
             if(!(newsContainer instanceof Element)){throw new Error('Erorr')}
+
             if (target.classList.contains('source__item')) {
-                const sourceId = target.getAttribute('data-source-id');
+                const sourceBtns:Element|null=document.querySelector('.sources')
+                const news:Element|null=document.querySelector('.news')
+                news?.classList.add('news--active')
+                sourceBtns?.classList.add('sources--active')
+                const sourceId:string|null = target.getAttribute('data-source-id');
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId as string);
                     super.getResp(
