@@ -1,3 +1,11 @@
+.news{
+    position: relative;
+    top:0;
+    transition: all 0.7 ease;
+}
+.news--active{
+    top:-111px;
+}
 .news__item {
     display: flex;
     flex-direction: column;
