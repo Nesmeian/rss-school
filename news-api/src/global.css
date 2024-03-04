@@ -1,7 +1,15 @@
+html,
 body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
+    justify-content: space-between;
 }
 
 header {
@@ -14,6 +22,9 @@ header h1 {
     text-align: center;
 }
 
+.title--disabled {
+    opacity: 0;
+}
 footer {
     height: 100px;
     display: flex;

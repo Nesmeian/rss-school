@@ -1,7 +1,7 @@
-import './news.css'
+import './news.css';
 export interface NewsItems {
-    name: string; 
-    id: string
+    name: string;
+    id: string;
     author: string;
     urlToImage: string;
     source: { name: string; id: string };
@@ -11,9 +11,9 @@ export interface NewsItems {
     url: string;
 }
 
-enum Status{
-    error="error",
-    ok='ok',
+enum Status {
+    error = 'error',
+    ok = 'ok',
 }
 
 export interface NewsItemsStatus {
@@ -22,10 +22,10 @@ export interface NewsItemsStatus {
     articles: NewsItems[];
 }
 
-export interface NewsItemsSources{
-    sources:NewsItems[]
-    status:Status
-} 
+export interface NewsItemsSources {
+    sources: NewsItems[];
+    status: Status;
+}
 class News {
     public draw(data: NewsItems[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;

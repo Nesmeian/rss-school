@@ -1,10 +1,10 @@
-.news{
+.news {
     position: relative;
-    top:0;
+    top: 0;
     transition: all 0.7 ease;
 }
-.news--active{
-    top:-111px;
+.news--active {
+    top: -111px;
 }
 .news__item {
     display: flex;
@@ -98,7 +98,9 @@
     margin-left: -10px;
     opacity: 0;
     vertical-align: middle;
-    transition: margin 0.3s, opacity 0.3s;
+    transition:
+        margin 0.3s,
+        opacity 0.3s;
 }
 
 .news__item .news__description .news__read-more a:hover:after {
