@@ -1,0 +1,24 @@
+.register__form{
+    margin: auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid black;
+    padding: 35px;
+    border-radius: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.label{
+    width: 150px;
+}
+.input{
+    border-radius: 10px;
+    border:0.1px solid black;
+}
+.register__button{
+    border-radius: 10px;
+    border: 0.1px solid black;
+    width: 70px;
+}
