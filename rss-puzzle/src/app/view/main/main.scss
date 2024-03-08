@@ -1,0 +1,15 @@
+html,
+body{
+    height: 100%;
+
+}
+.wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+}

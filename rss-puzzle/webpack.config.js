@@ -11,21 +11,30 @@ const baseConfig = {
     module: {
         rules: [
             {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.ts$/i,
                 use: 'ts-loader',
             },
+            {
+                test: /\.woff2?$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext]',
+                },
+            },
         ],
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
     },
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, './News-Api'),
+        path: path.resolve(__dirname, './rss-puzzle'),
+        clean: true,
+        assetModuleFilename: 'assets/[hash][ext]',
     },
     plugins: [
         new DotenvWebpackPlugin(),

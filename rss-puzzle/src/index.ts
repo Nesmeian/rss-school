@@ -1,3 +1,2 @@
-let a: number = 5;
-let b: number = 5;
-console.log(a + b);
+import App from './app/app';
+const app = new App();
