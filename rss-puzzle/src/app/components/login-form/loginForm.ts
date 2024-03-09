@@ -48,7 +48,7 @@ export class FormLogin {
       }
       if (surnameLogin && nameLogin) {
         localStorage.setItem(
-          'jack',
+          'Login',
           JSON.stringify({name: nameLogin, surname: surnameLogin})
         )
       }
