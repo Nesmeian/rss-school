@@ -29,11 +29,28 @@ export class FormLogin {
       this.removeMessage()
       const notValideMessageName = this.createValidationMessage()
       const notValideMessageSurname = this.createValidationMessage()
-      if (!this.validation(name, 3, notValideMessageName)) {
-        nameLabel.append(notValideMessageName)
+      let nameLogin
+      let surnameLogin
+      if (
+        name instanceof HTMLInputElement &&
+        surname instanceof HTMLInputElement
+      ) {
+        if (!this.validation(name, 3, notValideMessageName)) {
+          nameLabel.append(notValideMessageName)
+        } else {
+          nameLogin = name.value
+        }
+        if (!this.validation(surname, 4, notValideMessageSurname)) {
+          surnameLabel.append(notValideMessageSurname)
+        } else {
+          surnameLogin = surname.value
+        }
       }
-      if (!this.validation(surname, 4, notValideMessageSurname)) {
-        surnameLabel.append(notValideMessageSurname)
+      if (surnameLogin && nameLogin) {
+        localStorage.setItem(
+          'jack',
+          JSON.stringify({name: nameLogin, surname: surnameLogin})
+        )
       }
     })
     return container
@@ -128,13 +145,12 @@ export class FormLogin {
         } else {
           input.classList.add('input--inactive')
           input.classList.remove('input--active')
-          message.textContent =
-            'The input is not valid, the first letter must be capitalized '
+          message.textContent = `The input is not valid, the first letter must be capitalized `
         }
       } else {
         input.classList.add('input--inactive')
         input.classList.remove('input--active')
-        message.textContent = 'The input is not valid is too short'
+        message.textContent = `The input is not valid is too short, must be long then ${minLength} `
       }
     }
     return condition
