@@ -1,0 +1,13 @@
+.Header__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  background-image: url('../../../img/puzzle.jpg');
+  background-position: center;
+  background-size: 200%;
+  background-repeat: no-repeat;
+}
