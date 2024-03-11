@@ -1,6 +1,5 @@
 import createElement, {Html} from '../../../utlils/createFunction'
 import './loginForm.scss'
-type VariableType = 'name' | 'surname'
 export class FormLogin {
   form: Html
   constructor() {
@@ -11,19 +10,16 @@ export class FormLogin {
   }
   formCreate() {
     const container = this.createLoginForm()
-
     const nameLabel = this.createLoginNameLabel()
     const name: Element | HTMLInputElement = this.createLoginName()
     nameLabel.append(name)
     const surnameLabel = this.createLoginSurnameLabel()
     const surname: Element | HTMLInputElement = this.createLoginSurname()
-
     surnameLabel.append(surname)
     const button = this.createLoginButton()
     container.append(nameLabel)
     container.append(surnameLabel)
     container.append(button)
-
     container.addEventListener('submit', (e) => {
       e.preventDefault()
       this.removeMessage()
@@ -51,6 +47,10 @@ export class FormLogin {
           'Login',
           JSON.stringify({name: nameLogin, surname: surnameLogin})
         )
+        container.classList.add('form--remove')
+        setInterval(() => {
+          container.remove()
+        }, 4000)
       }
     })
     return container
@@ -101,7 +101,6 @@ export class FormLogin {
       classes: ['input', 'register__surname'],
       text: '',
     }
-
     const element = new createElement(param).getElement()
     element.setAttribute('type', 'text')
     return element

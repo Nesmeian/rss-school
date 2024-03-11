@@ -25,16 +25,20 @@ const baseConfig = {
           filename: 'fonts/[name][ext]',
         },
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.scss'],
   },
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, './rss-puzzle'),
     clean: true,
-    assetModuleFilename: 'assets/[hash][ext]',
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
   plugins: [
     new DotenvWebpackPlugin(),

@@ -1,4 +1,5 @@
 .register__form {
+  position: relative;
   margin: auto;
   width: 300px;
   display: flex;
@@ -11,6 +12,7 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
   background-color: #0e96ff;
+  transition: all 2s ease;
 }
 .label {
   width: 150px;
@@ -34,6 +36,11 @@ input:focus-visible {
   width: 220px;
   transition: all 0.5s ease;
 }
+
+.form--remove {
+  transform: translateX(-4000px);
+}
+
 .input--active {
   border: 1px solid green;
 }
