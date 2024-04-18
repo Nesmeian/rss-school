@@ -1,3 +1,3 @@
-import { DeAuthorization } from "./app/app";
-const app = new DeAuthorization();
+import { App } from "./app/app";
+const app = new App();
 app;
