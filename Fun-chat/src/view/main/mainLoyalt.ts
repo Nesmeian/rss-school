@@ -1,6 +1,7 @@
-import createElement from "../utils/createElems";
-import { Html } from "../utils/createElems";
-import { AuthForm } from "../components/authForm";
+import createElement from "../../utils/createElems";
+import { Html } from "../../utils/createElems";
+import { AuthForm } from "../../components/authForm";
+import "./main.scss";
 export class Main {
   main: Html;
   constructor() {
@@ -12,7 +13,7 @@ export class Main {
     const mainWrapper = this.createWrapper();
     const main = this.createMain();
     main.append(mainWrapper);
-    main.append(authForm);
+    mainWrapper.append(authForm);
     return main;
   }
   createWrapper(): Html {

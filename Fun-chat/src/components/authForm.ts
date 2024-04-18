@@ -1,6 +1,13 @@
 import createElement from "../utils/createElems";
 import { Html } from "../utils/createElems";
+import "./authForm.scss";
 export class AuthForm {
+  conditionLogin: boolean;
+  conditionPassword: boolean;
+  constructor() {
+    this.conditionLogin = false;
+    this.conditionPassword = false;
+  }
   collectForm(): Html {
     const form = this.createForm();
     const login = this.createInputLogWrapper();
@@ -47,9 +54,10 @@ export class AuthForm {
       classes: ["auth__input-login", "input"],
     };
     const login = new createElement(param).getElement();
+    login.setAttribute("type", "text");
+    login.addEventListener("focus", () => {});
     login.addEventListener("blur", () => {
       const wrapper = document.querySelector(".auth__wrapper-login");
-      console.log(wrapper);
       this.validation(login, "Login", wrapper);
     });
     return login;
@@ -57,7 +65,7 @@ export class AuthForm {
   createInputPassWrapper(): Html {
     const param = {
       tag: "div",
-      classes: ["auth__wrapper-login", "auth__input-wrapper"],
+      classes: ["auth__wrapper-password", "auth__input-wrapper"],
     };
     const wrapper = new createElement(param).getElement();
     const label = this.createLabelPassword();
@@ -80,43 +88,96 @@ export class AuthForm {
       tag: "input",
       classes: ["auth__input-password", "input"],
     };
-    return new createElement(param).getElement();
+    const password = new createElement(param).getElement();
+    password.setAttribute("type", "text");
+    password.addEventListener("blur", () => {
+      const wrapper = document.querySelector(".auth__wrapper-password");
+      this.validation(password, "Password", wrapper);
+    });
+    return password;
   }
 
   createButton(): Html {
     const param = {
       tag: "button",
       classes: ["auth__button", "button"],
-      text: "Auth",
+      text: "Submit",
     };
     const button = new createElement(param).getElement();
-    button.setAttribute("disabled", "true");
+    button.setAttribute("type", "button");
+    button?.setAttribute("disabled", "true");
+
+    button.addEventListener("click", () => {
+      const loginValue: HTMLInputElement | null =
+        document.querySelector(".auth__input-login");
+      const PasswordValue: HTMLInputElement | null = document.querySelector(
+        ".auth__input-password"
+      );
+      const authorization = JSON.stringify({
+        id: `${this.idGenerator()}`,
+        type: "USER_LOGIN",
+        payload: {
+          user: {
+            login: `${loginValue}`,
+            password: `${PasswordValue}`,
+          },
+        },
+      });
+      console.log(authorization);
+    });
     return button;
   }
 
   validation(input: Html, purpose: string, wrapper: Element | null): void {
-    const minLength: number = 5;
+    const minLength: number = 4;
+    const button = document.querySelector(".auth__button");
     if (input instanceof HTMLInputElement) {
       const inputVal = input.value.split("");
       const message = wrapper;
       const messageValue: Html = this.validationMessage();
-      if (purpose === "Login") {
-        if (inputVal.length > 0) {
-          if (inputVal[0] !== inputVal[0].toUpperCase()) {
-            messageValue.innerHTML +=
-              "Login must start with Capital letter <br>";
+      if (inputVal.length > 0) {
+        if (inputVal[0] !== inputVal[0].toUpperCase()) {
+          messageValue.innerHTML += `The ${purpose} must start with a capital letter <br>`;
+          if (purpose === "Login") {
+            this.conditionLogin = false;
+          } else if (purpose === "Password") {
+            this.conditionPassword = false;
           }
-          if (inputVal.length < minLength) {
-            messageValue.innerHTML += "Login must be longer than 5 <br>";
-          }
-        } else if (inputVal) {
-          messageValue.textContent += "Please add your Login";
         }
-        this.validationMessageDelete(wrapper);
-        message?.append(messageValue);
+        if (inputVal.length < minLength) {
+          messageValue.innerHTML += `The ${purpose} must be longer than 4 <br>`;
+          if (purpose === "Login") {
+            this.conditionLogin = false;
+          } else if (purpose === "Password") {
+            this.conditionPassword = false;
+          }
+        }
+        if (purpose === "Login") {
+          this.conditionLogin = true;
+        } else if (purpose === "Password") {
+          this.conditionPassword = true;
+        }
       }
+      if (inputVal.length === 0) {
+        messageValue.textContent += `Please add your ${purpose}`;
+        if (purpose === "Login") {
+          this.conditionLogin = false;
+        } else if (purpose === "Password") {
+          this.conditionPassword = false;
+        }
+      }
+      if (!this.conditionLogin || !this.conditionPassword) {
+        button?.setAttribute("disabled", "true");
+      }
+      this.validationMessageDelete(wrapper);
+      message?.append(messageValue);
+    }
+    if (this.conditionLogin && this.conditionPassword) {
+      console.log(this.conditionLogin, this.conditionPassword);
+      button?.removeAttribute("disabled");
     }
   }
+
   validationMessage(): Html {
     const param = {
       tag: "div",
@@ -131,5 +192,16 @@ export class AuthForm {
         e.remove();
       });
     }
+  }
+  idGenerator(): string {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "";
+    for (let i = 0; i < 10; i++) {
+      result += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+    return result;
   }
 }

@@ -1,4 +1,4 @@
-import { Main } from "../view/mainLoyalt";
+import { Main } from "../view/main/mainLoyalt";
 export class App {
   constructor() {
     this.addMain();
