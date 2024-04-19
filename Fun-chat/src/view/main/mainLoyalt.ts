@@ -1,6 +1,6 @@
 import createElement from "../../utils/createElems";
 import { Html } from "../../utils/createElems";
-import { AuthForm } from "../../components/authForm";
+import { AuthForm } from "../../components/auth/authForm";
 import "./main.scss";
 export class Main {
   main: Html;

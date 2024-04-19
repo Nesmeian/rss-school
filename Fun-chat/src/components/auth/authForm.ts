@@ -1,5 +1,7 @@
-import createElement from "../utils/createElems";
-import { Html } from "../utils/createElems";
+import createElement from "../../utils/createElems";
+import { Html } from "../../utils/createElems";
+import { connectServer, login } from "../../webSocket/webSocket";
+connectServer();
 import "./authForm.scss";
 export class AuthForm {
   conditionLogin: boolean;
@@ -118,13 +120,15 @@ export class AuthForm {
         type: "USER_LOGIN",
         payload: {
           user: {
-            login: `${loginValue}`,
-            password: `${PasswordValue}`,
+            login: `${loginValue?.value}`,
+            password: `${PasswordValue?.value}`,
           },
         },
       });
-      console.log(authorization);
+
+      login(authorization);
     });
+    this.pressEnter();
     return button;
   }
 
@@ -132,38 +136,35 @@ export class AuthForm {
     const minLength: number = 4;
     const button = document.querySelector(".auth__button");
     if (input instanceof HTMLInputElement) {
+      if (this.conditionLogin)
+        if (purpose === "Login") {
+          this.conditionLogin = false;
+        } else if (purpose === "Password") {
+          this.conditionPassword = false;
+        }
       const inputVal = input.value.split("");
       const message = wrapper;
       const messageValue: Html = this.validationMessage();
       if (inputVal.length > 0) {
         if (inputVal[0] !== inputVal[0].toUpperCase()) {
           messageValue.innerHTML += `The ${purpose} must start with a capital letter <br>`;
-          if (purpose === "Login") {
-            this.conditionLogin = false;
-          } else if (purpose === "Password") {
-            this.conditionPassword = false;
-          }
         }
         if (inputVal.length < minLength) {
           messageValue.innerHTML += `The ${purpose} must be longer than 4 <br>`;
-          if (purpose === "Login") {
-            this.conditionLogin = false;
-          } else if (purpose === "Password") {
-            this.conditionPassword = false;
-          }
-        }
-        if (purpose === "Login") {
-          this.conditionLogin = true;
-        } else if (purpose === "Password") {
-          this.conditionPassword = true;
         }
       }
       if (inputVal.length === 0) {
         messageValue.textContent += `Please add your ${purpose}`;
+      }
+      if (
+        inputVal.length > minLength &&
+        inputVal.length !== 0 &&
+        inputVal[0] == inputVal[0].toUpperCase()
+      ) {
         if (purpose === "Login") {
-          this.conditionLogin = false;
+          this.conditionLogin = true;
         } else if (purpose === "Password") {
-          this.conditionPassword = false;
+          this.conditionPassword = true;
         }
       }
       if (!this.conditionLogin || !this.conditionPassword) {
@@ -203,5 +204,27 @@ export class AuthForm {
       );
     }
     return result;
+  }
+  pressEnter(): void {
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode === 13 && this.conditionLogin && this.conditionPassword) {
+        const loginValue: HTMLInputElement | null =
+          document.querySelector(".auth__input-login");
+        const PasswordValue: HTMLInputElement | null = document.querySelector(
+          ".auth__input-password"
+        );
+        const authorization = JSON.stringify({
+          id: `${this.idGenerator()}`,
+          type: "USER_LOGIN",
+          payload: {
+            user: {
+              login: `${loginValue?.value}`,
+              password: `${PasswordValue?.value}`,
+            },
+          },
+        });
+        login(authorization);
+      }
+    });
   }
 }
