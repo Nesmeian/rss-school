@@ -1,4 +1,5 @@
 import { modalIsAuth } from "../components/modals/loginIsAuth/loginIsAuth";
+import { Footer } from "../view/footer/footer";
 import { Header } from "../view/header/header";
 
 let socket: WebSocket | null = null;
@@ -24,10 +25,19 @@ export function login(username: string): void {
     const form = document.querySelector(".auth__form");
     const message = JSON.parse(event.data);
     const body = document.querySelector("body");
+    const main = document.querySelector(".main");
+    const app = document.getElementById("app");
     const header = new Header().buildHeader();
     const modalIsAuthorizate = new modalIsAuth().buildModal();
+    const footer = new Footer().buildFooter();
     if (!message.payload.error) {
-      body?.insertAdjacentElement("afterbegin", header);
+      app?.remove();
+      if (!document.querySelector("header")) {
+        body?.insertAdjacentElement("afterbegin", header);
+      }
+      if (!document.querySelector("footer")) {
+        main?.insertAdjacentElement("beforeend", footer);
+      }
       form?.classList.add("auth__form--remove");
       setInterval(() => {
         form?.remove();

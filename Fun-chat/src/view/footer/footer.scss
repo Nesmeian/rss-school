@@ -1,0 +1,18 @@
+.footer{
+    font-size: 20px;
+}
+.footer__wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer__logo{
+    background-image: url('..//..//img/logo_rs_text.svg');
+    height: 70px;
+    width: 70px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+

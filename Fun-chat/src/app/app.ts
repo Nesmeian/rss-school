@@ -1,4 +1,6 @@
 import { Main } from "../view/main/mainLoyalt";
+import "../components/buttons/button.scss";
+import "../components/links/links.scss";
 export class App {
   constructor() {
     this.addMain();
