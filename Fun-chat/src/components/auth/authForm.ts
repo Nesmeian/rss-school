@@ -223,7 +223,9 @@ export class AuthForm {
             },
           },
         });
-        login(authorization);
+        if (document.querySelector(".auth__button")) {
+          login(authorization);
+        }
       }
     });
   }

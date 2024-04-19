@@ -1,3 +1,6 @@
+import { modalIsAuth } from "../components/modals/loginIsAuth/loginIsAuth";
+import { Header } from "../view/header/header";
+
 let socket: WebSocket | null = null;
 
 export function connectServer(): { getSocket: () => WebSocket } {
@@ -20,13 +23,25 @@ export function login(username: string): void {
   socket.onmessage = (event) => {
     const form = document.querySelector(".auth__form");
     const message = JSON.parse(event.data);
+    const body = document.querySelector("body");
+    const header = new Header().buildHeader();
+    const modalIsAuthorizate = new modalIsAuth().buildModal();
     if (!message.payload.error) {
+      body?.insertAdjacentElement("afterbegin", header);
       form?.classList.add("auth__form--remove");
       setInterval(() => {
         form?.remove();
       }, 2000);
     } else {
-      alert(message.payload.error);
+      if (body?.querySelector(".is-auth__wrapper")) {
+        throw new Error("this modal is already appear");
+      } else {
+        body?.insertAdjacentElement("afterbegin", modalIsAuthorizate);
+        setTimeout(
+          () => modalIsAuthorizate?.classList.add("is-auth__wrapper--active"),
+          100
+        );
+      }
     }
   };
 }

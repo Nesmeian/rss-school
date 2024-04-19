@@ -4,8 +4,8 @@ export class App {
     this.addMain();
   }
   addMain(): void {
-    const main = new Main();
-    const mainElem = main.createMainLoyalt();
-    document.body.append(mainElem);
+    const body = document.querySelector("body");
+    const main = new Main().createMainLoyalt();
+    body?.insertAdjacentElement("afterbegin", main);
   }
 }
