@@ -16,7 +16,7 @@ export class Footer {
   createFooter(): Html {
     const param = {
       tag: "footer",
-      classes: ["footer"],
+      classes: ["footer", "footer--inactive"],
     };
     return new createElement(param).getElement();
   }

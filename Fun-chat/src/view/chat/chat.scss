@@ -1,0 +1,50 @@
+.chat{
+    position: relative;
+    transition: all 0.5s ease;
+    width: 600px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat--inactive{
+    transform: translateX(-1500px);
+}
+.chat__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 70%;
+}
+.chat__user-container{
+    height: 50px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.user-container__user-condition{
+    color:green
+}
+.user-container__user-condition--offline{
+    color:red
+}
+.container-message__input{
+    width: 88%;
+}
+.user-container__window{
+    height: 100%;
+}
+.user__container-message{
+    display: flex;
+}
+.users__container{
+    display: flex;
+    flex-direction: column;
+}
+.users__container{
+    background-color: gray;
+}
+.users__list{
+    min-height: 280px;
+}

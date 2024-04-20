@@ -1,7 +1,6 @@
 import createElement from "../../utils/createElems";
 import { Html } from "../../utils/createElems";
-import { connectServer, login } from "../../webSocket/webSocket";
-connectServer();
+import { login } from "../../webSocket/webSocket";
 import "./authForm.scss";
 export class AuthForm {
   conditionLogin: boolean;
@@ -125,7 +124,12 @@ export class AuthForm {
           },
         },
       });
-
+      const loginSession = {
+        login: `${loginValue?.value}`,
+        password: `${PasswordValue?.value}`,
+        id: `${this.idGenerator()}`,
+      };
+      sessionStorage.setItem("Login", JSON.stringify(loginSession));
       login(authorization);
     });
     this.pressEnter();

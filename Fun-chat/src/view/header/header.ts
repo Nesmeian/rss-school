@@ -1,4 +1,6 @@
+import { AuthForm } from "../../components/auth/authForm";
 import createElement, { Html } from "../../utils/createElems";
+import { logOutServer } from "../../webSocket/webSocket";
 import "./header.scss";
 export class Header {
   buildHeader(): Html {
@@ -13,12 +15,13 @@ export class Header {
     wrapper.append(title);
     wrapper.append(about);
     wrapper.append(logOut);
+
     return header;
   }
   createHeader(): Html {
     const param = {
       tag: "header",
-      classes: ["header"],
+      classes: ["header", "header--inactive"],
     };
     return new createElement(param).getElement();
   }
@@ -30,12 +33,15 @@ export class Header {
     return new createElement(param).getElement();
   }
   createLogo(): Html {
+    const name: string | null = JSON.parse(
+      sessionStorage.getItem("Login") ?? "{}"
+    )?.login;
     const param = {
       tag: "div",
       classes: ["header__logo"],
+      text: `User: ${name}`,
     };
-    const img = new createElement(param).getElement();
-    return img;
+    return new createElement(param).getElement();
   }
   createTitle(): Html {
     const param = {
@@ -53,6 +59,7 @@ export class Header {
     };
     const button = new createElement(param).getElement();
     button.setAttribute("type", "button");
+    button.addEventListener("click", this.logOut);
     return button;
   }
   createAbout(): Html {
@@ -64,5 +71,27 @@ export class Header {
     const button = new createElement(param).getElement();
     button.setAttribute("type", "button");
     return button;
+  }
+  logOut(): void {
+    logOutServer();
+    sessionStorage.removeItem("Login");
+    const mainWrapper = document.querySelector(".wrapper");
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    const chat = document.querySelector(".chat");
+    const authForm = new AuthForm().collectForm();
+    authForm.classList.add("auth__form--remove");
+    header?.classList.add("header--inactive");
+    footer?.classList.add("footer--inactive");
+    chat?.classList.add("chat--inactive");
+    setTimeout(() => {
+      header?.remove();
+      footer?.remove();
+      chat?.remove();
+      mainWrapper?.append(authForm);
+    }, 500);
+    setTimeout(() => {
+      authForm.classList.remove("auth__form--remove");
+    }, 600);
   }
 }

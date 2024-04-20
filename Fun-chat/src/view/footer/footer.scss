@@ -1,5 +1,10 @@
 .footer{
+    position: relative;
+    transition: all 0.5s ease;
     font-size: 20px;
+}
+.footer--inactive{
+    transform: translateX(-1500px);
 }
 .footer__wrapper{
     display: flex;
