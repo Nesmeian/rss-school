@@ -108,13 +108,16 @@ export class Chat {
     const result = new createElement(param).getElement();
     return result;
   }
-  createUsersSearch(): Html {
+  createUsersSearch(): HTMLInputElement {
     const param = {
       tag: "input",
       classes: ["users__search"],
     };
-    const result = new createElement(param).getElement();
+    const result = <HTMLInputElement>new createElement(param).getElement();
     result.setAttribute("type", "text");
+    result.addEventListener("input", () => {
+      this.searchUser(result.value);
+    });
     return result;
   }
   createUsersList(): Html {
@@ -133,7 +136,7 @@ export class Chat {
     return new createElement(param).getElement();
   }
 
-  addItemToList(list: Html, user: string[], classes: string): void {
+  addItemToList(list: Html, user: { login: string }[], classes: string): void {
     const currentLogin = JSON.parse(sessionStorage.getItem("Login") ?? "{}");
     user.forEach((e) => {
       const user = this.createAllUsers();
@@ -145,6 +148,18 @@ export class Chat {
         }
         user.textContent = e.login;
         list.append(user);
+      }
+    });
+  }
+  searchUser(value: string): void {
+    const users = document.querySelectorAll(".users__item");
+    users.forEach((user) => {
+      value = value.toLowerCase();
+      const userText = user.textContent?.toLowerCase() || "";
+      if (!userText.includes(value)) {
+        (user as HTMLElement).style.display = "none";
+      } else {
+        (user as HTMLElement).style.display = "flex";
       }
     });
   }
