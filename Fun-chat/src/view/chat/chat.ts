@@ -26,6 +26,7 @@ export class Chat {
     wrapper.append(messageContainer);
     messageContainer.append(messageInput);
     messageContainer.append(button);
+    this.selectUser();
     return chat;
   }
   createChat(): Html {
@@ -53,7 +54,6 @@ export class Chat {
     const param = {
       tag: "div",
       classes: ["user-container__user"],
-      text: `User:`,
     };
     return new createElement(param).getElement();
   }
@@ -61,7 +61,6 @@ export class Chat {
     const param = {
       tag: "div",
       classes: ["user-container__user-condition"],
-      text: "Offlaine",
     };
     return new createElement(param).getElement();
   }
@@ -91,7 +90,7 @@ export class Chat {
   createChatMessageButton(): Html {
     const param = {
       tag: "button",
-      classes: ["container-message__button"],
+      classes: ["container-message__button", "button"],
       text: "send",
     };
     const result = new createElement(param).getElement();
@@ -162,5 +161,26 @@ export class Chat {
         (user as HTMLElement).style.display = "flex";
       }
     });
+  }
+  selectUser(): void {
+    const users = document.querySelectorAll(".users__item");
+    const userName = document.querySelector<HTMLElement>(
+      ".user-container__user"
+    );
+    const condition = document.querySelector<HTMLElement>(
+      ".user-container__user-condition"
+    );
+    if (userName && condition) {
+      users.forEach((e) => {
+        e.addEventListener("click", () => {
+          userName.textContent = `User: ${e.textContent}`;
+          if (e.classList.contains("--active")) {
+            condition.textContent = "Online";
+          } else {
+            condition.textContent = "Offline";
+          }
+        });
+      });
+    }
   }
 }

@@ -109,30 +109,10 @@ export function logOutServer(): void {
     socket.send(login);
   }
 }
-// export async function createListOfUsers(): Promise<string[]> {
-//   return new Promise((resolve) => {
-//     if (socket?.readyState) {
-//       const a = JSON.stringify({
-//         id: "1",
-//         type: "USER_ACTIVE",
-//         payload: null,
-//       });
-//       socket.send(a);
-//       socket.onmessage = (e) => {
-//         try {
-//           const message = JSON.parse(e.data);
-//           if (message.type === "USER_ACTIVE") {
-//             const activeUsers = message.payload.users;
-//             resolve(activeUsers);
-//           }
-//         } catch (e) {
-//           console.log(e);
-//         }
-//       };
-//     }
-//   });
-// }
-export function createListOfUsers(message: string[], classes: string): void {
+export function createListOfUsers(
+  message: { login: string }[],
+  classes: string
+): void {
   const userlist = document.querySelector(".users__list");
   if (userlist) {
     new Chat().addItemToList(userlist, message, classes);

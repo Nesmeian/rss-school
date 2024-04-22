@@ -2,11 +2,13 @@
     position: relative;
     transition: all 0.5s ease;
     width: 600px;
-    background-color: black;
     display: flex;
     justify-content: space-between;
     min-width: 350px;
     width: 60vw;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid black;
 }
 .chat--inactive{
     transform: translateX(-1500px);
@@ -16,10 +18,12 @@
     flex-direction: column;
     justify-content: space-between;
     flex-basis: 90%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
 }
 .chat__user-container{
     height: 50px;
-    background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -31,7 +35,10 @@
     color:red
 }
 .container-message__input{
+    border-radius: 10px;
+    border: 1px solid black;
     width: 100%;
+    margin-right:10px ;
 }
 .user-container__window{
     height: 100%;
@@ -42,17 +49,23 @@
 .users__container{
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
 .users__container{
-    background-color: gray;
+    background-color: white;
+    margin: 0 5px;
 }
 .users__search{
-    margin-top: 2px;
+    border-radius: 10px;
+    padding: 3px 0;
+    margin: 5px 5px;
+    border: 1px solid black;
 }
 .users__list{
     max-height: 380px;
     overflow: auto;
     min-height: 280px;
+    padding: 0 10px;
 }
 .users__item{
     position: relative;
