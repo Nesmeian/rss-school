@@ -1,5 +1,6 @@
 import createElement, { Html } from "../../../utils/createElems";
 import "./loginIsAuth.scss";
+
 export class modalIsAuth {
   buildModal(): Html {
     const wrapper = this.createModalWrapper();

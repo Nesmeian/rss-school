@@ -1,5 +1,4 @@
 import createElement, { Html } from "../../utils/createElems";
-import { createListOfUsers } from "../../webSocket/webSocket";
 import "./chat.scss";
 
 export class Chat {
@@ -124,7 +123,6 @@ export class Chat {
       classes: ["users__list"],
     };
     const result = new createElement(param).getElement();
-    this.addItemToList(result);
     return result;
   }
   createAllUsers(): Html {
@@ -134,17 +132,15 @@ export class Chat {
     };
     return new createElement(param).getElement();
   }
-  addItemToList(list: Html): void {
+
+  addItemToList(list: Html, user: string[]): void {
     const currentLogin = JSON.parse(sessionStorage.getItem("Login") ?? "{}");
-    const users = createListOfUsers();
-    users.then((elem) => {
-      elem.forEach((e) => {
-        const user = this.createAllUsers();
-        if (currentLogin.login !== e.login) {
-          user.textContent = e.login;
-          list.append(user);
-        }
-      });
+    user.forEach((e) => {
+      const user = this.createAllUsers();
+      if (currentLogin.login !== e.login) {
+        user.textContent = e.login;
+        list.append(user);
+      }
     });
   }
 }

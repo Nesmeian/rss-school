@@ -8,12 +8,10 @@ export class Header {
     const wrapper = this.createWrapper();
     const logo = this.createLogo();
     const title = this.createTitle();
-    const about = this.createAbout();
     const logOut = this.createLogout();
     header.append(wrapper);
     wrapper.append(logo);
     wrapper.append(title);
-    wrapper.append(about);
     wrapper.append(logOut);
 
     return header;
@@ -60,16 +58,6 @@ export class Header {
     const button = new createElement(param).getElement();
     button.setAttribute("type", "button");
     button.addEventListener("click", this.logOut);
-    return button;
-  }
-  createAbout(): Html {
-    const param = {
-      tag: "button",
-      classes: ["header__log-out_btn", "header__btn", "button"],
-      text: "About",
-    };
-    const button = new createElement(param).getElement();
-    button.setAttribute("type", "button");
     return button;
   }
   logOut(): void {

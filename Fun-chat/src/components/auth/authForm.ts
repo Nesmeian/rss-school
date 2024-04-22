@@ -1,6 +1,7 @@
 import createElement from "../../utils/createElems";
 import { Html } from "../../utils/createElems";
 import { login } from "../../webSocket/webSocket";
+import { AboutModal } from "../modals/about/about";
 import "./authForm.scss";
 export class AuthForm {
   conditionLogin: boolean;
@@ -14,9 +15,11 @@ export class AuthForm {
     const login = this.createInputLogWrapper();
     const password = this.createInputPassWrapper();
     const button = this.createButton();
+    const aboutBtn = this.createAboutBtn();
     form.append(login);
     form.append(password);
     form.append(button);
+    form.append(aboutBtn);
     return form;
   }
 
@@ -136,6 +139,25 @@ export class AuthForm {
     return button;
   }
 
+  createAboutBtn(): Html {
+    const param = {
+      tag: "button",
+      classes: ["auth__log-out_btn", "auth__btn", "button"],
+      text: "About",
+    };
+    const button = new createElement(param).getElement();
+    button.setAttribute("type", "button");
+    const aboutModal = new AboutModal().buildAbout();
+    const body = document.querySelector("body");
+    button.addEventListener("click", () => {
+      body?.insertAdjacentElement("afterbegin", aboutModal);
+      setTimeout(() => {
+        aboutModal.classList.remove("about--inactive");
+      }, 100);
+    });
+    return button;
+  }
+
   validation(input: Html, purpose: string, wrapper: Element | null): void {
     const minLength: number = 4;
     const button = document.querySelector(".auth__button");
@@ -227,9 +249,7 @@ export class AuthForm {
             },
           },
         });
-        if (document.querySelector(".auth__button")) {
-          login(authorization);
-        }
+        login(authorization);
       }
     });
   }
