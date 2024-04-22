@@ -1,0 +1,88 @@
+.setup-menu {
+  padding: 20px;
+}
+.select {
+  display: flex;
+  width: 30%;
+  min-width: 100px;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+}
+
+.select__level {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: #0e96ff;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.level__title {
+  transition: all 0.5 ease;
+}
+
+.level__game {
+  position: absolute;
+  transition: all 0.5s ease;
+  font-size: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 12px;
+  left: 105px;
+}
+
+.select__game {
+  color: #0e96ff;
+  background: #e0f1ff;
+  padding: 0.2px 4px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.select__game_value:nth-child() {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.level__btn {
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 30px;
+}
+.--active {
+  .level__title {
+    display: none;
+  }
+  .level__game {
+    position: static;
+  }
+}
+.level__btn::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 8px;
+  background-color: white;
+  top: 5px;
+  right: 10px;
+  transform: rotate(45deg);
+  transition: all 0.4s ease;
+}
+.level__btn::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 8px;
+  background-color: white;
+  top: 10px;
+  right: 10px;
+  transform: rotate(-45deg);
+  transition: all 0.4s ease;
+}

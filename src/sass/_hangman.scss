@@ -1,0 +1,109 @@
+.hangman{
+  padding: 0 40px 40px;
+}
+.hangman__gallow {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  border: black solid 10px;
+  border-radius: 5px;
+  border-right: 0;
+}
+
+.hangman__support-beam {
+  width: 10px;
+  height: 120px;
+  background-color: black;
+  transform: rotateZ(45deg);
+  position: absolute;
+  left: 32px;
+  top: -22px;
+}
+
+.hangman__hanging-beam {
+  position: absolute;
+  right: 2px;
+  width: 5px;
+  height: 40px;
+  border-radius: 0 0 10px 10px;
+  background-color: black;
+}
+
+.hangman__foundation {
+  position: absolute;
+  bottom: -10px;
+  left: -50px;
+  width: 300px;
+  height: 10px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.hagman__head {
+  position: absolute;
+  width: 50px;
+  height: 0px;
+  border: 0px solid black;
+  border-radius: 30px;
+  right: -23px;
+  top: 38px;
+  transition: all 0.7s ease;
+}
+.hagman__body {
+  height: 0px;
+  background: black;
+  position: absolute;
+  right: 1px;
+  top: 90px;
+  border-radius: 5px;
+  transition: all 0.7s ease;
+}
+
+.hagman__left-arm {
+  transform: rotate(45deg);
+  height: 0;
+  background: black;
+  position: absolute;
+  right: 22px;
+  top: 84px;
+  border-radius: 5px;
+  transition: all 0.7s ease;
+}
+
+.hagman__rigth-arm {
+  transform: rotate(132deg);
+  height: 0;
+  background: black;
+  position: absolute;
+  right: -20px;
+  top: 85px;
+  border-radius: 5px;
+  transition: all 0.7s ease;
+}
+
+.hagman__left-leg {
+  transform: rotate(45deg);
+  height: 0;
+  background: black;
+  position: absolute;
+  right: 21px;
+  top: 133px;
+  border-radius: 5px;
+  transition: all 0.7s ease;
+}
+
+.hagman__rigth-leg {
+  transform: rotate(132deg);
+  height: 0;
+  background: black;
+  position: absolute;
+  right: -18px;
+  top: 132px;
+  border-radius: 5px;
+  transition: all 0.7s ease;
+}
+
+.--active {
+  height: 50px;
+  border: 3px solid black;
+}
