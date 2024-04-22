@@ -211,6 +211,9 @@ class Chat {
     };
     const result = new createElement(param).getElement();
     result.setAttribute("type", "button");
+    result.addEventListener("click", () => {
+      this.sendMessage();
+    });
     return result;
   }
   createUsers() {
@@ -295,6 +298,32 @@ class Chat {
           }
         });
       });
+    }
+  }
+  sendMessage() {
+    const name = document.querySelector(".user-container__user");
+    const messageValue = document.querySelector(
+      ".container-message__input"
+    );
+    if ((name == null ? void 0 : name.textContent) != "") {
+      let result = name == null ? void 0 : name.textContent;
+      result = result == null ? void 0 : result.replace(/^User: /, "");
+      const message = JSON.stringify({
+        id: new AuthForm().idGenerator(),
+        type: "MSG_SEND",
+        payload: {
+          message: {
+            to: result,
+            text: messageValue == null ? void 0 : messageValue.value
+          }
+        }
+      });
+      socket == null ? void 0 : socket.send(message);
+      if (messageValue) {
+        messageValue.value = "";
+      }
+    } else {
+      console.log(5);
     }
   }
 }
@@ -499,13 +528,14 @@ function login(username) {
     socket.addEventListener("message", function(event) {
       const form = document.querySelector(".auth__form");
       const message = JSON.parse(event.data);
+      const error = message.payload.error;
       const body = document.querySelector("body");
       const mainWrapper = document.querySelector(".wrapper");
       const header = new Header().buildHeader();
       const modalIsAuthorizate = new modalIsAuth().buildModal();
       const footer = new Footer().buildFooter();
       const chat = new Chat().buildChat();
-      if (!message.payload.error) {
+      if (!error) {
         if (!document.querySelector("header")) {
           body == null ? void 0 : body.insertAdjacentElement("afterbegin", header);
           mainWrapper == null ? void 0 : mainWrapper.insertAdjacentElement("afterbegin", chat);
@@ -521,11 +551,16 @@ function login(username) {
         setInterval(() => {
           form == null ? void 0 : form.remove();
         }, 500);
-      } else {
+      } else if (error === "incorrect password" || error === "a user with this login is already authorized") {
+        sessionStorage.removeItem("Login");
         if (body == null ? void 0 : body.querySelector(".is-auth__wrapper")) {
           throw new Error("this modal is already appear");
         } else {
           body == null ? void 0 : body.insertAdjacentElement("afterbegin", modalIsAuthorizate);
+          const modalText = document.querySelector(".is-auth__modal__message");
+          if (modalText) {
+            modalText.textContent = error;
+          }
           setTimeout(
             () => modalIsAuthorizate == null ? void 0 : modalIsAuthorizate.classList.add("is-auth__wrapper--active"),
             100
