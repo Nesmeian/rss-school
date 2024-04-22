@@ -283,12 +283,17 @@
   width: 220px;
   font-size: 10px;
   color: #f03118;
-}body {
+}html,
+body {
+  height: 100%;
+}
+
+body {
   position: relative;
   background-image: url("/nesmeian-JSFE2023Q4/Fun-chat/wrapperImg.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   padding-bottom: 20px;
   margin: 0;
   display: flex;
