@@ -11,9 +11,25 @@ socket.onopen = function () {
   }
 };
 socket.onmessage = function (e) {
-  const message = JSON.parse(e.data).type;
-  console.log(message);
-  if (message === "USER_EXTERNAL_LOGIN" || message === "USER_EXTERNAL_LOGOUT") {
+  const message = JSON.parse(e.data);
+  const chat = document.querySelector(".users__list");
+  if (message.type === "USER_INACTIVE") {
+    const inactive = message.payload.users;
+    createListOfUsers(inactive, "inactive");
+  }
+  if (message.type === "USER_ACTIVE") {
+    if (chat) {
+      chat.innerHTML = "";
+    }
+    const active = message.payload.users;
+    createListOfUsers(active, "active");
+  }
+
+  if (
+    message.type === "USER_EXTERNAL_LOGIN" ||
+    message.type === "USER_EXTERNAL_LOGOUT" ||
+    message.type === "USER_LOGIN"
+  ) {
     const idGenerator = new AuthForm().idGenerator();
     const idGenerator2 = new AuthForm().idGenerator();
     const userInactive = JSON.stringify({
@@ -26,11 +42,8 @@ socket.onmessage = function (e) {
       type: "USER_ACTIVE",
       payload: null,
     });
-    socket.send(userInactive);
     socket.send(userActive);
-  }
-  if (message === "USER_INACTIVE" || message === "USER_ACTIVE") {
-    console.log("jack");
+    socket.send(userInactive);
   }
 };
 
@@ -119,10 +132,11 @@ export function logOutServer(): void {
 //     }
 //   });
 // }
-export function createListOfUsers(message): void {
-  let users = [];
+export function createListOfUsers(message: string[], classes: string): void {
   const userlist = document.querySelector(".users__list");
-  users = message.payload.users;
+  if (userlist) {
+    new Chat().addItemToList(userlist, message, classes);
+  }
 }
 
 export function sendLoginWhenReload(): void {

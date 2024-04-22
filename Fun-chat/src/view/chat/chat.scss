@@ -5,8 +5,9 @@
     background-color: black;
     display: flex;
     justify-content: space-between;
+    min-width: 350px;
+    width: 60vw;
 }
-
 .chat--inactive{
     transform: translateX(-1500px);
 }
@@ -46,5 +47,13 @@
     background-color: gray;
 }
 .users__list{
+    max-height: 380px;
+    overflow: auto;
     min-height: 280px;
+}
+.--active{
+    color:green
+}
+.--inactive{
+    color: red;
 }

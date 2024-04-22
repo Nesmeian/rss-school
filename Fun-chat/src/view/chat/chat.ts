@@ -133,11 +133,16 @@ export class Chat {
     return new createElement(param).getElement();
   }
 
-  addItemToList(list: Html, user: string[]): void {
+  addItemToList(list: Html, user: string[], classes: string): void {
     const currentLogin = JSON.parse(sessionStorage.getItem("Login") ?? "{}");
     user.forEach((e) => {
       const user = this.createAllUsers();
       if (currentLogin.login !== e.login) {
+        if (classes === "active") {
+          user.classList.add("--active");
+        } else {
+          user.classList.add("--inactive");
+        }
         user.textContent = e.login;
         list.append(user);
       }
