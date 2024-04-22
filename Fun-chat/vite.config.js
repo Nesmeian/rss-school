@@ -5,6 +5,7 @@ export default defineConfig({
   build: {
     minify: false,
     sourcemap: true,
+    outDir: "Fun-chat",
     rollupOptions: {
       input: {
         // eslint-disable-next-line no-undef
