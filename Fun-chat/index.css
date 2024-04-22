@@ -168,7 +168,7 @@
 }
 
 .footer__logo {
-  background-image: url("/nesmeian-JSFE2023Q4/fun-chat/logo_rs_text.svg");
+  background-image: url("/nesmeian-JSFE2023Q4/Fun-chat/logo_rs_text.svg");
   height: 70px;
   width: 70px;
   background-position: center;
@@ -290,7 +290,7 @@ body {
 
 body {
   position: relative;
-  background-image: url("/nesmeian-JSFE2023Q4/fun-chat/wrapperImg.jpg");
+  background-image: url("/nesmeian-JSFE2023Q4/Fun-chat/wrapperImg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
