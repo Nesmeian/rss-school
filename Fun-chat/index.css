@@ -82,11 +82,36 @@
 }
 
 .user-container__window {
-  height: 100%;
+  overflow: auto;
+  display: flex;
+  height: 300px;
+  flex-direction: column;
 }
 
 .user__container-message {
   display: flex;
+}
+
+.window__message {
+  display: flex;
+  position: relative;
+  height: 70px;
+  width: 120px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 7px 3px;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.--current {
+  align-self: flex-end;
+}
+
+.message__text {
+  overflow: auto;
+  display: flex;
+  height: 80%;
 }
 
 .users__container {
@@ -120,6 +145,18 @@
   overflow: hidden;
   max-width: 150px;
   padding-left: 15px;
+}
+
+.message__time {
+  font-size: 9px;
+  position: absolute;
+  bottom: 0;
+}
+
+.message__from-login {
+  top: 0;
+  position: absolute;
+  font-size: 9px;
 }
 
 .--active {
@@ -291,9 +328,6 @@ body {
 body {
   position: relative;
   background-image: url("/nesmeian-JSFE2023Q4/Fun-chat/wrapperImg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
   padding-bottom: 20px;
   margin: 0;
   height: 100vh;
@@ -301,6 +335,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .wrapper {

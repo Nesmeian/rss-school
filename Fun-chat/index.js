@@ -142,7 +142,6 @@ class Chat {
     wrapper.append(messageContainer);
     messageContainer.append(messageInput);
     messageContainer.append(button);
-    this.selectUser();
     return chat;
   }
   createChat() {
@@ -296,6 +295,18 @@ class Chat {
           } else {
             condition.textContent = "Offline";
           }
+          const messagesFrom = JSON.stringify({
+            id: new AuthForm().idGenerator(),
+            type: "MSG_FROM_USER",
+            payload: {
+              user: {
+                login: e.textContent
+              }
+            }
+          });
+          if (socket == null ? void 0 : socket.readyState) {
+            socket.send(messagesFrom);
+          }
         });
       });
     }
@@ -305,25 +316,40 @@ class Chat {
     const messageValue = document.querySelector(
       ".container-message__input"
     );
-    if ((name == null ? void 0 : name.textContent) != "") {
-      let result = name == null ? void 0 : name.textContent;
-      result = result == null ? void 0 : result.replace(/^User: /, "");
-      const message = JSON.stringify({
-        id: new AuthForm().idGenerator(),
-        type: "MSG_SEND",
-        payload: {
-          message: {
-            to: result,
-            text: messageValue == null ? void 0 : messageValue.value
+    const input = document.querySelector(
+      ".container-message__input"
+    );
+    if (input) {
+      if (input.value !== "") {
+        if ((name == null ? void 0 : name.textContent) != "") {
+          let result = name == null ? void 0 : name.textContent;
+          result = result == null ? void 0 : result.replace(/^User: /, "");
+          const messageSend = JSON.stringify({
+            id: new AuthForm().idGenerator(),
+            type: "MSG_SEND",
+            payload: {
+              message: {
+                to: result,
+                text: messageValue == null ? void 0 : messageValue.value
+              }
+            }
+          });
+          const messageFrom2 = JSON.stringify({
+            id: new AuthForm().idGenerator(),
+            type: "MSG_FROM_USER",
+            payload: {
+              user: {
+                login: result
+              }
+            }
+          });
+          socket == null ? void 0 : socket.send(messageSend);
+          socket == null ? void 0 : socket.send(messageFrom2);
+          if (messageValue) {
+            messageValue.value = "";
           }
         }
-      });
-      socket == null ? void 0 : socket.send(message);
-      if (messageValue) {
-        messageValue.value = "";
       }
-    } else {
-      console.log(5);
     }
   }
 }
@@ -491,22 +517,71 @@ socket.onopen = function() {
   if (sessionStorage.getItem("Login")) {
     sendLoginWhenReload();
   }
+  if (!sessionStorage.getItem("Login")) {
+    sesionLogin();
+  }
 };
 socket.onmessage = function(e) {
+  const chat = new Chat();
+  const form = document.querySelector(".auth__form");
+  const body = document.querySelector("body");
+  const mainWrapper = document.querySelector(".wrapper");
+  const header = new Header().buildHeader();
+  const modalIsAuthorizate = new modalIsAuth().buildModal();
+  const footer = new Footer().buildFooter();
+  const chats = chat.buildChat();
   const message = JSON.parse(e.data);
-  const chat = document.querySelector(".users__list");
+  const chatsa = document.querySelector(".users__list");
+  const error = message.payload.error;
   if (message.type === "USER_INACTIVE") {
     const inactive = message.payload.users;
     createListOfUsers(inactive, "inactive");
   }
   if (message.type === "USER_ACTIVE") {
-    if (chat) {
-      chat.innerHTML = "";
+    if (chatsa) {
+      chatsa.innerHTML = "";
     }
     const active = message.payload.users;
     createListOfUsers(active, "active");
   }
+  if (message.type === "ERROR") {
+    if (error === "incorrect password" || error === "a user with this login is already authorized") {
+      sessionStorage.removeItem("Login");
+      if (body == null ? void 0 : body.querySelector(".is-auth__wrapper")) {
+        throw new Error("this modal is already appear");
+      } else {
+        body == null ? void 0 : body.insertAdjacentElement("afterbegin", modalIsAuthorizate);
+        const modalText = document.querySelector(".is-auth__modal__message");
+        if (modalText) {
+          modalText.textContent = error;
+        }
+        setTimeout(
+          () => modalIsAuthorizate == null ? void 0 : modalIsAuthorizate.classList.add("is-auth__wrapper--active"),
+          100
+        );
+      }
+    }
+  } else {
+    if (!error) {
+      if (!document.querySelector("header")) {
+        body == null ? void 0 : body.insertAdjacentElement("afterbegin", header);
+        mainWrapper == null ? void 0 : mainWrapper.insertAdjacentElement("afterbegin", chats);
+        setTimeout(() => {
+          header.classList.remove("header--inactive"), chats.classList.remove("chat--inactive");
+        }, 500);
+      }
+      if (!document.querySelector("footer")) {
+        body == null ? void 0 : body.insertAdjacentElement("beforeend", footer);
+        setTimeout(() => footer.classList.remove("footer--inactive"), 500);
+      }
+      form == null ? void 0 : form.classList.add("auth__form--remove");
+      setInterval(() => {
+        form == null ? void 0 : form.remove();
+      }, 500);
+    }
+  }
   if (message.type === "USER_EXTERNAL_LOGIN" || message.type === "USER_EXTERNAL_LOGOUT" || message.type === "USER_LOGIN") {
+    console.log(message.type);
     const idGenerator = new AuthForm().idGenerator();
     const idGenerator2 = new AuthForm().idGenerator();
     const userInactive = JSON.stringify({
@@ -522,62 +597,26 @@ socket.onmessage = function(e) {
     socket.send(userActive);
     socket.send(userInactive);
   }
-};
-function login(username) {
-  if (socket == null ? void 0 : socket.readyState) {
-    socket.addEventListener("message", function(event) {
-      const form = document.querySelector(".auth__form");
-      const message = JSON.parse(event.data);
-      const error = message.payload.error;
-      const body = document.querySelector("body");
-      const mainWrapper = document.querySelector(".wrapper");
-      const header = new Header().buildHeader();
-      const modalIsAuthorizate = new modalIsAuth().buildModal();
-      const footer = new Footer().buildFooter();
-      const chat = new Chat().buildChat();
-      if (!error) {
-        if (!document.querySelector("header")) {
-          body == null ? void 0 : body.insertAdjacentElement("afterbegin", header);
-          mainWrapper == null ? void 0 : mainWrapper.insertAdjacentElement("afterbegin", chat);
-          setTimeout(() => {
-            header.classList.remove("header--inactive"), chat.classList.remove("chat--inactive");
-          }, 500);
+  if (message.type === "MSG_FROM_USER") {
+    const chat2 = document.querySelector(".user-container__window");
+    const messagesFrom = message.payload.messages;
+    console.log(message.payload);
+    if (chat2) {
+      console.log(5);
+      chat2.textContent = "";
+      messagesFrom.forEach(
+        (e2) => {
+          const messageItem = createMessage(e2.datetime, e2.from, e2.text);
+          chat2.append(messageItem);
         }
-        if (!document.querySelector("footer")) {
-          body == null ? void 0 : body.insertAdjacentElement("beforeend", footer);
-          setTimeout(() => footer.classList.remove("footer--inactive"), 500);
-        }
-        form == null ? void 0 : form.classList.add("auth__form--remove");
-        setInterval(() => {
-          form == null ? void 0 : form.remove();
-        }, 500);
-      } else if (error === "incorrect password" || error === "a user with this login is already authorized") {
-        sessionStorage.removeItem("Login");
-        if (body == null ? void 0 : body.querySelector(".is-auth__wrapper")) {
-          throw new Error("this modal is already appear");
-        } else {
-          body == null ? void 0 : body.insertAdjacentElement("afterbegin", modalIsAuthorizate);
-          const modalText = document.querySelector(".is-auth__modal__message");
-          if (modalText) {
-            modalText.textContent = error;
-          }
-          setTimeout(
-            () => modalIsAuthorizate == null ? void 0 : modalIsAuthorizate.classList.add("is-auth__wrapper--active"),
-            100
-          );
-        }
-      }
-    });
-    socket.send(username);
-    if (!sessionStorage.getItem("Login")) {
-      sesionLogin();
+      );
     }
   }
-}
+};
 function logOutServer() {
   if (socket == null ? void 0 : socket.readyState) {
     const sesionLogin2 = JSON.parse(sessionStorage.getItem("Login") ?? "{}");
-    const login2 = JSON.stringify({
+    const login = JSON.stringify({
       id: sesionLogin2.id,
       type: "USER_LOGOUT",
       payload: {
@@ -587,37 +626,40 @@ function logOutServer() {
         }
       }
     });
-    socket.send(login2);
+    socket.send(login);
   }
 }
 function createListOfUsers(message, classes) {
   const userlist = document.querySelector(".users__list");
   if (userlist) {
     new Chat().addItemToList(userlist, message, classes);
+    new Chat().selectUser();
   }
 }
 function sendLoginWhenReload() {
-  const body = document.querySelector("body");
-  const footer = new Footer().buildFooter();
-  const header = new Header().buildHeader();
-  const loginSession = JSON.parse(sessionStorage.getItem("Login") ?? "{}");
-  const loginSes = JSON.stringify({
-    id: `${loginSession.id}`,
-    type: "USER_LOGIN",
-    payload: {
-      user: {
-        login: `${loginSession == null ? void 0 : loginSession.login}`,
-        password: `${loginSession == null ? void 0 : loginSession.password}`
+  if (socket == null ? void 0 : socket.readyState) {
+    const body = document.querySelector("body");
+    const footer = new Footer().buildFooter();
+    const header = new Header().buildHeader();
+    const loginSession = JSON.parse(sessionStorage.getItem("Login") ?? "{}");
+    const loginSes = JSON.stringify({
+      id: `${loginSession.id}`,
+      type: "USER_LOGIN",
+      payload: {
+        user: {
+          login: `${loginSession == null ? void 0 : loginSession.login}`,
+          password: `${loginSession == null ? void 0 : loginSession.password}`
+        }
       }
-    }
-  });
-  body == null ? void 0 : body.insertAdjacentElement("afterbegin", header);
-  body == null ? void 0 : body.append(footer);
-  setTimeout(() => {
-    header.classList.remove("header--inactive");
-    footer.classList.remove("footer--inactive");
-  }, 100);
-  login(loginSes);
+    });
+    socket.send(loginSes);
+    body == null ? void 0 : body.insertAdjacentElement("afterbegin", header);
+    body == null ? void 0 : body.append(footer);
+    setTimeout(() => {
+      header.classList.remove("header--inactive");
+      footer.classList.remove("footer--inactive");
+    }, 100);
+  }
 }
 function sesionLogin() {
   if (socket == null ? void 0 : socket.readyState) {
@@ -636,6 +678,60 @@ function sesionLogin() {
       socket.send(authorization);
     }
   }
+}
+function createMessage(timeMessage, fromLogin, textMessage) {
+  const param = {
+    tag: "div",
+    classes: ["window__message"]
+  };
+  const message = new createElement(param).getElement();
+  const login = JSON.parse(sessionStorage.getItem("Login") ?? "{}");
+  if (fromLogin == login.login) {
+    message.classList.add("--current");
+  }
+  const time = messageTime(timeMessage);
+  const from = messageFrom(fromLogin);
+  const text = messageText(textMessage);
+  message.append(from);
+  message.append(text);
+  message.append(time);
+  return message;
+}
+function messageTime(textTime) {
+  const param = {
+    tag: "div",
+    classes: ["message__time"],
+    text: new Date(textTime).toLocaleString()
+  };
+  return new createElement(param).getElement();
+}
+function messageFrom(messageFromLogin) {
+  const param = {
+    tag: "div",
+    classes: ["message__from-login"],
+    text: messageFromLogin
+  };
+  return new createElement(param).getElement();
+}
+function messageText(messageText2) {
+  const param = {
+    tag: "div",
+    classes: ["message__text"]
+  };
+  const result = new createElement(param).getElement();
+  console.log(spliceStr(messageText2));
+  result.innerHTML = spliceStr(messageText2);
+  return result;
+}
+function spliceStr(str) {
+  if (str.length > 10) {
+    const match = str.match(/.{1,10}/g);
+    if (match) {
+      const dividedStr = match.join(" ");
+      return dividedStr;
+    }
+  }
+  return str;
 }
 class AboutModal {
   buildAbout() {
@@ -717,11 +813,11 @@ class AuthForm {
   }
   collectForm() {
     const form = this.createForm();
-    const login2 = this.createInputLogWrapper();
+    const login = this.createInputLogWrapper();
     const password = this.createInputPassWrapper();
     const button = this.createButton();
     const aboutBtn = this.createAboutBtn();
-    form.append(login2);
+    form.append(login);
     form.append(password);
     form.append(button);
     form.append(aboutBtn);
@@ -760,15 +856,15 @@ class AuthForm {
       tag: "input",
       classes: ["auth__input-login", "input"]
     };
-    const login2 = new createElement(param).getElement();
-    login2.setAttribute("type", "text");
-    login2.addEventListener("focus", () => {
+    const login = new createElement(param).getElement();
+    login.setAttribute("type", "text");
+    login.addEventListener("focus", () => {
     });
-    login2.addEventListener("blur", () => {
+    login.addEventListener("blur", () => {
       const wrapper = document.querySelector(".auth__wrapper-login");
-      this.validation(login2, "Login", wrapper);
+      this.validation(login, "Login", wrapper);
     });
-    return login2;
+    return login;
   }
   createInputPassWrapper() {
     const param = {
@@ -834,7 +930,7 @@ class AuthForm {
         id: `${this.idGenerator()}`
       };
       sessionStorage.setItem("Login", JSON.stringify(loginSession));
-      login(authorization);
+      socket == null ? void 0 : socket.send(authorization);
     });
     this.pressEnter();
     return button;
@@ -942,7 +1038,7 @@ class AuthForm {
             }
           }
         });
-        login(authorization);
+        socket == null ? void 0 : socket.send(authorization);
       }
     });
   }
