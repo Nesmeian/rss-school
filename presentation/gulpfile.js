@@ -1,3 +1,4 @@
+
 const pkg = require("./package.json");
 const glob = require("glob");
 const yargs = require("yargs");
@@ -23,14 +24,15 @@ const autoprefixer = require("gulp-autoprefixer");
 const root = yargs.argv.root || ".";
 const port = yargs.argv.port || 8000;
 const host = yargs.argv.host || "localhost";
-
 const banner = `/*!
 * reveal.js ${pkg.version}
 * ${pkg.homepage}
 * MIT licensed
 *
 * Copyright (C) 2011-2024 Hakim El Hattab, https://hakim.se
+
 */\n`;
+
 
 // Prevents warnings from opening too many test pages
 process.setMaxListeners(20);
@@ -67,6 +69,7 @@ babelConfigESM.presets[0][1].targets = {
     "last 2 Edge versions",
   ],
 };
+
 
 let cache = {};
 
@@ -361,3 +364,4 @@ gulp.task("serve", () => {
 
   gulp.watch(["test/*.html"], gulp.series("test"));
 });
+

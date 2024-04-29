@@ -1,0 +1,79 @@
+.modal__wrapper {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: -9999px;
+  height: 100%;
+  width: 100%;
+  background: white;
+  transition: all 1s ease;
+  color:#0b3d63
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  background-color: gainsboro;
+  border-radius: 30px;
+  gap: 30px;
+  border: 1px solid aliceblue;
+}
+.modal__btn {
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 5px 15px;
+}
+
+.modal__congratulation {
+  padding: 10px;
+}
+
+
+.scores__modal {
+  position: fixed;
+  display: flex;
+  left: -9999px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  transition: all 1s ease;
+  color:#0b3d63
+}
+.scores__modal__wrapper {
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  background-color: white;
+  border-radius: 30px;
+  gap: 20px;
+  padding: 1% 20px;
+  border: 1px solid aliceblue;
+}
+
+.scores__modal__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.scores__item {
+  padding: 10px;
+}
+
+
+.time__name,
+.level__num,
+.game__num,
+.place__num{
+  padding-top: 5px;
+}
+.modal--active {
+  left: 0;
+}
