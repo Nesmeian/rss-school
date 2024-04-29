@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>React</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section><h1>React</h1></section>
+        <section>
+          <section>
+            <h2>React</h2>
+            <p>
+              It is a declarative, efficient, and flexible JavaScript library
+              for creating user interfaces. It allows us to assemble a complex
+              UI from small isolated pieces of code called "components".
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>React was developed by Facebook in March 2013</h2>
+            <aside class="notes">
+              React was created to solve the problem of efficiently updating the
+              user interface in real-time without requiring the entire page to
+              be reloaded.
+            </aside>
+            <aside class="notes">
+              The history of React development is quite extensive, so let's
+              focus on it for a moment.
+            </aside>
+          </section>
+          <section>
+            <h3>React 0.14(2015)</h3>
+            In this version, stateless components were added, making the code
+            more declarative and testing easier.
+            <aside class="notes">
+              A stateless component, also known as a functional component, is a
+              fundamental concept in React that represents a UI element without
+              any internal state management. In simpler terms, a stateless
+              component is a function that takes props as input and returns JSX
+              (JavaScript XML) to describe the UI.
+            </aside>
+          </section>
+          <section>
+            <h3>React 0.3 (2013)</h3>
+            The first release of React introduced basic concepts such as the
+            virtual DOM and unidirectional data flow. These principles ensured
+            that the interface was effectively updated without the need for a
+            complete page re-rendering.
+          </section>
+          <section>
+            <h3>React 16.0 (2017)</h3>
+            The emergence of Fiber, a new architecture of the React internal
+            device.
+            <aside class="notes">
+              Fiber's goal is to increase productivity when developing tasks
+              such as animation, organizing elements on a page, and moving
+              elements. Its main feature is incremental rendering: the ability
+              to divide the rendering work into units and distribute them among
+              multiple frames.
+            </aside>
+          </section>
+          <section>
+            <h3>React 16.3 (2018)</h3>
+            Context has been added, and the lifecycle system has been improved.
+            <aside class="notes">
+              Context provides a way to pass data through the component tree
+              without having to pass props down manually at every level.
+            </aside>
+          </section>
+          <section>
+            <h3>React 16.8(2019)</h3>
+            Hooks were added - functional components providing access to state
+            and the possibility of using lifecycle methods.
+            <aside class="notes">
+              Hooks allow using states and other features of React without using
+              classes.
+            </aside>
+          </section>
+        </section>
+        <section><h2>Advantages and Disadvantages</h2></section>
+        <section>
+          <section>
+            <h2>Advantages</h2>
+            <ul>
+              <li>Quick because it uses Virtual DOM</li>
+              <li>A huge number of open libraries</li>
+              <li>One-Way Binding</li>
+              <li>React Native</li>
+              <li>Advanced and most useful React Dev tools</li>
+              <li>Has a low entry threshold</li>
+            </ul>
+          </section>
+          <section>
+            <h2>VDOM</h2>
+            The virtual DOM (VDOM) is a programming concept where an ideal, or
+            “virtual”, representation of a UI is kept in memory and synced with
+            the “real” DOM by a library such as ReactDOM. This process is called
+            reconciliation.
+            <aside class="notes">
+              In simple terms, VDOM compares its nodes and nodes of the DOM; if
+              something is different, then it redoes only these nodes and
+              doesn't touch the entire tree. This is faster than manipulation
+              with DOM.
+            </aside>
+          </section>
+          <section>
+            <h2>A huge number of open libraries</h2>
+            A large number of libraries have been developed for React, which
+            allow you to work without problems even with very complex
+            animations, and not only with it.
+            <aside class="notes">
+              Examples include Formik, React Popper, React animations, React
+              Icons.
+            </aside>
+          </section>
+          <section>
+            <h3>One-Way Binding</h3>
+            One-way binding means that the binding happens in one direction. In
+            this case, changes in the data automatically update the UI, but
+            changes in the UI do not automatically update the data. That’s why
+            it is referred to as one-way data binding.
+          </section>
+          <section>
+            <h3>React Native</h3>
+            React Native is a popular JavaScript-based mobile application
+            platform that allows creating native mobile applications for iOS and
+            Android. Also, this framework allows creating applications for
+            different platforms using the same code base.
+          </section>
+          <section>
+            <h3>React Dev Instruments</h3>
+            These tools help coding smoothly and easier.
+            <aside class="notes">
+              Examples include React Datasheet, which allows using math
+              formulas, React Native for Web, which adds progress bars, buttons,
+              and a lot of useful things, Reactide, which is an IDE tool for
+              working with React, among others.
+            </aside>
+          </section>
+          <section>
+            <h2>has a low entry threshold</h2>
+            compared to other frameworks and libraries, React is relatively easy
+            to use, but it takes a long time to master it.
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Disadvantages</h2>
+            <aside class="notes">
+              There are not many of them, but they are worth mentioning.
+            </aside>
+            <ul>
+              <li>Doesn't work out of the box</li>
+              <li>There is no division into modules</li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
